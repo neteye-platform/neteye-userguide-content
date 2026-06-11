@@ -1,0 +1,9 @@
+[submodule "nep"]
+	path = nep
+	url = git@github.com:neteye-platform/nep-documentation.git
+[submodule "troubleshooting"]
+	path = troubleshooting
+	url = git@github.com:neteye-platform/troubleshooting-userguide.git
+[submodule "satayo"]
+	path = satayo
+	url = git@github.com:neteye-platform/satayo-userguide.git

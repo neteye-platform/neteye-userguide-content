@@ -1,0 +1,9 @@
+[submodule "troubleshooting-userguide"]
+	path = troubleshooting
+	url = ../troubleshooting-userguide.git
+[submodule "nep-documentation"]
+	path = nep
+	url = ../nep-documentation.git
+[submodule "satayo-userguide"]
+	path = satayo
+	url = ../satayo-userguide.git

@@ -14,4 +14,3 @@ It provides guidance on reaching the login page and authenticating with your cre
    access/authentication-idp.rst
    access/authentication-entra-id.rst
    access/authorization.rst
-   

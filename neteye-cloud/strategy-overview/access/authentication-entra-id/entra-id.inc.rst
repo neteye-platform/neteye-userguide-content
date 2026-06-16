@@ -65,7 +65,7 @@ Create a dedicated App Registration
    c. As Redirect URI, select `Web` as Platform Type and insert the Redirect URI provided
       by NetEye Cloud Team.
    d. Then, click on `Register` to save the new App registration
-      
+
       .. figure:: /neteye-cloud/strategy-overview/img/new-app-registered.png
 
 #. From the App Registration Overview, copy the Application (client) ID and provide it to Neteye Cloud Team.
@@ -98,7 +98,7 @@ Add Claims to EntraID Token
 
    .. figure:: /neteye-cloud/strategy-overview/img/token-config.png
 
-#. Click on `Add optional claim` 
+#. Click on `Add optional claim`
 #. Select Token type `ID`, then flag email in the next list; confirm by clicking on `Add`
 
    .. figure:: /neteye-cloud/strategy-overview/img/optional-claim-form.png
@@ -130,7 +130,7 @@ Generate Credential
 .. warning:: The generated Credential has a Life Span. Make sure to take note of it because,
    when it expires, you will not be able to Login into NetEye.Cloud using your EntraID anymore.
 
-.. note:: Secret's Attributes are visible only immediately after creation. 
+.. note:: Secret's Attributes are visible only immediately after creation.
    If you go to another page, you will not be able to see them anymore, so take note of them
    just after the creation. If you forget, just destroy and recreate the Credential.
 
@@ -151,7 +151,7 @@ Generate Credential
    **Important!** You will not be able to access it in the future, so take note immediately.
 
 
-Final Information Review 
+Final Information Review
 ++++++++++++++++++++++++
 
 Once the App Registration is created and configured, you must provide the NetEye.Cloud

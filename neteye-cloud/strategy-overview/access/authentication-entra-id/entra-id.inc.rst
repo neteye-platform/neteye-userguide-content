@@ -6,34 +6,34 @@ Authentication via Microsoft Entra ID
 
 The NetEye.Cloud solution uses **Entra ID** as one of the identity providers for user authentication.
 
-To enable login using Microsoft Entra ID, you must create a **dedicated App Registration** 
+To enable login using Microsoft Entra ID, you must create a **dedicated App Registration**
 within your Azure subscription.
 
-This App Registration is used by the NetEye.Cloud solution to authenticate users and retrieve 
+This App Registration is used by the NetEye.Cloud solution to authenticate users and retrieve
 identity information during the login process.
-As part of the configuration, you must define specific **Optional Claims** in the access or ID token 
-issued by Entra ID. These claims allow the NetEye.Cloud solution to obtain relevant details 
+As part of the configuration, you must define specific **Optional Claims** in the access or ID token
+issued by Entra ID. These claims allow the NetEye.Cloud solution to obtain relevant details
 about the account that is logging in (such as user identity attributes required for access and authorization).
 
 The sections below describe how to configure Entra ID for use with NetEye.Cloud, including how to
 add Group Claims to the authentication token.
 
 .. note::
-   Including Group Claims is recommended for customers who want full control over authorization management 
-   without operational dependency on the NetEye.Cloud team. For a general explanation of what Group Claims 
+   Including Group Claims is recommended for customers who want full control over authorization management
+   without operational dependency on the NetEye.Cloud team. For a general explanation of what Group Claims
    are and how they affect authorization management, see :ref:`group-claims-for-authorization`.
-   
+
 
 Configure EntraID on Azure
 ``````````````````````````
 
 It is required to create a dedicated **Azure App Registration** within your own Azure subscription.
 
-The purpose of this App Registration is to allow the NetEye.Cloud solution to trust Microsoft Entra ID as 
+The purpose of this App Registration is to allow the NetEye.Cloud solution to trust Microsoft Entra ID as
 an identity provider and to retrieve the necessary identity information during user authentication.
-Below you will find all required steps to follow. 
+Below you will find all required steps to follow.
 
-.. note:: Make sure NetEye.Cloud Team provided you with the NetEye Cloud Redirect URI. 
+.. note:: Make sure NetEye.Cloud Team provided you with the NetEye Cloud Redirect URI.
    If not, you should request it.
 
 
@@ -52,18 +52,18 @@ Create a dedicated App Registration
 #. Provide basic information:
 
    a. Provide a Name for the new Application (suggested: `Wuerth-IT NetEye Cloud`).
-   b. Select the most appropriate Account Type that is allowed to logon (if you are unsure, 
+   b. Select the most appropriate Account Type that is allowed to logon (if you are unsure,
       use `Account in this organizational directory only` as is the most restrictive).
-   c. As Redirect URI, select `Web` as Platform Type and insert the Redirect URI provided 
+   c. As Redirect URI, select `Web` as Platform Type and insert the Redirect URI provided
       by NetEye Cloud Team.
    d. Then, click on `Register` to save the new App registration
-      
+
       .. figure:: /neteye-cloud/strategy-overview/img/new-app-registered.png
 
 #. From the App Registration Overview, copy the Application (client) ID and provide it to Neteye Cloud Team.
-#. Open the list of Endpoints by clicking on `Endpoint` 
+#. Open the list of Endpoints by clicking on `Endpoint`
 
-   .. figure:: /neteye-cloud/strategy-overview/img/endpoints.png     
+   .. figure:: /neteye-cloud/strategy-overview/img/endpoints.png
 
 #. From the list of Endpoints, take note of the `OpenID Connect metadata document` URLs and provide it to NetEye Cloud Team.
 
@@ -71,13 +71,13 @@ Create a dedicated App Registration
 Add Claims to EntraID Token
 +++++++++++++++++++++++++++
 
-.. warning:: Optional Claims are used to map a User-friendly Attribute as the Account’s Username 
-   on NetEye.Cloud. You need to map your Email to allow Login via Email. 
+.. warning:: Optional Claims are used to map a User-friendly Attribute as the Account’s Username
+   on NetEye.Cloud. You need to map your Email to allow Login via Email.
 
-.. note:: Groups Claim is used to fully delegate Authorization to EntraID: by doing this, 
-   you can decide on your own the Access Level each Person has when logging into NetEye.Cloud 
-   by changing Group Membership on its own Identity Service. If not configured, Authorization and 
-   Access Level will be managed by Würth-IT on your behalf. 
+.. note:: Groups Claim is used to fully delegate Authorization to EntraID: by doing this,
+   you can decide on your own the Access Level each Person has when logging into NetEye.Cloud
+   by changing Group Membership on its own Identity Service. If not configured, Authorization and
+   Access Level will be managed by Würth-IT on your behalf.
    In this case, changes must be requested using a Jira Ticket.
 
 #. Open Azure Admin Portal (usually, go to `Microsoft Azure <https://portal.azure.com/>`_)
@@ -88,42 +88,42 @@ Add Claims to EntraID Token
 
 #. On the Left Menu, expand `Manage` and select `Token configuration`
 
-   .. figure:: /neteye-cloud/strategy-overview/img/token-config.png 
+   .. figure:: /neteye-cloud/strategy-overview/img/token-config.png
 
-#. Click on `Add optional claim` 
-#. Select Token type `ID`, then flag email in the next list; confirm by clicking on `Add` 
+#. Click on `Add optional claim`
+#. Select Token type `ID`, then flag email in the next list; confirm by clicking on `Add`
 
    .. figure:: /neteye-cloud/strategy-overview/img/optional-claim-form.png
 
-#. If requested, turn on the Microsoft Graph permission. 
+#. If requested, turn on the Microsoft Graph permission.
 
 
 Add Optional Groups Claim
 +++++++++++++++++++++++++
 
-.. note:: You should only consider this step in case you prefer to manage Authorization 
-   on NetEye.Cloud on your own. By enabling this option, all membership of the Authenticated Account 
-   are forwarded to NetEye.Cloud. 
+.. note:: You should only consider this step in case you prefer to manage Authorization
+   on NetEye.Cloud on your own. By enabling this option, all membership of the Authenticated Account
+   are forwarded to NetEye.Cloud.
 
-#. Click on `Add groups claim` 
+#. Click on `Add groups claim`
 
-   .. figure:: /neteye-cloud/strategy-overview/img/add-group-claim.png 
+   .. figure:: /neteye-cloud/strategy-overview/img/add-group-claim.png
 
-#. Select `Security groups`, then select `sAMAccountName` for all Group types, then confirm by clicking on `Add` 
+#. Select `Security groups`, then select `sAMAccountName` for all Group types, then confirm by clicking on `Add`
 
-   .. figure:: /neteye-cloud/strategy-overview/img/security-groups.png  
+   .. figure:: /neteye-cloud/strategy-overview/img/security-groups.png
 
-#. If requested, turn on the Microsoft Graph permission. 
+#. If requested, turn on the Microsoft Graph permission.
 
 
 Generate Credential
 +++++++++++++++++++
 
-.. warning:: The generated Credential has a Life Span. Make sure to take note of it because, 
+.. warning:: The generated Credential has a Life Span. Make sure to take note of it because,
    when it expires, you will not be able to Login into NetEye.Cloud using your EntraID anymore.
 
-.. note:: Secret's Attributes are visible only immediately after creation. 
-   If you go to another page, you will not be able to see them anymore, so take note of them 
+.. note:: Secret's Attributes are visible only immediately after creation.
+   If you go to another page, you will not be able to see them anymore, so take note of them
    just after the creation. If you forget, just destroy and recreate the Credential.
 
 #. Open Azure Admin Portal (usually, go to `this page <https://portal.azure.com/>`_)
@@ -137,17 +137,17 @@ Generate Credential
    .. figure:: /neteye-cloud/strategy-overview/img/secret.png
 
 #. Move to `Client secrets` tab and create a `New Client Secret` by clinking on a corresponding button.
-#. Provide a description useful for remembering in the future (suggested: NetEye Cloud OiDC Credential) 
-   and a suitable expiration date, then click on `Add` to store it. 
-#. Right after the Secret is created, copy Secret’s Value and provide it to NetEye.Cloud Team; 
+#. Provide a description useful for remembering in the future (suggested: NetEye Cloud OiDC Credential)
+   and a suitable expiration date, then click on `Add` to store it.
+#. Right after the Secret is created, copy Secret’s Value and provide it to NetEye.Cloud Team;
    **Important!** You will not be able to access it in the future, so take note immediately.
 
 
-Final Information Review 
+Final Information Review
 ++++++++++++++++++++++++
 
-Once the App Registration is created and configured, you must provide the NetEye.Cloud 
-Team with the required parameters so that the identity provider can be properly configured 
+Once the App Registration is created and configured, you must provide the NetEye.Cloud
+Team with the required parameters so that the identity provider can be properly configured
 in the NetEye.Cloud’s **Keycloak** instance.
 
 At the end of this procedure, you have 4 different data that need to be provided to NetEye.Cloud Team:
@@ -156,10 +156,3 @@ At the end of this procedure, you have 4 different data that need to be provided
  - OpenID Connect metadata document
  - Secret Value
  - Whether or not Groups claim will be included in the EntraID Token
-
-
-
-
-
-
-

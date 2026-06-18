@@ -52,7 +52,7 @@ In this scenario:
    future, the NetEye.Cloud Team can assist with the migration from
    local accounts to IdP-based authentication at any time.
 
-  
+
 Requesting Access Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

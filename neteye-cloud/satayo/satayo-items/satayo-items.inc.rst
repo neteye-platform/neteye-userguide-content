@@ -453,3 +453,36 @@ Resource
 
 The **Resource item** represents a finding associated with a specific **URL**.
 A resource is reported when it is referenced in an entry of a :ref:`stealer log <stealer_logs_item>` containing a username or password for an account associated with that specific URL.
+
+.. _account_item:
+
+Account
+=======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589.003 Gather Victim Identity Information: Credentials <https://attack.mitre.org/techniques/T1589/003/>`__
+   - `T1589.002 Gather Victim Identity Information: Email Addresses <https://attack.mitre.org/techniques/T1589/002/>`__
+
+   Credential Access
+
+   - `T1078.003 Valid Accounts: Local Accounts <https://attack.mitre.org/techniques/T1078/003/>`__
+   - `T1078.002 Valid Accounts: Domain Accounts <https://attack.mitre.org/techniques/T1078/002/>`__
+   - `T1078.001 Valid Accounts: Default Accounts <https://attack.mitre.org/techniques/T1078/001/>`__
+   - `T1586.002 Compromise Accounts: Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
+
+
+An **Account item** represents an online account associated with your organization that has been identified in compromised data sources, such as :ref:`stealer logs <stealer_logs_item>` or data
+breaches. Accounts are flagged when they appear in a stealer log or breach containing exposed credentials or session information.
+
+For each account found, SATAYO provides information about:
+
+- Username associated with the account
+- The resource associated with the account
+- Presence in stealer logs/data breaches and related email addresses (if present)
+
+It is recommended to verify the authenticity of any account found in this section and take immediate action by resetting credentials and enabling multi-factor authentication if available.

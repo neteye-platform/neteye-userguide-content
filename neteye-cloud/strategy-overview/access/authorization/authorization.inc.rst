@@ -67,32 +67,27 @@ Caption: Basic structure of a group
    login process, permissions are effectively updated during login, so any change
    to permissions will require logging out and logging back in.
 
+Customers manage group memberships in their own Identity Provider —
+they decide who gets which groups. However, the mapping from groups
+to actual permissions is controlled entirely on the NetEye.Cloud platform
+side and reflects only the contracts and access levels that are active for
+the tenant.
+
+A customer cannot grant access to contracts they have not subscribed to,
+nor can they affect another tenant's permissions. Group names that do not match
+any server-side configuration are silently ignored.
+
 
 
 Parsing the Group Claims
 ~~~~~~~~~~~~~~~~~~~~~~~~
-Assigning permissions to an authenticated user thus entails extracting
-the company code, contract and access level from each claim, translating
-the company code to the tenant name, and then using them to look up the
-permissions in the appropriate table.
+Assigning permissions to an authenticated user entails reading the group names
+from the group claims in the token, mapping each group to its contract type
+and access level via the tenant's `idp_groups_mapping` configuration, and
+then applying the corresponding permissions as defined in the Access-to-Permissions Map.
 
 At the same time, an administrator can configure the appropriate group
 claims in their IDP by reversing the process.
-
-.. admonition:: Question...
-
-   Are there safeguards to keep IdPs from abusing the system, like spoofing
-   someone else's tenant ID, or adding contracts they didn't pay for?
-
-.. admonition:: Question...
-
-   Do we actively validate whether each claim is syntactically correct and
-   has valid contract types and access levels, or does it just fail to find
-   something in the table and return zero permissions?
-
-.. admonition:: Question...
-
-   How is the company code turned into a tenant ID? Is it just the same string?
 
 The elements of a group claim are:
 
@@ -152,6 +147,23 @@ groups are properly configured and added as group claims during authentication.
 
 
 
+.. rubric:: Unrecognized Group Claims are silently ignored
+
+If a group name in the token does not match any configured entry — whether
+due to a typo, a misconfiguration in the IdP, or a naming change that wasn't
+synchronized — no error is raised. The user simply does not receive any
+permissions from that group.
+
+As a result:
+- A user with some matching and some unmatching groups will only receive permissions for the matching ones.
+- A user with no matching groups will be able to log in (authentication succeeds) but will see
+  no data in the UI, since no permissions are granted.
+
+This silent behavior makes it important to verify that group names configured
+in the Identity Provider exactly match those agreed upon with WITIT.
+When a user reports being able to log in but not seeing expected data, a mismatch
+in group names is the most common cause.
+
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 The next step is to take each group and map it to one or more specific module
@@ -166,11 +178,7 @@ Next, the column associated with the access level is selected in that table. Fin
 for each row in the table where the corresponding access level is ``yes``, the
 permission in the ``Name`` field is added to the user's profile.
 
-.. admonition:: Question...
-
-   Does the authorization phase also add restrictions? Do we need to mention them?
-
-The following tabels indicate which permissions will be granted to users for a
+The following tables indicate which permissions will be granted to users for a
 particular pair <Contract Value, Access Level>:
 
 +---------------------------------------------------------------------------+-----------------------------------------+
@@ -211,17 +219,29 @@ particular pair <Contract Value, Access Level>:
 |
 
 
+Tenant restrictions
+~~~~~~~~~~~~~~~~~~~
+
+In addition to permissions, the authorization phase also applies restrictions
+that limit the user's visibility to their own tenant's data.
+
+These restrictions act as boundaries that cannot be overridden by any
+permission level — an administrator within one tenant still cannot
+see data belonging to another tenant.
+
+This means the authorization outcome has two layers:
+
+- Permissions determine what operations the user can perform (view, edit, administer) within each module.
+- Restrictions determine which data those operations apply to, scoped to the user's tenant.
+
 
 Compliance
 ~~~~~~~~~~
-Legal requirements in many countries (e.g. the EU's Cyber Resilience Act, or
-Italy's GDPR) require that login attempts, whether valid or not, be logged for
-security and compliance reasons.
+Login attempts — whether successful or not — are logged with the user identity,
+action, and timestamp.
 
-.. admonition:: Question...
-
-   Does the entire JWT get logged?  Just user ID and success?
-
+These logs are retained in compliance with applicable regulations, including
+the Italian Data Protection Authority's requirements for system administrator access logging.
 
 
 IdP/User Configuration Procedure

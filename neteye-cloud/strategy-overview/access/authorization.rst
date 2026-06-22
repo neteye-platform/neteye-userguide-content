@@ -1,3 +1,3 @@
 
 
-.. include:: authorization/authorization-overview.inc.rst
+.. include:: authorization/authorization.inc.rst

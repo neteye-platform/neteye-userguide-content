@@ -7,4 +7,10 @@ who have an active subscription to one or more cloud services.
 
 It provides guidance on reaching the login page and authenticating with your credentials.
 
-.. include:: access/access-to-cloud.inc.rst
+
+.. toctree::
+   :maxdepth: 1
+
+   access/authentication-idp.rst
+   access/authentication-entra-id.rst
+   access/authorization.rst

@@ -54,7 +54,7 @@ Caption: [Example group claims in OAuth 2.0 JSON Web Token](https://datatracker.
 
 Each individual element of a group claim contains the information necessary
 to tell NetEye the exact permissions a user should have.  A group element
-consists of a code identifying the company/tenant, a Contract Type and an Access Level:
+consists of a code supplied by WITIT identifying the company/tenant, a Contract Type and an Access Level:
 
 .. code::
 
@@ -220,20 +220,22 @@ particular pair <Contract Value, Access Level>:
 |
 
 
-Tenant restrictions
+Tenant Restrictions
 ~~~~~~~~~~~~~~~~~~~
 
 In addition to permissions, the authorization phase also applies restrictions
-that limit the user's visibility to their own tenant's data.
+that limit the user's visibility to their own tenant's data.  In practice,
+this amounts to a single restriction being added that equates what users can
+see to the data belonging to the tenant.
 
-These restrictions act as boundaries that cannot be overridden by any
+This restriction acts as a boundary that cannot be overridden by any
 permission level — an administrator within one tenant still cannot
 see data belonging to another tenant.
 
 This means the authorization outcome has two layers:
 
 - Permissions determine what operations the user can perform (view, edit, administer) within each module.
-- Restrictions determine which data those operations apply to, scoped to the user's tenant.
+- Restrictions determine which data those operations apply to, scoped to the user's company/tenant.
 
 
 Compliance

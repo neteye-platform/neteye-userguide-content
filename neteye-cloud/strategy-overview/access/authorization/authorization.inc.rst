@@ -142,7 +142,7 @@ The group name must be jointly determined with Wuerth-IT to ensure it is not
 duplicated. Successful configuration of the IdP by the customer thus means all
 groups are properly configured and added as group claims during authentication.
 
-.. admonition:: Flow Diagram
+.. figure:: /neteye-cloud/strategy-overview/img/authorization-flow.png
 
    Insert diagram showing how an OIDC token is converted in stages into module permissions
 

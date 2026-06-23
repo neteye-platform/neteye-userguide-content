@@ -14,7 +14,8 @@ module at all.
 
 If your Identity Provider is managed by Wuerth IT, or if your organization
 uses an IdP not based on OIDC, then the appropriate groups and permissions
-will be handled via requests to the [Management Portal](link) you are
+will be handled via requests to the
+`Management Portal <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__ you are
 already familiar with. If not, the information below will assist you in
 configuring the required information in your IdP to grant your users the
 necessary permissions.
@@ -53,7 +54,7 @@ Caption: [Example group claims in OAuth 2.0 JSON Web Token](https://datatracker.
 
 Each individual element of a group claim contains the information necessary
 to tell NetEye the exact permissions a user should have.  A group element
-consists of a code identifying the tenant, a Contract Type and an Access Level:
+consists of a code identifying the company/tenant, a Contract Type and an Access Level:
 
 .. code::
 
@@ -71,7 +72,7 @@ Customers manage group memberships in their own Identity Provider —
 they decide who gets which groups. However, the mapping from groups
 to actual permissions is controlled entirely on the NetEye.Cloud platform
 side and reflects only the contracts and access levels that are active for
-the tenant.
+the company/tenant.
 
 A customer cannot grant access to contracts they have not subscribed to,
 nor can they affect another tenant's permissions. Group names that do not match

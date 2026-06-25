@@ -29,9 +29,9 @@ can also be specified.
 
 You can refer to the official Grafana docs to learn more about the user
 management model of Grafana with
-`Organizations <https://grafana.com/docs/grafana/v11.6/administration/organization-management/>`__
+`Organizations <https://grafana.com/docs/grafana/v12.4/administration/organization-management/>`__
 and related
-`Permissions <https://grafana.com/docs/grafana/v11.6/administration/roles-and-permissions/>`__.
+`Permissions <https://grafana.com/docs/grafana/v12.4/administration/roles-and-permissions/>`__.
 
 If a user belongs to more than one **Role** within *different*
 **Organizations**, they will be able to access *each* **Organization**.

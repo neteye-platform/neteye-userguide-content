@@ -4,7 +4,7 @@
 Overview
 --------
 
-The Asset Management Module is an additional |NE| feature module that
+The Asset Management Module is an additional |ne| feature module that
 allows to *keep an inventory* of a company's IT infrastructure.
 NetEye 4 integrates a solution to provide this functionality: the server
 and agent part of the Open Source Software `GLPI <http://glpi-project.org/>`__.

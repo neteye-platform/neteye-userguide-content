@@ -81,7 +81,7 @@ on your monitored hosts via the `Fleet UI in Kibana <https://www.elastic.co/guid
 GLPI Agents are to be installed and configured manually to collect assets
 and send them to the GLPI Server on the Master. They can be installed
 on any Windows/Linux machine and configured to send data directly to
-the Master or through a |NE| Satellite as a Proxy.
+the Master or through a |ne| Satellite as a Proxy.
 
 To learn more about how to configure GLPI for Single- or Multitenant environments, please
 consult GLPI :ref:`asset-management-conf`.

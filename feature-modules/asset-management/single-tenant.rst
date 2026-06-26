@@ -6,7 +6,7 @@
 Single Tenancy
 --------------
 
-The single tenancy is the most common configuration. It consists of a |NE| system, installed without
+The single tenancy is the most common configuration. It consists of a |ne| system, installed without
 Tenants or :term:`Satellite`. In this case the aim of an efficient GLPI configuration is the
 collection of all the assets of the IT infrastructure and inventorying them inside the main GLPI Entity.
 
@@ -21,7 +21,7 @@ Thus, as described above, for correctly performing an inventory
 the system should have the following configuration:
 
 *  the Master Entity configured in the GLPI server
-*  a |NE| user and role for the GLPI Agent that ensure that the inventory is sent to the correct Entity
+*  a |ne| user and role for the GLPI Agent that ensure that the inventory is sent to the correct Entity
 *  GLPI Agents installed on the desired device and configured as described in :ref:`asset-collection-methods`
 
 NetEye is preconfigured with a default user and role named ``neteye_glpi_agent_master``

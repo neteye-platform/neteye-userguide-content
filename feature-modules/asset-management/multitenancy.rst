@@ -6,7 +6,7 @@ Multitenancy
 With the entities being configured properly, GLPI supports :term:`Multi-tenancy`.
 The GLPI Server can be used by multiple tenants maintaining the confidentiality
 and integrity of the information: this feature is implemented by associating every
-|NE| Tenant to a dedicated GLPI Entity.
+|ne| Tenant to a dedicated GLPI Entity.
 
 Enabling Asset Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,7 +31,7 @@ If the Tenant still doesn't exist, follow :ref:`neteye-tenant` to configure it p
 GLPI Entity
 ~~~~~~~~~~~
 
-If Multitenancy is used in GLPI, when creating a new |NE| Tenant as described in
+If Multitenancy is used in GLPI, when creating a new |ne| Tenant as described in
 :ref:`tenants-configuration`, a dedicated GLPI Entity ``Root entity > 'New Tenant'``
 will be created. All the users belonging to that Tenant should then be associated
 to the automatically created role ``neteye_tenant_<tenant_name>`` in order to have
@@ -42,12 +42,12 @@ that can be used for assets collection.
 
 .. warning::
 
-    |NE| Roles, Users and GLPI Entities automatically created with the ``neteye tenant config create``
+    |ne| Roles, Users and GLPI Entities automatically created with the ``neteye tenant config create``
     should never be modified to avoid permission issues or profile/entity mismatch between
-    |NE| and GLPI.
+    |ne| and GLPI.
 
 The general :term:`Multi-tenancy` implementation, as described in the :numref:`figure-general-use-case`
-is reached by having a GLPI Entity "Entity tenant A" associated with the |NE| "Tenant A".
+is reached by having a GLPI Entity "Entity tenant A" associated with the |ne| "Tenant A".
 Assets are sent by the GLPI Agent that belongs to the same Tenant authenticated through Basic
 auth and, if no rules are applied in GLPI, Assets are directly sent in the correct Entity.
 

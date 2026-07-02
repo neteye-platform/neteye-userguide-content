@@ -47,7 +47,7 @@ All the functionality provided by |ne| is delivered to the user
 within |ne| Modules.
 
 The Modules that are shipped with the standard |ne| image constitute the
-**|ne| Core**. All other Modules are called **|ne| Components**
+**NetEye Core**. All other Modules are called **NetEye Components**
 and can be installed on demand. More information can be
 found in the section :ref:`neteye-components`.
 

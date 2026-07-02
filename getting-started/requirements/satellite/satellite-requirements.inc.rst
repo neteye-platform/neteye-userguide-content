@@ -20,7 +20,7 @@ Besides those mentioned in :ref:`neteye-single-requirements`, there
 are a few addeitional requirements that a satellite must satisfy:
 
 * It is required that both the Master and the Satellite be equipped
-  with the **same |ne| version**
+  with the **same NetEye version**
 
 * The NATS connection between Master and Satellite is always initiated
   by the Satellite, so please ensure that the :ref:`Networking

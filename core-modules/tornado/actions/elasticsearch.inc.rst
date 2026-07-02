@@ -41,7 +41,7 @@ method, ``default_auth``, is defined in the Action's payload and will be used
 to authenticate to Elasticsearch.
 
 However, the default method is available only with
-the :ref:`|ne| Elastic Stack Feature Module <neteye-modules>` installed.
+the :ref:`NetEye Elastic Stack Feature Module <neteye-modules>` installed.
 
 In case the Feature Module has not been installed, or the default authentication method
 is to be overwritten, one should:

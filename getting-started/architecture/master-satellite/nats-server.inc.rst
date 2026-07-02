@@ -86,7 +86,7 @@ To learn more about Telegraf configuration please check
 Multi Tenancy configuration explained
 `````````````````````````````````````
 
-The procedure to :ref:`configure a |ne| Satellite
+The procedure to :ref:`configure a NetEye Satellite
 <neteye-satellite-configuration>` automatically configures `NATS Accounts
 <https://docs.nats.io/nats-server/configuration/securing_nats/accounts>`__
 on the Master and `NATS Leaf Node
@@ -109,7 +109,7 @@ The automatic procedure configures the following:
 
     #. The stream subjects coming from the |ne| Satellites are prefixed with the Tenant
        unique identifier defined during
-       the :ref:`|ne| Satellite configuration <neteye-satellite-configuration>`.
+       the :ref:`NetEye Satellite configuration <neteye-satellite-configuration>`.
        This is done in order to let subscribers securely pinpoint the origin of the
        messages, by solely relying on the NATS subject.
        So, for example, if the NATS Leaf Node of |ne| Satellite `acmesatellite` belonging to
@@ -129,4 +129,4 @@ The automatic procedure configures the following:
 
     #. The NATS Leaf Node is configured to talk to the NATS Server of the |ne| Master,
        using the FQDN defined during the
-       :ref:`|ne| Satellite configuration <neteye-satellite-configuration>` and the port 7422.
+       :ref:`NetEye Satellite configuration <neteye-satellite-configuration>` and the port 7422.

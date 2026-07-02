@@ -38,7 +38,7 @@ are to be opened on the Master Node or its Satellite.
    dedicated ports. Please refer to `Dell's Support Documentation
    <https://www.dell.com/support/manuals/it-it/poweredge-fx2/idrac8_2.30.30.30_ug>`__
    to understand the required ports."
-   "TCP 80, 443", "**|ne| Management Interface** and **System Updates**, Inbound", "Master, Satellite", "Systems
+   "TCP 80, 443", "**NetEye Management Interface** and **System Updates**, Inbound", "Master, Satellite", "Systems
    used to manage |ne| should reach the Cluster Virtual IP via
    HTTP/S. Satellites use those ports to receive data from agents."
    "TCP 22","**Node SSH Console**, Inbound", "Master, Satellite", "Systems used to manage deep |ne|
@@ -127,7 +127,7 @@ Monitoring Requirements
 Monitoring **should never** be carried out on the private (heartbeat)
 cluster network.
 
-At present, the *|ne| Cluster's Virtual IP* is used for **passive
+At present, the *NetEye Cluster's Virtual IP* is used for **passive
 monitoring** (i.e., by devices autonomously sending information to
 |ne|) and agent deployment, while the *Physical Node's IP* is used
 for **active monitoring** (i.e., requests from |ne| to devices).

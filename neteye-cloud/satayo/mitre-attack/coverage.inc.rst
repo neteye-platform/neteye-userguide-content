@@ -51,7 +51,7 @@ The relationship between tactics, techniques, and sub-techniques is
 commonly visualized through the **ATT&CK Matrix**, which organizes
 attacker behaviors across the stages of an attack.
 
-The following image shows the tactics and techniques covered by Wuerth IT Italy cyber security products.
+The following image shows the tactics and techniques covered by Würth IT Italy cyber security products.
 
 .. image:: /neteye-cloud/satayo/mitre-attack/mitreCoverage.svg
    :align: center
@@ -60,7 +60,7 @@ The following image shows the tactics and techniques covered by Wuerth IT Italy 
 Colors used are to be interpreted as follows:
 
 + BLUE: Area covered by SATAYO
-+ PURPLE: Area covered by both SATAYO and Wuerth IT Italy's :abbr:`SOC (Security Operation Center)`
++ PURPLE: Area covered by both SATAYO and Würth IT Italy's :abbr:`SOC (Security Operation Center)`
 + GREEN: Area covered by SOC detection rules
 
 We recommend you open the image in another tab and zoom in to read it properly.

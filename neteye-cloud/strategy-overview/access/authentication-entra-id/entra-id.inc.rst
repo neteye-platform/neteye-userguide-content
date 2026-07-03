@@ -85,7 +85,7 @@ Add Claims to EntraID Token
 .. note:: Groups Claim is used to fully delegate Authorization to EntraID: by doing this,
    you can decide on your own the Access Level each Person has when logging into NetEye.Cloud
    by changing Group Membership on its own Identity Service. If not configured, Authorization and
-   Access Level will be managed by Würth-IT on your behalf.
+   Access Level will be managed by Würth IT on your behalf.
    In this case, changes must be requested using a Jira Ticket.
 
 #. Open Azure Admin Portal (usually, go to `Microsoft Azure <https://portal.azure.com/>`_)

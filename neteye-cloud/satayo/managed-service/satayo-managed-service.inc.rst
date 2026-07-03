@@ -52,7 +52,7 @@ and API access is up to you.
 Help Center
 ```````````
 
-The `Help Center of Wuerth Phoenix <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__,
+The `Help Center of Wuerth IT <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__,
 is the place where you can open tickets or requests for malfunctions, information,
 help with configurations or anything you need.
 

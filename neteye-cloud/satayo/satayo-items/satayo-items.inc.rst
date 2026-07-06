@@ -486,3 +486,38 @@ For each account found, SATAYO provides information about:
 - Presence in stealer logs/data breaches and related email addresses (if present)
 
 It is recommended to verify the authenticity of any account found in this section and take immediate action by resetting credentials and enabling multi-factor authentication if available.
+
+
+.. _data_breach_item:
+
+Data Breach
+===========
+
+The **Data Breach item** helps analysts identify breached data findings linked to corporate identities.
+It shows corporate accounts mapped to the analyzed organization that appear in external data breach scenarios.
+
+A data breach is a security incident in which information is exposed to unauthorized parties.
+A breached account represents the presence of one or more corporate accounts in an external data breach.
+
+For each data breach found, SATAYO provides information about:
+
+- **Name**: Unique data breach identifier.
+- **Title**: Data breach title.
+- **Domain**: Domain of the primary website the breach occurred on.
+- **Description**: Overview of the breach.
+- **Breach Date**: Date when the breach originally occurred.
+- **Last Update**: The date and time the breach was modified.
+- **Compromised accounts**: Total number of compromised accounts loaded into the data breach.
+- **Compromised data**: Nature of the data compromised in the data breach.
+- **Spread**: Whether the data breach is not very widespread, moderately widespread or very widespread.
+- **Typology**: Whether the data breach contains low-criticality data, moderately critical data or highly critical data.
+- **Complexity**: Whether the data breach contains no complexity measures, medium level of complexity measures or high level of complexity measures.
+- **Accounts**: Total number of compromised corporate accounts associated with the data breach.
+
+The following flags provide additional data breach context:
+
+- **Verified**: Data breach legitimacy has been validated with reasonable confidence.
+- **Fabricated**: The data breach likely did not originate from the claimed source, but it may still contain real personal data.
+- **Sensitive**: Data breach visibility is restricted due to the nature of the exposed context.
+- **Retired**: Data breach was removed from active circulation/search in the source system.
+- **Spam**: Data breach is primarily linked to targeted spam activity rather than a direct system compromise.

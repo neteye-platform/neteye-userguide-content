@@ -222,7 +222,7 @@ the node on which it is executed such as updating the operating system.
 .. _neteye-node-system-upgrade:
 
 ``neteye node system-upgrade``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The command :command:`neteye node system-upgrade` executed on a specific node is
 responsible for the upgrade of NetEye from version **4.22** to **4.23** and also
@@ -296,7 +296,7 @@ This command lists all the tags that are collected and sent to Red Hat Insight.
 .. _neteye-node-register:
 
 ``neteye node register``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The command :command:`neteye node register` registers the RHEL 8 subscription and sets up
 Red Hat Insights. By default it uses the |ne| activation key. If the node is
@@ -315,7 +315,7 @@ and the Red Hat Insights subscription are skipped.
 .. _neteye-node-reboot:
 
 ``neteye node reboot``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /getting-started/neteye-command/includes/neteye-node-reboot.inc.rst
 
@@ -855,6 +855,63 @@ Usage:
 .. code:: bash
 
    neteye# neteye cluster upgrade-prerequisites ido-migration <sla|history> resume
+
+
+.. _neteye-cluster-upgrade-prerequisites-neteye-domain:
+
+``neteye cluster upgrade-prerequisites neteye-domain``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This command group migrates Keycloak from dynamically resolving its public hostname from incoming
+requests (``KC_HOSTNAME_STRICT=false``, explicitly set after an update or upgrade) to a fixed,
+strictly validated hostname. See :ref:`Keycloak Hostname Configuration <hostname-configuration-upgrade-migration>` for more details.
+
+.. note:: This requires ``neteye.frontend_domain`` to be configured in
+   :file:`/etc/neteye-environment.yaml`. On a Cluster, remember to run
+   :ref:`neteye config cluster sync <cluster-management-commands>` after creating or editing that
+   file, since it is not stored on shared storage.
+
+.. _neteye-cluster-upgrade-prerequisites-neteye-domain-apply:
+
+``neteye cluster upgrade-prerequisites neteye-domain apply``
+````````````````````````````````````````````````````````````
+
+The :command:`neteye cluster upgrade-prerequisites neteye-domain apply` command sets
+``KC_HOSTNAME=https://<frontend_domain>/auth``, ``KC_HOSTNAME_STRICT=true``, and
+``KC_HOSTNAME_BACKCHANNEL_DYNAMIC=true`` in :file:`/neteye/shared/keycloak/conf/keycloak.env`, then
+restarts Keycloak to apply the new configuration.
+
+Usage:
+
+.. code:: bash
+
+   neteye# neteye cluster upgrade-prerequisites neteye-domain apply
+
+Before applying any change, the command:
+
+- reads ``neteye.frontend_domain`` from :file:`/etc/neteye-environment.yaml`
+- verifies that a valid HTTPS certificate is served at ``https://<frontend_domain>/auth``
+- creates a backup copy of the current :file:`keycloak.env` file, named
+  :file:`keycloak.env.bak_no_public_domain`
+
+.. note:: The command can be run only once: if ``KC_HOSTNAME`` is already configured, it fails
+   with an error instead of overwriting the existing configuration.
+
+.. _neteye-cluster-upgrade-prerequisites-neteye-domain-rollback:
+
+``neteye cluster upgrade-prerequisites neteye-domain rollback``
+```````````````````````````````````````````````````````````````
+
+The :command:`neteye cluster upgrade-prerequisites neteye-domain rollback` command reverts the
+changes performed by :ref:`apply <neteye-cluster-upgrade-prerequisites-neteye-domain-apply>`,
+restoring :file:`keycloak.env` from the :file:`keycloak.env.bak_no_public_domain` backup and
+restarting Keycloak.
+
+Usage:
+
+.. code:: bash
+
+   neteye# neteye cluster upgrade-prerequisites neteye-domain rollback
 
 
 ``neteye backup``

@@ -150,7 +150,21 @@ Part 2: Single Nodes Only
 To complete the setup of Satellite Nodes, jump to section
 :ref:`neteye-satellite-conf`.
 
-.. rubric:: **Step 8:** Complete |ne| setup
+.. rubric:: **Step 9:** Define the frontend domain
+
+Create the :file:`/etc/neteye-environment.yaml` file from the shipped template
+and set the ``frontend_domain`` to the domain through which this |ne| installation
+will be accessed::
+
+   cp /usr/share/neteye/setup/neteye-environment.yaml.tpl /etc/neteye-environment.yaml
+   # vim /etc/neteye-environment.yaml
+
+Set ``neteye.frontend_domain`` to your domain and save the file.
+:command:`neteye install` (next step) validates this file and refuses to proceed if
+``frontend_domain`` is missing or still set to the placeholder value.
+See :ref:`Keycloak Hostname Configuration <hostname-configuration>` for details.
+
+.. rubric:: **Step 10:** Complete |ne| setup
 
 Run the :ref:`install script <neteye-install>`::
 
@@ -167,7 +181,7 @@ commands.
    # neteye status
 
 
-.. rubric:: **Step 9:** Update |ne|
+.. rubric:: **Step 11:** Update |ne|
 
 To finalize the process, go to :ref:`update-procedure` to update your installation.
 

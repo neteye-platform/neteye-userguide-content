@@ -62,7 +62,7 @@ through a satellite endpoint. In this model:
 - The agent connects to a Satellite endpoint exposed externally
 - Communication uses HTTPS over port 443/TCP
 - Each Satellite is identified by a fully qualified domain name (FQDN)
-- Secure communication is ensured using a public certificate provided by Würth IT Italy with Satellite configuration
+- Secure communication is ensured using a public certificate provided by |witit| with Satellite configuration
 
 This architecture allows devices to report asset information to the platform regardless of
 their physical location, while maintaining secure connectivity to the Cloud environment.

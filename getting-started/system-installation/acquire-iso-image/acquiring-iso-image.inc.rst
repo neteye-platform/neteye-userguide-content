@@ -24,7 +24,7 @@ the right key installed on your system.
 Download and Verify the ISO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|ne| is shipped as ISO images. A link to the Würth IT Italy
+|ne| is shipped as ISO images. A link to the |witit|
 repository containing the images and supporting material will be
 provided by the Support Team after the contract is signed.
 

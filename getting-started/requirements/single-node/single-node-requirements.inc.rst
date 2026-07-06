@@ -49,8 +49,8 @@ Node**, to allow for updates and license verification:
 .. csv-table::
    :header: "Domain", "Port", "Intended Use"
 
-   "repo.wuerth-phoenix.com", "443 TCP", "Würth IT Italy repository for |ne| update/upgrade"
-   "api.neteye.cloud", "443 TCP", "Würth IT Italy API used during |ne| update/upgrade"
+   "repo.wuerth-phoenix.com", "443 TCP", "|witit| repository for |ne| update/upgrade"
+   "api.neteye.cloud", "443 TCP", "|witit| API used during |ne| update/upgrade"
    "cdn.redhat.com", "443 TCP", "RedHat subscription/packages"
    "cdn-ubi.redhat.com", "443 TCP", "RedHat subscription/packages"
    "cert-api.access.redhat.com", "443 TCP", "RedHat subscription/packages"

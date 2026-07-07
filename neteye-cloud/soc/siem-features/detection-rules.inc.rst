@@ -61,7 +61,7 @@ Sigma Rules
 Another important repository of detection rules used by the SOC is that of the `Sigma Rules project <https://github.com/SigmaHQ/sigma>`__,
 to which international researchers contribute in order to pool detection expertise.
 
-The SOC of Würth IT Italy has developed the `Sigma Crawler project <https://github.com/SimoneCagol/sigma-rules-crawler>`__,
+The SOC of |witit| has developed the `Sigma Crawler project <https://github.com/SimoneCagol/sigma-rules-crawler>`__,
 which receives all the rules of the Sigma Rules project as input on a daily basis
 and converts them into the Elastic compatible format.
 

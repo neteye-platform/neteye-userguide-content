@@ -90,7 +90,7 @@ To install a |ne| Feature Module, you can apply the following procedure:
 |ne| Feature Modules Licenses
 """""""""""""""""""""""""""""
 
-As an Elastic OEM partner, Würth IT Italy provides the Elastic license
+As an Elastic OEM partner, |witit| provides the Elastic license
 with the |ne| Elastic Stack Feature Module. The license provides a fully functional Elastic Stack,
 with all features of the `Platinum subscription <https://www.elastic.co/subscriptions>`__, covering also, for example
 APM functionalities.

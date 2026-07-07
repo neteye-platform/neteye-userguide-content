@@ -63,7 +63,7 @@ node must satisfy the following requirements:
   - must store the SSH keys of all nodes in file
     :file:`/root/.ssh/authorized_keys`
   - needs Internet connectivity, including the ability to reach
-    repositories of Würth IT Italy and Red Hat
+    repositories of |witit| and Red Hat
   - must have the dnf group **neteye** installed
   - must have the tags set with the command :command:`neteye node tags set`.
     To know more about this command please refer to :ref:`neteye-node-tags-set`

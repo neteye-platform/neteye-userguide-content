@@ -156,8 +156,7 @@ permissions from that group.
 
 As a result:
 - A user with some matching and some unmatching groups will only receive permissions for the matching ones.
-- A user with no matching groups will be able to log in (authentication succeeds) but will see
-  no data in the UI, since no permissions are granted.
+- A user with no matching groups will be able to log in (authentication succeeds) but will see no data in the UI, since no permissions are granted.
 
 This silent behavior makes it important to verify that group names configured
 in the Identity Provider exactly match those agreed upon with WITIT.

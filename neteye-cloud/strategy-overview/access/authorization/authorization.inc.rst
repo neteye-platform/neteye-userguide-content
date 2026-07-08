@@ -12,9 +12,8 @@ be able to use any NetEye module, so permissions determine not only what you
 can do within a particular module, but also whether you can even access a
 module at all.
 
-If your Identity Provider is managed by Wuerth IT, or if your organization
-uses an IdP not based on OIDC, then the appropriate groups and permissions
-will be handled via requests to the
+If your users are entirely managed by Wuerth IT and hence are not provided by your IdP,
+then the appropriate groups and permissions will be handled via requests to the
 `Management Portal <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__ you are
 already familiar with. If not, the information below will assist you in
 configuring the required information in your IdP to grant your users the
@@ -168,7 +167,7 @@ in group names is the most common cause.
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 The next step is to take each group and map it to one or more specific module
-[permissions](https://neteye.guide/4.48/getting-started/setup/authorization/roles.html)
+[permissions](https://neteye.guide/current/getting-started/setup/authorization/roles.html)
 that are added to the user's profile.
 
 The NetEye Cloud authorization system uses a set of pre-defined tables for this mapping.

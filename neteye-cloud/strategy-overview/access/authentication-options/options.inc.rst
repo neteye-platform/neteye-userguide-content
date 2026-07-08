@@ -56,7 +56,7 @@ In this scenario:
 Requesting Access Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In certain configurations, user access to NetEye.Cloud is managed by
+In certain configurations like the above, user access to NetEye.Cloud is managed by
 the NetEye.Cloud Team rather than by your organization directly.
 This applies when:
 

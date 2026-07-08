@@ -10,7 +10,7 @@ software, the following steps should be executed:
 #.  Install GLPI Agent on the desired device following the `official GLPI documentation
     <https://glpi-agent.readthedocs.io/en/latest/installation/index.html>`__.
     GLPI Agent can be installed on both Linux and Windows nodes that are external to
-    the |NE| environment.
+    the |ne| environment.
     For Windows installation we recommend to use the ``.msi`` package.
 
     .. hint::
@@ -18,7 +18,7 @@ software, the following steps should be executed:
         In order to execute ``glpi-agent`` and ``glpi-remote`` commands on Windows machines, be sure to
         operate as administrator from the ``GLPI-Agent`` folder.
 
-#.  Find credentials for the agent: GLPI Agent has a dedicated |NE| user called ``neteye_glpi_agent_<tenant_name>``
+#.  Find credentials for the agent: GLPI Agent has a dedicated |ne| user called ``neteye_glpi_agent_<tenant_name>``
     authorized to send assets to the Master. User's password can be found in
     ``/root/.pwd_neteye_glpi_agent_<tenant_name>`` and should be used for authentication when sending inventories.
 
@@ -94,7 +94,7 @@ be correctly configured for a SSL connection. Detailed information can be found 
 the `official Microsoft guide
 <https://learn.microsoft.com/en-us/troubleshoot/windows-client/system-management-components/configure-winrm-for-https>`__.
 
-GLPI Agent, used as a server between remotes and |NE|, should be configured as it follows:
+GLPI Agent, used as a server between remotes and |ne|, should be configured as it follows:
 
 Linux server configuration
 ``````````````````````````
@@ -146,7 +146,7 @@ Linux server configuration
 
     .. warning::
 
-        |NE| Security is granted only if ``mode=libssh2`` and ``mode=ssl`` are used for Linux and
+        |ne| Security is granted only if ``mode=libssh2`` and ``mode=ssl`` are used for Linux and
         Windows remotes respectively.
 
     .. hint::
@@ -215,7 +215,7 @@ Windows server configuration
 
     .. warning::
 
-        |NE| Security is granted only if ``mode=libssh2`` and ``mode=ssl`` are used for Linux and
+        |ne| Security is granted only if ``mode=libssh2`` and ``mode=ssl`` are used for Linux and
         Windows remotes respectively.
 
     .. hint::

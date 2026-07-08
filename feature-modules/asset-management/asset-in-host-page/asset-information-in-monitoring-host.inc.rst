@@ -3,7 +3,7 @@
 Display asset information in monitoring host page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When asset management module is installed,|NE| will automatically search
+When asset management module is installed, |ne| will automatically search
 for the host inside GLPI to fetch its information and display it in the dedicated
 host detail page in icingaweb2 monitoring. The following guide details different ways
 to refine the search or force a link to a specific asset.

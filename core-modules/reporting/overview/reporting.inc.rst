@@ -37,7 +37,7 @@ SLM reports. The filter is based on the **Customer** selected in report definiti
 A logged-in user will see only their own
 **Customer** (i.e. customers with the same or inherited role as the logged-in user) reports.
 
-|NE| admin and reporting admin users can see and can create/modify all SLM reports.
+|ne| admin and reporting admin users can see and can create/modify all SLM reports.
 
 .. note::
 
@@ -58,4 +58,4 @@ reports linked to its tenant.
 The reports, that are not linked to any tenant, are visible to all users,
 regardless of the tenant they belong to.
 
-Once a report is created, only the |NE| admin can modify the tenant it is associated with.
+Once a report is created, only the |ne| admin can modify the tenant it is associated with.

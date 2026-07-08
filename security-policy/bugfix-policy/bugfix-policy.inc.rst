@@ -23,7 +23,7 @@ within NetEye:
 Critical Vulnerabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a Critical security vulnerability is discovered by a third party or Würth IT Italy itself,
+When a Critical security vulnerability is discovered by a third party or |witit| itself,
 the latter will release a fix for the :ref:`current version <intro-neteye-releases>` of the product:
 
 For example: If a bug is discovered in 4.29 (current version) and the fix is ​​released 90 days later
@@ -61,7 +61,7 @@ self-calculated CVSS score for each specific vulnerability.
   * Medium
   * Low
 
-For CVSS v3 Würth IT Italy uses the following severity rating system:
+For CVSS v3 |witit| uses the following severity rating system:
 
 .. csv-table::
    :header: "CVSS V3 Score Range", "Severity in Advisory"
@@ -135,6 +135,6 @@ There are a number of third-party software integrated within NetEye, which funct
 in accordance with their own licenses and bug-fixing policies.
 
 We actively cooperate with all third parties in order to fix vulnerabilities
-for the convenience of our customers. On top of that, Würth IT Italy is always aiming
+for the convenience of our customers. On top of that, |witit| is always aiming
 to detect vulnerabilities and report them to the software producers in order for them
 to process according to their own security policies.

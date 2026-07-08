@@ -28,7 +28,7 @@ All entities and profiles must be created before users login
 for having a success permission synchronization. The only exceptions to
 this are the **Root entity** and the default GLPI profiles. If the
 **profile/entities** does not exist for the users in GLPI, then the mapping
-between |NE| and GLPI will not be successful.
+between |ne| and GLPI will not be successful.
 
 Note that if you need to investigate on what happens during the
 permissions synchronization (e.g. for debugging purposes), you can have

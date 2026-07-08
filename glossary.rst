@@ -289,7 +289,7 @@ N
    |ne| Components
       A |neb| **Component** is a software module that extends the
       functionalities of |ne| Core. There are three categories of
-      |ne| Components: *|ne| Feature Modules*, *Preview Software*,
+      |ne| Components: *NetEye Feature Modules*, *Preview Software*,
       and *Beta Software*. You can refer to Section
       :ref:`neteye-components` for detailed information.
 

@@ -77,16 +77,16 @@ approaches.
 
 .. seealso:: Documentation resources about the ITOA components.
 
-   - `Official Grafana v11.6 documentation
-     <https://grafana.com/docs/grafana/v11.6/>`_
+   - `Official Grafana v12.4 documentation
+     <https://grafana.com/docs/grafana/v12.4/>`_
    - `Getting Started with Grafana
-     <https://grafana.com/docs/grafana/v11.6/getting-started/>`_
+     <https://grafana.com/docs/grafana/v12.4/getting-started/>`_
    - `Official InfluxDB v1.8 documentation
      <https://docs.influxdata.com/influxdb/v1.8/>`_
    - `Getting started with InfluxDB
      <https://docs.influxdata.com/influxdb/v1.8/introduction/getting_started>`_
-   - `Official Telegraf v1.23 documentation
-     <https://docs.influxdata.com/telegraf/v1.23/>`_
+   - `Official Telegraf v1.38 documentation
+     <https://docs.influxdata.com/telegraf/v1.38/>`_
    - `FLUX language reference
      <https://docs.influxdata.com/influxdb/v2.0/reference/flux/stdlib/>`_
 

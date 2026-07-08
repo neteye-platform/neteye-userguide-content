@@ -43,7 +43,7 @@ How Authentication Works
 
 When you log in to NetEye.Cloud, the platform processes your request
 through several steps before granting access. The diagram below
-summarises the flow; the paragraphs that follow describe each step in
+summarizes the flow; the paragraphs that follow describe each step in
 detail.
 
 .. note::
@@ -92,9 +92,15 @@ occur during the authentication process:
 
 * **Authentication failure** — your Identity Provider could not
   verify your credentials (e.g. wrong password, expired account).
-* **Invalid or expired token** — the security token returned by
-  your IdP is malformed, has expired, or cannot be verified by
-  NetEye.Cloud.
+* **Unverifiable token** — the security token was issued by a
+  known Identity Provider, but NetEye.Cloud cannot validate it.
+  This typically means the token's signature does not match the
+  expected certificate, the signing algorithm is unsupported, or
+  the token has been tampered with in transit.
+* **Unrecognized Identity Provider** — the token's issuer does
+  not match any Identity Provider configured in NetEye.Cloud.
+  This can occur if the IdP was never set up, was removed, or if
+  its issuer identifier changed after the initial configuration.
 * **No valid NetEye.Cloud profile** — your account is not
   recognized as an authorized NetEye.Cloud user.
 * **Missing or insufficient group membership** — when Group Claims

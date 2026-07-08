@@ -79,7 +79,7 @@ Design and Configuration
 
 With NetEye 4 we recommend that you use at least 3 nodes to form an
 Elasticsearch cluster. If nevertheless you decide to setup a 2-node
-cluster, we recommend to consult a Würth IT Italy NetEye Solution Architect
+cluster, we recommend to consult a |witit| NetEye Solution Architect
 who can fully explain the risks in your specific environment and help you
 develop strategies to mitigate potential risks.
 

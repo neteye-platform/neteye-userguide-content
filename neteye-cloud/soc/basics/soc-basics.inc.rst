@@ -7,7 +7,7 @@ The elements that will be used within the project are described below, including
 Technological solutions adopted
 ```````````````````````````````
 
-Würth IT Italy will configure and make use of the following technological solutions:
+|witit| will configure and make use of the following technological solutions:
 
 .. rubric:: NetEye SIEM
 
@@ -19,12 +19,12 @@ The Elastic Stack (aka ELK) is a robust solution for search, log management, and
 Elasticsearch, Logstash, Kibana and Elastic Agent are the macro components of the solution that combine to provide a single platform
 for data storage, data retrieval, data sorting, and data analysis.
 
-Würth IT Italy, through its partnership and close working relationship with the Elastic development team,
+|witit|, through its partnership and close working relationship with the Elastic development team,
 is able to offer the solution fully integrated within NetEye.
 
 .. rubric:: SATAYO
 
-SATAYO is an OSINT & Cyber Threat Intelligence platform developed by Würth IT Italy. Its capabilities
+SATAYO is an OSINT & Cyber Threat Intelligence platform developed by |witit|. Its capabilities
 make it a key tool for all organizations that need to monitor their exposure within public
 domain sources, found in the Surface, Deep & Dark Web.
 
@@ -40,7 +40,7 @@ Check out more information on SATAYO following the `link <https://www.wuerth-it.
 SOC Prime is the leading Threat Detection Marketplace, which makes detection rules developed by the best Threat Hunters internationally available
 through an exclusive subscription.
 
-Würth IT Italy, as a SOC Prime partner, has developed an integration that allows NetEye SIEM to have on board at all times detection rules
+|witit|, as a SOC Prime partner, has developed an integration that allows NetEye SIEM to have on board at all times detection rules
 that are constantly updated and thus able to identify threats as they are discovered and analyzed over time.
 
 .. rubric:: Greenbone Security Manager
@@ -74,15 +74,15 @@ It is provided by the customer during the onboarding and can be tweaked later in
 for existing contracts.
 
 The NetEye SIEM platform will receive as input the data/logs/flows collected from the NetEye satellites
-installed in the customer's network and from the SATAYO platform in the cloud of Würth IT Italy.
+installed in the customer's network and from the SATAYO platform in the cloud of |witit|.
 
 Architecture
 ````````````
 The NetEye SIEM solution is configured as follows:
 
- - **NetEye Master**: is the main component in the architecture provided by Würth IT Italy, receives and processes logs
+ - **NetEye Master**: is the main component in the architecture provided by |witit|, receives and processes logs
    from the various satellites installed in the client network. It transmits real-time data to the ELK console.
-   The master machine is located within the Würth IT Italy cloud, thus enabling security and confidentiality of customer data.
+   The master machine is located within the |witit| cloud, thus enabling security and confidentiality of customer data.
 
  - **NetEye Satellite**: receives and processes logs from nodes connected to it, applying predefined
    correlation rules in order to detect possible cybersecurity threats.

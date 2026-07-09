@@ -493,6 +493,29 @@ It is recommended to verify the authenticity of any account found in this sectio
 Data Breach
 ===========
 
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589.001 Gather Victim Identity Information: Credentials <https://attack.mitre.org/techniques/T1589/001/>`__
+   - `T1589.002 Gather Victim Identity Information: Email Addresses <https://attack.mitre.org/techniques/T1589/002/>`__
+   - `T1589.003 Gather Victim Identity Information: Employee Names <https://attack.mitre.org/techniques/T1589/003/>`__
+
+   Resource Development
+
+   - `T1586.001 Compromise Accounts: Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
+   - `T1586.002 Compromise Accounts: Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
+   - `T1586.003 Compromise Accounts: Cloud Accounts <https://attack.mitre.org/techniques/T1586/003/>`__
+
+   Initial Access
+
+   - `T1078.001 Valid Accounts: Default Accounts <https://attack.mitre.org/techniques/T1078/001/>`__
+   - `T1078.002 Valid Accounts: Domain Accounts <https://attack.mitre.org/techniques/T1078/002/>`__
+   - `T1078.003 Valid Accounts: Local Accounts <https://attack.mitre.org/techniques/T1078/003/>`__
+   - `T1078.004 Valid Accounts: Cloud Accounts <https://attack.mitre.org/techniques/T1078/004/>`__
+
 The **Data Breach item** helps analysts identify breached data findings linked to corporate identities.
 It shows corporate accounts mapped to the analyzed organization that appear in external data breach scenarios.
 
@@ -521,3 +544,41 @@ The following flags provide additional data breach context:
 - **Sensitive**: Data breach visibility is restricted due to the nature of the exposed context.
 - **Retired**: Data breach was removed from active circulation/search in the source system.
 - **Spam**: Data breach is primarily linked to targeted spam activity rather than a direct system compromise.
+
+
+.. _paste_item:
+
+Paste
+=====
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589.001 Credentials <https://attack.mitre.org/techniques/T1589/001/>`__
+   - `T1589.002 Email Addresses <https://attack.mitre.org/techniques/T1589/002/>`__
+   - `T1589.003 Employee Names <https://attack.mitre.org/techniques/T1589/003/>`__
+
+   Resource Development
+
+   - `T1586.001 Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
+   - `T1586.002 Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
+   - `T1586.003 Cloud Accounts <https://attack.mitre.org/techniques/T1586/003/>`__
+
+   Initial Access
+
+   - `T1078.001 Default Accounts <https://attack.mitre.org/techniques/T1078/001/>`__
+   - `T1078.002 Domain Accounts <https://attack.mitre.org/techniques/T1078/002/>`__
+   - `T1078.003 Local Accounts <https://attack.mitre.org/techniques/T1078/003/>`__
+   - `T1078.004 Cloud Accounts <https://attack.mitre.org/techniques/T1078/004/>`__
+
+A **Paste item** represents the presence of one or more corporate email addresses on an external paste site, such as Pastebin.
+
+For each paste found, SATAYO provides information about:
+
+- The website that is the source of the paste.
+- The link to the specific paste.
+- The date on which the paste was published.
+- Which email addresses are present in that paste.

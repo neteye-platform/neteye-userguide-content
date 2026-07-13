@@ -476,16 +476,33 @@ Account
    - `T1586.002 Compromise Accounts: Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
 
 
-An **Account item** represents an online account associated with your organization that has been identified in compromised data sources, such as :ref:`stealer logs <stealer_logs_item>` or data
-breaches. Accounts are flagged when they appear in a stealer log or breach containing exposed credentials or session information.
+An **Account item** represents an online account associated with your organization that has been identified in
+compromised data sources, such as :ref:`stealer logs <stealer_logs_item>` or data breaches. Accounts are flagged when
+they appear in a stealer log or breach containing exposed credentials or session information.
 
 For each account found, SATAYO provides information about:
 
 - Username associated with the account
-- The resource associated with the account
+- The resource associated with the account (if present)
 - Presence in stealer logs/data breaches and related email addresses (if present)
 
 It is recommended to verify the authenticity of any account found in this section and take immediate action by resetting credentials and enabling multi-factor authentication if available.
+
+
+.. _account_password_item:
+
+Account password
+----------------
+
+If credentials for an :ref:`account <account_item>` are found in a :ref:`stealer log <stealer_logs_item>` or
+data breach, SATAYO provides information about them in the account password finding. If the
+password comes from a data breach, it can either be in plaintext or hashed format. If it comes from a stealer log, it
+is always in plaintext format. In any case, if credentials are found, it is recommended to reset the password
+immediately and enable multi-factor authentication if available.
+
+Should the password be reused across multiple services, it is highly recommended to change the password for all
+accounts with the same email address and using the same credentials immediately to avoid potential compromise of other
+accounts.
 
 
 .. _data_breach_item:

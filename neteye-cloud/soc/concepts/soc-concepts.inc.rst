@@ -7,7 +7,7 @@ for national and international organizations that require stringent security req
 The level of structural complexity of such organizations requires that the organization of a SOC is taken care of
 down to the smallest detail, especially in terms of processes and procedures governing the service.
 
-The SOC Attacker Centric service developed by Würth IT Italy offers proactive approach to security monitoring
+The SOC Attacker Centric service developed by |witit| offers proactive approach to security monitoring
 that goes beyond the capabilities of a traditional SOC. While both types of SOCs analyze logs and events
 using Indicators of Compromise (IoCs) and rely on SIEM-based detection rules, the SOC Attacker Centric introduces
 several enhancements that significantly strengthen threat detection and business resilience.
@@ -18,7 +18,7 @@ It also uses Indicators of Pre-Compromise (IoPC) to detect potential threats bef
 
 The service integrates both Blue Team and Red Team perspectives, providing a comprehensive view of defense
 and offense in cybersecurity. Through the use of exclusive detection rules (SOC Prime) and SATAYO IoCs —
-a vast database of over 900,000 indicators updated daily — Würth IT Italy ensures its threat intelligence
+a vast database of over 900,000 indicators updated daily — |witit| ensures its threat intelligence
 is both rich and constantly evolving.
 
 Moreover, SOC Attacker Centric leverages the NetEye monitoring platform to actively retrieve information

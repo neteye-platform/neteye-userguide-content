@@ -11,6 +11,9 @@ It provides guidance on reaching the login page and authenticating with your cre
 .. toctree::
    :maxdepth: 1
 
+   access/basics.rst
+   access/authentication-options.rst
    access/authentication-idp.rst
+   access/group-claims.rst
    access/authentication-entra-id.rst
    access/authorization.rst

@@ -1,4 +1,6 @@
 
+.. _authentication-via-idp:
+
 Authentication via IdP
 ~~~~~~~~~~~~~~~~~~~~~~
 

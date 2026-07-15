@@ -12,7 +12,7 @@ by applying certain rules, allowing the analysis of events from different system
 
 The platform natively supports the collection of events and flows from the network systems
 of the main vendors, but no limit is placed on the type of resources that can be integrated
-as Würth IT Italy Cyber Security Analysts can create customized filters capable of integrating
+as |witit| Cyber Security Analysts can create customized filters capable of integrating
 any type of data.
 
 The communication between the sources and NetEye SIEM can take place, at high level, in 2 modes:

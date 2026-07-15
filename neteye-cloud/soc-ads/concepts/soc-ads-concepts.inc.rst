@@ -14,14 +14,14 @@ with specific technical and organizational measures:
  - **Activity Verification**: At least once a year, data controllers must verify that System Administrator
    activities comply with personal data protection regulations.
 
-The Würth IT Italy **SOC AdS Service** provides:
+The |witit| **SOC AdS Service** provides:
 
  - Exclusive collection of administrative access to servers, databases, network/security devices and cloud services
  - Alerting rules triggered by anomaly detection processes on collected data
  - Online summary dashboards with interactive charts
  - Continuous auditing of data immutability through blockchain verification
  - Six-month data retention in compliance with privacy authority requirements
- - Access to the Würth IT Italy IT Service Management portal for:
+ - Access to the |witit| IT Service Management portal for:
     - Knowledge base (Playbooks) for known AdS events
     - Structured management of alarm notifications via Jira Issues (Atlassian)
     - Monthly summary report on service status and collected data

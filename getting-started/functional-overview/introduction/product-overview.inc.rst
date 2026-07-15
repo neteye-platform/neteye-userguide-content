@@ -7,7 +7,7 @@ business services, and company assets.
 
 The entire solution is licensed under open source licenses, with
 the GPLv3 Open Source License being the most used. Continuous improvements,
-coming from both the community and from Würth IT Italy, are integrated into
+coming from both the community and from |witit|, are integrated into
 |ne| to provide added business value to widely-used open source projects.
 
 Real-time dashboards built with the data collected over time,

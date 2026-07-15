@@ -476,13 +476,126 @@ Account
    - `T1586.002 Compromise Accounts: Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
 
 
-An **Account item** represents an online account associated with your organization that has been identified in compromised data sources, such as :ref:`stealer logs <stealer_logs_item>` or data
-breaches. Accounts are flagged when they appear in a stealer log or breach containing exposed credentials or session information.
+An **Account item** represents an online account associated with your organization that has been identified in
+compromised data sources, such as :ref:`stealer logs <stealer_logs_item>` or data breaches. Accounts are flagged when
+they appear in a stealer log or breach containing exposed credentials or session information.
 
 For each account found, SATAYO provides information about:
 
 - Username associated with the account
-- The resource associated with the account
+- The resource associated with the account (if present)
 - Presence in stealer logs/data breaches and related email addresses (if present)
 
 It is recommended to verify the authenticity of any account found in this section and take immediate action by resetting credentials and enabling multi-factor authentication if available.
+
+
+.. _account_password_item:
+
+Account password
+----------------
+
+If credentials for an :ref:`account <account_item>` are found in a :ref:`stealer log <stealer_logs_item>` or
+data breach, SATAYO provides information about them in the account password finding. If the
+password comes from a data breach, it can either be in plaintext or hashed format. If it comes from a stealer log, it
+is always in plaintext format. In any case, if credentials are found, it is recommended to reset the password
+immediately and enable multi-factor authentication if available.
+
+Should the password be reused across multiple services, it is highly recommended to change the password for all
+accounts with the same email address and using the same credentials immediately to avoid potential compromise of other
+accounts.
+
+
+.. _data_breach_item:
+
+Data Breach
+===========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589.001 Gather Victim Identity Information: Credentials <https://attack.mitre.org/techniques/T1589/001/>`__
+   - `T1589.002 Gather Victim Identity Information: Email Addresses <https://attack.mitre.org/techniques/T1589/002/>`__
+   - `T1589.003 Gather Victim Identity Information: Employee Names <https://attack.mitre.org/techniques/T1589/003/>`__
+
+   Resource Development
+
+   - `T1586.001 Compromise Accounts: Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
+   - `T1586.002 Compromise Accounts: Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
+   - `T1586.003 Compromise Accounts: Cloud Accounts <https://attack.mitre.org/techniques/T1586/003/>`__
+
+   Initial Access
+
+   - `T1078.001 Valid Accounts: Default Accounts <https://attack.mitre.org/techniques/T1078/001/>`__
+   - `T1078.002 Valid Accounts: Domain Accounts <https://attack.mitre.org/techniques/T1078/002/>`__
+   - `T1078.003 Valid Accounts: Local Accounts <https://attack.mitre.org/techniques/T1078/003/>`__
+   - `T1078.004 Valid Accounts: Cloud Accounts <https://attack.mitre.org/techniques/T1078/004/>`__
+
+The **Data Breach item** helps analysts identify breached data findings linked to corporate identities.
+It shows corporate accounts mapped to the analyzed organization that appear in external data breach scenarios.
+
+A data breach is a security incident in which information is exposed to unauthorized parties.
+A breached account represents the presence of one or more corporate accounts in an external data breach.
+
+For each data breach found, SATAYO provides information about:
+
+- **Name**: Unique data breach identifier.
+- **Title**: Data breach title.
+- **Domain**: Domain of the primary website the breach occurred on.
+- **Description**: Overview of the breach.
+- **Breach Date**: Date when the breach originally occurred.
+- **Last Update**: The date and time the breach was modified.
+- **Compromised accounts**: Total number of compromised accounts loaded into the data breach.
+- **Compromised data**: Nature of the data compromised in the data breach.
+- **Spread**: Whether the data breach is not very widespread, moderately widespread or very widespread.
+- **Typology**: Whether the data breach contains low-criticality data, moderately critical data or highly critical data.
+- **Complexity**: Whether the data breach contains no complexity measures, medium level of complexity measures or high level of complexity measures.
+- **Accounts**: Total number of compromised corporate accounts associated with the data breach.
+
+The following flags provide additional data breach context:
+
+- **Verified**: Data breach legitimacy has been validated with reasonable confidence.
+- **Fabricated**: The data breach likely did not originate from the claimed source, but it may still contain real personal data.
+- **Sensitive**: Data breach visibility is restricted due to the nature of the exposed context.
+- **Retired**: Data breach was removed from active circulation/search in the source system.
+- **Spam**: Data breach is primarily linked to targeted spam activity rather than a direct system compromise.
+
+
+.. _paste_item:
+
+Paste
+=====
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589.001 Credentials <https://attack.mitre.org/techniques/T1589/001/>`__
+   - `T1589.002 Email Addresses <https://attack.mitre.org/techniques/T1589/002/>`__
+   - `T1589.003 Employee Names <https://attack.mitre.org/techniques/T1589/003/>`__
+
+   Resource Development
+
+   - `T1586.001 Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
+   - `T1586.002 Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
+   - `T1586.003 Cloud Accounts <https://attack.mitre.org/techniques/T1586/003/>`__
+
+   Initial Access
+
+   - `T1078.001 Default Accounts <https://attack.mitre.org/techniques/T1078/001/>`__
+   - `T1078.002 Domain Accounts <https://attack.mitre.org/techniques/T1078/002/>`__
+   - `T1078.003 Local Accounts <https://attack.mitre.org/techniques/T1078/003/>`__
+   - `T1078.004 Cloud Accounts <https://attack.mitre.org/techniques/T1078/004/>`__
+
+A **Paste item** represents the presence of one or more corporate email addresses on an external paste site, such as Pastebin.
+
+For each paste found, SATAYO provides information about:
+
+- The website that is the source of the paste.
+- The link to the specific paste.
+- The date on which the paste was published.
+- Which email addresses are present in that paste.

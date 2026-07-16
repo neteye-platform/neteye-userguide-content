@@ -703,159 +703,32 @@ their recovery state, and guides the administrator through the recovery procedur
    as transactions present on more advanced nodes may be discarded. Before running this command, it is strongly recommended
    to verify node availability, confirm the selected bootstrap candidate, and ensure that recent backups of the database are available.
 
-``neteye cluster upgrade-prerequisites ido-migration``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _neteye-cluster-upgrade-prerequisites-glpi-pcs-resources:
 
-With the introduction of IcingaDB as the new backend for monitoring,
-one crucial step in transition is the migration of the historical monitoring events
-from the IDO database to IcingaDB. This ensures that all past events are preserved
-and accessible via IcingaDB, maintaining continuity in monitoring data.
+``neteye cluster upgrade-prerequisites glpi-pcs-resources``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :command:`neteye cluster upgrade-prerequisites ido-migration` command
-performs the migration of the historical monitoring events from the IDO database.
+The :command:`neteye cluster upgrade-prerequisites glpi-pcs-resources` command
+allows to configure the virtual IP address that will be used for the GLPI PCS resources in a cluster environment.
+This is a required step before upgrading to a version of NetEye that includes GLPI in the cluster resources.
 
-There are two kinds of data that can be migrated:
+.. _neteye-cluster-upgrade-prerequisites-glpi-pcs-resources-set:
 
-- SLA data: this data is required for the SLM reporting
-- Historical events: this data are used in the history pages of single hosts and services
+``neteye cluster upgrade-prerequisites glpi-pcs-resources set``
+```````````````````````````````````````````````````````````````
 
-For each type of data, multiple subcommands are available to start, stop and monitor the
-migration process.
-
-.. _neteye-cluster-upgrade-prerequisites-ido-migration-check-disk:
-
-``neteye cluster upgrade-prerequisites ido-migration <sla|history> check-disk``
-```````````````````````````````````````````````````````````````````````````````
-
-The :command:`neteye cluster upgrade-prerequisites ido-migration <sla|history> check-disk` command
-performs a check to verify if there is enough disk space to perform the migration of the selected
-type of data (``sla`` or ``history``) from the IDO database to IcingaDB.
-
-In particular the paths that are checked are the following:
-
-- ``/neteye/local/mariadb``: there must be enough free space to store the data that will be migrated to IcingaDB
-- ``/root``: there must be at least **5GB** of free space to store the cache used during the migration process
-
-The command accepts the following options:
-
-- ``--from YYYY-MM-DD``: (Optional) the start date of the migration. If not specified, the check will be performed for all the data in the IDO database.
-
-.. _neteye-cluster-upgrade-prerequisites-ido-migration-start:
-
-``neteye cluster upgrade-prerequisites ido-migration <sla|history> start``
-``````````````````````````````````````````````````````````````````````````
-
-The :command:`neteye cluster upgrade-prerequisites ido-migration <sla|history> start` command
-starts the migration of the selected type of data (sla or history) from the IDO database to IcingaDB.
+The :command:`neteye cluster upgrade-prerequisites glpi-pcs-resources set` command
+sets the virtual IP address for the GLPI PCS resources.
 
 Usage:
 
 .. code:: bash
 
-   neteye# neteye cluster upgrade-prerequisites ido-migration <sla|history> start [OPTIONS]
+   neteye# neteye cluster upgrade-prerequisites glpi-pcs-resources set
 
-The command accepts the following options:
-
-- ``--from YYYY-MM-DD``: (Optional) the start date of the migration. If not specified, the migration will start from the earliest date available in the IDO database.
-- ``--bulk N``: (Optional) the number of records to migrate in each batch. Default is 100. Increasing this value can speed up the migration process, but it will also increase the load on the database.
-- ``--loglevel debug|info|warning|error``: (Optional) the log level of the migration process. Default is info.
-- ``--check-disk-space``: (Optional) performs the disk space check only and does not trigger the migration process.
-- ``--skip-disk-space-check``: (Optional) skips the disk space check and starts the migration process directly.
-
-The command performs the following steps:
-
-- Start a tmux session where the migration process will run in the background. In this way the migration
-  process will continue to run even if the SSH connection is closed.
-- Check if there is enough disk space to perform the migration
-- Start the migration process
-
-.. note:: The migration is performed from the selected date (``--from`` option) or from the earliest date
-   available in the IDO database (if ``--from`` is not specified) up to the most recent date available in the IDO database.
-
-
-Depending on the cluster setup and the amount of data to migrate, the migration process could stress the database.
-Changing the bulk size helps to find a good compromise between speed and load on the database.
-The default bulk size (100) is a conservative value that works in most of the cases, but in some particular environments it could be too high.
-We suggest then the following steps to find the best bulk size for your setup:
-
-- Start the migration of a data batch from a shorter time period, e.g. one month with the default bulk size (100)
-- Monitor the database status
-- If the database is stressed, reduce the bulk size (e.g. 50) and repeat the migration of another short time period
-- When a good bulk size is found, start the migration of the entire data set with the selected bulk size
-
-.. note:: The migration process can take a long time to complete, depending on the amount of data to migrate
-   and the performance of the database it could take from a few hours to several days.
-   For this reason, it is recommended to schedule the activity in advance and to monitor the process regularly.
-
-``neteye cluster upgrade-prerequisites ido-migration <sla|history> logs``
-`````````````````````````````````````````````````````````````````````````
-
-The :command:`neteye cluster upgrade-prerequisites ido-migration <sla|history> logs` command
-shows the logs of the migration process that is running in the background.
-This command is useful to monitor the progress of the migration process.
-
-Usage:
-
-.. code:: bash
-
-   neteye# neteye cluster upgrade-prerequisites ido-migration <sla|history> logs
-
-
-``neteye cluster upgrade-prerequisites ido-migration <sla|history> status``
-```````````````````````````````````````````````````````````````````````````
-
-The :command:`neteye cluster upgrade-prerequisites ido-migration <sla|history> status` command
-shows the status of the migration process.
-
-Usage:
-
-.. code:: bash
-
-   neteye# neteye cluster upgrade-prerequisites ido-migration <sla|history> status
-
-The command shows the status of each performed migration of that type of data (sla or history), for example:
-
-.. code:: bash
-
-   Migration runs found: 3
-     From 2026-01-01 -> completed
-     From 2025-12-01 -> completed
-     From 2025-11-01 -> running
-   There are migrations that are not yet completed.
-
-A migration can be in one of the following states:
-
-- **running**: the migration is still in progress
-- **completed**: the migration has been completed successfully
-- **stopped**: the migration has been stopped by the user
-- **failed**: the migration has failed due to an error
-
-
-``neteye cluster upgrade-prerequisites ido-migration <sla|history> stop``
-`````````````````````````````````````````````````````````````````````````
-
-The :command:`neteye cluster upgrade-prerequisites ido-migration <sla|history> stop` command
-stops the migration process that is running in the background if any.
-
-Usage:
-
-.. code:: bash
-
-   neteye# neteye cluster upgrade-prerequisites ido-migration <sla|history> stop
-
-``neteye cluster upgrade-prerequisites ido-migration <sla|history> resume``
-```````````````````````````````````````````````````````````````````````````
-
-The :command:`neteye cluster upgrade-prerequisites ido-migration <sla|history> resume` command
-resumes a previously stopped migration process.
-This command can be also used to restart a migration process that has failed due to an error.
-
-Usage:
-
-.. code:: bash
-
-   neteye# neteye cluster upgrade-prerequisites ido-migration <sla|history> resume
-
+During the execution, the command will suggest an IP address that appears to be available in the same subnet as other cluster resources.
+The administrator can then confirm the suggested IP or provide a different one when prompted.
+However, it is the administrator's responsibility to ensure that the chosen IP address is not already assigned to other devices or PCS resources.
 
 .. _neteye-cluster-upgrade-prerequisites-neteye-domain:
 

@@ -9,10 +9,7 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
 
 #. .. include:: /references/update-upgrade/update/elastic-prerequisites.inc.rst
 
-#. Make sure you have migrated all your monitoring data from IDO to Icinga DB, because it's a mandatory requirement before upgrading to NetEye 4.48. The migration is performed using the :ref:`neteye cluster upgrade-prerequisites ido-migration <neteye-cluster-upgrade-prerequisites-ido-migration-start>` command.
-
-#. If ``idoreports`` is in use, run ``icingacli reporting migrate idoreports`` on the node where Icinga Web 2 is running to migrate to Icinga DB reports before proceeding with the upgrade. It is highly recommended to first run ``icingacli reporting migrate idoreports --dry-run`` to verify compatibility with your existing report filters without applying any changes.
-
-#. Before starting the upgrade, you must set the corresponding flags under **Configuration / Modules / neteye / Configuration** to disable the IDO DB, IDO reports and Monitoring module. You can proceed with the upgrade only after selecting these flags.
-
-#. To confirm that you read the breaking changes regarding the removal of the Log Manager module, set the flag under **Configuration / Modules / logmanager / Configuration**.
+#. Before upgrading, if you are in a Cluster environment, you must ensure that the virtual IP for the cluster resources for GLPI is correctly configured.
+   You must run the command :ref:`neteye cluster upgrade-prerequisites glpi-pcs-resources set <neteye-cluster-upgrade-prerequisites-glpi-pcs-resources-set>` to set the virtual IP address that will be used for the GLPI PCS resources.
+   During the upgrade, NetEye will propose an IP address that it detects as free, but it is the user's responsibility to verify that this IP is not already in use by other PCS resources.
+   This command is required because NetEye needs a dedicated virtual IP address to manage GLPI resources in the cluster through PCS.

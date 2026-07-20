@@ -9,10 +9,23 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
 
 #. .. include:: /references/update-upgrade/update/elastic-prerequisites.inc.rst
 
-#. Make sure you have migrated all your monitoring data from IDO to Icinga DB, because it's a mandatory requirement before upgrading to NetEye 4.48. The migration is performed using the :ref:`neteye cluster upgrade-prerequisites ido-migration <neteye-cluster-upgrade-prerequisites-ido-migration-start>` command.
+#. To prepare for integration of RKE2, please ensure that the following requirements are met:
 
-#. If ``idoreports`` is in use, run ``icingacli reporting migrate idoreports`` on the node where Icinga Web 2 is running to migrate to Icinga DB reports before proceeding with the upgrade. It is highly recommended to first run ``icingacli reporting migrate idoreports --dry-run`` to verify compatibility with your existing report filters without applying any changes.
+   - The system must have at least 12GB of disk space available on the :file:`/neteye/local/rke2` directory for the RKE2 installation.
 
-#. Before starting the upgrade, you must set the corresponding flags under **Configuration / Modules / neteye / Configuration** to disable the IDO DB, IDO reports and Monitoring module. You can proceed with the upgrade only after selecting these flags.
+   ..note: It is recommended to create a separate LVM logical volume for the :file:`/neteye/local/rke2` directory to avoid running out of disk space on the root filesystem.
 
-#. To confirm that you read the breaking changes regarding the removal of the Log Manager module, set the flag under **Configuration / Modules / logmanager / Configuration**.
+   - The following ports must be available for RKE2 to function properly:
+
+     - TCP 6442: load balancer for the Kubernetes API server
+     - TCP 6443: Kubernetes API server
+     - TCP 6444: used in case of restore procedures
+     - TCP 9345: RKE2 local supervisor
+     - TCP 9346: load balancer for the RKE2 local supervisor
+
+   - RKE2 official RPM repository must be reachable from the |ne| system. The repository URL is :file:`https://rpm.rancher.io/`.
+
+   - In case of cluster installations, you must ensure the correct roles are assigned to the nodes in order to meet the minimum requirements for a Kubernetes cluster.
+     For more information on the roles and their requirements, please refer to the :ref:`kubernetes-roles` section.
+
+   - You should have created and synced on all nodes the :file:`/etc/neteye-environment.yaml`, following the :ref:`hostname-configuration` section.

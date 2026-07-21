@@ -14,9 +14,9 @@ RKE2 is designed to be secure by default, with a focus on simplicity and ease of
 Kubernetes roles
 ~~~~~~~~~~~~~~~~
 
-|ne| offers two types of Kubernetes roles to be able to more efficiently manage the compute resources of the |ne| installation: 
+|ne| offers two types of Kubernetes roles to be able to more efficiently manage the compute resources of the |ne| installation:
 
-- **Kubernetes Master**: This role is responsible for managing the Kubernetes cluster and its components. It runs the Kubernetes API server, controller manager, scheduler, and etcd database. 
+- **Kubernetes Master**: This role is responsible for managing the Kubernetes cluster and its components. It runs the Kubernetes API server, controller manager, scheduler, and etcd database.
   The master node is also responsible for managing the deployment of |ne| components on the worker nodes.
 - **Kubernetes Worker**: This role is responsible for running the |ne| components and workloads. Worker nodes receive instructions from the master node and execute the tasks accordingly.
 
@@ -34,19 +34,19 @@ The following tools are installed and configured to simplify the management of t
 - **helm** (`doc <https://helm.sh/>`_): A package manager for Kubernetes that simplifies the deployment and management of applications on the cluster.
 - **crictl** (`doc <https://github.com/kubernetes-sigs/cri-tools>`_): A command-line interface for interacting with container runtimes, such as containerd, which is used by RKE2.
 
-The most common tools for managing the Kubernetes cluster are kubectl and k9s, which are installed on all nodes of the |ne| installation and 
+The most common tools for managing the Kubernetes cluster are kubectl and k9s, which are installed on all nodes of the |ne| installation and
 automatically configured to connect to the local Kubernetes cluster.
 
 For example, to check the status of the Kubernetes cluster, you can run the following command on any node:
 
 .. code-block:: bash
-  
+
    kubectl get nodes
 
 or, alternatively, you can use k9s to get a more user-friendly view of the cluster status:
 
 .. code-block:: bash
-  
+
    k9s
 
 and then in the k9s interface, you can navigate to the "Nodes" view to see the status of all nodes in the cluster by writing `:nodes` in the command bar and pressing Enter.

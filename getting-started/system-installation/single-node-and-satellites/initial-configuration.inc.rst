@@ -144,13 +144,7 @@ Then update PHP to use that same location:
    section and make sure to carry out the steps in section
    :ref:`satellite-node-install`.
 
-Part 2: Single Nodes Only
-`````````````````````````
-
-To complete the setup of Satellite Nodes, jump to section
-:ref:`neteye-satellite-conf`.
-
-.. rubric:: **Step 9:** Define the frontend domain
+.. rubric:: **Step 9:** Define the neteye-environment
 
 Create the :file:`/etc/neteye-environment.yaml` file from the shipped template
 and set the ``frontend_domain`` to the domain through which this |ne| installation
@@ -163,6 +157,21 @@ Set ``neteye.frontend_domain`` to your domain and save the file.
 :command:`neteye install` (next step) validates this file and refuses to proceed if
 ``frontend_domain`` is missing or still set to the placeholder value.
 See :ref:`Keycloak Hostname Configuration <hostname-configuration>` for details.
+
+Furthermore, in the :file:`/etc/neteye-environment.yaml` file you will be able to configure also
+three CIDRs for RKE2. More specifically, the required CIDRs are:
+
+- `pod_cidr`: the CIDR from which the pods will be assigned their IP addresses. The default value is `10.42.0.0/16`. Regardless of the chosen value, the CIDR must be a /16 network.
+- `svc_cidr`: the CIDR from which the services will be assigned their IP addresses. The default value is `10.43.0.0/16`. Regardless of the chosen value, the CIDR must be a /16 network.
+- `service_loadbalancer_cidr`: the CIDR from which the service load balancers will be assigned their IP addresses. The default value is `10.44.0.0/24`. Regardless of the chosen value, the CIDR must contain at least 256 addresses (`/24` or lower).
+
+Changing the CIDRs after the initial installation is currently **not** supported and may lead to inconsistent behaviours of the deployed components.
+
+Part 2: Single Nodes Only
+`````````````````````````
+
+To complete the setup of Satellite Nodes, jump to section
+:ref:`neteye-satellite-conf`.
 
 .. rubric:: **Step 10:** Complete |ne| setup
 

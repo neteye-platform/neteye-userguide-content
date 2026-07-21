@@ -15,7 +15,7 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
 
    .. note:: It is recommended to create a separate logical volume for the :file:`/neteye/local/rke2` directory to avoid running out of disk space on the root filesystem.
 
-   - The following ports must be available for RKE2 to function properly:
+   - The following ports must be available for RKE2 to function properly on `0.0.0.0`:
 
      - TCP 6442: load balancer for the Kubernetes API server
      - TCP 6443: Kubernetes API server

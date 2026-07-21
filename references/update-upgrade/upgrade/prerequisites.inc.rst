@@ -13,7 +13,7 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
 
    - The system must have at least 12GB of disk space available on the :file:`/neteye/local/rke2` directory for the RKE2 installation.
 
-   ..note: It is recommended to create a separate LVM logical volume for the :file:`/neteye/local/rke2` directory to avoid running out of disk space on the root filesystem.
+   .. note:: It is recommended to create a separate logical volume for the :file:`/neteye/local/rke2` directory to avoid running out of disk space on the root filesystem.
 
    - The following ports must be available for RKE2 to function properly:
 
@@ -28,4 +28,4 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
    - In case of cluster installations, you must ensure the correct roles are assigned to the nodes in order to meet the minimum requirements for a Kubernetes cluster.
      For more information on the roles and their requirements, please refer to the :ref:`kubernetes-roles` section.
 
-   - You should have created and synced on all nodes the :file:`/etc/neteye-environment.yaml`, following the :ref:`hostname-configuration` section.
+   - You should have created and synced on all nodes the :file:`/etc/neteye-environment.yaml`. For more information please refer to *Step 9* of the :ref:`ne-setup-part-one` section.

@@ -1,3 +1,1 @@
-Kubernetes in NetEye
-~~~~~~~~~~~~~~~~~~~~
-
+No breaking changes are present in this release.

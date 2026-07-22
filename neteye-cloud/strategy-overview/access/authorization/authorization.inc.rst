@@ -4,7 +4,7 @@ Authorization
 -------------
 Once a user is authenticated, he or she needs to be *authorized*, which is
 the set of steps for obtaining their specific permissions and role which they
-will need to use NetEye to complete their tasks without granting them
+will need within NetEye to complete their tasks without granting them
 additional abilities beyond what they should have.
 
 NetEye uses the Single Sign-On (SSO) model: You only need to sign in once to
@@ -12,7 +12,7 @@ be able to use any NetEye module, so permissions determine not only what you
 can do within a particular module, but also whether you can even access a
 module at all.
 
-If your users are entirely managed by Wuerth IT and hence are not provided by your IdP,
+If your users are entirely managed by Wuerth IT and thus not provided by your IdP,
 then the appropriate groups and permissions will be handled via requests to the
 `Management Portal <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__ you are
 already familiar with. If not, the information below will assist you in
@@ -34,6 +34,9 @@ A user who has been authenticated, but whose account has not been otherwise
 configured, will have no group claims in their token, and will thus be able
 to enter the NetEye platform but will not see any modules or data.
 
+The authenticated user is issued a token containing their group claims in
+`OAuth 2.0 JSON Web Token <https://datatracker.ietf.org/doc/html/rfc7519>`_ format:
+
 .. code:: json
 
    {
@@ -45,11 +48,9 @@ to enter the NetEye platform but will not see any modules or data.
      "tokenType": "JWTToken",
      "group": [
         "group-claim-1",
-     "group-claim-2"
+        "group-claim-2"
      ]
    }
-
-Caption: [Example group claims in OAuth 2.0 JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519)
 
 Each individual element of a group claim contains the information necessary
 to tell NetEye the exact permissions a user should have.  A group element
@@ -59,15 +60,7 @@ consists of a code supplied by WITIT identifying the company/tenant, a Contract 
 
    grp[Company Code]-necloud-<contracttype>-<accesslevel>
 
-Caption: Basic structure of a group
-
-.. Note::
-
-   Because permissions are assigned during the authorization part of the
-   login process, permissions are effectively updated during login, so any change
-   to permissions will require logging out and logging back in.
-
-Customers manage group memberships in their own Identity Provider —
+Customers manage group memberships in their own Identity Provider –
 they decide who gets which groups. However, the mapping from groups
 to actual permissions is controlled entirely on the NetEye.Cloud platform
 side and reflects only the contracts and access levels that are active for
@@ -76,6 +69,12 @@ the company/tenant.
 A customer cannot grant access to contracts they have not subscribed to,
 nor can they affect another tenant's permissions. Group names that do not match
 any server-side configuration are silently ignored.
+
+.. Note::
+
+   Because permissions are assigned during the authorization part of the
+   login process, permissions are effectively updated during login, so any change
+   to permissions will require logging out and logging back in.
 
 
 
@@ -108,13 +107,13 @@ The elements of a group claim are:
     Note that this is equivalent to a module administrator, not a full
     system administrator.
 
-Note that only one access level is allowed per contract type.  Also, some
+Only one access level is allowed per contract type.  Also, some
 contracts may not utilize all three levels; if a group indicates a contract
 with an access level that is not a valid combination, the access role will
 default to Viewer.
 
-As an example, a company named ACME that uses monitoring and the Elastic Stack,
-needing viewing and editor roles respectively, you would see the following group
+As an example, given a company named ACME with a user who uses monitoring and the Elastic Stack,
+and needing viewing and editor roles respectively, you would see the following group
 claims:
 
 .. code:: json
@@ -124,7 +123,8 @@ claims:
      "grp[ACME]-necloud-mon-viewer"
    ]
 
-Whereas the following group claim would not be allowed:
+Whereas the following group claim would not be allowed as it provides multiple roles
+for the same contract type:
 
 .. code:: json
 
@@ -141,22 +141,18 @@ The group name must be jointly determined with Wuerth-IT to ensure it is not
 duplicated. Successful configuration of the IdP by the customer thus means all
 groups are properly configured and added as group claims during authentication.
 
-.. figure:: /neteye-cloud/strategy-overview/img/authorization-flow.png
-
-   Insert diagram showing how an OIDC token is converted in stages into module permissions
-
-
-
 .. rubric:: Unrecognized Group Claims are silently ignored
 
-If a group name in the token does not match any configured entry — whether
+If a group name in the token does not match any configured entry – whether
 due to a typo, a misconfiguration in the IdP, or a naming change that wasn't
-synchronized — no error is raised. The user simply does not receive any
+synchronized – no error is raised. The user simply does not receive any
 permissions from that group.
 
 As a result:
-- A user with some matching and some unmatching groups will only receive permissions for the matching ones.
-- A user with no matching groups will be able to log in (authentication succeeds) but will see no data in the UI, since no permissions are granted.
+
+* A user with some matching and some non-matching groups will only receive permissions for the matching ones.
+* A user with no matching groups will be able to log in (authentication succeeds) but will see no data in the UI,
+  since no permissions are granted.
 
 This silent behavior makes it important to verify that group names configured
 in the Identity Provider exactly match those agreed upon with WITIT.
@@ -165,55 +161,51 @@ in group names is the most common cause.
 
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-The next step is to take each group and map it to one or more specific module
-[permissions](https://neteye.guide/current/getting-started/setup/authorization/roles.html)
+Each group claim is then mapped to one or more specific
+`module permissions <https://neteye.guide/current/getting-started/setup/authorization/roles.html>`__
 that are added to the user's profile.
 
-The NetEye Cloud authorization system uses a set of pre-defined tables for this mapping.
-Each table corresponds to a contract type, so first the correct table is selected by
-extracting the contract type from the group.
+.. figure:: /neteye-cloud/strategy-overview/img/authorizationFlow.png
+
+   How an OIDC token is converted in stages into module permissions
+
+The NetEye Cloud authorization system uses a set of pre-defined tables (Access-to-Permissions Map)
+for this mapping. Each table corresponds to a contract type, so first the correct table is
+selected by extracting the contract type from the group.
 
 Next, the column associated with the access level is selected in that table. Finally,
 for each row in the table where the corresponding access level is ``yes``, the
 permission in the ``Name`` field is added to the user's profile.
 
-The following tables indicate which permissions will be granted to users for a
+The following example Access-to-Permissions Map indicates how a permission will be granted to users for a
 particular pair <Contract Value, Access Level>:
 
-+---------------------------------------------------------------------------+-----------------------------------------+
-| **ASSET Permissions**                                                     | **Access Level**                        |
-+============================+==============================================+=============+=============+=============+
-| **Name**                   | **Description**                              | **Viewer**  | **Editor**  | **Admin**   |
-+----------------------------+----------------------------------------------+-------------+-------------+-------------+
-| ``module/assetmanagement`` | *Generic access to module Access Management* |     yes     |     yes     |    yes      |
-+----------------------------+----------------------------------------------+-------------+-------------+-------------+
-| ``glpi/profile``           | *GLPI Profile assigned*                      | Asset       | Asset       | Asset Mgmt. |
-|                            |                                              | Management  | Management  | Admin       |
-+----------------------+-----+-------------------------+--------------------+----------+--+-------------+-------------+
-| **Group Names**      | **Viewer**                    | **Editor**                    | **Admin**                    |
-+----------------------+-------------------------------+-------------------------------+------------------------------+
-| ASSET                | grp[CODE]-necloud-ast-viewer  | grp[CODE]-necloud-ast-editor  | grp[CODE]-necloud-ast-admin  |
-+----------------------+-------------------------------+-------------------------------+------------------------------+
+.. table::
+   :widths: 30 34 12 12 12
 
-|
+   +---------------------------------------------------------------------------+-----------------------------------------+
+   | **ASSET Permissions**                                                     | **Access Level**                        |
+   +============================+==============================================+=============+=============+=============+
+   | **Name**                   | **Description**                              | **Viewer**  | **Editor**  | **Admin**   |
+   +----------------------------+----------------------------------------------+-------------+-------------+-------------+
+   | ``module/assetmanagement`` | *Generic access to module Access Management* |     yes     |     yes     |    yes      |
+   +----------------------------+----------------------------------------------+-------------+-------------+-------------+
+   | ``glpi/profile``           | *GLPI Profile assigned*                      | Asset       | Asset       | Asset Mgmt. |
+   |                            |                                              | Mgmt.       | Mgmt.       | Admin       |
+   +----------------------------+----------------------------------------------+-------------+-------------+-------------+
 
-+---------------------------------------------------------+---------------------------------------------------------+
-| ELK Permissions                                         | Access Level                                            |
-+===================+=====================================+==============================+============+=============+
-| **Name**          | **Description**                     | **Viewer**                   | **Editor** | **Admin**   |
-+-------------------+-------------------------------------+------------------------------+------------+-------------+
-| ``module/kibana`` | *Generic access to module Kibana*   | {fab}`check;sd-text-success` |     yes    |    yes      |
-+-------------------+-------------------------------------+------------------------------+------------+-------------+
-| ``kibana/roles``  | *Kibana Roles assigned*             | APM Data Viewer              |                          |
-|                   |                                     | APM Space Viewer             | APM Kibana Editor        |
-|                   |                                     | APM Observability Viewer     |                          |
-+-------------------+-------------------------------------+------------------------------+--------------------------+
+.. table::
+   :widths: 15 20 65
 
-+----------------------+-------------------------------+-------------------------------+------------------------------+
-| **Group Names**      | **Viewer**                    | **Editor**                    | **Admin**                    |
-+======================+===============================+===============================+==============================+
-| ELK                  | grp[CODE]-necloud-elk-viewer  | grp[CODE]-necloud-elk-editor  | grp[CODE]-necloud-elk-admin  |
-+----------------------+-------------------------------+-------------------------------+------------------------------+
+   +----------------------+-------------------+----------------------------------------+
+   | **Module Name**      | **Permission**    | **Code**                               |
+   +======================+===================+========================================+
+   | ASSET                | *Viewer*          | grp[CODE]-necloud-ast-viewer           |
+   |                      +-------------------+----------------------------------------+
+   |                      | *Editor*          | grp[CODE]-necloud-ast-editor           |
+   |                      +-------------------+----------------------------------------+
+   |                      | *Admin*           | grp[CODE]-necloud-ast-admin            |
+   +----------------------+-------------------+----------------------------------------+
 
 |
 
@@ -227,7 +219,7 @@ this amounts to a single restriction being added that equates what users can
 see to the data belonging to the tenant.
 
 This restriction acts as a boundary that cannot be overridden by any
-permission level — an administrator within one tenant still cannot
+permission level – an administrator within one tenant still cannot
 see data belonging to another tenant.
 
 This means the authorization outcome has two layers:
@@ -238,7 +230,7 @@ This means the authorization outcome has two layers:
 
 Compliance
 ~~~~~~~~~~
-Login attempts — whether successful or not — are logged with the user identity,
+Login attempts – whether successful or not – are logged with the user identity,
 action, and timestamp.
 
 These logs are retained in compliance with applicable regulations, including
@@ -256,12 +248,3 @@ When an IdP administrator configures permissions for a new user, they need to:
   add it with a unique group name (see the tables above)
 * Connect the user account to those permissions by adding the user to each group,
   which will include the groups in a group claim that is passed via the OIDC token
-
-.. admonition:: Question...
-
-   How is tenancy marked in the IdP infrastructure?
-
-.. admonition:: Question...
-
-   Do we need a separate use case for setting up a new IdP server?
-   That would presumably involve setting up the tenant string...

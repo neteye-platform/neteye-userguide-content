@@ -726,7 +726,7 @@ Usage:
 
    neteye# neteye cluster upgrade-prerequisites glpi-pcs-resources set
 
-During the execution, the command will suggest an IP address that appears to be available in the same subnet as other cluster resources.
+During execution, the command will suggest an IP address that appears to be available in the same subnet as other cluster resources.
 The administrator can then confirm the suggested IP or provide a different one when prompted.
 However, it is the administrator's responsibility to ensure that the chosen IP address is not already assigned to other devices or PCS resources.
 

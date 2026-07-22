@@ -7,5 +7,5 @@ If you have installed additional plugins in GLPI, you must follow the official G
 
 GLPI PHP configurations have moved from ``/neteye/local/php/conf/php.d/`` to ``/neteye/shared/glpi/conf/php.d/``. If you have custom configurations, you must manually move them to the new path, with the exception of the PHP timezone customization which is automatically migrated during the upgrade.
 
-During the upgrade to GLPI 11, the database tables related to the GLPI plugin ocsinventoryng (all tables prefixed with ``glpi_plugin_ocsinventoryng``) will be removed from the ``glpi`` database, as they are leftover of the old plugin.
+During the upgrade to GLPI 11, the database tables related to the GLPI plugin ocsinventoryng (all tables prefixed with ``glpi_plugin_ocsinventoryng``) will be removed from the ``glpi`` database, as they are left over from the old plugin.
 If you need to preserve this data, ensure you have a backup before starting the upgrade process.

@@ -709,7 +709,7 @@ their recovery state, and guides the administrator through the recovery procedur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The :command:`neteye cluster upgrade-prerequisites glpi-pcs-resources` command
-allows to configure the virtual IP address that will be used for the GLPI PCS resources in a cluster environment.
+lets you configure the virtual IP address that will be used for the GLPI PCS resources in a cluster environment.
 This is a required step before upgrading to a version of NetEye that includes GLPI in the cluster resources.
 
 .. _neteye-cluster-upgrade-prerequisites-glpi-pcs-resources-set:

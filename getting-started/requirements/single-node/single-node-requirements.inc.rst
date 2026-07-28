@@ -132,3 +132,14 @@ Notifications can be sent via SMTP or SMS. Therefore, the following requirements
     * SMS Gateway connected over Ethernet
     * :ref:`SMS Gateway connected via serial bus <sms-gateway-moxa>`
       (contact your |ne| 4's consultant for further information)
+
+Kubernetes Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+Since |ne| 4.49, RKE2 is used as the Kubernetes distribution. RKE2 requires three CIDRs to be defined during the installation process in the :file:`/etc/neteye-environment.yaml` file.
+The following three CIDRs are required:
+
+- `pod_cidr`: the CIDR from which the pods will be assigned their IP addresses. The default value is `10.42.0.0/16`. Regardless of the chosen value, the CIDR must be a /16 network.
+- `svc_cidr`: the CIDR from which the services will be assigned their IP addresses. The default value is `10.43.0.0/16`. Regardless of the chosen value, the CIDR must be a /16 network.
+- `service_loadbalancer_cidr`: the CIDR from which the service load balancers will be assigned their IP addresses. The default value is `10.44.0.0/24`. Regardless of the chosen value, the CIDR must contain at least 256 addresses (`/24` or lower).
+
+Changing the CIDRs after the initial installation is currently **not** supported and may lead to inconsistent behaviours of the deployed components.

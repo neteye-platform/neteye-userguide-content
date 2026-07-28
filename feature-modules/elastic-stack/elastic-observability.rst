@@ -7,3 +7,4 @@ Elastic Observability
 
    elastic-observability/elastic-apm.rst
    elastic-observability/elastic-rum.rst
+   elastic-observability/multitenant-otel-collector.rst

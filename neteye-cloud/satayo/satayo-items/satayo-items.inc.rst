@@ -431,11 +431,18 @@ Email Address
    - `T1589.002 Gather Victim Identity Information: Email Addresses <https://attack.mitre.org/techniques/T1589/002/>`__
    - `T1586.002 Compromise Accounts: Email Accounts <https://attack.mitre.org/techniques/T1586/002/>`__
 
-The **Email Address item** shows the email address belonging or related to a domain under analysis.
-It indicates whether an account with that email address was present in a stealer log.
+The **Email Address** item shows the email address belonging or related to a domain under analysis.
+It indicates whether an account with that email address was present in a stealer log, data breach, or paste.
 
-Emails shown here were retrieved by SATAYO through the acquisition of stealer logs, which are collections of compromised
-data associated with your monitored domain, distributed by third parties through underground marketplaces.
+Email addresses shown here were retrieved by SATAYO through the acquisition of compromised data from multiple sources:
+**Stealer Logs** (collections of compromised data, distributed by third parties through underground marketplaces),
+**Data Breaches** (incidents in which information is exposed to unauthorized parties),
+and **Pastes** (collections of data posted on external paste sites, such as Pastebin).
+
+For each email address found, SATAYO can also provide information about:
+
+- **Social Networks and Web Sites**: social networks, platforms, and other web sites — such as LinkedIn, GitHub, Amazon, etc. — where accounts related to the monitored email address have been detected
+- **Extra Attributes**: additional data associated with the email address, such as profile information discovered in data breaches.
 
 .. _resource_item:
 

@@ -606,3 +606,46 @@ For each paste found, SATAYO provides information about:
 - The link to the specific paste.
 - The date on which the paste was published.
 - Which email addresses are present in that paste.
+
+
+.. _sandboxes_item:
+
+Sandboxes
+=========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1595 Active Scanning <https://attack.mitre.org/techniques/T1595/>`__
+   - `T1591 Gather Victim Org Information <https://attack.mitre.org/techniques/T1591/>`__
+   - `T1597.001 Search Closed Sources: Threat Intel Vendors <https://attack.mitre.org/techniques/T1597/001/>`__
+   - `T1593.002 Search Open Websites/Domains: Search Engines <https://attack.mitre.org/techniques/T1593/002/>`__
+
+   Initial Access
+
+   - `T1566.001 Phishing: Spearphishing Attachment <https://attack.mitre.org/techniques/T1566/001/>`__
+   - `T1566.002 Phishing: Spearphishing Link <https://attack.mitre.org/techniques/T1566/002/>`__
+
+The **Sandboxes item** represents evidence found within public malware sandboxes
+and related to the monitored organization. A sandbox detonates files in controlled
+virtual environments to track their activity and communications, producing detailed
+reports that include files opened, created, and written, registry keys set, domains
+contacted, and more.
+
+Evidence is detected using dedicated **YARA rules**, preconfigured by the team of
+analysts and built from the monitoring scope and intelligence requirements defined
+with the customer during onboarding.
+
+For each item, SATAYO provides information about:
+
+- The URL of the analyzed evidence.
+- The country from which the file was uploaded.
+- The size and extension of the file.
+
+This finding may include malicious artifacts that reference the monitored
+organization, as well as generic files uploaded to sandboxes by unaware users.
+When confidential or critical files are uploaded, the associated report includes
+guidance on how to properly mitigate the exposure.

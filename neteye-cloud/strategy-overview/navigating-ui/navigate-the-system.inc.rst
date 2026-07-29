@@ -5,7 +5,7 @@ Navigating the UI
 
 The NetEye.Cloud user interface provides access to the monitoring
 information that is relevant for your organization. You can use the interface
-to check the overall status of yourmonitored environment, identify active problems,
+to check the overall status of your monitored environment, identify active problems,
 review alerts, and open the available details for hosts, services,
 and monitoring modules.
 
@@ -41,7 +41,7 @@ the dashboard indicates that something is not operating as expected, or
 when you want to review the current situation without starting from a
 specific host or service.
 
-Use the Problems view is intended to help you understand what
+The Problems view is intended to help you understand what
 problems are active right now, which hosts, services, or monitored
 objects are affected, the severity and the time of occurrence
 of the problem.
@@ -168,7 +168,7 @@ information needed to understand the current monitoring situation.
 Customizing your session
 ++++++++++++++++++++++++
 
-NetEye.Cloud is a fully managed monitoring experience, so most monitoring
+NetEye.Cloud is a fully managed monitoring environment, so most monitoring
 configuration is handled for you. However, you can still adjust a few personal
 preferences to make day-to-day navigation more comfortable.
 

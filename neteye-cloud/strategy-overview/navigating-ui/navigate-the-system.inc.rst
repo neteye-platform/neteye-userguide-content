@@ -91,7 +91,7 @@ Use a detail page to answer questions such as:
 The available information depends on the monitoring configuration and on
 the functionality enabled for your NetEye Cloud account. If a module or
 detail area is not available, it may not be part of your current NetEye.Cloud
- service scope.
+service scope.
 
 Filter & Search for your Information
 ++++++++++++++++++++++++++++++++++++
@@ -139,6 +139,7 @@ to understand the current state of your monitored environment.
 Start each monitoring session from the dashboard. Use it as the first checkpoint
 to understand whether the monitored environment is healthy or whether any area
 requires attention.
+
 #. If something requires attention, open the Problems view to identify active issues.
 
 Here you can focus on the entries that are currently active and relevant for your services.
@@ -158,8 +159,8 @@ or time range.
 #. Open the affected host, service, or monitored object to review the available details.
 #. Use filters or search to narrow the information when a view contains many entries.
 #. Complete the flow by opening any available monitoring module, such as reporting or analytics,
-when you need historical context, trends, or supporting information. This helps you move
-from a current status check to a more complete understanding of the monitored situation.
+   when you need historical context, trends, or supporting information. This helps you move
+   from a current status check to a more complete understanding of the monitored situation.
 
 This approach helps you move from a high-level overview to the specific
 information needed to understand the current monitoring situation.

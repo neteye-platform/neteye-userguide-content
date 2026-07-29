@@ -630,10 +630,10 @@ Sandboxes
    - `T1566.002 Phishing: Spearphishing Link <https://attack.mitre.org/techniques/T1566/002/>`__
 
 The **Sandboxes item** represents evidence found within public malware sandboxes
-and related to the monitored organization. A sandbox detonates files in controlled
-virtual environments to track their activity and communications, producing detailed
-reports that include files opened, created, and written, registry keys set, domains
-contacted, and more.
+and related to the monitored organization. A sandbox "detonates" files (purposefully
+launches them in controlled virtual environments) to track their activity and
+communications, producing detailed reports that include files opened, created,
+and written, registry keys set, domains contacted, and more.
 
 Evidence is detected using dedicated **YARA rules**, preconfigured by the team of
 analysts and built from the monitoring scope and intelligence requirements defined

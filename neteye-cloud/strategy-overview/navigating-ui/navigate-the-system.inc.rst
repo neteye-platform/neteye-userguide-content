@@ -129,7 +129,7 @@ configuration. This chapter should only describe modules that are visible
 and usable for NetEye Cloud customers.
 
 Suggested navigation flow
--------------------------
++++++++++++++++++++++++++
 
 Below you will find a recommended practical sequence of actions to repeat daily
 to understand the current state of your monitored environment.
@@ -163,3 +163,26 @@ from a current status check to a more complete understanding of the monitored si
 
 This approach helps you move from a high-level overview to the specific
 information needed to understand the current monitoring situation.
+
+Customizing your session
+++++++++++++++++++++++++
+
+NetEye.Cloud is a fully managed monitoring experience, so most monitoring
+configuration is handled for you. However, you can still adjust a few personal
+preferences to make day-to-day navigation more comfortable.
+
+To review these options, select the gear icon in the bottom-left part of the
+main menu. Depending on your permissions and enabled services, you can tune
+basic settings such as:
+
+* language and time zone
+* main menu color
+* number of elements displayed per page
+* automatic refresh of web pages
+* saved searches or filters for frequently used views (if available)
+* display of additional debug information (if enabled for your account)
+
+These settings do not change the monitored environment itself. They only
+customize how information is displayed during your session, helping you review
+dashboards, problems, alerts, and other monitoring views in a way that better
+fits your workflow.

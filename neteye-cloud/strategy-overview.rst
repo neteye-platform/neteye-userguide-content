@@ -8,3 +8,4 @@ NetEye.Cloud Solution
    strategy-overview/concepts.rst
    strategy-overview/subscription.rst
    strategy-overview/access.rst
+   strategy-overview/navigating-ui.rst

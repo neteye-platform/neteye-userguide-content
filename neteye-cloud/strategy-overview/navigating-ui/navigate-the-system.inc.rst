@@ -89,7 +89,7 @@ Use a detail page to answer questions such as:
 * What monitoring information is available for further analysis?
 
 The available information depends on the monitoring configuration and on
-the functionality enabled for your NetEye Cloud account. If a module or
+the functionality enabled for your NetEye.Cloud account. If a module or
 detail area is not available, it may not be part of your current NetEye.Cloud
 service scope.
 
@@ -124,9 +124,9 @@ problem, and alert views.
 For example, you may find areas dedicated to reporting, analytics, or
 other monitoring-related functions.
 
-The exact modules and actions available depend on your NetEye Cloud
-configuration. This chapter should only describe modules that are visible
-and usable for NetEye Cloud customers.
+The exact modules and actions available depend on your NetEye.Cloud
+configuration. This chapter only describes modules that are visible
+and usable for NetEye.Cloud customers.
 
 Suggested navigation flow
 +++++++++++++++++++++++++

@@ -15,7 +15,7 @@ lower-level services such as database servers and routers.
 This can help you to prioritize which devices should be repaired first in the event of an emergency,
 as well as explore recovery strategies with hypothetical incidents.
 
-With Business Service Monitoring in the NetEye.Cloud, you are able to:
+With Business Service Monitoring in the |nec|, you are able to:
 
 - Visualize parts of your IT infrastructure in a clear hierarchical view;
 - Understand the business impact of individual services;
@@ -32,7 +32,7 @@ With Business Service Monitoring in the NetEye.Cloud, you are able to:
 This fully-managed service ensures you benefit from powerful monitoring insights
 while the operations team takes care of all configuration and updates.
 
-In the NetEye.Cloud, Business Service Monitoring is delivered as an empty container service.
+In the |nec|, Business Service Monitoring is delivered as an empty container service.
 Unlike the on-premises installation, you will not need to create or configure business processes themselves. Instead:
 
 - The information and details about required business processes are to be provided during onboarding.

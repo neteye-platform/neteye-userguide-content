@@ -6,7 +6,7 @@ To easily and reliably check the status of a Monitored Object it is fundamental
 to find all its Monitoring information in a single point. The VMD module integrates
 the information related to your Virtualization infrastructure next to each Host in the Monitoring.
 
-vSphereDB Monitoring Integration is available by default for all NetEye.Cloud Monitoring Service subscribers.
+vSphereDB Monitoring Integration is available by default for all |nec| Monitoring Service subscribers.
 
 During the onboarding process, you will provide the necessary information and parameters related
 to your environment (such as vCenter details, Monitoring backend identifiers like Icinga DB Resource and Source Type).

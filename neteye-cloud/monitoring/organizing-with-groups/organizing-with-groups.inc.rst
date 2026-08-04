@@ -11,7 +11,7 @@ predefined ones in the
 and then view them within the **Overview** section in the left side menu.
 This view shows hosts and service states in aggregation, as shown here:
 
-.. _figure-nec-host-details-view:
+.. _figure-nec-host-service-groups:
 
 .. figure:: /neteye-cloud/monitoring/img/host_and_service_groups.png
    :alt: Viewing hostgroups and servicegroups

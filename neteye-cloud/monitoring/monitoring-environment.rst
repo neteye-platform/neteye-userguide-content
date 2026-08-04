@@ -10,4 +10,3 @@ The Monitoring Environment
    monitoring-environment/exporting.rst
    monitoring-environment/viewing-details.rst
    monitoring-environment/organizing-with-groups.rst
-

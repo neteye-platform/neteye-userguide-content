@@ -16,11 +16,13 @@ Kubernetes roles
 
 |ne| offers two types of Kubernetes roles to be able to more efficiently manage the compute resources of the |ne| installation:
 
-- **Kubernetes Master**: This role is responsible for managing the Kubernetes cluster and its components. It runs the Kubernetes API server, controller manager, scheduler, and etcd database.
+- **Kubernetes Master** (``kubernetes-master``): This role is responsible for managing the Kubernetes cluster and its components. It runs the Kubernetes API server, controller manager, scheduler, and etcd database.
   The master node is also responsible for managing the deployment of |ne| components on the worker nodes.
-- **Kubernetes Worker**: This role is responsible for running the |ne| components and workloads. Worker nodes receive instructions from the master node and execute the tasks accordingly.
+- **Kubernetes Worker** (``kubernetes-worker``): This role is responsible for running the |ne| components and workloads. Worker nodes receive instructions from the master node and execute the tasks accordingly.
 
 A node can have any possible combination of the two roles, with the only constraint of having at least three master nodes and two worker nodes in cluster installations.
+To configure node roles in a cluster installation, use the ``kubernetes-master`` and
+``kubernetes-worker`` values as described in :ref:`cluster-nodes-roles`.
 
 Kubernetes is also supported and configured on Single Node installations, where the single node has implicitly both the master and worker roles.
 

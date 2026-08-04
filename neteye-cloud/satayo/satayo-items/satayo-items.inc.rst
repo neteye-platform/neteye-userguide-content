@@ -649,3 +649,27 @@ This finding may include malicious artifacts that reference the monitored
 organization, as well as generic files uploaded to sandboxes by unaware users.
 When confidential or critical files are uploaded, the associated report includes
 guidance on how to properly mitigate the exposure.
+
+
+.. _deep_dark_web_item:
+
+Deep & Dark Web
+===============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1591.004 Gather Victim Org Information: Identify Roles <https://attack.mitre.org/techniques/T1591/004/>`__
+   - `T1597 Search Closed Sources <https://attack.mitre.org/techniques/T1597/>`__
+   - `T1596.005 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+   - `T1593.001 Search Open Websites/Domains: Social Media <https://attack.mitre.org/techniques/T1593/001/>`__
+   - `T1593.002 Search Open Websites/Domains: Search Engines <https://attack.mitre.org/techniques/T1593/002/>`__
+   - `T1593.003 Search Open Websites/Domains: Code Repositories <https://attack.mitre.org/techniques/T1593/003/>`__
+
+The **Deep & Dark Web item** contains evidence retrieved by SATAYO from Deep & Dark Web sources,
+such as leak forums, onion sites, illegal marketplaces, and social networks.
+The analysis is performed using several keywords related to the analyzed domain.
+For each item found, the link to the mention and a snippet of its content are provided.

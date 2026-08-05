@@ -8,7 +8,7 @@ an Alyvix Node as recommended in the official `Alyvix Service user guide <https:
 
 .. note::
 
-    NetEye supports Alyvix Service version >= 2.5.0. Please make sure your Alyvix Node is up to date before
+    |ne| supports Alyvix Service version >= 2.5.0. Please make sure your Alyvix Node is up to date before
     proceeding with the installation.
 
 As a part of the installation procedure, you will have to perform mandatory security
@@ -24,7 +24,7 @@ in the Director Module.
 Alyvix Network Architecture
 +++++++++++++++++++++++++++
 
-Before you start configuring the Alyvix Node in NetEye,
+Before you start configuring the Alyvix Node in |ne|,
 it is important that you decide on the type of your network architecture
 and the type of environment you would like to work in, i.e. single- or multi-tenant.
 
@@ -41,26 +41,26 @@ at step :ref:`alyvix-create-an-alyvix-node`.
    see :ref:`neteye-command` section.
 
 For |ne| to be able to reach the Alyvix Service, port 443 is to be opened,
-while the Alyvix should reach NetEye through port 4222.
+while the Alyvix should reach |ne| through port 4222.
 For a deeper insight into the Network Architecture please refer to the diagrams
 in :ref:`alyvix-nodes-architectures` section.
 
 .. _alyvix-neteye-ver-compatibility:
 
-Version Compatibility with Neteye
-+++++++++++++++++++++++++++++++++
+Version Compatibility with |ne|
++++++++++++++++++++++++++++++++
 
-In order to have the integration working, NetEye and Alyvix service should support
+In order to have the integration working, |ne| and Alyvix service should support
 the same API version. New features of Alyvix, present with new API versions, can only
-be used in NetEye granted the latter supports the new API version.
+be used in |ne| granted the latter supports the new API version.
 
-The upgrade of NetEye and Alyvix is done individually.
+The upgrade of |ne| and Alyvix is done individually.
 
 `Alyvix service version <https://alyvix.com/learn/service/install.html#versions>`__
 serves as an indicator of which API version is exposed by each Alyvix service version.
 
 
-NetEye |neteye_version| version supports Alyvix API v3, v4, v5.
+|ne| |neteye_version| version supports Alyvix API v3, v4, v5.
 
 
 .. _alyvix-nodes-authentication:
@@ -86,8 +86,8 @@ explains the procedure in details.
 
 Another, **not recommended**, way to install the certificates on the Alyvix nodes
 is to create the certificates via a script provided by |ne|.
-The script generates server certificates signed by the internal Root CA of NetEye,
-which will then be trusted only by your NetEye machines.
+The script generates server certificates signed by the internal Root CA of |ne|,
+which will then be trusted only by your |ne| machines.
 
 .. warning::
    Installing the certificates via the |ne| script is not recommended
@@ -297,7 +297,7 @@ The following fields are displayed for each node:
 
 * **Name**: The name of the Alyvix node set previously during the Host creation
 * **Tenant**: The Tenant which the node belongs to. In case of a multitenant tenant-shared node, an icon
-    is displayed instead of the tenant names.
+  is displayed instead of the tenant names.
 * **Sessions status**: The list of sessions with the status. Possible status values are:
 
    * |disconnect_icon| *Disconnected* (Alyvix service is not able to connect to a specific session)
@@ -305,7 +305,7 @@ The following fields are displayed for each node:
    * |waiting_icon| *Waiting* (Alyvix service is connected to the session and is ready to run assigned test cases)
    * |stopped_icon| *Stopped* (Alyvix service is connected to the session and is not going to run test cases)
 
-* **Health**: The Host status monitored by NetEye. Next to the health status is a link that opens the host page in the :ref:`monitoring module <active-monitoring>`.
+* **Health**: The Host status monitored by |ne|. Next to the health status is a link that opens the host page in the :ref:`monitoring module <active-monitoring>`.
 * **License**: The status of the license can be: *Disabled*, *Active*, *Expiring* or *Expired*. See more on this in the :ref:`alyvix-license-tab`.
 * **Alyvix version**: The version of Alyvix that is running on the node
 
@@ -349,9 +349,9 @@ A session on an Alyvix node is defined by the following properties:
 * **Workflow waiting period**: Number of minutes before restarting the workflow
 * **Display dimensions**
 
-   * **Width**: the width of the screen resolution in pixels
-   * **Height**: the height of the screen resolution in pixels
-   * **Zoom**: the zoom percentage
+  * **Width**: the width of the screen resolution in pixels
+  * **Height**: the height of the screen resolution in pixels
+  * **Zoom**: the zoom percentage
 
 * **Live preview**: A visual preview of the session generated from screenshots captured periodically,
   by default every 0.5 seconds. This feature allows you to verify that the session is running as

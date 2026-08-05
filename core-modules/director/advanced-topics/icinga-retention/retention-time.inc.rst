@@ -24,8 +24,8 @@ In **Icinga DB**, retention is managed through two policies:
 How To Set The Retention Time
 `````````````````````````````
 
-To configure or modify the values, go to *Configuration > Modules >
-Neteye > Configuration*.
+To configure or modify the values, go to **Configuration > Modules >
+NetEye > Configuration**.
 
 -  **Step 1**. Insert a value in days for the *History retention policy
    in days*, which by default is **550**.
@@ -54,4 +54,4 @@ policy in days* and *SLA retention policy in days* to **0**.
 
 .. warning:: Disabling the retention time is discouraged, because the
    disk space required by the Databases might grow quickly if the
-   monitoring activities on NetEye create a lot of input.
+   monitoring activities on |ne| create a lot of input.

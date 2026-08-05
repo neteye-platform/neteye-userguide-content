@@ -1,4 +1,4 @@
-Before starting the upgrade, carefully read the latest release notes on `NetEye's blog <https://www.neteye-blog.com/category/neteye/release-notes-2/>`_ and check the features that will change or be deprecated.
+Before starting the upgrade, carefully read the latest release notes on `NetEye's blog <https://www.neteye-blog.com/blog/category/release-notes-2/>`_ and check the features that will change or be deprecated.
 
 #. All NetEye packages installed on a currently running version must be updated according to the
    :ref:`update procedure <update-procedure>` prior to running the upgrade.

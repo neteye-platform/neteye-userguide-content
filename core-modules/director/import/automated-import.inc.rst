@@ -10,7 +10,7 @@ accessible, structured file (e.g., a CSV file). You can view the
 Icinga2 documentation `on importing and synchronizing
 <https://www.icinga.com/docs/director/latest/doc/70-Import-and-Sync/>`__.
 
-The following import capabilities (source types) are part of NetEye
+The following import capabilities (source types) are part of |ne|
 Core:
 
 -  **CoreApi:** Import from the Icinga2 API
@@ -32,7 +32,7 @@ field “Object class” you can select “computer”, “user” or “user gr
 
 The import process retrieves information from the external data
 source, but by itself it will not permanently change existing objects
-in NetEye such as hosts or users. To do this, you must also invoke a
+in |ne| such as hosts or users. To do this, you must also invoke a
 separate :ref:`Synchronization Rule <sync-rules>` to integrate the
 imported data into the existing monitoring configuration. This
 integration could either be adding an entirely new host, or just
@@ -40,12 +40,12 @@ updating a field like the IP address.
 
 For each synchronization rule you must decide how every :ref:`property
 should map <import-source>` from the import source field to your
-field in Neteye (e.g., from dnshostname to host_name). You can also
+field in |ne| (e.g., from dnshostname to host_name). You can also
 define different synchronization rules on the same import method so
 that you can synchronize different properties at different times.
 
 To trigger either the import or synchronization tasks, you must press
-the corresponding button on their panels. Neteye also allows you to
+the corresponding button on their panels. |ne| also allows you to
 schedule background tasks (:ref:`Jobs <automating-import-jobs>`) for
 import and synchronization. You can thus create regular schedules for
 importing hosts from external sources, for instance importing VMs from
@@ -53,7 +53,7 @@ vSphere every morning at 7:00AM, then synchronizing them with existing
 hosts at 7:30AM. As with immediate import and synchronization, you
 must define a separate job for each task.
 
-To begin importing hosts into NetEye, select **Director > Import data
+To begin importing hosts into |ne|, select **Director > Import data
 sources** as in :numref:`figure-automation-menu`.
 
 .. _figure-automation-menu:
@@ -122,7 +122,7 @@ Properties are the named fields that should be fetched for each object
 key indexing column (**key column name**) for that data source, and its
 values (e.g., host names) must be unique, as they are matched against
 each other during the synchronization process to determine whether an
-incoming object already exists in NetEye. For instance, if you are
+incoming object already exists in |ne|. For instance, if you are
 importing hosts, the key indexing column should contain fully qualified
 domain names. If these values are not unique, the import will fail.
 
@@ -208,7 +208,7 @@ Synchronization Rules
 
 When rows of data are being imported, it is possible that the new
 objects created from those rows will overlap with existing objects
-already being monitored. In these cases, NetEye will make use of
+already being monitored. In these cases, |ne| will make use of
 Synchronization Rules to determine what to do with each object. You can
 choose from among the following three synchronization strategies, known
 as the **Update Policy**:
@@ -224,7 +224,7 @@ importing if they cannot be found in the import source.
 
 Each synchronization rule should state :ref:`how every property should
 map <import-source>` from the import source field to your field in
-Neteye (e.g., dnshostname -> host_name).
+|ne| (e.g., dnshostname -> host_name).
 
 To begin, go to **Director > Synchronize** from the main menu and
 press the green “Add” action in the **Sync rule** panel in
@@ -296,7 +296,7 @@ Synchronization Rule Properties
 ```````````````````````````````
 
 A **Sync Property** is a mapping from a field in the input source to a
-field of a NetEye object. Separating the mapping from the sync rule
+field of a |ne| object. Separating the mapping from the sync rule
 definition allows you to reuse mappings across multiple import types.
 
 To add a sync property, click on the “Properties” tab
@@ -328,9 +328,9 @@ those that haven’t.
 
 Next, choose the destination field
 (:numref:`figure-setting-destination-field`), which corresponds to the
-field in NetEye where imported values will be stored. Destination
+field in |ne| where imported values will be stored. Destination
 fields are the pre-defined special properties or object properties of
-existing NetEye objects. Note that some destination field values like
+existing |ne| objects. Note that some destination field values like
 custom variables will require you to fill in additional fields in the
 form.
 

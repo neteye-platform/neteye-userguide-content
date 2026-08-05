@@ -3,11 +3,11 @@
 External Identity Providers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes how to configure an external identity provider (IdP) in Neteye.
+This section describes how to configure an external identity provider (IdP) in |ne|.
 
 Identity Providers are services that create, maintain, and manage identity information for users
 while providing authentication services to relying applications within a federation or distributed
-network. If you have an existing IdP, you can configure it in NetEye to authenticate users with it
+network. If you have an existing IdP, you can configure it in |ne| to authenticate users with it
 (via SAML), defined in :rfc:`7522` or OIDC defined in the `OpenID Connect Core 1.0 specification.
 <https://openid.net/specs/openid-connect-core-1_0.html>`_ Some popular options for that are: Ping
 Identity, Fortinet or MS ADFS. This page also shows examples of how to configure some of the most
@@ -22,10 +22,10 @@ When an IdP is enabled, Keycloak redirects the user to the IdP login page based 
 
 .. _idp-idp-in-neteye:
 
-Add an IdP in NetEye
-````````````````````
+Add an IdP in |ne|
+``````````````````
 
-To add an IdP in NetEye, access the :ref:`Authentication Admin Console <auth-admin-console>` and
+To add an IdP in |ne|, access the :ref:`Authentication Admin Console <auth-admin-console>` and
 click on the :menuselection:`Identity Providers > Add provider` menu item. Many already configured
 IdPs can be easily set up by clicking a button under the `Social` section, or a custom IdP can be
 configured by selecting a protocol under the `User defined` tab.
@@ -35,10 +35,10 @@ configured by selecting a protocol under the `User defined` tab.
  Keycloak supports SAML v2.0, OIDC v1.0, and OAuth 2.0.
 
 After clicking a button, a `wizard` will guide you through the configuration of the IdP.
-You will also need access to the IdP admin console to obtain the necessary information to configure the IdP in NetEye, and accept NetEye as a client.
+You will also need access to the IdP admin console to obtain the necessary information to configure the IdP in |ne|, and accept |ne| as a client.
 
 
-Specific IdP how-to guides
+Specific IdP How-to Guides
 ``````````````````````````
 
 * How to configure :ref:`MSADFS <idp-msadfs-saml>`
@@ -66,7 +66,7 @@ documentation.
 
 .. _idp-common-config:
 
-Common IdP configuration
+Common IdP Configuration
 ````````````````````````
 .. csv-table:: Configuration fields
 
@@ -83,14 +83,14 @@ See the `official guide of Keycloak <https://www.keycloak.org/docs/latest/server
 
 .. _idp-domains:
 
-Configuring idp domains
+Configuring IdP Domains
 ```````````````````````
 
 For the **Home IdP Discovery** to correctly map the email domain to the proper login endpoint, the IdP
 domains need to be configured. This step ensures that Keycloak properly redirects to the IdP for authentication, requiring only the username as the initial step of the login process. Additionally, if multiple IdPs are configured in Keycloak, setting this parameter allows Keycloak to determine the correct IdP to redirect to based on the email domain associated with the entered username.
 
 Since that configuration option is currently only available over a REST-API, we
-provide a neteye subcommand to make these configuration as easy as possible. With the
+provide a :command:`neteye` subcommand to make these configuration as easy as possible. With the
 :ref:`neteye-config-auth-idp` command, you can view and edit the domain configuration with the
 subcommands :command:`list` and :command:`set` respectively.
 

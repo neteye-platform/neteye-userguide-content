@@ -47,7 +47,7 @@ B
       single package that can be installed at will. A Beta Software is
       a part of a module, but in some cases it can also be a standalone
       software, that provides a specific functionality which is not
-      yet part of NetEye. Multiple versions of a same Beta Software
+      yet part of |ne|. Multiple versions of a same Beta Software
       coexist in the repository, and, like for Preview Software,
       Beta Software is provided **AS IS**, with no guarantee of
       stability and maturity.
@@ -84,24 +84,24 @@ C
 
    Corporate Network
 
-      The network the NetEye Master or NetEye Satellite is connected to.
-      In terms of networking involving a NetEye Cluster, a Corporate Network
+      The network the |ne| Master or |ne| Satellite is connected to.
+      In terms of networking involving a |ne| Cluster, a Corporate Network
       has to respect certain requirements for TCP and UDP ports that should be opened
-      to allow NetEye to communicate correctly with the monitored hosts and external services.
+      to allow |ne| to communicate correctly with the monitored hosts and external services.
 
-      The ports can be inbound or outbound. Communication between the NetEye and Corporate Network
-      should be built with respect to the NetEye architecture, which means selected ports
+      The ports can be inbound or outbound. Communication between the |ne| and Corporate Network
+      should be built with respect to the |ne| architecture, which means selected ports
       are to be opened on the Master Node or its Satellite.
 
    Current |ne| Release
       The latest stable |ne| release available to be installed by a customer.
-      Development cycle lasts two months, thus a new NetEye release is published and available for installation
+      Development cycle lasts two months, thus a new |ne| release is published and available for installation
       at the beginning of the even months.
 
-      **Current** label in the NetEye User Guide indicates the version of the userguide which corresponds
-      the current NetEye version.
+      **Current** label in the |ne| User Guide indicates the version of the userguide which corresponds
+      the current |ne| version.
 
-      **Next** label corresponds to the next coming version of NetEye, which is currently in development.
+      **Next** label corresponds to the next coming version of |ne|, which is currently in development.
 
       **Alpha** version appears in the User Guide for a two-week period, which means feature freeze of a to-be-released
       version and the start of a newer version development.
@@ -112,7 +112,7 @@ D
    :sorted:
 
    Downtime
-      In the context of monitoring within NetEye, *Downtime* is a scheduled period of time when a
+      In the context of monitoring within |ne|, *Downtime* is a scheduled period of time when a
       monitored object is intentionally either not available or will not perform its expected function,
       but which should nonetheless be considered as available.
 
@@ -128,18 +128,19 @@ E
    :sorted:
 
    Event
-      In the context of monitoring within NetEye, an *Event* refers to one of multiple possible event
+      In the context of monitoring within |ne|, an *Event* refers to one of multiple possible event
       types, as declared by Icinga 2. The most common type is the
       `state change event <https://icinga.com/docs/icinga2/latest/doc/03-monitoring-basics/#hard-and-soft-states>`__
       caused by a host or service check result that differs from a previous check result.  An Event has
       a single timestamp, it is not a duration.
 
-      The types of events currently defined on NetEye are:
+      The types of events currently defined on |ne| are:
+
       * **State Change:**  A host or service has changed from one state to another, e.g from OK to CRITICAL.
       * **Downtime:**  The host or service is scheduled to be down.
       * **Flapping:**  A host or service is continually alternating between two states, e.g. UP and DOWN.
-      * **Comment:**  A NetEye user flagged a point in time with a written note.
-      * **Notification:**  NetEye sends an alert, e.g. an email to a system administrator.
+      * **Comment:**  A |ne| user flagged a point in time with a written note.
+      * **Notification:**  |ne| sends an alert, e.g. an email to a system administrator.
 
    Event Adjustment
       An *Event Adjustment* is a retroactive modification of the event history of a monitored object.
@@ -279,7 +280,7 @@ N
 
    |ne| Additional Feature Modules
       |neb| **Feature Modules** are |ne| components that perform very
-      specific functions, and that can be installed on top of NetEye
+      specific functions, and that can be installed on top of |ne|
       Core, thanks to its modular architecture.  Unlike :term:`Preview
       Software`, |ne| modules are officially supported; each module
       has its own, distinct contract, and can be quickly installed on
@@ -289,13 +290,13 @@ N
    |ne| Components
       A |neb| **Component** is a software module that extends the
       functionalities of |ne| Core. There are three categories of
-      |ne| Components: *NetEye Feature Modules*, *Preview Software*,
+      |ne| Components: |nei| *Feature Modules*, *Preview Software*,
       and *Beta Software*. You can refer to Section
       :ref:`neteye-components` for detailed information.
 
    |ne| Core
       It is the set of most commonly used functionalities offered by
-      NetEye, including monitoring, visualization (with dashboards and
+      |ne|, including monitoring, visualization (with dashboards and
       maps), configuration, reporting, and event handling.
 
    |ne| Cluster
@@ -303,19 +304,21 @@ N
       types of nodes: operative nodes, elastic-only nodes, and
       voting-only nodes; |ne| clustering service is based on a stack
       of software: Corosync, Pacemaker, and DRBD, although some
-      NetEye services rely on their own clustering technologies.
+      |ne| services rely on their own clustering technologies.
 
    |ne| Cluster Node roles
-      Some of the distributed NetEye services can be configured to run only on specific
+      Some of the distributed |ne| services can be configured to run only on specific
       nodes within the Cluster. By modifying the Cluster configuration file
       one can assign specific services to specific nodes depending on the needs of the customer.
 
    |ne| Health Check
 
-      It is important to monitor the health of NetEye itself. There are two types of |ne| health checks,
+      It is important to monitor the health of |ne| itself. There are two types of |ne| health checks,
       that are each applicable for a number of reasons:
+
       * The Light check is a sequence of very lightweight checks that tells you quickly whether important parts of NetEye are up and running.
       * Deep checks are intended for tasks like verifying the integrity and consistency of resources. They're typically used before an update or upgrade.
+
       |ne| Health Checks are implemented as shell commands that call a set of scripts in a particular order.
 
    |ne| Services
@@ -375,20 +378,20 @@ P
    :sorted:
 
    PCS-managed Services
-      In NetEye the high availability of some services is provided via PCS, while other services use their own clustering capabilities.
+      In |ne| the high availability of some services is provided via PCS, while other services use their own clustering capabilities.
       Thus, *pcs-managed services* refer to one or more services that are started/stopped by PCS, which moves the service between nodes
       for high availability.
 
    Preview Feature
       A **Preview Feature** is a new functionality that has been
-      developed and integrated into NetEye, but it is not yet in its
+      developed and integrated into |ne|, but it is not yet in its
       final form.  A *Preview Feature* can be used **AS IS**, but not
-      all functionalities are guaranteed to comply with the NetEye quality
+      all functionalities are guaranteed to comply with the |ne| quality
       standards. Feedback on Preview Features is always appreciated!
 
    Preview Software
       A **Preview Software** is a new |ne| module that has been
-      developed and integrated into NetEye, but it is not yet in its
+      developed and integrated into |ne|, but it is not yet in its
       final form.  A *Preview Software* can be used **AS IS**, but not
       all functionalities are guaranteed to be stable and you should
       expect significant changes in the future.  Feedback on Preview
@@ -413,7 +416,7 @@ R
       blocks of one :term:`Time Period`, for example `Time Period 24x5`
       can be defined as the union of `[TimeRange Monday 00:00-24:00,
       TimeRange Tuesday 00:00-24:00, TimeRange Wednesday 00:00-24:00,
-      TimeRange Thursady 00:00-24:00, TimeRange Friday 00:00-24:00]`
+      TimeRange Thursday 00:00-24:00, TimeRange Friday 00:00-24:00]`
 
       In the SLM API, Ranges are represented as a `ranges` object
       within a `time_period`.
@@ -438,7 +441,7 @@ R
 
    Resource Contract
       A **Resource Contract** is stipulated between an SLM customer and his service provider. The service
-      provider uses NetEye to monitor the consumption of the resources and to report them in either pdf or
+      provider uses |ne| to monitor the consumption of the resources and to report them in either pdf or
       html format to the SLM customer. Resources could be related to different monitoring objects, like
       CPU, RAM, Storage, or Network.
 
@@ -467,11 +470,12 @@ S
       A *Service Level Agreement* is a contractual commitment between a service provider and a client
       defining particular quantitative aspects of a service.  It may specify the details of various
       metrics, thresholds, etc. such as:
+
       * Quality
       * Availability
       * Responsibilities
 
-      In NetEye, particularly in the Service Level Management module, a single Service Level Agreement
+      In |ne|, particularly in the Service Level Management module, a single Service Level Agreement
       can be modeled as :ref:`an SLA contract <slm-create-sla-contract>`.
 
    Service Level Management
@@ -534,8 +538,8 @@ S
    Single Purpose Node
       A |neb| **Single Purpose Node** is a specialized Node in a
       |ne| Cluster. There are currently two types of Single Purpose
-      Nodes: Elastic-only nodes, which are also marked ad **(E)**, and
-      Voting-only nodes, which are also marked ad **(V)**. (E) are
+      Nodes: Elastic-only nodes, which are also marked as **(E)**, and
+      Voting-only nodes, which are also marked as **(V)**. (E) are
       nodes that host the DB component of the Elastic stack. On the
       other hand, (V) are used by a |ne| Cluster as quorum devices.
 
@@ -571,9 +575,9 @@ T
       a *Service template*.
 
    Tenant
-      NetEye can be used to monitor objects belonging to multiple entities in such a way that
+      |ne| can be used to monitor objects belonging to multiple entities in such a way that
       each entity can independently collect and analyze only their own data. In this context,
-      each entity is called a Tenant in NetEye.
+      each entity is called a Tenant in |ne|.
 
       Agents can be grouped into Tenants. With respect to this setup type,
       NATS Server provides support for a secure, TLS-based, multi-tenancy, that can be secured using
@@ -608,7 +612,7 @@ T
    Tornado Collector
       A service which collects External events, converts them into Tornado events
       and forwards them to the Tornado Engine.
-      Tornado :ref:`tornado-collectors-overview` run on the NetEye Master and on Satellites if there are any.
+      Tornado :ref:`tornado-collectors-overview` run on the |ne| Master and on Satellites if there are any.
       There are different types of Collectors to be used depending on the type of event to handle.
 
    Tornado Processing Tree
@@ -616,6 +620,7 @@ T
       One can modify Tornado configuration with the help of a Processing Tree.
       Tornado Engine receives and processes the events produced by the Collectors. The outcome of this
       step is fully defined by a Processing Tree, i.e. each Rule in a Ruleset determines:
+
       * The conditions a Tornado Event has to respect to match it
       * The actions to be executed in case of a match
 
@@ -640,7 +645,7 @@ V
    :sorted:
 
    Vulnerability
-      NetEye considers a security vulnerability to be a weakness in our product or infrastructure
+      |ne| considers a security vulnerability to be a weakness in our product or infrastructure
       that could allow an attacker to impact the confidentiality, integrity or availability
       of the product or infrastructure.
 

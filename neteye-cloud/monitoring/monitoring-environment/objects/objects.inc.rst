@@ -8,7 +8,7 @@ There are two main types of objects that monitoring works with:
 
 * **Hosts:** Physical or virtual devices that correspond to a "computer". They
   have a CPU, memory and storage (which can be measured), and run processes
-  launched by the user or the   system itself. Hosts can be "Up", "Down" or
+  launched by the user or the system itself. Hosts can be "Up", "Down" or
   *Unreachable*, depending on whether they're functioning or not. Examples include:
 
   * Computers (servers, laptops and tablets)
@@ -40,7 +40,7 @@ Modern host operating systems will typically include one or more services that
 are dedicated to monitoring, such as reporting CPU load, memory or storage
 capacity used, and network throughput. These are called
 `check commands <https://icinga.com/docs/icinga-2/latest/doc/10-icinga-template-library/#check-commands>`__,
-and they return the service state and other result values.  User-installed
+and they return the service state and other result values.  User-provided
 check commands called *plugins* can also be installed.
 
 We can check the status and performance of a service at any given moment by
@@ -49,7 +49,7 @@ looking at the check results using:
 * *Views*, which show the most recent return values
 * *Dashboards*, which show multiple views as panels in a larger screen
 * *Interactive Dashboards*, which continually store those check results
-  and let you compare them with previously recorded values.
+  and let you compare them with previously recorded values
 
 
 Host and Service Templates
@@ -149,7 +149,7 @@ request is answered, the host is reachable at that moment.
 But a host may not answer either because (1) it's down or (2) it's up but
 the network between the host and the monitor is not working.  It's not always
 easy to tell the difference. For instance, if other hosts on the same subnet
-are reachable, then the host likely is down.  If they aren't, it's more
+are reachable, then the host is likely down.  If they aren't, it's more
 likely a network problem.
 
 When a host is down, any services running on that host will also not be working.

@@ -1,3 +1,5 @@
+.. _host-and-service-details:
+
 Viewing Host and Service Details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

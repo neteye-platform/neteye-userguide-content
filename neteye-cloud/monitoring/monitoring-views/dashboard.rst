@@ -1,0 +1,2 @@
+
+.. include:: dashboard/dashboard.rst

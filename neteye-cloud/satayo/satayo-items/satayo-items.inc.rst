@@ -691,3 +691,22 @@ Bug Bounty
 The **Bug Bounty item** shows evidence of occurrences related to monitored domains found within
 the `Open Bug Bounty <https://www.openbugbounty.org/>`_ portal. The portal allows an organization
 to manage the Vulnerability Disclosure activity in a coordinated way with the researchers who discover it.
+
+
+.. _github_item:
+
+GitHub
+======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.003 Search Open Websites/Domains: Code Repositories <https://attack.mitre.org/techniques/T1593/003/>`__
+
+The **GitHub item** shows information deemed interesting obtained from GitHub repositories related to the
+monitored domain. It is possible that some files may contain confidential information.
+Items such as users, passwords, certificate keys, configuration files, and log files were searched.
+The link to the repository and the evidence found can be viewed in the list.

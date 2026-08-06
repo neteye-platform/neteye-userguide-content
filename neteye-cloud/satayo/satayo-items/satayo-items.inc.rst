@@ -673,3 +673,21 @@ The **Deep & Dark Web item** contains evidence retrieved by SATAYO from Deep & D
 such as leak forums, onion sites, illegal marketplaces, and social networks.
 The analysis is performed using several keywords related to the analyzed domain.
 For each item found, the link to the mention and a snippet of its content are provided.
+
+
+.. _bug_bounty_item:
+
+Bug Bounty
+==========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1595.002 Active Scanning: Vulnerability Scanning <https://attack.mitre.org/techniques/T1595/002/>`__
+
+The **Bug Bounty item** shows evidence of occurrences related to monitored domains found within
+the `Open Bug Bounty <https://www.openbugbounty.org/>`_ portal. The portal allows an organization
+to manage the Vulnerability Disclosure activity in a coordinated way with the researchers who discover it.

@@ -1,2 +1,2 @@
 
-.. include:: dashboard/dashboard.rst
+.. include:: dashboard/dashboard.inc.rst

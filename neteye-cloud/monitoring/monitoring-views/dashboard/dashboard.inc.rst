@@ -7,7 +7,7 @@ efficiency: instead of opening several monitoring views one by one, you can coll
 the most important views, summaries, and widgets in one place and arrange them
 according to your preferred workflow.
 
-For |NEC| users the Dashboard is typically pre-configured, so you can immediately start
+For |nec| users the Dashboard is typically pre-configured, so you can immediately start
 from a standard set of dashlets that provide commonly used monitoring information.
 
 .. figure:: /neteye-cloud/monitoring/img/dashboard.png

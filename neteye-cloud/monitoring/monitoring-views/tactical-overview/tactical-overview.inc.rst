@@ -2,7 +2,7 @@
 Tactical Overview
 ~~~~~~~~~~~~~~~~~
 
-The **Tactical Overview** is one of the monitoring views available in |NEC|.
+The **Tactical Overview** is one of the monitoring views available in |nec|.
 
 It is useful after you enter the monitoring area and need a quick operational summary
 before drilling down into specific hosts, services, or dashboards.

@@ -1,5 +1,5 @@
 
-Probelms View
+Problems View
 ~~~~~~~~~~~~~
 
 The Problems view helps you focus on the parts of your monitored environment that currently

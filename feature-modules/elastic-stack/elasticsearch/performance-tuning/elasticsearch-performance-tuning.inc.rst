@@ -92,7 +92,7 @@ steps allow to achieve this goal.
 
 Check if the amount of file descriptor suffices by using the command
 ``lsof -p <elastic-pid> | wc -l`` on each nodes. By default the setting
-on Neteye is 65,535.
+on |ne| is 65,535.
 
 To increase the default value this create a file in
 ``/etc/systemd/system/elasticsearch.service.d/neteye-open-file-limit.conf``
@@ -206,4 +206,4 @@ described on `our blog <https://www.neteye-blog.com/2025/06/elastic-integration-
 If you're using Elastic under the Enterprise licence, GB of RAM are the basis of licensing,
 and not the number of nodes. Hence, you should consider the `type of license <https://www.elastic.co/subscriptions>`__ you're using,
 and in case with Enterprise license make sure the memory is enough to be distributed properly
-between the nodes depending on your infrastructure.  
+between the nodes depending on your infrastructure.

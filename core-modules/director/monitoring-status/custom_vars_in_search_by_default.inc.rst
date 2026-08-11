@@ -5,8 +5,8 @@ Include Custom Variables in Search Results by Default
 
 By default, custom variables are not used for filtering monitoring search results.
 To change the default behavior and choose which custom variables to include
-automatically, you can use the dedicated panel in the Neteye module configuration
-section: simply write variable names (as displayed inside Hosts or Services) separated by commas, without any spaces.
+automatically, you can use the dedicated panel in the |ne| module configuration
+section: Simply write variable names (as displayed inside Hosts or Services) separated by commas, without any spaces.
 
 .. _figure-neteye-module-configuration:
 
@@ -15,13 +15,13 @@ section: simply write variable names (as displayed inside Hosts or Services) sep
 
    Specifying custom variables to include by default.
 
-You can do this by going to **Configuration > Modules > neteye > Configuration**
+You can do this by going to **Configuration > Modules > NetEye > Configuration**
 (:numref:`figure-neteye-module-configuration`) and scroll down to the
 "IcingaDB - Search Custom Vars" section. Here you can insert the names
 of the custom variables you want to extend the search results with by default,
 for both hosts and services.
 
-The variables are saved in the Neteye module config.ini file, and now when you
+The variables are saved in the |ne| module *config.ini* file, and now when you
 launch a search in the monitoring hosts or services list you'll see that the
 filter is automatically updated and search results are linked to
 the custom variables you've chosen.

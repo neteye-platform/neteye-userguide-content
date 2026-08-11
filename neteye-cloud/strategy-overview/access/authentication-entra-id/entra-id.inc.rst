@@ -4,23 +4,23 @@
 Authentication via Microsoft Entra ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The NetEye.Cloud solution uses **Entra ID** as one of the identity providers for user authentication.
+The |nec| solution uses **Entra ID** as one of the identity providers for user authentication.
 
 To enable login using Microsoft Entra ID, you must create a **dedicated App Registration**
 within your Azure subscription.
 
-This App Registration is used by the NetEye.Cloud solution to authenticate users and retrieve
+This App Registration is used by the |nec| solution to authenticate users and retrieve
 identity information during the login process.
 As part of the configuration, you must define specific **Optional Claims** in the access or ID token
-issued by Entra ID. These claims allow the NetEye.Cloud solution to obtain relevant details
+issued by Entra ID. These claims allow the |nec| solution to obtain relevant details
 about the account that is logging in (such as user identity attributes required for access and authorization).
 
-The sections below describe how to configure Entra ID for use with NetEye.Cloud, including how to
+The sections below describe how to configure Entra ID for use with |nec|, including how to
 add Group Claims to the authentication token.
 
 .. note::
    Including Group Claims is recommended for customers who want full control over authorization management
-   without operational dependency on the NetEye.Cloud team. For a general explanation of what Group Claims
+   without operational dependency on the |nec| team. For a general explanation of what Group Claims
    are and how they affect authorization management, see :ref:`group-claims-for-authorization`.
 
 
@@ -29,11 +29,11 @@ Configure EntraID on Azure
 
 It is required to create a dedicated **Azure App Registration** within your own Azure subscription.
 
-The purpose of this App Registration is to allow the NetEye.Cloud solution to trust Microsoft Entra ID as
+The purpose of this App Registration is to allow the |nec| solution to trust Microsoft Entra ID as
 an identity provider and to retrieve the necessary identity information during user authentication.
 Below you will find all required steps to follow.
 
-.. note:: Make sure NetEye.Cloud Team provided you with the NetEye Cloud Redirect URI.
+.. note:: Make sure the |nec| Team provided you with the NetEye Cloud Redirect URI.
    If not, you should request it.
 
 
@@ -55,28 +55,28 @@ Create a dedicated App Registration
    b. Select the most appropriate Account Type that is allowed to logon (if you are unsure,
       use `Account in this organizational directory only` as is the most restrictive).
    c. As Redirect URI, select `Web` as Platform Type and insert the Redirect URI provided
-      by NetEye Cloud Team.
+      by the |nec| Team.
    d. Then, click on `Register` to save the new App registration
 
       .. figure:: /neteye-cloud/strategy-overview/img/new-app-registered.png
 
-#. From the App Registration Overview, copy the Application (client) ID and provide it to Neteye Cloud Team.
+#. From the App Registration Overview, copy the Application (client) ID and provide it to the |nec| Team.
 #. Open the list of Endpoints by clicking on `Endpoint`
 
    .. figure:: /neteye-cloud/strategy-overview/img/endpoints.png
 
-#. From the list of Endpoints, take note of the `OpenID Connect metadata document` URLs and provide it to NetEye Cloud Team.
+#. From the list of Endpoints, take note of the `OpenID Connect metadata document` URLs and provide it to the |nec| Team.
 
 
 Add Claims to EntraID Token
 +++++++++++++++++++++++++++
 
 .. warning:: Optional Claims are used to map a User-friendly Attribute as the Account’s Username
-   on NetEye.Cloud. You need to map your Email to allow Login via Email.
+   on |nec|. You need to map your Email to allow Login via Email.
 
-.. note:: Groups Claim is used to fully delegate Authorization to EntraID: by doing this,
-   you can decide on your own the Access Level each Person has when logging into NetEye.Cloud
-   by changing Group Membership on its own Identity Service. If not configured, Authorization and
+.. note:: A Groups Claim is used to fully delegate Authorization to EntraID: By doing this,
+   you can decide on your own the Access Level each Person has when logging into |nec|
+   by changing Group Membership in your own Identity Service. If not configured, Authorization and
    Access Level will be managed by |witit| on your behalf.
    In this case, changes must be requested using a Jira Ticket.
 
@@ -102,8 +102,8 @@ Add Optional Groups Claim
 +++++++++++++++++++++++++
 
 .. note:: You should only consider this step in case you prefer to manage Authorization
-   on NetEye.Cloud on your own. By enabling this option, all membership of the Authenticated Account
-   are forwarded to NetEye.Cloud.
+   on |nec| on your own. By enabling this option, all membership of the Authenticated Account
+   are forwarded to |nec|.
 
 #. Click on `Add groups claim`
 
@@ -120,7 +120,7 @@ Generate Credential
 +++++++++++++++++++
 
 .. warning:: The generated Credential has a Life Span. Make sure to take note of it because,
-   when it expires, you will not be able to Login into NetEye.Cloud using your EntraID anymore.
+   when it expires, you will not be able to Login into |nec| using your EntraID anymore.
 
 .. note:: Secret's Attributes are visible only immediately after creation.
    If you go to another page, you will not be able to see them anymore, so take note of them
@@ -139,18 +139,18 @@ Generate Credential
 #. Move to `Client secrets` tab and create a `New Client Secret` by clinking on a corresponding button.
 #. Provide a description useful for remembering in the future (suggested: NetEye Cloud OiDC Credential)
    and a suitable expiration date, then click on `Add` to store it.
-#. Right after the Secret is created, copy Secret’s Value and provide it to NetEye.Cloud Team;
+#. Right after the Secret is created, copy Secret’s Value and provide it to the |nec| Team;
    **Important!** You will not be able to access it in the future, so take note immediately.
 
 
 Final Information Review
 ++++++++++++++++++++++++
 
-Once the App Registration is created and configured, you must provide the NetEye.Cloud
+Once the App Registration is created and configured, you must provide the |nec|
 Team with the required parameters so that the identity provider can be properly configured
-in the NetEye.Cloud’s **Keycloak** instance.
+in the |nec|’s **Keycloak** instance.
 
-At the end of this procedure, you have 4 different data that need to be provided to NetEye.Cloud Team:
+At the end of this procedure, you have 4 different data that need to be provided to the |nec| Team:
 
  - Application (client) ID
  - OpenID Connect metadata document

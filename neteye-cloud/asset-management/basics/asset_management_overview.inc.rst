@@ -1,10 +1,10 @@
 
 .. _asset-management-on-cloud:
 
-Asset Management in Neteye.Cloud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Asset Management in |nec|
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assets & IT Service Management is a functional module of the NetEye.Cloud platform.
+Assets & IT Service Management is a functional module of the |nec| platform.
 
 It provides a centralized view of IT assets as part of an infrastructure observability approach.
 This allows you to maintain visibility over your organizations' infrastructure components, understand
@@ -25,7 +25,7 @@ GLPI provides capabilities for:
 - Centralized IT asset organization
 - IT service and user support processes
 
-As a cloud-delivered service, GLPI is accessed through the Neteye.Cloud platform and does not require local installation
+As a cloud-delivered service, GLPI is accessed through the |nec| platform and does not require local installation
 or system maintenance by the customer.
 
 Asset Inventory
@@ -73,7 +73,7 @@ to reach the Satellite endpoint from their network environments.
 Cloud Deployment Characteristics
 ````````````````````````````````
 
-When delivered through NetEye.Cloud, Asset Management operates as a fully managed service.
+When delivered through |nec|, Asset Management operates as a fully managed service.
 The underlying GLPI platform, including infrastructure, updates, and maintenance activities,
 is handled at the service level.
 

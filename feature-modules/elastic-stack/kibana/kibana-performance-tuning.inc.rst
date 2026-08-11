@@ -1,7 +1,7 @@
 Kibana Performance
 ~~~~~~~~~~~~~~~~~~
 
-There is a number of interesting tuning options that could be applied on Kibana
+There are a number of interesting tuning options that could be applied on Kibana
 settings to improve performance on production.
 
 For more information, see the `official
@@ -17,7 +17,7 @@ that you *enable Kibana’s strict mode* for content security policy,
 which will block access to Kibana for any browser that does not enforce
 even a rudimentary set of CSP protections.
 
-To do this, set ``csp.strict`` to **true** in file
+To do this, set ``csp.strict`` to **true** in the file
 ``/neteye/shared/kibana/conf/kibana.yml``.
 
 .. rubric:: Memory
@@ -28,7 +28,7 @@ in some scenarios, such as large reporting jobs, it may make sense to
 tweak limits to meet more specific requirements.
 
 You can modify this limit by setting ``--max-old-space-size`` in the
-``NODE_OPTIONS`` environment variable. In Neteye this can be configured
+``NODE_OPTIONS`` environment variable. In |ne| this can be configured
 creating a file
 ``/etc/systemd/system/kibana-logmanager.service.d/memory.conf``
 containing a limit in MB such as::

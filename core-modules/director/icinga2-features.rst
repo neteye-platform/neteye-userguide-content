@@ -8,8 +8,8 @@ As a special feature that will only be pre-configured, but not automatically ena
 we have the `neteye_datastreamwriter`.
 
 
-Neteye DatastreamWriter
-+++++++++++++++++++++++
+|ne| DatastreamWriter
++++++++++++++++++++++
 
 The `neteye_datastreamwriter` feature comes pre-configured with the `elastic-stack` module. It is
 an alternative data sink for the `influxdb` writer that sends all the data to Elasticsearch. The

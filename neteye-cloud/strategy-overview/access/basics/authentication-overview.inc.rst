@@ -19,10 +19,16 @@ In practice, this means:
 * **NetEye.Cloud** accepts the confirmation and lets you in — or
   denies access if verification fails.
 
-NetEye.Cloud never stores or manages your password directly. Instead,
-it delegates the verification step to an external **Identity Provider
-(IdP)** — a dedicated service that your organization already uses to
-manage user accounts and credentials (for example, Microsoft Entra ID).
+In most cases, NetEye.Cloud delegates the verification step to an
+external **Identity Provider (IdP)** — a dedicated service that your
+organization uses to manage user accounts and credentials (for example,
+Microsoft Entra ID). In this scenario, NetEye.Cloud never sees or stores
+your password.
+
+If your organization does not operate a supported Identity Provider,
+authentication is handled through a local NetEye.Cloud account managed
+by the NetEye.Cloud team. In this case, your credentials are stored
+within the platform's built-in identity service.
 
 .. note::
 

@@ -9,7 +9,7 @@ detailed investigation of active problems affecting hosts, services, or planned 
 In the Problems view, you can work with several sections: Host problems, Service problems,
 Service grid, and information about current downtimes. Depending on the section you open,
 you can see the hosts and services that are not in a healthy state, check which issues
-are already known or planned, and decide what needs your immediate action.
+are already known or planned, and decide what needs immediate action.
 
 The host and service problem lists give you a focused view of affected objects.
 You can filter these lists by details such as name, severity, current state, and
@@ -18,8 +18,8 @@ a clearer picture of what is happening in your environment, for example by showi
 critical issues, recently changed states, or a specific host or service name.
 
 The Service grid gives you a matrix-style overview of service health across affected hosts.
-It includes all hosts that have at least one faulted service and all services that run on
-a host with at least one faulted service. The result is a color-coded table that lets you
+It includes all hosts with at least one service that's not working and all services that run on
+a host with at least one service that's not working. The result is a color-coded table that lets you
 quickly compare the status of hosts and services and identify where problems are concentrated.
 
 .. figure:: /neteye-cloud/monitoring/img/service-grid.png

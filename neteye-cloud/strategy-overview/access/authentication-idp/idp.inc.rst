@@ -21,7 +21,7 @@ The authentication itself takes place entirely within your Identity
 Provider environment. Once authentication is successfully completed, the IdP
 issues a token that is validated by the NetEye.Cloud platform.
 
-.. figure:: /neteye-cloud/strategy-overview/img/authenticationFlow.png
+.. figure:: /neteye-cloud/strategy-overview/img/authenticationFlow.jpg
 
    Flow of authentication request messages given an external IdP
 

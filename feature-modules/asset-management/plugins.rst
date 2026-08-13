@@ -16,19 +16,9 @@ mounted into the container via a volume:
 
 Here is the list of the bundled plugins:
 
-* addressing
-* advanceddashboard
-* agentconfig
-* branding
 * cloudinventory
-* collaborativetools
 * datainjection
-* escalade
 * fields
-* localeoverride
-* scim
-* treeview
-* uninstall
 
 Installing Plugins
 ------------------

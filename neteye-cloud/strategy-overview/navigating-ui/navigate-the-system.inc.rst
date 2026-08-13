@@ -62,7 +62,7 @@ information.
 
 .. figure:: /neteye-cloud/strategy-overview/img/host-problem-details.png
 
-   Detailed view of a Host with a Problem detected
+   Detailed view of a host with a problem detected
 
 
 

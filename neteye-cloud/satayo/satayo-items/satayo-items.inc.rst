@@ -710,3 +710,23 @@ The **GitHub item** shows information deemed interesting obtained from GitHub re
 monitored domain. It is possible that some files may contain confidential information.
 Items such as users, passwords, certificate keys, configuration files, and log files were searched.
 The link to the repository and the evidence found can be viewed in the list.
+
+
+.. _published_file_item:
+
+Published File
+===============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1594 Search Victim-Owned Websites <https://attack.mitre.org/techniques/T1594/>`__
+
+The **Published File item** shows files found on the analyzed domain with an extension deemed interesting.
+For each file found, SATAYO provides information such as the title, author, creation date, and size.
+
+It is recommended to check the contents of these files and remove them from the Internet if they contain
+confidential information. The link to the file is provided so that it can be verified.

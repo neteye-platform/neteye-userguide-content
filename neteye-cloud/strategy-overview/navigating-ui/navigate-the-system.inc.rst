@@ -21,6 +21,10 @@ The dashboard gives you a high-level overview of the monitored
 environment and helps you understand whether everything is operating
 normally or whether something requires your attention.
 
+.. figure:: /neteye-cloud/strategy-overview/img/dashboard.png
+
+   Current Incidents view of the Dashboard
+
 From the dashboard, you can typically answer questions such as:
 
 * Is the monitored environment currently healthy?
@@ -46,11 +50,21 @@ problems are active right now, which hosts, services, or monitored
 objects are affected, the severity and the time of occurrence
 of the problem.
 
+.. figure:: /neteye-cloud/strategy-overview/img/problems.png
+
+   Host Problems view
+
 After identifying a relevant problem, open its details to review the
 available context. Depending on the information shown in your NetEye.Cloud environment,
 the details may help you understand the affected
 object, the current status, related checks, and recent monitoring
 information.
+
+.. figure:: /neteye-cloud/strategy-overview/img/host-problem-details.png
+
+   Detailed view of a host with a problem detected
+
+
 
 Review Alerts and recent Events
 +++++++++++++++++++++++++++++++
@@ -77,7 +91,7 @@ Open details for a Monitored Object
 +++++++++++++++++++++++++++++++++++
 
 When you need more information about a specific host, service, or
-monitored component, open the related detail page. Detail pages help you
+monitored component, open the related :ref:`details <host-and-service-details>` page. Detail pages help you
 move from a general overview to the information available for a specific
 object.
 
@@ -100,6 +114,10 @@ When a view contains many entries, use the available search and filter
 options to focus on the information that is relevant to your task.
 Filters help you reduce noise and quickly find the hosts, services,
 alerts, or problems you want to review.
+
+.. figure:: /neteye-cloud/strategy-overview/img/filter-hosts.png
+
+   Tune your filter to find and view the exact problems
 
 Depending on the view, you may be able to filter by information such as:
 
@@ -136,25 +154,25 @@ to understand the current state of your monitored environment.
 
 #. Open the dashboard to check the overall status of the monitored environment.
 
-Start each monitoring session from the dashboard. Use it as the first checkpoint
-to understand whether the monitored environment is healthy or whether any area
-requires attention.
+   Start each monitoring session from the dashboard. Use it as the first checkpoint
+   to understand whether the monitored environment is healthy or whether any area
+   requires attention.
 
 #. If something requires attention, open the Problems view to identify active issues.
 
-Here you can focus on the entries that are currently active and relevant for your services.
-Check the affected host, service, severity, and start time to understand the operational
-impact. When a problem requires more context, open the related details and review
-the available monitoring information for the affected object.
+   Here you can focus on the entries that are currently active and relevant for your services.
+   Check the affected host, service, severity, and start time to understand the operational
+   impact. When a problem requires more context, open the related details and review
+   the available monitoring information for the affected object.
 
 #. Review related alerts to understand recent events and notifications.
 
-After reviewing the active problem, use the Alerts view to understand
-recent events and notifications related to the same object or service.
-Alerts can help you reconstruct what changed, when it happened, and whether
-the event is still relevant. If the view contains many entries, apply
-filters or search criteria to focus on the affected service, host, severity,
-or time range.
+   After reviewing the active problem, use the Alerts view to understand
+   recent events and notifications related to the same object or service.
+   Alerts can help you reconstruct what changed, when it happened, and whether
+   the event is still relevant. If the view contains many entries, apply
+   filters or search criteria to focus on the affected service, host, severity,
+   or time range.
 
 #. Open the affected host, service, or monitored object to review the available details.
 #. Use filters or search to narrow the information when a view contains many entries.

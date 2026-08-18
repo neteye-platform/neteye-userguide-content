@@ -9,5 +9,6 @@ Cyber Threat Intelligence - SATAYO
    satayo/threat-intelligence-lifecycle.rst
    satayo/how-it-works.rst
    satayo/mitre-attack.rst
+   satayo/dashboard.rst
    satayo/satayo-items.rst
    satayo/managed-service.rst

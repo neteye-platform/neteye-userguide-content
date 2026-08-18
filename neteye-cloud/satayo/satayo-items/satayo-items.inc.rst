@@ -101,7 +101,7 @@ with the corresponding finding’s preview panel automatically displayed.
 .. _domain_item:
 
 Domain
-------
+======
 
 .. admonition:: MITRE ATT&CK Techniques
 
@@ -606,6 +606,60 @@ For each paste found, SATAYO provides information about:
 - The link to the specific paste.
 - The date on which the paste was published.
 - Which email addresses are present in that paste.
+
+
+.. _social_media_item:
+
+Social Media
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.001 Search Open Websites/Domains: Social Media <https://attack.mitre.org/techniques/T1593/001/>`__
+   - `T1589.003 Gather Victim Identity Information: Employee Names <https://attack.mitre.org/techniques/T1589/003/>`__
+   - `T1591 Gather Victim Org Information <https://attack.mitre.org/techniques/T1591/>`__
+
+   Resource Development
+
+   - `T1585.001 Establish Accounts: Social Media Accounts <https://attack.mitre.org/techniques/T1585/001/>`__
+   - `T1586.001 Compromise Accounts: Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
+
+   Initial Access
+
+   - `T1566.003 Phishing: Spearphishing via Service <https://attack.mitre.org/techniques/T1566/003/>`__
+
+The **Social Media item** represents an account on a social network or another online platform
+that uses the name, domain, or identity of the monitored organization. Such an account may
+legitimately represent the organization, or it may have been created by a third party to
+simulate its identity, with the goal of establishing trust relationships with victims and
+preparing social engineering or phishing activities.
+
+Each finding corresponds to a single account profile and is identified by its **URL**, which
+links to the profile on the external platform so that it can be reviewed directly.
+
+For each account found, SATAYO provides information about:
+
+- **Time**: the date on which the account was detected.
+- **Name**: the platform hosting the account, such as a social network, a code-sharing site, or another online service.
+- **Category**: the type of platform on which the account was detected, for example coding, business, or social networking.
+- **Url**: the address of the account profile on the external platform.
+- **Full name**: the display name shown on the profile.
+- **Username**: the account handle used on the platform.
+- **Biography**: the profile description published on the account.
+- **External URL**: an additional address referenced from the profile, such as a personal or corporate website.
+- **Business Account**: whether the platform marks the account as a business profile.
+- **Business Category**: the business classification declared on the profile, when the account is a business profile.
+
+Platforms expose different sets of attributes, therefore some of these fields may be empty
+for a given account.
+
+It is recommended to review each detected account and verify whether it is genuinely operated
+by your organization. Accounts that impersonate the organization should be reported to the
+hosting platform so that they can be taken down.
 
 
 .. _sandboxes_item:

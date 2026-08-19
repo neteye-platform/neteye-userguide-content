@@ -619,18 +619,11 @@ Social Media
 
    Reconnaissance
 
-   - `T1593.001 Search Open Websites/Domains: Social Media <https://attack.mitre.org/techniques/T1593/001/>`__
-   - `T1589.003 Gather Victim Identity Information: Employee Names <https://attack.mitre.org/techniques/T1589/003/>`__
-   - `T1591 Gather Victim Org Information <https://attack.mitre.org/techniques/T1591/>`__
+   - `T1593.001 Social Media <https://attack.mitre.org/techniques/T1593/001/>`__
 
    Resource Development
 
-   - `T1585.001 Establish Accounts: Social Media Accounts <https://attack.mitre.org/techniques/T1585/001/>`__
-   - `T1586.001 Compromise Accounts: Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
-
-   Initial Access
-
-   - `T1566.003 Phishing: Spearphishing via Service <https://attack.mitre.org/techniques/T1566/003/>`__
+   - `T1586.001 Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
 
 The **Social Media item** represents an account on a social network or another online platform
 that uses the name, domain, or identity of the monitored organization. Such an account may
@@ -656,11 +649,6 @@ For each account found, SATAYO provides information about:
 
 Platforms expose different sets of attributes, therefore some of these fields may be empty
 for a given account.
-
-It is recommended to review each detected account and verify whether it is genuinely operated
-by your organization. Accounts that impersonate the organization should be reported to the
-hosting platform so that they can be taken down.
-
 
 .. _sandboxes_item:
 

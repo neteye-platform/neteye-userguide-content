@@ -499,7 +499,7 @@ It is recommended to verify the authenticity of any account found in this sectio
 .. _account_password_item:
 
 Account password
-----------------
+================
 
 If credentials for an :ref:`account <account_item>` are found in a :ref:`stealer log <stealer_logs_item>` or
 data breach, SATAYO provides information about them in the account password finding. If the

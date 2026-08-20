@@ -772,3 +772,29 @@ For each file found, SATAYO provides information such as the title, author, crea
 
 It is recommended to check the contents of these files and remove them from the Internet if they contain
 confidential information. The link to the file is provided so that it can be verified.
+
+
+.. _storage_item:
+
+Storage
+=======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.003 Search Open Websites/Domains: Code Repositories <https://attack.mitre.org/techniques/T1593/003/>`__
+
+The **Storage item** represents a publicly exposed storage resource belonging to the organization, such as an Amazon S3, Google Cloud Storage, or Azure Blob Storage.
+When a storage resource is found to be publicly accessible, its internal content is listed.
+
+For each storage resource found, SATAYO provides information about:
+
+- The URL of the storage resource.
+- The type of storage resource (e.g. S3 bucket).
+- The number of files it contains.
+
+Storage findings represent publicly exposed storage resources that may contain leaked files or sensitive data.
+They expand the investigation surface for company-related data leak exposure.

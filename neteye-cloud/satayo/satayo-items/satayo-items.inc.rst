@@ -786,6 +786,11 @@ Storage
    Reconnaissance
 
    - `T1593.003 Search Open Websites/Domains: Code Repositories <https://attack.mitre.org/techniques/T1593/003/>`__
+   - `T1596 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+   Discovery
+
+   - `T1619 Cloud Storage Object Discovery <https://attack.mitre.org/techniques/T1619/>`__
 
 The **Storage item** represents a publicly exposed storage resource belonging to the organization, such as an Amazon S3, Google Cloud Storage, or Azure Blob Storage.
 When a storage resource is found to be publicly accessible, its internal content is listed.

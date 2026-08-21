@@ -772,3 +772,33 @@ For each file found, SATAYO provides information such as the title, author, crea
 
 It is recommended to check the contents of these files and remove them from the Internet if they contain
 confidential information. The link to the file is provided so that it can be verified.
+
+
+.. _phone_number_item:
+
+Phone Number
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1594 Search Victim-Owned Websites <https://attack.mitre.org/techniques/T1594/>`__
+
+The **Phone Number item** shows every phone number published within the institutional website
+of the analyzed domain. It is suggested not to publish direct telephone numbers of personnel
+working within the organization, as they could favor the activity of a social engineer.
+
+For each phone number found, SATAYO provides information such as:
+
+- **Prefix**: the country calling code associated with the phone number, along with the country name.
+- **Phone**: the phone number as published on the website.
+- **Name**: the name of the person or office associated with the phone number, when available.
+- **Subtitle**: additional context about the role or department associated with the phone number, when available.
+- **Location**: the address associated with the phone number, when available.
+- **Source**: the link to the page on which the phone number was found.
+
+Some of these fields may be empty, depending on the information published on the source page.
+

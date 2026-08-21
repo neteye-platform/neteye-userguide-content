@@ -793,7 +793,7 @@ working within the organization, as they could favor the activity of a social en
 
 For each phone number found, SATAYO provides information such as:
 
-- **Prefix**: the country calling code associated with the phone number, along with the country name.
+- **Prefix**: the country code associated with the phone number, along with the country name.
 - **Phone**: the phone number as published on the website.
 - **Name**: the name of the person or office associated with the phone number, when available.
 - **Subtitle**: additional context about the role or department associated with the phone number, when available.

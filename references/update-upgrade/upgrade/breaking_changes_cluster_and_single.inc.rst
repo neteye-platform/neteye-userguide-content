@@ -13,3 +13,13 @@ the directory ``/neteye/shared/glpi/data/marketplace``.
 
 From |ne| 4.50, you can add a plugin to GLPI by placing the plugin files in the
 folder ``/neteye/shared/glpi/data/marketplace`` on the host system.
+
+Icinga2 Upgrade to v2.16
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+|ne| 4.50 upgrades Icinga 2 from version 2.15 to 2.16.
+
+Please review the official upstream `upgrade guide <https://icinga.com/docs/icinga-2/latest/doc/16-upgrading-icinga-2/>`_.
+
+To address the deprecations regarding ``ElasticsearchWriter``, ``Elasticsearch Datastream Writer``
+and ``FilterExpression`` permission, please refer to the :ref:`upgrade-additional-steps-cluster` section.

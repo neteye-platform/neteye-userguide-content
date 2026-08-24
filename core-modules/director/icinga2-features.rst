@@ -5,16 +5,49 @@ Icinga comes with a list of pre-configured modules to get started. These include
 for Icinga to function, like the `api`, `checker`, `mainlog` and `notification`. Furthermore we
 also ship some activated features, in specific the `livestatus`, `influxdb` and `icingadb`.
 As a special feature that will only be pre-configured, but not automatically enabled,
-we have the `neteye_datastreamwriter`.
+we have the `neteye_otlpmetricswriter`.
+
+
+.. _icinga2-features-otlpmetricswriter:
+
+|ne| OTLPMetrics Writer
+++++++++++++++++++++++++
+
+The `neteye_otlpmetricswriter` feature comes pre-configured with the `elastic-stack` module and
+provides the recommended way to send Icinga 2 performance data to Elasticsearch through the
+NetEye OpenTelemetry pipeline.
+
+This feature configures the upstream `OTLP Metrics Writer <https://icinga.com/docs/icinga-2/snapshot/doc/14-features/#otlpmetrics-writer>`_
+so that metric payloads are forwarded to the NetEye :ref:`cross-tenant-otel-collector` and then
+stored in Elasticsearch datastreams.
+
+Once activated, the writer publishes check performance data to datastreams named in the format
+``metrics-generic.otel-<neteye_tenant>``. These datastreams use the component template
+``metrics-otel@custom``, which allows additional optimizations such as lifecycle management.
+
+To enable the feature run the following commands on the node that owns icinga2-master:
+
+.. code:: shell
+
+  master# icinga2-master feature enable neteye_otlpmetricswriter
+  master# systemctl restart icinga2-master
+
+.. note::
+  You might want to disable the influxdb feature if you have enabled the `neteye_datastreamwriter` feature,
+  as you are having the performance data duplicated otherwise, wasting disk space.
 
 
 |ne| DatastreamWriter
 +++++++++++++++++++++
 
-The `neteye_datastreamwriter` feature comes pre-configured with the `elastic-stack` module. It is
-an alternative data sink for the `influxdb` writer that sends all the data to Elasticsearch. The
-pre-configured feature ships the permissions for Elasticsearch and configures the writer with the
-appropriate credentials in the form of client certificates.
+.. warning::
+  The `neteye_datastreamwriter` feature is deprecated and will be removed in a future release.
+  Use :ref:`icinga2-features-otlpmetricswriter` instead.
+
+The `neteye_datastreamwriter` feature comes pre-configured with the `elastic-stack` module and was
+used as an alternative data sink for the `influxdb` writer to send metric data to Elasticsearch.
+The feature ships the required Elasticsearch permissions and configures the writer with the
+appropriate client certificate credentials.
 
 Once activated, the feature will write the performance data of all checks out to Elasticsearch
 Datastreams. Each Datastream has a name in the format `metrics-icinga2.<check>-<neteye_tenant>`

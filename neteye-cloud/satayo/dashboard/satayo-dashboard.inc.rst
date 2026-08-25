@@ -131,4 +131,3 @@ In this case, the panel shows an empty state instead of ticket data.
    Tickets panel to understand which of those findings are already acknowledged,
    prioritized, assigned, reviewed, or resolved. Together, the two panels help
    you move from detection to remediation without losing the original evidence.
-

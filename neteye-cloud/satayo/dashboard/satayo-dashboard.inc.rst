@@ -32,7 +32,7 @@ The Dashboard is composed of **panels**. Each panel summarizes one aspect of
 the monitored perimeter and gives you a starting point for further investigation.
 
 Exposure Assessment Index Value (EAIV)
---------------------------------------
+``````````````````````````````````````
 
 The **Exposure Assessment Index Value (EAIV)** panel shows the external exposure
 level of the selected organization based on the most recent scan results. The value
@@ -51,7 +51,7 @@ A larger organization with more domains, services, and publicly accessible
 infrastructure can naturally have a higher value because its external presence is broader.
 
 New Findings
-------------
+````````````
 
 The **Findings** panel summarizes findings detected during recent scan activities.
 Use it as the main entry point for understanding what changed in the monitored
@@ -75,7 +75,7 @@ findings are already part of the remediation workflow.
    and the full investigation context.
 
 Tickets
--------
+```````
 
 The **Tickets** panel summarizes tickets created for findings in the selected period.
 Use it to monitor operational workload, understand which findings are already being handled,

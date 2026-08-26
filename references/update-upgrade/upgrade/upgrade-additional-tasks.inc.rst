@@ -1,7 +1,7 @@
-Icinga2 v2.16 migration tasks
-=============================
+Icinga 2 v2.16 migration tasks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section explains how to migrate Icinga2 features ``ElasticsearchWriter`` and ``ElasticsearchDatastreamWriter`` that have been deprecated in v2.16 and
+This section explains how to migrate Icinga 2 features ``ElasticsearchWriter`` and ``ElasticsearchDatastreamWriter`` that have been deprecated in v2.16 and
 will be removed in future releases. Moreover, it explains how to migrate to the new ``FilterExpression`` permission
 that will also be enforced in future releases.
 
@@ -10,7 +10,7 @@ NetEye versions.
 
 
 FilterExpression Permission
----------------------------
+```````````````````````````
 
 Icinga 2 v2.16 introduces the ``FilterExpression`` permission, which controls whether an
 ``ApiUser`` is allowed to use DSL filter expressions in API requests. This permission is
@@ -33,7 +33,7 @@ For more information you can refer to the `official Icinga 2 documentation <http
 
 
 Deprecation of ElasticsearchWriter and Elasticsearch Datastream Writer
-----------------------------------------------------------------------
+``````````````````````````````````````````````````````````````````````
 
 Starting with Icinga 2 v2.16, the legacy ``ElasticsearchWriter`` and
 ``ElasticsearchDatastreamWriter`` Icinga2 features are deprecated and will be removed in a

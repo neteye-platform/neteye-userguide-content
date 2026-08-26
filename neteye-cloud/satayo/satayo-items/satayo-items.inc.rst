@@ -832,3 +832,65 @@ For each storage resource found, SATAYO provides information about:
 
 Storage findings represent publicly exposed storage resources that may contain leaked files or sensitive data.
 They expand the investigation surface for company-related data leak exposure.
+
+
+.. _credit_card_item:
+
+Credit Card
+===========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589 Gather Victim Identity Information <https://attack.mitre.org/techniques/T1589/>`__
+   - `T1597 Search Closed Sources <https://attack.mitre.org/techniques/T1597/>`__
+
+   Impact
+
+   - `T1657 Financial Theft <https://attack.mitre.org/techniques/T1657/>`__
+
+The **Credit Card item** represents a credit card issued by the monitored organization and offered for sale
+within an underground marketplace. Cards are stolen through a multitude of techniques, including phishing
+campaigns, data breaches, sniffing on public Wi-Fi networks, and physical cloning at ATMs.
+
+Each finding corresponds to a single card published by a seller, and it is identified by the marketplace on
+which it was detected together with the identifier assigned to the listing.
+
+.. note::
+
+   This finding is available only to credit institutions that issue credit cards.
+
+For each card detected, SATAYO provides information about:
+
+- **Inserted**: the date on which the card was detected within the marketplace.
+- **Source**: the marketplace on which the card is offered for sale.
+- **Source ID**: the identifier assigned to the listing by the marketplace.
+- **Bank**: the name of the institution that issued the card, as declared by the seller.
+- **Hidden CC**: the partial card number published by the seller. Marketplaces usually mask most of the digits and expose only the initial part, which identifies the issuing circuit and the institution.
+- **Card Type**: the type of card declared within the listing.
+- **Expiration Date**: the expiration date of the card. Cards that are still valid represent a more urgent risk, as they can be used for fraudulent transactions.
+- **CVR**: the validity rate declared for the card, expressed as a percentage. Sellers use this value to indicate how likely the card is to be still usable.
+- **Reviews**: the feedback published within the marketplace about the listing or the seller.
+- **Country**, **State**, **City** and **ZIP**: the geographic information associated with the card.
+- **Seller DB**: the name of the archive the seller attributes the card to. The same archive is often used to sell several cards originating from the same compromise.
+- **Seller Tag**: the nickname used by the seller within the marketplace.
+- **Seller Rate**: the reputation score of the seller within the marketplace.
+- **Price**: the price at which the card is offered for sale.
+
+The following flags indicate which additional data is offered for sale together with the card, without
+disclosing its content:
+
+- **CVV**: whether the card verification value is included.
+- **Holder Name**: whether the name of the cardholder is included.
+- **Date of birth**: whether the cardholder's date of birth is included.
+- **SSN**: whether the social security number of the cardholder is included.
+- **EMail**: whether the email address of the cardholder is included.
+- **Phone**: whether the phone number of the cardholder is included.
+- **Address**: whether the address of the cardholder is included.
+
+More data associated with the card increases the risk of fraud, identity theft, and social engineering
+attacks against the cardholder. It is recommended to block or reissue the cards detected in this section
+and to inform the cardholder of the exposure.

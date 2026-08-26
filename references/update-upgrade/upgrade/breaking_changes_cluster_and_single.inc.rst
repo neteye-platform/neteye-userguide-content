@@ -1,3 +1,12 @@
+Keycloak Breaking Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|ne| 4.49 updates Keycloak from version 26.6.2 to 26.7.2, which introduces some breaking
+changes. Please review the
+`Keycloak Upgrading Guide - Migration Changes <https://www.keycloak.org/docs/latest/upgrading/#migration-changes>`_
+before upgrading.
+
+
 GLPI Bundled Plugins
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -15,8 +24,8 @@ From |ne| 4.50, you can add a plugin to GLPI by placing the plugin files in the
 folder ``/neteye/shared/glpi/data/marketplace`` on the host system.
 
 
-Elastic Stack upgrade to version 9.5.2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Elastic Stack Upgrade to v9.5.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In |ne| 4.50, Elastic Stack upgrades from version 9.4.5 to 9.5.2. To ensure compatibility, review the official breaking changes linked below:
 
@@ -25,3 +34,14 @@ In |ne| 4.50, Elastic Stack upgrades from version 9.4.5 to 9.5.2. To ensure comp
 * `Elastic Agent <https://www.elastic.co/docs/release-notes/elastic-agent/breaking-changes#elastic-agent-9.5.2-breaking-changes>`_
 * `Logstash <https://www.elastic.co/docs/release-notes/logstash/breaking-changes#logstash-950-breaking-changes>`_
 * `Beats <https://www.elastic.co/docs/release-notes/beats/breaking-changes#beats-9.5.2-breaking-changes>`_
+
+
+Icinga 2 Upgrade to v2.16
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|ne| 4.50 upgrades Icinga 2 from version 2.15 to 2.16.
+
+Please review the official upstream `upgrade guide <https://icinga.com/docs/icinga-2/latest/doc/16-upgrading-icinga-2/>`_.
+
+To address the deprecations regarding ``ElasticsearchWriter``, ``Elasticsearch Datastream Writer``
+and ``FilterExpression`` permission, please refer to the :ref:`upgrade-additional-steps-cluster` section.

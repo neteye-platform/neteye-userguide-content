@@ -6,7 +6,7 @@ Dashboard
 
 The SATAYO Dashboard is your starting point for understanding the current
 security posture of your organization in NetEye.Cloud. Use it to check
-exposure trends, identify new findings, follow remediation progress, and
+exposure indeces, identify new findings, follow remediation progress, and
 decide which areas require your attention first.
 
 The Dashboard consolidates information that would otherwise be spread
@@ -23,7 +23,7 @@ all organizations available to you.
 
 Thus, in general, the Dashboard gives you a quick understanding of what has changed
 in your monitored perimeter and where you should look first. Start from the overall
-exposure trend, then check new findings and related tickets to see which issues need
+exposure index, then check new findings and related tickets to see which issues need
 investigation, remediation, or follow-up. When you need more context, open the
 detailed :guilabel:`Findings` or :guilabel:`Tickets` views directly from the Dashboard
 and continue your analysis there.
@@ -31,8 +31,8 @@ and continue your analysis there.
 The Dashboard is composed of **panels**. Each panel summarizes one aspect of
 the monitored perimeter and gives you a starting point for further investigation.
 
-Exposure Assessment Index Value (EAIV)
-``````````````````````````````````````
+Exposure Index
+``````````````
 
 The **Exposure Assessment Index Value (EAIV)** panel shows the external exposure
 level of the selected organization based on the most recent scan results. The value
@@ -42,7 +42,7 @@ ranges from 0 to 100.
 
 #. **100** represents the maximum exposure level within the SATAYO scoring model.
 
-Use the EAIV graph to follow exposure trends across scan cycles. Each point on the graph
+Use the EAIV graph to follow exposure index across scan cycles. Each point on the graph
 represents the EAIV calculated during a specific scan. Expand the graph when you need
 a larger view for trend analysis.
 
@@ -77,8 +77,7 @@ findings are already part of the remediation workflow.
 Tickets
 ```````
 
-The **Tickets** panel summarizes tickets created for findings in the selected period.
-Use it to monitor operational workload, understand which findings are already being handled,
+Use **Tickets** panel to monitor operational workload, understand which findings are already being handled,
 and track how remediation activities are progressing.
 
 Each ticket represents an operational follow-up for a finding that requires attention.

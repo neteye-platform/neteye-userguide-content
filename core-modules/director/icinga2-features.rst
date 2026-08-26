@@ -33,7 +33,7 @@ To enable the feature run the following commands on the node that owns icinga2-m
   master# systemctl restart icinga2-master
 
 .. note::
-  You might want to disable the influxdb feature if you have enabled the `neteye_datastreamwriter` feature,
+  You might want to disable the `influxdb` feature if you have enabled the `neteye_datastreamwriter` feature,
   as you are having the performance data duplicated otherwise, wasting disk space.
 
 
@@ -72,5 +72,5 @@ To enable the feature run the following commands on the node that owns icinga2-m
 
 
 .. note::
-  You might want to disable the influxdb feature if you have enabled the `neteye_datastreamwriter` feature,
+  You might want to disable the `influxdb` feature if you have enabled the `neteye_datastreamwriter` feature,
   as you are having the performance data duplicated otherwise, wasting disk space.

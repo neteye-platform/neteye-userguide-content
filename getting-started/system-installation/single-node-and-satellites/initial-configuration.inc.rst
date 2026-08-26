@@ -158,14 +158,13 @@ Set ``neteye.frontend_domain`` to your domain and save the file.
 ``frontend_domain`` is missing or still set to the placeholder value.
 See :ref:`Keycloak Hostname Configuration <hostname-configuration>` for details.
 
-Furthermore, in the :file:`/etc/neteye-environment.yaml` file you will be able to configure also
-three CIDRs for RKE2. More specifically, the required CIDRs are:
+Furthermore, in the :file:`/etc/neteye-environment.yaml` file you will be able to configure also three additional CIDRs
+for RKE2. If you are unsure about this configuration, please refer to the
+:ref:`Kubernetes Networking Requirements <kubernetes_networking_requirements>` section.
 
-- `pod_cidr`: the CIDR from which the pods will be assigned their IP addresses. The default value is `10.42.0.0/16`. Regardless of the chosen value, the CIDR must be a /16 network.
-- `svc_cidr`: the CIDR from which the services will be assigned their IP addresses. The default value is `10.43.0.0/16`. Regardless of the chosen value, the CIDR must be a /16 network.
-- `service_loadbalancer_cidr`: the CIDR from which the service load balancers will be assigned their IP addresses. The default value is `10.44.0.0/24`. Regardless of the chosen value, the CIDR must contain at least 256 addresses (`/24` or lower).
-
-Changing the CIDRs after the initial installation is currently **not** supported and may lead to inconsistent behaviours of the deployed components.
+.. warning::
+   Changing the CIDRs after the initial installation is **not** supported and requires a complete reinstallation of the
+   Kubernetes cluster.
 
 Part 2: Single Nodes Only
 `````````````````````````

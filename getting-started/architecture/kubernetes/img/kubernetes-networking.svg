@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">NetEye Kubernetes networking</title>
+  <desc id="desc">Existing public and heartbeat networks remain in place. Kubernetes adds logical Pod and Service address spaces and L2-announced LoadBalancer virtual IPs.</desc>
+  <style>
+    text { font-family: sans-serif; fill: #172033; }
+    .heading { font-size: 24px; font-weight: 700; }
+    .label { font-size: 18px; font-weight: 700; }
+    .body { font-size: 15px; }
+    .small { font-size: 13px; }
+    .physical { fill: #e8f0f7; stroke: #406785; stroke-width: 2; }
+    .logical { fill: #eaf6ed; stroke: #3c7a4a; stroke-width: 2; }
+    .external { fill: #fff3dc; stroke: #a26a16; stroke-width: 2; }
+    .node { fill: #ffffff; stroke: #69788c; stroke-width: 2; }
+    .ebpf { fill: #263c5c; }
+    .arrow { fill: none; stroke: #51667e; stroke-width: 3; marker-end: url(#arrow); }
+    .dashed { stroke-dasharray: 8 6; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#51667e"/>
+    </marker>
+  </defs>
+
+  <text x="50" y="52" class="heading">NetEye cluster: existing networks plus Kubernetes address spaces</text>
+
+  <rect x="50" y="95" width="1100" height="120" rx="8" class="physical"/>
+  <text x="75" y="130" class="label">Existing host infrastructure</text>
+  <rect x="75" y="150" width="470" height="42" rx="5" fill="#ffffff" stroke="#406785"/>
+  <text x="92" y="177" class="body">Corporate/Public Network: node access and Cluster VIP</text>
+  <rect x="585" y="150" width="510" height="42" rx="5" fill="#ffffff" stroke="#406785"/>
+  <text x="602" y="177" class="body">Private Heartbeat Network: PCS, Corosync, DRBD</text>
+
+  <rect x="50" y="260" width="715" height="440" rx="8" class="logical"/>
+  <text x="75" y="298" class="label">Kubernetes cluster - logical address spaces</text>
+  <text x="75" y="324" class="small">No VLAN, DHCP scope, or external route is required for Pod or Service CIDRs.</text>
+
+  <rect x="80" y="355" width="300" height="130" rx="7" class="node"/>
+  <text x="100" y="388" class="label">Pod Network</text>
+  <text x="100" y="416" class="body">pod_cidr</text>
+  <text x="100" y="441" class="body">Pod IPs are allocated per node.</text>
+  <text x="100" y="466" class="small">Not externally routed.</text>
+
+  <rect x="425" y="355" width="300" height="130" rx="7" class="node"/>
+  <text x="445" y="388" class="label">Service Network</text>
+  <text x="445" y="416" class="body">svc_cidr</text>
+  <text x="445" y="441" class="body">Stable virtual Service IPs.</text>
+  <text x="445" y="466" class="small">Handled by Cilium eBPF; not externally routed.</text>
+
+  <rect x="80" y="530" width="645" height="135" rx="7" class="node"/>
+  <rect x="103" y="557" width="600" height="33" rx="4" class="ebpf"/>
+  <text x="285" y="580" font-size="17" font-family="sans-serif" font-weight="700" fill="#ffffff">Cilium eBPF datapath on every node</text>
+  <text x="105" y="618" class="body">Service load balancing, policy, masquerading, and host routing</text>
+  <text x="105" y="644" class="small">Cilium creates managed cilium_*, lxc*, and optional tunnel interfaces.</text>
+
+  <rect x="815" y="260" width="335" height="440" rx="8" class="external"/>
+  <text x="840" y="298" class="label">Trusted network zone</text>
+  <rect x="840" y="345" width="285" height="155" rx="7" fill="#ffffff" stroke="#a26a16"/>
+  <text x="860" y="380" class="label">LoadBalancer Network</text>
+  <text x="860" y="409" class="body">service_loadbalancer_cidr</text>
+  <text x="860" y="436" class="body">Virtual IPs for selected Services</text>
+  <text x="860" y="463" class="small">Cilium replies to ARP on eligible nodes.</text>
+  <text x="860" y="487" class="small">Clients route only to this Kubernetes range.</text>
+  <rect x="840" y="545" width="285" height="95" rx="7" fill="#ffffff" stroke="#a26a16"/>
+  <text x="860" y="580" class="body">Clients and gateways</text>
+  <text x="860" y="607" class="small">Need reachability and firewall access to VIPs.</text>
+
+  <path d="M765 427 H835" class="arrow"/>
+  <text x="775" y="405" class="small">only client-facing</text>
+  <path d="M980 545 V510" class="arrow dashed"/>
+  <text x="995" y="535" class="small">ARP</text>
+</svg>

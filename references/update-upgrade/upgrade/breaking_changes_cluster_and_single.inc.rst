@@ -13,3 +13,15 @@ the directory ``/neteye/shared/glpi/data/marketplace``.
 
 From |ne| 4.50, you can add a plugin to GLPI by placing the plugin files in the
 folder ``/neteye/shared/glpi/data/marketplace`` on the host system.
+
+
+Elastic Stack upgrade to version 9.5.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In |ne| 4.50, Elastic Stack upgrades from version 9.4.5 to 9.5.2. To ensure compatibility, review the official breaking changes linked below:
+
+* `Elasticsearch <https://www.elastic.co/docs/release-notes/elasticsearch/breaking-changes#elasticsearch-9.5.2-breaking-changes>`_
+* `Kibana <https://www.elastic.co/docs/release-notes/kibana/breaking-changes#kibana-9.5.2-breaking-changes>`_
+* `Elastic Agent <https://www.elastic.co/docs/release-notes/elastic-agent/breaking-changes#elastic-agent-9.5.2-breaking-changes>`_
+* `Logstash <https://www.elastic.co/docs/release-notes/logstash/breaking-changes#logstash-950-breaking-changes>`_
+* `Beats <https://www.elastic.co/docs/release-notes/beats/breaking-changes#beats-9.5.2-breaking-changes>`_

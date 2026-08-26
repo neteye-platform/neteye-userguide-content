@@ -8,6 +8,3 @@ Business Service Monitoring
    business-monitoring/overview.rst
    business-monitoring/logic.rst
    business-monitoring/view.rst
-
-
-

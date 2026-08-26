@@ -39,7 +39,3 @@ Unlike the on-premises installation, you will not need to create or configure bu
 - Operations team sets up and configures those processes for you.
 - Once live, you can track and monitor your business services through dashboards, reports, and notifications.
 - If you need to introduce new processes or adjust existing ones, you may request changes.
-
-
-
-

@@ -1,3 +1,11 @@
+Keycloak Breaking Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|ne| 4.49 updates Keycloak from version 26.6.2 to 26.7.2, which introduces some breaking
+changes. Please review the
+`Keycloak Upgrading Guide - Migration Changes <https://www.keycloak.org/docs/latest/upgrading/#migration-changes>`_
+before upgrading.
+
 GLPI Bundled Plugins
 ~~~~~~~~~~~~~~~~~~~~
 

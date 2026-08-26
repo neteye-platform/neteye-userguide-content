@@ -6,7 +6,7 @@ Dashboard
 
 The SATAYO Dashboard is your starting point for understanding the current
 security posture of your organization in NetEye.Cloud. Use it to check
-exposure indeces, identify new findings, follow remediation progress, and
+exposure indices, identify new findings, follow remediation progress, and
 decide which areas require your attention first.
 
 The Dashboard consolidates information that would otherwise be spread

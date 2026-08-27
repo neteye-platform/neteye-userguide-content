@@ -63,6 +63,10 @@ in that group and helps you compare areas such as exposed services, leaked infor
 vulnerable assets, suspicious references, or other configured exposure categories.
 Use the domain filter when you need to focus on a specific part of the monitored perimeter.
 
+.. figure:: dashboard/img/findings.jpg
+
+   Findings panel of the Dashboard
+
 The panel helps you distinguish between general exposure and findings that already
 require operational handling. When a finding has been acknowledged and a ticket has been created,
 the Dashboard can show the related severity level and make it easier to understand which
@@ -83,6 +87,10 @@ and track how remediation activities are progressing.
 Each ticket represents an operational follow-up for a finding that requires attention.
 The panel helps you move from detection to action: instead of only seeing that an exposure
 exists, you can check whether it has already been assigned, prioritized, reviewed, or resolved.
+
+.. figure:: dashboard/img/tickets.jpg
+
+   Tickets panel of the Dashboard
 
 Tickets are managed by the SATAYO Intelligence Team. You can filter tickets by status, including:
 

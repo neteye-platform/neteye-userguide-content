@@ -101,7 +101,7 @@ with the corresponding finding’s preview panel automatically displayed.
 .. _domain_item:
 
 Domain
-------
+======
 
 .. admonition:: MITRE ATT&CK Techniques
 
@@ -499,7 +499,7 @@ It is recommended to verify the authenticity of any account found in this sectio
 .. _account_password_item:
 
 Account password
-----------------
+================
 
 If credentials for an :ref:`account <account_item>` are found in a :ref:`stealer log <stealer_logs_item>` or
 data breach, SATAYO provides information about them in the account password finding. If the
@@ -607,6 +607,48 @@ For each paste found, SATAYO provides information about:
 - The date on which the paste was published.
 - Which email addresses are present in that paste.
 
+
+.. _social_media_item:
+
+Social Media
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.001 Social Media <https://attack.mitre.org/techniques/T1593/001/>`__
+
+   Resource Development
+
+   - `T1586.001 Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
+
+The **Social Media item** represents an account on a social network or another online platform
+that uses the name, domain, or identity of the monitored organization. Such an account may
+legitimately represent the organization, or it may have been created by a third party to
+simulate its identity, with the goal of establishing trust relationships with victims and
+preparing social engineering or phishing activities.
+
+Each finding corresponds to a single account profile and is identified by its **URL**, which
+links to the profile on the external platform so that it can be reviewed directly.
+
+For each account found, SATAYO provides information about:
+
+- **Time**: the date on which the account was detected.
+- **Name**: the platform hosting the account, such as a social network, a code-sharing site, or another online service.
+- **Category**: the type of platform on which the account was detected, for example coding, business, or social networking.
+- **Url**: the address of the account profile on the external platform.
+- **Full name**: the display name shown on the profile.
+- **Username**: the account handle used on the platform.
+- **Biography**: the profile description published on the account.
+- **External URL**: an additional address referenced from the profile, such as a personal or corporate website.
+- **Business Account**: whether the platform marks the account as a business profile.
+- **Business Category**: the business classification declared on the profile, when the account is a business profile.
+
+Platforms expose different sets of attributes, therefore some of these fields may be empty
+for a given account.
 
 .. _sandboxes_item:
 
@@ -730,3 +772,125 @@ For each file found, SATAYO provides information such as the title, author, crea
 
 It is recommended to check the contents of these files and remove them from the Internet if they contain
 confidential information. The link to the file is provided so that it can be verified.
+
+
+.. _phone_number_item:
+
+Phone Number
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1594 Search Victim-Owned Websites <https://attack.mitre.org/techniques/T1594/>`__
+
+The **Phone Number item** shows every phone number published within the institutional website
+of the analyzed domain. It is suggested not to publish direct telephone numbers of personnel
+working within the organization, as they could favor the activity of a social engineer.
+
+For each phone number found, SATAYO provides information such as:
+
+- **Prefix**: the country code associated with the phone number, along with the country name.
+- **Phone**: the phone number as published on the website.
+- **Name**: the name of the person or office associated with the phone number, when available.
+- **Subtitle**: additional context about the role or department associated with the phone number, when available.
+- **Location**: the address associated with the phone number, when available.
+- **Source**: the link to the page on which the phone number was found.
+
+Some of these fields may be empty, depending on the information published on the source page.
+
+
+.. _storage_item:
+
+Storage
+=======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.003 Search Open Websites/Domains: Code Repositories <https://attack.mitre.org/techniques/T1593/003/>`__
+   - `T1596 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+   Discovery
+
+   - `T1619 Cloud Storage Object Discovery <https://attack.mitre.org/techniques/T1619/>`__
+
+The **Storage item** represents a publicly exposed storage resource belonging to the organization, such as an Amazon S3, Google Cloud Storage, or Azure Blob Storage.
+When a storage resource is found to be publicly accessible, its internal content is listed.
+
+For each storage resource found, SATAYO provides information about:
+
+- The URL of the storage resource.
+- The type of storage resource (e.g. S3 bucket).
+- The number of files it contains.
+
+Storage findings represent publicly exposed storage resources that may contain leaked files or sensitive data.
+They expand the investigation surface for company-related data leak exposure.
+
+
+.. _credit_card_item:
+
+Credit Card
+===========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589 Gather Victim Identity Information <https://attack.mitre.org/techniques/T1589/>`__
+   - `T1597 Search Closed Sources <https://attack.mitre.org/techniques/T1597/>`__
+
+   Impact
+
+   - `T1657 Financial Theft <https://attack.mitre.org/techniques/T1657/>`__
+
+The **Credit Card item** represents a credit card issued by the monitored organization and offered for sale
+within an underground marketplace. Cards are stolen through a multitude of techniques, including phishing
+campaigns, data breaches, sniffing on public Wi-Fi networks, and physical cloning at ATMs.
+
+Each finding corresponds to a single card published by a seller, and it is identified by the marketplace on
+which it was detected together with the identifier assigned to the listing.
+
+.. note::
+
+   This finding is available only to credit institutions that issue credit cards.
+
+For each card detected, SATAYO provides information about:
+
+- **Inserted**: the date on which the card was detected within the marketplace.
+- **Source**: the marketplace on which the card is offered for sale.
+- **Source ID**: the identifier assigned to the listing by the marketplace.
+- **Bank**: the name of the institution that issued the card, as declared by the seller.
+- **Hidden CC**: the partial card number published by the seller. Marketplaces usually mask most of the digits and expose only the initial part, which identifies the issuing circuit and the institution.
+- **Card Type**: the type of card declared within the listing.
+- **Expiration Date**: the expiration date of the card. Cards that are still valid represent a more urgent risk, as they can be used for fraudulent transactions.
+- **CVR**: the validity rate declared for the card, expressed as a percentage. Sellers use this value to indicate how likely the card is to be still usable.
+- **Reviews**: the feedback published within the marketplace about the listing or the seller.
+- **Country**, **State**, **City** and **ZIP**: the geographic information associated with the card.
+- **Seller DB**: the name of the archive the seller attributes the card to. The same archive is often used to sell several cards originating from the same compromise.
+- **Seller Tag**: the nickname used by the seller within the marketplace.
+- **Seller Rate**: the reputation score of the seller within the marketplace.
+- **Price**: the price at which the card is offered for sale.
+
+The following flags indicate which additional data is offered for sale together with the card, without
+disclosing its content:
+
+- **CVV**: whether the card verification value is included.
+- **Holder Name**: whether the name of the cardholder is included.
+- **Date of birth**: whether the cardholder's date of birth is included.
+- **SSN**: whether the social security number of the cardholder is included.
+- **EMail**: whether the email address of the cardholder is included.
+- **Phone**: whether the phone number of the cardholder is included.
+- **Address**: whether the address of the cardholder is included.
+
+More data associated with the card increases the risk of fraud, identity theft, and social engineering
+attacks against the cardholder. It is recommended to block or reissue the cards detected in this section
+and to inform the cardholder of the exposure.

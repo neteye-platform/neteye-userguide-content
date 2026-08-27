@@ -6,10 +6,18 @@ Kubernetes
 |ne| integrates a Kubernetes distribution to manage the deployment of some of its components. This integration
 represents a step towards the transformation of |ne| into a cloud-native application, which is the long-term goal.
 
-The chosen Kubernetes distribution is `RKE2 <https://docs.rke2.io/>`_, which is a CNCF-certified Kubernetes distribution.
-RKE2 is designed to be secure by default, with a focus on simplicity and ease of use.
+The chosen Kubernetes distribution is `RKE2 <https://docs.rke2.io/>`_, which is a CNCF-certified Kubernetes
+distribution. RKE2 is designed to be secure by default, with a focus on simplicity and ease of use.
 
-|ne| completely manages the RKE2 installation and configuration, so that the user does not have to worry about the underlying Kubernetes infrastructure.
+|ne| completely manages the RKE2 installation and configuration, so that the user does not have to worry about the
+underlying Kubernetes infrastructure.
+
+Kubernetes migration will allow |ne| to leverage the benefits of Kubernetes, such as:
+
+- Improved scalability and resource management
+- Enhanced security and isolation of workloads
+- Simplified deployment and management of applications
+- Seamless and faster updates and rollbacks of components
 
 .. _kubernetes-roles:
 
@@ -153,6 +161,3 @@ Use Kubernetes and Cilium status commands to inspect them instead.
 For a conceptual overview of where Cilium uses eBPF, see the `Cilium eBPF datapath introduction
 <https://docs.cilium.io/en/stable/network/ebpf/intro/>`_. For the behavior of eBPF-based source masquerading, see the
 `Cilium masquerading documentation <https://docs.cilium.io/en/stable/network/concepts/masquerading/>`_.
-
-.. image:: /getting-started/architecture/kubernetes/img/kubernetes-request-path.svg
-   :alt: Client request path from a Load Balancer virtual IP to a Kubernetes Pod

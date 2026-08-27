@@ -23,7 +23,7 @@ DHCP, or require the corresponding number of physical switch ports.
    * - Setting
      - Default
      - Purpose
-     - Visible outside the cluster
+     - Visible outside the |ne| cluster
    * - ``pod_cidr``
      - ``10.42.0.0/16``
      - Addresses assigned to Pods

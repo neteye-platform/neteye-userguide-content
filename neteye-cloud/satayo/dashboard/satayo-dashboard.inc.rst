@@ -50,6 +50,43 @@ Interpret the EAIV together with the size and digital footprint of the organizat
 A larger organization with more domains, services, and publicly accessible
 infrastructure can naturally have a higher value because its external presence is broader.
 
+Exposure by Group
+`````````````````
+
+The **Exposure by group** panel breaks down findings into groups and shows, for each group,
+how many findings are still waiting on remediation and how many are already closed. Use it to
+see at a glance which types of exposure are open, which are backed up in the remediation process,
+and which have already been handled.
+
+Findings are grouped along one of the following dimensions, selectable from the dropdown at the
+top of the panel:
+
+- **Risk Domain** — the kind of risk a finding represents, such as attack surface, brand abuse,
+  data exposure, identity exposure, or threat signals.
+- **Exposure Lifecycle** — where a finding sits in the exposure lifecycle, from discovery through
+  preparation, exposure, compromise, and operational impact.
+- **Surface Distribution** — the layer of the web where a finding was observed: surface, deep, or
+  dark web.
+- **Macro Area** — the high-level area of the organization's footprint a finding belongs to, such
+  as infrastructure, data/files and people, or the deep and dark web.
+
+For the selected dimension, each row shows one group together with three counts:
+
+- **WFC** (Waiting for customer): findings whose ticket is waiting for your organization to act.
+- **WFS** (Waiting for support): findings whose ticket is waiting on the SATAYO Intelligence Team.
+- **Closed**: findings whose ticket has reached a final state (canceled, false positive, resolved,
+  risk accepted, or published).
+
+A group always appears in the table, even when it currently has no findings in any of the three
+states, so you can see the full breakdown of the selected dimension at a glance. Findings with no
+ticket, or whose ticket is still open or in progress, are not counted in any of the three columns:
+this panel focuses on remediation workload, not on overall findings volume, which the
+:guilabel:`Findings` panel already covers.
+
+.. hint:: Select a count to drill down into exactly the findings behind it. You are taken to the
+   dedicated :guilabel:`Findings` page, already filtered by the selected group and ticket state,
+   so you can start investigating without having to rebuild the filter yourself.
+
 New Findings
 ````````````
 

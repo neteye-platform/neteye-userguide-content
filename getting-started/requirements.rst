@@ -32,6 +32,7 @@ install |ne| and is organized in these parts:
 
    requirements/single-node.rst
    requirements/cluster.rst
+   requirements/kubernetes-networking.rst
    requirements/satellite.rst
    requirements/tcp-udp-ports.rst
    requirements/additional-software.rst

@@ -121,10 +121,15 @@ The following table shows the maximum number of nodes that can be supported by d
    * - ``/22``
      - 4
 
+For example, a 3-node cluster, expecting to grow to 5 nodes in the future, should choose a Pod CIDR of at least ``/21``.
+
+For single node installations, a ``/24`` Pod CIDR is sufficient, even though it is still recommended to use a higher
+range to allow for future expansion.
+
 Choosing the Service CIDR
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-About the Service CIDR, choose a range that can accommodate at least 512 Services for smaller installations, and at
+About the Service CIDR, choose a range that can accommodate at least 256 Services for smaller installations, and at
 least 1024 Services for larger installations. Each Service consumes one address from the Service CIDR, so the number of
 Services is limited only by the size of the Service CIDR.
 
@@ -146,6 +151,8 @@ The following table shows the maximum number of Services that can be supported b
      - 1024
    * - ``/23``
      - 512
+   * - ``/24``
+     - 256
 
 Choosing the Service Load Balancer CIDR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

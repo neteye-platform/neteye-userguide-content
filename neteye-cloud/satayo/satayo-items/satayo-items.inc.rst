@@ -894,3 +894,29 @@ disclosing its content:
 More data associated with the card increases the risk of fraud, identity theft, and social engineering
 attacks against the cardholder. It is recommended to block or reissue the cards detected in this section
 and to inform the cardholder of the exposure.
+
+
+.. _blacklist_domain_item:
+
+Blacklist Domain
+=================
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1596.005 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+The **Blacklist Domain item** shows organization-related domains that are listed in external blacklists,
+identified from the blacklist records associated with a domain.
+
+The presence of a domain within a blacklist can compromise the provision of services and
+damage the organization's reputation:
+if browsers or organizations enforce controls such as content filtering,
+connections to a blacklisted domain may be terminated or refused.
+Reviewing these findings allows a threat intelligence analyst to assess the reputational and operational risk
+associated with a blacklisted domain and to take appropriate remediation action.
+
+Several blacklists allow the removal of a resource to be requested once its reputation has been verified.

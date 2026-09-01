@@ -894,3 +894,29 @@ disclosing its content:
 More data associated with the card increases the risk of fraud, identity theft, and social engineering
 attacks against the cardholder. It is recommended to block or reissue the cards detected in this section
 and to inform the cardholder of the exposure.
+
+
+.. _mobile_app_item:
+
+Mobile App
+==========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1592.002 Gather Victim Host Information: Software <https://attack.mitre.org/techniques/T1592/002/>`__
+
+The **Mobile App item** shows organization-related mobile applications uploaded to the Play Store or other
+third-party stores.
+
+Applications are scanned periodically, and different versions of the same application may be visible.
+For each application found, SATAYO provides information about:
+
+- The version of the application.
+- Whether an antimalware engine detected malware in that version.
+
+If malware is detected in a version, it is flagged, helping analysts identify potentially malicious or risky
+mobile applications associated with the organization.

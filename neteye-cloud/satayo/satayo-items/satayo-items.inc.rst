@@ -896,6 +896,32 @@ attacks against the cardholder. It is recommended to block or reissue the cards 
 and to inform the cardholder of the exposure.
 
 
+.. _mobile_app_item:
+
+Mobile App
+==========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1592.002 Gather Victim Host Information: Software <https://attack.mitre.org/techniques/T1592/002/>`__
+
+The **Mobile App item** shows organization-related mobile applications uploaded to the Play Store or other
+third-party stores.
+
+Applications are scanned periodically, and different versions of the same application may be visible.
+For each application found, SATAYO provides information about:
+
+- The version of the application.
+- Whether an antimalware engine detected malware in that version.
+
+If malware is detected in a version, it is flagged, helping analysts identify potentially malicious or risky
+mobile applications associated with the organization.
+
+
 .. _blacklist_domain_item:
 
 Blacklist Domain
@@ -917,6 +943,6 @@ damage the organization's reputation:
 if browsers or organizations enforce controls such as content filtering,
 connections to a blacklisted domain may be terminated or refused.
 Reviewing these findings allows a threat intelligence analyst to assess the reputational and operational risk
-associated with a blacklisted domain and to take appropriate remediation action.
+associated with a blacklisted domain and take appropriate remediation action.
 
 Several blacklists allow the removal of a resource to be requested once its reputation has been verified.

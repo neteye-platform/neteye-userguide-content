@@ -114,9 +114,12 @@ Domain
    - `Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
 
 The domain findings list all subdomains discovered for each configured monitored domain.
-They act as a starting point to explore all other findings related to a specific domain.
-Domains are identified through multiple finding types during SATAYO scans, such as
-**Hostnames** or **Stealer Logs.**
+Domain, like an IP address, is a human-readable name that corresponds to one or more IP
+addresses, making it easier to identify and remember. It is one of the starting points for
+SATAYO’s exposure assessment analysis, and it can provide valuable information about the
+services and applications running on a network. Domains are identified through multiple
+techniques during SATAYO scans, such as DNS resolution/subdomain enumeration or
+**Stealer Logs**.
 
 .. note::
 
@@ -125,41 +128,23 @@ Domains are identified through multiple finding types during SATAYO scans, such 
    domain findings described here.
 
 Domain findings act as **aggregators**: each finding collects related evidence discovered under the
-same domain. Currently, a domain finding can aggregate **Hostnames**, **Email addresses** and
-**Stealer Logs** related to the same domain.
+same domain. Currently, a domain finding can aggregate **Services**, **Mail servers**, **Mail**,
+**SSL/TLS certificates**, **Email addresses**, and **Stealer Logs** related to the same domain, as
+well as the **IPv4 addresses** it resolves to.
 
-When a domain is found through a Stealer Log, the finding includes a **severity** field that
-reflects how sensitive the associated resource is, based on the type of website recorded in the log.
-The severity levels are:
+Every domain finding carries a **severity** field that reflects how sensitive it is:
 
+- **UNASSIGNED** — the default level, assigned until the finding has been reviewed and reclassified.
+  Its mere existence doesn't pose a risk, so it does not contribute directly to the
+  :abbr:`EAIV (Exposure Assessment Index Value)` score.
 - **RISK ACCEPTED** — the resource is considered low risk.
 - **POTENTIALLY CRITICAL** — the resource may pose a significant risk and warrants review.
 - **CRITICAL** — the resource is a high-value target, such as an intranet website, password manager,
   private cloud, or administrative page.
 
-The severity classification is assigned by SATAYO but can be adjusted on request if the assigned
-level does not reflect the actual sensitivity of the resource.
-
-.. _hostname_item:
-
-Hostname
-========
-
-.. admonition:: MITRE ATT&CK Techniques
-
-   The following MITRE ATT&CK techniques are used to classify this finding:
-
-   **Reconnaissance**
-
-   - `T1596 Search Open Technical Databases: DNS/Passive DNS <https://attack.mitre.org/techniques/T1596/001/>`__
-   - `T1590 Gather Victim Network Information: Domain Properties <https://attack.mitre.org/techniques/T1590/001/>`__
-   - `T1595 Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
-
-Hostname, like IP addresses, is one of the items that SATAYO finds during its analysis. It is a human-readable name that corresponds to an IP address, making it easier to identify and remember. They are one of the starting points for SATAYO’s exposure assessment analysis, and they can provide valuable information about the services and applications running on a network.
-
-They also work as **aggregators** for other items, such as **Services, Mail servers, Mail, SSL/TLS certificates**, and more.
-
-They do not contribute directly to the :abbr:`EAIV (Exposure Assessment Index Value)` score, as their mere existence doesn't pose a risk.
+The last three levels are assigned when a domain is found through a Stealer Log, based on the type
+of website recorded in the log. The severity classification is assigned by SATAYO but can be
+adjusted on request if the assigned level does not reflect the actual sensitivity of the resource.
 
 |
 
@@ -179,7 +164,7 @@ IPv4 Address
    - `T1595 Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
    - `T1596 Search Open Technical Databases: DNS/Passive DNS <https://attack.mitre.org/techniques/T1596/001/>`__
 
-The **IPv4 address item** represents a publicly reachable IP address discovered by SATAYO. It can be correlated to other items, such as **Ports** and **Hostnames**.
+The **IPv4 address item** represents a publicly reachable IP address discovered by SATAYO. It can be correlated to other items, such as **Ports** and **Domains**.
 
 |
 
@@ -218,7 +203,7 @@ Registry
    - `T1590 Gather Victim Network Information: IP Addresses <https://attack.mitre.org/techniques/T1590/005/>`__
 
 The **registry item** consists of the subnet blocks where the retrieved found IP address resides.
-The addresses inside are scanned to see if there are other resolvable hostnames that, if found, are added to the list of hostnames and constitute an additional base for future scans and analysis.
+The addresses inside are scanned to see if there are other resolvable domains that, if found, are added to the list of domains and constitute an additional base for future scans and analysis.
 
 
 .. _cve_item:
@@ -287,9 +272,9 @@ Service
    - `T1592 Gather Victim Host Information: Client Configurations <https://attack.mitre.org/techniques/T1592/004/>`__
 
 
-A **service item** represents a specific service or application exposed over HTTP on a particular port of an IP address and identified by a hostname.
+A **service item** represents a specific service or application exposed over HTTP on a particular port of an IP address and identified by a domain.
 
-It is always associated with a hostname, because the hostname is a determining factor in request routing. The HTTP server may use the hostname to route
+It is always associated with a domain, because the domain is a determining factor in request routing. The HTTP server may use the domain to route
 requests to the appropriate virtual host or service.
 
 It provides information about the exposed HTTP service and web server, including:

@@ -35,20 +35,37 @@ Exposure Index
 ``````````````
 
 The **Exposure Assessment Index Value (EAIV)** panel shows the external exposure
-level of the selected organization based on the most recent scan results. The value
-ranges from 0 to 100.
+level of the selected organization, based on the last 12 months of scan activity. The
+value is the sum of three exposure categories:
+
+- **Infrastructure** — exposure related to your network and systems configuration.
+- **Data Files & People** — exposure related to leaked data, files, and personal information.
+- **Deep & Dark Web** — exposure related to mentions and activity found on the deep and dark web.
+
+.. hint:: Hover over the counter to see the current breakdown by category.
 
 #. **0** means that no external exposure was detected.
 
-#. **100** represents the maximum exposure level within the SATAYO scoring model.
+#. Most organizations score below **100**, though the index has no fixed maximum: it
+   is the sum of however many checks were run during a scan, so an organization with a
+   broad digital footprint (many monitored domains) can score higher.
 
-Use the EAIV graph to follow exposure index across scan cycles. Each point on the graph
-represents the EAIV calculated during a specific scan. Expand the graph when you need
-a larger view for trend analysis.
+The label under the counter tells you at a glance which risk band the current value
+falls into: :guilabel:`Optimal`, :guilabel:`Low`, :guilabel:`Medium`, :guilabel:`High`,
+or :guilabel:`Critical`. Its color matches the corresponding threshold line drawn on the
+graph (blue for Low, yellow for Medium, orange for High, red for Critical).
+
+Each point on the EAIV graph represents one month, over the last 12 months, based on
+that month's most recent scan. If a month had no scan, its point repeats the previous
+month's value so the trend line stays continuous. Expand the graph when you need a
+larger view for trend analysis.
 
 Interpret the EAIV together with the size and digital footprint of the organization.
 A larger organization with more domains, services, and publicly accessible
 infrastructure can naturally have a higher value because its external presence is broader.
+When you select :guilabel:`All Organizations`, the value shown is the average across
+your organizations' domains, not a sum, so viewing several organizations together does
+not inflate the index.
 
 Exposure by Group
 `````````````````

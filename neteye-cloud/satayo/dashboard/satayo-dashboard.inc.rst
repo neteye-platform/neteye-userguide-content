@@ -55,17 +55,19 @@ falls into: :guilabel:`Optimal`, :guilabel:`Low`, :guilabel:`Medium`, :guilabel:
 or :guilabel:`Critical`. Its color matches the corresponding threshold line drawn on the
 graph (blue for Low, yellow for Medium, orange for High, red for Critical).
 
-Each point on the EAIV graph represents one month, over the last 12 months, based on
-that month's most recent scan. If a month had no scan, its point repeats the previous
+The EAIV graph shows one point for each of the past 12 months, based on the most recent
+scan completed in each month. If no scan was performed that month, its point repeats the previous
 month's value so the trend line stays continuous. Expand the graph when you need a
 larger view for trend analysis.
 
 Interpret the EAIV together with the size and digital footprint of the organization.
 A larger organization with more domains, services, and publicly accessible
 infrastructure can naturally have a higher value because its external presence is broader.
-When you select :guilabel:`All Organizations`, the value shown is the average across
-your organizations' domains, not a sum, so viewing several organizations together does
-not inflate the index.
+
+.. note::
+    When you select :guilabel:`All Organizations`, the value shown is the average across
+    your organizations' domains, not a sum, so viewing several organizations together does
+    not inflate the index.
 
 Exposure by Group
 `````````````````

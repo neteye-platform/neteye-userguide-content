@@ -43,7 +43,7 @@ requirements before you install Alyvix:
 Versions
 ````````
 +----------------+------------------------------+--------------------------------------------------------------------------------------------------+
-| Alyvix Version |   Python Version Required    |       Install Command                                                                            |
+| Alyvix Version | Python Version Required      | Install Command                                                                                  |
 +----------------+------------------------------+--------------------------------------------------------------------------------------------------+
 | Alyvix 3.8.0   | |python-download-link-397|   | ``pip install alyvix --extra-index-url https://alyvix.github.io/alyvix-python-packages/simple/`` |
 +----------------+------------------------------+--------------------------------------------------------------------------------------------------+

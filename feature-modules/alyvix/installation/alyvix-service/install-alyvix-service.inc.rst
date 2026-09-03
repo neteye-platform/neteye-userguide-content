@@ -12,7 +12,7 @@ autonomously on the local Windows machine.
 .. _system_requirements_alyvix_service:
 
 System Requirements
-~~~~~~~~~~~~~~~~~~~
+```````````````````
 
 .. note::
 
@@ -55,10 +55,10 @@ requirements before you install Alyvix Service:
 .. _installation_versions_alyvix_service:
 
 Versions
-~~~~~~~~
+````````
 
 +-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service Version |          | Required Alyvix Core Version     | PostgreSQL Version              | Alyvix API Version |
+| Alyvix Service Version            | Required Alyvix Core Version     | PostgreSQL Version              | Alyvix API Version |
 +-----------------------------------+----------------------------------+---------------------------------+--------------------+
 | Alyvix Service 2.8.x              | |link-to-alyvix-install37x|      | |link-postgresql-install-12.x|  | 3,4,5,6            |
 +-----------------------------------+----------------------------------+---------------------------------+--------------------+
@@ -85,7 +85,7 @@ Versions
 .. _installation_steps_alyvix_service:
 
 Installation Steps
-~~~~~~~~~~~~~~~~~~
+``````````````````
 
 The following steps will install Alyvix Service on your machine:
 
@@ -165,7 +165,7 @@ The following steps will install Alyvix Service on your machine:
 .. _install_upgrade_alyvix_service:
 
 Upgrading
-~~~~~~~~~
+`````````
 
 The following steps will upgrade Alyvix Service to the latest version on your machine:
 
@@ -211,7 +211,7 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
 .. _uninstallation_steps:
 
 Uninstalling Alyvix Service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```````````````````````````
 
 The following steps will remove Alyvix Service from your machine.  Basically you will need to reverse
 the steps performed during installation.

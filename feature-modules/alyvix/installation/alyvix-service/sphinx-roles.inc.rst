@@ -20,7 +20,7 @@
 
 .. |security-directory-location| replace:: :file:`C:\\ProgramData\\Alyvix\\certs\\`
 
-.. |link-postgresql-install-12.x| replace:: `12.x https://www.enterprisedb.com/software-downloads-postgres>`_
+.. |link-postgresql-install-12.x| replace:: `12.x <https://www.enterprisedb.com/software-downloads-postgres>`_
 
 .. |link-to-alyvix-install37x| replace:: `Alyvix 3.7.x <https://alyvix.com/learn/getting_started/install.html#versions>`_
 

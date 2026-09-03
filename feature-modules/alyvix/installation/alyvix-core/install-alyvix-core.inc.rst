@@ -42,28 +42,31 @@ requirements before you install Alyvix:
 
 Versions
 ````````
-
-+----------------+------------------------------+-------------------------------+
-| Alyvix Version | Python Version Required      | Install command               |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.7.0   | |python-download-link-397|   | ``pip install alyvix==3.7.0`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.6.0   | |python-download-link-397|   | ``pip install alyvix==3.6.0`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.5.0   | |python-download-link-397|   | ``pip install alyvix==3.5.0`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.4.0   | |python-download-link-397|   | ``pip install alyvix==3.4.0`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.3.2   | |python-download-link-397|   | ``pip install alyvix==3.3.2`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.3.1   | |python-download-link-397|   | ``pip install alyvix==3.3.1`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.2.3   | |python-download-link-397|   | ``pip install alyvix==3.2.3`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.2.0   | |python-download-link-397|   | ``pip install alyvix==3.2.0`` |
-+----------------+------------------------------+-------------------------------+
-| Alyvix 3.1.6   | |python-download-link-379|   | ``pip install alyvix==3.1.6`` |
-+----------------+------------------------------+-------------------------------+
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix Version |   Python Version Required    |       Install Command                                                                            |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.8.0   | |python-download-link-397|   | ``pip install alyvix --extra-index-url https://alyvix.github.io/alyvix-python-packages/simple/`` |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.7.1   | |python-download-link-397|   | ``pip install alyvix==3.7.1``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.7.0   | |python-download-link-397|   | ``pip install alyvix==3.7.0``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.6.0   | |python-download-link-397|   | ``pip install alyvix==3.6.0``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.5.0   | |python-download-link-397|   | ``pip install alyvix==3.5.0``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.4.0   | |python-download-link-397|   | ``pip install alyvix==3.4.0``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.3.2   | |python-download-link-397|   | ``pip install alyvix==3.3.2``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.3.1   | |python-download-link-397|   | ``pip install alyvix==3.3.1``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.2.3   | |python-download-link-397|   | ``pip install alyvix==3.2.3``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.2.0   | |python-download-link-397|   | ``pip install alyvix==3.2.0``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
+| Alyvix 3.1.6   | |python-download-link-379|   | ``pip install alyvix==3.1.6``                                                                    |
++----------------+------------------------------+--------------------------------------------------------------------------------------------------+
 
 |
 
@@ -86,14 +89,14 @@ Follow this procedure to install Python on your system:
    2. Check the box **"Add Python 3.9 to PATH"** at the bottom
    3. Choose the option **"Customize installation"**
 
-   .. image:: images/python-install-01.png
+   .. image:: img/python-install-01.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The first panel of the python installation process.
 
 #. On the second panel all the option boxes should already be checked.  Click **"Next"** to
    continue.
 
-   .. image:: images/python-install-02.png
+   .. image:: img/python-install-02.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The second panel of the python installation process.
 
@@ -102,7 +105,7 @@ Follow this procedure to install Python on your system:
    Finally, click on **"Install"**.  At this point Python will begin installing, typically
    requiring about 5 minutes.
 
-   .. image:: images/python-install-03.png
+   .. image:: img/python-install-03.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The third panel of the python installation process.
 
@@ -157,7 +160,7 @@ The Alyvix installer is launched from the command prompt that, like the Python i
 
    If the Alyvix Editor window appears as shown here, then everything is working properly.
 
-   .. image:: images/ae_full_screen.png
+   .. image:: img/ae_full_screen.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The main Alyvix Editor screen indicating the installation was successful.
 

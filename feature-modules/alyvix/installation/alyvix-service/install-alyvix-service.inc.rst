@@ -9,7 +9,7 @@ a task and its interface should look like and how they behave, and then later ru
 autonomously on the local Windows machine.
 
 
-.. _system_requirements_top:
+.. _system_requirements_alyvix_service:
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -52,13 +52,15 @@ requirements before you install Alyvix Service:
 |
 
 
-.. _installation_versions:
+.. _installation_versions_alyvix_service:
 
 Versions
 ~~~~~~~~
 
 +-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service Version            | Required Alyvix Core Version     | PostgreSQL Version              | Alyvix API Version |
+| Alyvix Service Version |          | Required Alyvix Core Version     | PostgreSQL Version              | Alyvix API Version |
++-----------------------------------+----------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.8.x              | |link-to-alyvix-install37x|      | |link-postgresql-install-12.x|  | 3,4,5,6            |
 +-----------------------------------+----------------------------------+---------------------------------+--------------------+
 | Alyvix Service 2.7.x              | |link-to-alyvix-install37x|      | |link-postgresql-install-12.x|  | 3, 4, 5            |
 +-----------------------------------+----------------------------------+---------------------------------+--------------------+
@@ -80,7 +82,7 @@ Versions
 |
 
 
-.. _installation_steps:
+.. _installation_steps_alyvix_service:
 
 Installation Steps
 ~~~~~~~~~~~~~~~~~~
@@ -108,7 +110,7 @@ The following steps will install Alyvix Service on your machine:
    default password to ensure the security of your system, and make a note of it so that
    you can configure Alyvix Service to use PostGre in the next step below.
 
-   .. image:: images/postgre-install-05.png
+   .. image:: img/postgre-install-05.png
       :width: 70%
       :align: center
       :alt: Use a secure password and remember it.
@@ -147,7 +149,7 @@ The following steps will install Alyvix Service on your machine:
 
    Run **Alyvix Service** within Windows Services **Task Manager > Services Tab > Alyvix Service > Start**
 
-   .. image:: images/service_alyvix_restart.png
+   .. image:: img/service_alyvix_restart.png
       :width: 70%
       :align: center
       :alt: Start the Alyvix Service.
@@ -155,12 +157,12 @@ The following steps will install Alyvix Service on your machine:
 #. **Monitoring system integration**
 
    At this point Alyvix Service is installed and running, and you can now proceed to integrate it
-   :ref:`within a monitoring system <monitoring_integrations_top>`.
+   :ref:`installing the NetEye-Alyvix module <neteye-modules>`(`neteye-alyvix`) and then :ref:`configuring how it's used within NetEye <monitoring_integrations_neteye_checklist>`.
 
 |
 
 
-.. _install_upgrade:
+.. _install_upgrade_alyvix_service:
 
 Upgrading
 ~~~~~~~~~

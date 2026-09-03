@@ -129,7 +129,7 @@ placing all executables in the directory
 :file:`C:\\Python39\\Lib\\site-packages\\alyvix\\`.
 
 The Alyvix installer is launched from the command prompt that, like the Python installer, must be
-**started in Adminstrator mode**.  Only this single step is required:
+**started in Administrator mode**.  Only this single step is required:
 
 .. rst-class:: bignums
 

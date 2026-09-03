@@ -934,3 +934,35 @@ Reviewing these findings allows a threat intelligence analyst to assess the repu
 associated with a blacklisted domain and take appropriate remediation action.
 
 Several blacklists allow the removal of a resource to be requested once its reputation has been verified.
+
+
+.. _blacklist_ip_item:
+
+Blacklist IP
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1596.005 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+The **Blacklist IP item** shows organization-related IP addresses that are listed in external blacklists,
+identified from the blacklist records associated with an IP address.
+
+For each finding, SATAYO reports the blacklisted IP address, the type of blacklist it appears in, and
+any additional data provided by the blacklist source, such as the reason for the listing.
+
+The presence of an IP address within a blacklist can compromise the provision of services and
+damage the organization's reputation:
+if mail servers or organizations enforce controls such as reputation filtering,
+messages and connections originating from a blacklisted IP address may be rejected or silently dropped.
+Reviewing these findings allows a threat intelligence analyst to assess the reputational and operational risk
+associated with a blacklisted IP address and take appropriate remediation action.
+
+Several blacklists allow the removal of a resource to be requested once its reputation has been verified.
+
+Each Blacklist IP finding is correlated with the :ref:`IPv4 Address finding <ipv4_address_item>` for the
+same IP address, so an analyst can navigate from an IP address to its blacklist records and back.

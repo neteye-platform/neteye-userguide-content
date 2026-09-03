@@ -128,9 +128,12 @@ techniques during SATAYO scans, such as DNS resolution/subdomain enumeration or
    domain findings described here.
 
 Domain findings act as **aggregators**: each finding collects related evidence discovered under the
-same domain. Currently, a domain finding can aggregate **Services**, **Mail servers**, **Mail**,
-**SSL/TLS certificates**, **Email addresses**, and **Stealer Logs** related to the same domain, as
-well as the **IPv4 addresses** it resolves to.
+same domain. Currently, a domain finding can aggregate **Services**, **Mail**, **SSL/TLS certificates**,
+**Email addresses**, and **Stealer Logs** related to the same domain, as well as the **IPv4 addresses**
+it resolves to.
+
+Additionally, a domain finding includes a property that indicates whether the domain itself has been
+identified as a **Mail Server**.
 
 Every domain finding carries a **severity** field that reflects how sensitive it is:
 

@@ -1,18 +1,3 @@
-.. |font-img| image:: /_static/img/font.png
-   :width: 60
-.. |image-img| image:: /_static/img/image.png
-   :width: 60
-.. |rect-img| image:: /_static/img/rect.png
-   :width: 60
-.. |email-small-img| image:: /_static/img/email_40.png
-   :width: 40
-   :class: no-scaled-link
-.. |github-small-img| image:: /_static/img/github_40.png
-   :width: 48
-   :class: no-scaled-link
-.. |slack-small-img| image:: /pictures/slack_logo.png
-   :width: 38
-   :class: no-scaled-link
 
 .. |play-icon| raw:: html
 
@@ -22,11 +7,13 @@
 
    &nbsp;<i class="fa fa-small fa-black fa-times"></i>
 
-.. |python-download-link-397| replace:: `Python 3.9.7 <https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe>`_
+.. |python-download-link-3147| replace:: `Python 3.14.7 <https://www.python.org/ftp/python/3.14.7/python-3.14.7-amd64.exe>`__
 
-.. |python-download-link-379| replace:: `Python 3.7.9 <https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`_
+.. |python-download-link-397| replace:: `Python 3.9.7 <https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe>`__
 
-.. |python-download-link| replace:: `64-bit Windows installer for Python version 3.9.7 <https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe>`_
+.. |python-download-link-379| replace:: `Python 3.7.9 <https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__
+
+.. |python-download-link| replace:: `64-bit Windows installer for Python version 3.9.7 <https://www.python.org/ftp/python/3.14.7/python-3.14.7-amd64.exe>`__
 
 .. |python-remove-name| replace:: :file:`Python 3.9.7 (64-bit)`
 

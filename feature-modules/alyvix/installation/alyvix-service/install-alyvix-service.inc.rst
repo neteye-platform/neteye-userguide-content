@@ -110,7 +110,7 @@ The following steps will install Alyvix Service on your machine:
    default password to ensure the security of your system, and make a note of it so that
    you can configure Alyvix Service to use PostGre in the next step below.
 
-   .. image:: img/postgre-install-05.png
+   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/postgre-install-05.png
       :width: 70%
       :align: center
       :alt: Use a secure password and remember it.
@@ -149,7 +149,7 @@ The following steps will install Alyvix Service on your machine:
 
    Run **Alyvix Service** within Windows Services **Task Manager > Services Tab > Alyvix Service > Start**
 
-   .. image:: img/service_alyvix_restart.png
+   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/service_alyvix_restart.png
       :width: 70%
       :align: center
       :alt: Start the Alyvix Service.

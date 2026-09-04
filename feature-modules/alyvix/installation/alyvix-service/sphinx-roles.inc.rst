@@ -1,18 +1,3 @@
-.. |font-img| image:: /_static/img/font.png
-   :width: 60
-.. |image-img| image:: /_static/img/image.png
-   :width: 60
-.. |rect-img| image:: /_static/img/rect.png
-   :width: 60
-.. |email-small-img| image:: /_static/img/email_40.png
-   :width: 40
-   :class: no-scaled-link
-.. |github-small-img| image:: /_static/img/github_40.png
-   :width: 48
-   :class: no-scaled-link
-.. |slack-small-img| image:: /pictures/slack_logo.png
-   :width: 38
-   :class: no-scaled-link
 
 .. |config-file-location| replace:: :file:`C:\\ProgramData\\Alyvix\\config.json`
 
@@ -20,17 +5,17 @@
 
 .. |security-directory-location| replace:: :file:`C:\\ProgramData\\Alyvix\\certs\\`
 
-.. |link-postgresql-install-12.x| replace:: `12.x <https://www.enterprisedb.com/software-downloads-postgres>`_
+.. |link-postgresql-install-12.x| replace:: `12.x <https://www.enterprisedb.com/software-downloads-postgres>`__
 
-.. |link-to-alyvix-install37x| replace:: `Alyvix 3.7.x <https://alyvix.com/learn/getting_started/install.html#versions>`_
+.. |link-to-alyvix-install37x| replace:: `Alyvix 3.7.x <https://alyvix.com/learn/getting_started/install.html#versions>`__
 
-.. |link-to-alyvix-install36x| replace:: `Alyvix 3.6.x <https://alyvix.com/learn/getting_started/install.html#versions>`_
+.. |link-to-alyvix-install36x| replace:: `Alyvix 3.6.x <https://alyvix.com/learn/getting_started/install.html#versions>`__
 
-.. |link-to-alyvix-install35x| replace:: `Alyvix 3.5.x <https://alyvix.com/learn/getting_started/install.html#versions>`_
+.. |link-to-alyvix-install35x| replace:: `Alyvix 3.5.x <https://alyvix.com/learn/getting_started/install.html#versions>`__
 
-.. |link-to-alyvix-install34x| replace:: `Alyvix 3.4.x <https://alyvix.com/learn/getting_started/install.html#versions>`_
+.. |link-to-alyvix-install34x| replace:: `Alyvix 3.4.x <https://alyvix.com/learn/getting_started/install.html#versions>`__
 
-.. |link-to-alyvix-install33x| replace:: `Alyvix 3.3.x <https://alyvix.com/learn/getting_started/install.html#versions>`_
+.. |link-to-alyvix-install33x| replace:: `Alyvix 3.3.x <https://alyvix.com/learn/getting_started/install.html#versions>`__
 
 .. |source-youtube| raw:: html
 

@@ -45,7 +45,7 @@ Versions
 +----------------+------------------------------+--------------------------------------------------------------------------------------------------+
 | Alyvix Version | Python Version Required      | Install Command                                                                                  |
 +----------------+------------------------------+--------------------------------------------------------------------------------------------------+
-| Alyvix 3.8.0   | |python-download-link-397|   | ``pip install alyvix --extra-index-url https://alyvix.github.io/alyvix-python-packages/simple/`` |
+| Alyvix 3.8.0   | |python-download-link-3147|  | ``pip install alyvix --extra-index-url https://alyvix.github.io/alyvix-python-packages/simple/`` |
 +----------------+------------------------------+--------------------------------------------------------------------------------------------------+
 | Alyvix 3.7.1   | |python-download-link-397|   | ``pip install alyvix==3.7.1``                                                                    |
 +----------------+------------------------------+--------------------------------------------------------------------------------------------------+
@@ -86,26 +86,26 @@ Follow this procedure to install Python on your system:
 #. Start the installation:
 
    1. :warn:`Right-click` on the downloaded executable and select **"Run as administrator"**
-   2. Check the box **"Add Python 3.9 to PATH"** at the bottom
+   2. Check the box **"Add Python 3.14 to PATH"** at the bottom
    3. Choose the option **"Customize installation"**
 
-   .. image:: img/python-install-01.png
+   .. image:: /feature-modules/alyvix/installation/alyvix-core/img/python-install-01.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The first panel of the python installation process.
 
 #. On the second panel all the option boxes should already be checked.  Click **"Next"** to
    continue.
 
-   .. image:: img/python-install-02.png
+   .. image:: /feature-modules/alyvix/installation/alyvix-core/img/python-install-02.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The second panel of the python installation process.
 
 #. On the third panel, make sure the advanced options are set as shown below.  Then under
-   **"Customize install location"**, insert the recommended location :file:`C:\\Python39\\`.
+   **"Customize install location"**, insert the recommended location :file:`C:\\Python314\\`.
    Finally, click on **"Install"**.  At this point Python will begin installing, typically
    requiring about 5 minutes.
 
-   .. image:: img/python-install-03.png
+   .. image:: /feature-modules/alyvix/installation/alyvix-core/img/python-install-03.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The third panel of the python installation process.
 
@@ -116,7 +116,7 @@ Follow this procedure to install Python on your system:
       :class: tiny-code-block
 
       C:\> python --version
-      Python 3.9.7
+      Python 3.14.7
 
 
 
@@ -128,8 +128,8 @@ Installing Alyvix
 
 Alyvix itself is installed via *pip*, the official Python package manager.  *pip* will
 automatically detect that your system is running Python 3 and will install Alyvix 3,
-placing all executables in the directory
-:file:`C:\\Python39\\Lib\\site-packages\\alyvix\\`.
+placing all python files in the directory
+:file:`C:\\Python314\\Lib\\site-packages\\alyvix\\`.
 
 The Alyvix installer is launched from the command prompt that, like the Python installer, must be
 **started in Administrator mode**.  Only this single step is required:
@@ -193,7 +193,11 @@ Only two steps are needed to upgrade to the latest version:
        containing folder (e.g., ``C:\Python37\``) and re-install Alyvix with *pip* as shown in
        the section :ref:`Installing Alyvix <install_release_alyvix_install>` above.
 
-     * If you have Python 3.9.7 installed, then you can use the *pip --upgrade* command:
+     * If you have Python 3.9.7 installed, uninstall it, then manually remove its
+       containing folder (e.g., ``C:\Python39\``) and re-install Alyvix with *pip* as shown in
+       the section :ref:`Installing Alyvix <install_release_alyvix_install>` above.
+
+     * If you have Python 3.14.7 installed, then you can use the *pip --upgrade* command:
 
        .. code-block:: doscon
           :class: short-code-block

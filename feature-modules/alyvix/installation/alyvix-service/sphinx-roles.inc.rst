@@ -73,12 +73,6 @@
 
    <i class="fa fa-small fa-invblue fa-trash"></i>
 
-.. |pivotal| image:: /pictures/pt_logo.png
-   :height: 38px
-   :width: 38px
-   :alt: The logo for Pivotal Tracker.
-   :target: https://www.pivotaltracker.com/n/projects/1533621
-
 .. |smalltab| raw:: html
 
    &nbsp;

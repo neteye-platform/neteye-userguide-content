@@ -65,21 +65,6 @@
 
    <i class="fa fa-smaller fa-link"></i>
 
-.. |lineadd-icon| image:: /pictures/lineadd_icon.png
-   :class: inline-image-higher
-
-.. |runblue| image:: /pictures/button_run_blue.png
-   :class: inline-image-higher button-boxshadow
-
-.. |mousearrow| image:: /pictures/icon_mouse_click_left_point_inline.png
-   :class: inline-image button-boxshadow
-
-.. |pivotal| image:: /pictures/pt_logo.png
-   :height: 38px
-   :width: 38px
-   :alt: The logo for Pivotal Tracker.
-   :target: https://www.pivotaltracker.com/n/projects/1533621
-
 .. |smalltab| raw:: html
 
    &nbsp;

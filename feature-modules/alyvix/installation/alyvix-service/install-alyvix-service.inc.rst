@@ -157,7 +157,7 @@ The following steps will install Alyvix Service on your machine:
 #. **Monitoring system integration**
 
    At this point Alyvix Service is installed and running, and you can now proceed to integrate it
-   :ref:`installing the NetEye-Alyvix module <neteye-modules>`(`neteye-alyvix`) and then :ref:`configuring how it's used within NetEye <monitoring_integrations_neteye_checklist>`.
+   :ref:`installing the NetEye-Alyvix module <neteye-modules>` (`neteye-alyvix`) and then :ref:`configuring how it's used within NetEye <monitoring_integrations_neteye_checklist>`.
 
 |
 

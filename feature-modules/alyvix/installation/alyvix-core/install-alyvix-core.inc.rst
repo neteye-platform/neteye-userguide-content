@@ -160,7 +160,7 @@ The Alyvix installer is launched from the command prompt that, like the Python i
 
    If the Alyvix Editor window appears as shown here, then everything is working properly.
 
-   .. image:: img/ae_full_screen.png
+   .. image:: /feature-modules/alyvix/installation/alyvix-core/img/ae_full_screen.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The main Alyvix Editor screen indicating the installation was successful.
 

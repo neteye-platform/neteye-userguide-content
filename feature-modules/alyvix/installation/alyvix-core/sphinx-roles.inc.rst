@@ -13,9 +13,9 @@
 
 .. |python-download-link-379| replace:: `Python 3.7.9 <https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__
 
-.. |python-download-link| replace:: `64-bit Windows installer for Python version 3.9.7 <https://www.python.org/ftp/python/3.14.7/python-3.14.7-amd64.exe>`__
+.. |python-download-link| replace:: `64-bit Windows installer for Python version 3.14.7 <https://www.python.org/ftp/python/3.14.7/python-3.14.7-amd64.exe>`__
 
-.. |python-remove-name| replace:: :file:`Python 3.9.7 (64-bit)`
+.. |python-remove-name| replace:: :file:`Python 3.14.7 (64-bit)`
 
 .. |source-youtube| raw:: html
 

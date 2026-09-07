@@ -134,7 +134,7 @@ The following steps will install Alyvix Service on your machine:
 
    * Create the folder :file:`C:\\ProgramData\\Alyvix\\certs\\webserver\\`
    * Save :file:`cert.crt` as an HTTPS certificate recognized by your CA
-   * Save :file:`cert.key` as its (unprotected) password
+   * Save :file:`cert.key` as the unencrypted private key corresponding to :file:`cert.crt`
 
    Note that the private key is all you need, you should not be asked for an additional password.
 
@@ -173,7 +173,7 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
 
    * If you're upgrading from version 2.4.x or earlier, create the subdirectory :file:`webserver\\`
      within :file:`C:\\ProgramData\\Alyvix\\certs\\` and move :file:`cert.crt` and :file:`cert.key`
-     to the new subdirectory (before version 2.6.0 these files may be in :file:`C:\\Program Files\\Alyvix\\Alyvix Service\\`)
+     to the new subdirectory (before version 2.5.0 these files may be in :file:`C:\\Program Files\\Alyvix\\Alyvix Service\\`)
    * Now back up the entire security certificate directory: |br1|  |security-directory-location|
    * Then back up your Alyvix Service configuration file: |br1|  |config-file-location|
    * And back up your Alyvix Service tenant roles file: |br1|  |mapping-file-location|
@@ -228,7 +228,7 @@ the steps performed during installation.
 #. Remove these two directories:
 
    * :file:`C:\\Program Files\\Alyvix\\`
-   * :file:`C:\\Program Data\\Alyvix\\`
+   * :file:`C:\\ProgramData\\Alyvix\\`
 
 #. If desired, remove Alyvix Core and/or Python using
    `the Alyvix uninstall instructions <https://alyvix.com/learn/getting_started/install.html#uninstalling-alyvix-and-python>`_.

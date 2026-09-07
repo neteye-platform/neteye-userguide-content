@@ -132,8 +132,7 @@ same domain. Currently, a domain finding can aggregate **Services**, **Mail**, *
 **Email addresses**, and **Stealer Logs** related to the same domain, as well as the **IPv4 addresses**
 it resolves to.
 
-Additionally, a domain finding includes a property that indicates whether the domain itself has been
-identified as a **Mail Server**.
+Additionally, a domain finding includes a property indicating whether its value is used as target of an **MX Record**.
 
 Every domain finding carries a **severity** field that reflects how sensitive it is:
 

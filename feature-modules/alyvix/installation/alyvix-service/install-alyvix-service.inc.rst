@@ -237,9 +237,6 @@ the steps performed during installation.
 Unblock Alyvix Service Files
 ````````````````````````````
 
-Unblock downloaded Alyvix Service files on Windows
-=================================================
-
 When Alyvix Service installation files are downloaded from the Internet, Windows
 may mark them with security information known as the Mark of the Web (MOTW).
 In some environments, this can prevent the installer or related files from opening correctly.

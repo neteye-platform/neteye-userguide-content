@@ -232,3 +232,41 @@ the steps performed during installation.
 
 #. If desired, remove Alyvix Core and/or Python using
    `the Alyvix uninstall instructions <https://alyvix.com/learn/getting_started/install.html#uninstalling-alyvix-and-python>`_.
+
+
+Unblock Alyvix Service Files
+````````````````````````````
+
+Unblock downloaded Alyvix Service files on Windows
+=================================================
+
+When Alyvix Service installation files are downloaded from the Internet, Windows
+may mark them with security information known as the Mark of the Web (MOTW).
+In some environments, this can prevent the installer or related files from opening correctly.
+
+If Windows blocks a downloaded Alyvix Service file, the following message may be displayed::
+
+   This file came from another computer and might be blocked to help protect this computer.
+
+Before starting the Alyvix Service installation, verify that the downloaded files are not blocked.
+
+To unblock a downloaded file:
+
+#. Open **File Explorer**.
+#. Locate the downloaded Alyvix Service installation file.
+#. Right-click the file and select **Properties**.
+#. On the **General** tab, check the **Security** section at the bottom of the window.
+#. If the **Unblock** option is available, select it.
+#. Select **Apply**, then select **OK**.
+
+.. warning::
+
+   Unblock only files downloaded from trusted sources.
+
+If Windows continues to display security warnings for trusted Alyvix Service files:
+
+* Make sure Windows and all required applications are up to date.
+* Verify that the files were downloaded from an official or trusted source.
+* Re-download the files if they may have been corrupted.
+* Check whether your organization applies security policies that block downloaded files.
+* Temporarily disable third-party download managers or security software only for testing purposes.

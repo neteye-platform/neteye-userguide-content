@@ -73,11 +73,12 @@ Kubernetes Networking
 Since |ne| leverages Kubernetes for its container orchestration, it is mandatory to ensure that the networking
 requirements are met. Down below you can find an image depicting how the networking is structured in a |ne| cluster:
 
-.. figure:: /getting-started/architecture/kubernetes/img/kubernetes-networking.svg
-   :alt: Kubernetes Networking inside a |ne| Cluster
-   :scale: 90%
+.. _figure-kubernetes-networking:
 
-   The |ne| Kubernetes Networking Architecture
+.. figure:: kubernetes/img/kubernetes-networking.svg
+    :alt: Kubernetes Networking
+
+    Networking in a |ne| Kubernetes cluster
 
 Three networking components are involved in the |ne| Kubernetes networking:
 

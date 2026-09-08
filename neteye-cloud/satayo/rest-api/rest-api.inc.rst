@@ -12,7 +12,7 @@ Example
 As an example, suppose we want to insert a finding about a bank account credential for a
 user identified by an email address.
 
-We use the following ``curl`` command to insert it:
+We can use the following ``curl`` command to insert it:
 
 .. code-block:: bash
 
@@ -40,8 +40,7 @@ The API inserts the finding and returns ``201`` with the finding identifier in t
       "uid": "Y3JlZGVudGlhbC0zODM5"
     }
 
-Then suppose we want to retrieve that finding. One possible way is to
-retrieve the finding using its identifier:
+Then suppose we want to retrieve that finding. We can do so using its identifier:
 
 .. code-block:: bash
 
@@ -97,7 +96,7 @@ The API returns ``200`` with the finding details in the body:
       ]
     }
 
-The finding will also appear in the list of credential findings:
+Another way is to locate the finding within the list of all credential findings by making a call like this:
 
 .. code-block:: bash
 
@@ -150,6 +149,6 @@ The API returns ``200`` with the list of findings in the body:
           "email_address": "johndoe@mail.com",
           "resource": "https://www.bank.com/"
         },
-        ...
+        // the other findings would be listed here
       ]
     }

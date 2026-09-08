@@ -9,4 +9,3 @@ Security Policy
    security-policy/bugfix-policy.rst
    security-policy/reporting.rst
    security-policy/cra-compliance.rst
-

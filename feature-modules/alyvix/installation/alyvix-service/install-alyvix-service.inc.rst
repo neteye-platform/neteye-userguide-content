@@ -95,10 +95,12 @@ The following steps will install Alyvix Service on your machine:
    `to request it <https://alyvix.com/team>`_, providing a machine IP from where you will download the
    software package.  You'll obtain access to `our repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_.
 
+
 #. **Install Alyvix Core**
 
    Follow :ref:`the installation instructions <install_alyvix_core>`
    for Python and Alyvix.
+
 
 #. **Install PostgreSQL**
 
@@ -117,6 +119,7 @@ The following steps will install Alyvix Service on your machine:
 
    Continue clicking "Next" to accept the remaining defaults and complete the installation.
 
+
 #. **Install Alyvix Service**
 
    Download the most recent version of the installer (:file:`alyvix_service_<version>.zip`) from
@@ -131,6 +134,7 @@ The following steps will install Alyvix Service on your machine:
    * Open the file |config-file-location| :warn:`in administrator mode`
    * Paste the password in this line: |br1|
      ``"database":{.. "password": "<your_password>", ..}``
+
 
 #. **Mandatory security configuration**
 
@@ -149,6 +153,7 @@ The following steps will install Alyvix Service on your machine:
    * Copy the JWT certificate file from your monitoring system into the folder above,
      renaming it to :file:`public.pem`.
 
+
 #. **Start Alyvix Service**
 
    Run **Alyvix Service** within Windows Services **Task Manager > Services Tab > Alyvix Service > Start**
@@ -157,6 +162,7 @@ The following steps will install Alyvix Service on your machine:
       :width: 70%
       :align: center
       :alt: Start the Alyvix Service.
+
 
 #. **Monitoring system integration**
 

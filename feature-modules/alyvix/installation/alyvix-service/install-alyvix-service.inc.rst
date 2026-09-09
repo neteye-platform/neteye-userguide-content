@@ -97,7 +97,7 @@ The following steps will install Alyvix Service on your machine:
 
 #. **Install Alyvix Core**
 
-   Follow `the installation instructions <https://alyvix.com/learn/getting_started/install.html>`_
+   Follow :ref:`the installation instructions <install_alyvix_core>`
    for Python and Alyvix.
 
 #. **Install PostgreSQL**
@@ -122,6 +122,10 @@ The following steps will install Alyvix Service on your machine:
    Download the most recent version of the installer (:file:`alyvix_service_<version>.zip`) from
    `the repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_, and run the :file:`setup.exe`
    installer which can be found inside the .zip file :warn:`in administrator mode`. |br|
+
+   .. note:: See how to
+      :ref:`unblock_alyvix_files` in case Windows blocks a downloaded Alyvix Service file.
+
    Set the database password from step #3 as follows:
 
    * Open the file |config-file-location| :warn:`in administrator mode`
@@ -189,7 +193,7 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
 
 #. Upgrade Alyvix Core
 
-   Follow `the instructions here <https://alyvix.com/learn/getting_started/install.html#upgrading-alyvix>`_
+   Follow :ref:`the instructions here <install_upgrade>`
 
 #. Install the new version of Alyvix Service
 
@@ -231,8 +235,10 @@ the steps performed during installation.
    * :file:`C:\\ProgramData\\Alyvix\\`
 
 #. If desired, remove Alyvix Core and/or Python using
-   `the Alyvix uninstall instructions <https://alyvix.com/learn/getting_started/install.html#uninstalling-alyvix-and-python>`_.
+   :ref:`the Alyvix uninstall instructions <install_uninstall>`.
 
+
+.. _unblock_alyvix_files:
 
 Unblock Alyvix Service Files
 ````````````````````````````
@@ -246,15 +252,22 @@ If Windows blocks a downloaded Alyvix Service file, the following message may be
    This file came from another computer and might be blocked to help protect this computer.
 
 Before starting the Alyvix Service installation, verify that the downloaded files are not blocked.
+Windows may mark files downloaded from the Internet with security information known as the Mark of the Web (MOTW).
+Windows can also propagate this mark from a downloaded ZIP archive to the files extracted from it,
+which can leave the installer or its dependencies blocked.
 
-To unblock a downloaded file:
+Before extracting the Alyvix Service archive, unblock the downloaded ``alyvix_service_<version>.zip`` file.
+
+To unblock the downloaded ZIP file:
 
 #. Open **File Explorer**.
-#. Locate the downloaded Alyvix Service installation file.
-#. Right-click the file and select **Properties**.
+#. Locate the downloaded ``alyvix_service_<version>.zip`` file.
+#. Right-click the ZIP file and select **Properties**.
 #. On the **General** tab, check the **Security** section at the bottom of the window.
 #. If the **Unblock** option is available, select it.
 #. Select **Apply**, then select **OK**.
+#. Extract the unblocked ``alyvix_service_<version>.zip`` archive.
+#. Open the extracted folder and run ``setup.exe``.
 
 .. warning::
 

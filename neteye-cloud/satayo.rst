@@ -11,4 +11,5 @@ Cyber Threat Intelligence - SATAYO
    satayo/mitre-attack.rst
    satayo/dashboard.rst
    satayo/satayo-items.rst
+   satayo/rest-api.rst
    satayo/managed-service.rst

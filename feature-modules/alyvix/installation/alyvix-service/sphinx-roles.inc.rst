@@ -7,16 +7,6 @@
 
 .. |link-postgresql-install-12.x| replace:: `12.x <https://www.enterprisedb.com/software-downloads-postgres>`__
 
-.. |link-to-alyvix-install37x| replace:: `Alyvix 3.7.x <https://neteye.guide/current/feature-modules/alyvix/installation/alyvix-core.html#versions>`__
-
-.. |link-to-alyvix-install36x| replace:: `Alyvix 3.6.x <https://neteye.guide/current/feature-modules/alyvix/installation/alyvix-core.html#versions>`__
-
-.. |link-to-alyvix-install35x| replace:: `Alyvix 3.5.x <https://neteye.guide/current/feature-modules/alyvix/installation/alyvix-core.html#versions>`__
-
-.. |link-to-alyvix-install34x| replace:: `Alyvix 3.4.x <https://neteye.guide/current/feature-modules/alyvix/installation/alyvix-core.html#versions>`__
-
-.. |link-to-alyvix-install33x| replace:: `Alyvix 3.3.x <https://neteye.guide/current/feature-modules/alyvix/installation/alyvix-core.html#versions>`__
-
 .. |source-youtube| raw:: html
 
    <div style="text-align: right; padding: 0; margin: 0;">Source:  Alyvix@YouTube &nbsp; <i class="fas fa-small fa-external-link-alt"></i></div>

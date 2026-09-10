@@ -63,6 +63,11 @@ Node**, to allow for updates and license verification:
    "downloads-regions.dell-cidr.akadns.net", "443 TCP", "DELL firmware updates"
    "downloads.dell.com-v2-dd.edgekey.net", "443 TCP", "DELL firmware updates"
    "e12616.dscd.akamaiedge.net", "443 TCP", "DELL firmware updates"
+   "ghcr.io", "443 TCP", "|ne| container images (e.g. the |ne| Operator)"
+   "quay.io", "443 TCP", "Third-party container images (e.g. operators distributed through OperatorHub)"
+   "docker.io", "443 TCP", "Third-party container images (e.g. the OpenTelemetry Collector and Alpine Linux)"
+   "index.docker.io", "443 TCP", "RKE2 container images (e.g. Kubernetes control plane components)"
+   "docker.elastic.co", "443 TCP", "Elastic container images (e.g. the EDOT Collector; only for installations with the Elastic Stack)"
    "2.rhel.pool.ntp.org", "123 UDP", "NTP server for time synchronization. Alternatively, an internal NTP server can be `configured <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/configuring-time-synchronization_configuring-basic-system-settings#setting-up-chrony-for-a-system-in-an-isolated-network_using-chrony>`__"
 
 The following domains may prove to be useful and simplify working with |ne|:

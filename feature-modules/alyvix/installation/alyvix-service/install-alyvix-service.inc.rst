@@ -57,27 +57,27 @@ requirements before you install Alyvix Service:
 Versions
 ````````
 
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service Version            | Required Alyvix Core Version     | PostgreSQL Version              | Alyvix API Version |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.8.x              | |link-to-alyvix-install37x|      | |link-postgresql-install-12.x|  | 3,4,5,6            |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.7.x              | |link-to-alyvix-install37x|      | |link-postgresql-install-12.x|  | 3, 4, 5            |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.6.x              | |link-to-alyvix-install36x|      | |link-postgresql-install-12.x|  | 3, 4               |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.5.x              | |link-to-alyvix-install36x|      | |link-postgresql-install-12.x|  | 0, 1, 2, 3         |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.4.x              | |link-to-alyvix-install35x|      | |link-postgresql-install-12.x|  | 0, 1, 2            |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.3.x              | |link-to-alyvix-install35x|      | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.2.x              | |link-to-alyvix-install35x|      | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.1.x              | |link-to-alyvix-install34x|      | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.0.x              | |link-to-alyvix-install33x|      | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+----------------------------------+---------------------------------+--------------------+
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service Version            | Required Alyvix Core Version                 | PostgreSQL Version              | Alyvix API Version |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.8.x              | :ref:`Alyvix 3.7.x <installation_versions>`  | |link-postgresql-install-12.x|  | 3,4,5,6            |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.7.x              | :ref:`Alyvix 3.7.x <installation_versions>`  | |link-postgresql-install-12.x|  | 3, 4, 5            |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.6.x              | :ref:`Alyvix 3.6.x <installation_versions>`  | |link-postgresql-install-12.x|  | 3, 4               |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.5.x              | :ref:`Alyvix 3.6.x <installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1, 2, 3         |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.4.x              | :ref:`Alyvix 3.5.x <installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1, 2            |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.3.x              | :ref:`Alyvix 3.5.x <installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.2.x              | :ref:`Alyvix 3.5.x <installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.1.x              | :ref:`Alyvix 3.4.x <installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.0.x              | :ref:`Alyvix 3.3.x <installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
 
 |
 
@@ -95,10 +95,12 @@ The following steps will install Alyvix Service on your machine:
    `to request it <https://alyvix.com/team>`_, providing a machine IP from where you will download the
    software package.  You'll obtain access to `our repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_.
 
+
 #. **Install Alyvix Core**
 
-   Follow `the installation instructions <https://alyvix.com/learn/getting_started/install.html>`_
+   Follow :ref:`the installation instructions <install_alyvix_core>`
    for Python and Alyvix.
+
 
 #. **Install PostgreSQL**
 
@@ -117,16 +119,22 @@ The following steps will install Alyvix Service on your machine:
 
    Continue clicking "Next" to accept the remaining defaults and complete the installation.
 
+
 #. **Install Alyvix Service**
 
    Download the most recent version of the installer (:file:`alyvix_service_<version>.zip`) from
    `the repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_, and run the :file:`setup.exe`
    installer which can be found inside the .zip file :warn:`in administrator mode`. |br|
+
+   .. note:: See how to
+      :ref:`unblock_alyvix_files` in case Windows blocks a downloaded Alyvix Service file.
+
    Set the database password from step #3 as follows:
 
    * Open the file |config-file-location| :warn:`in administrator mode`
    * Paste the password in this line: |br1|
      ``"database":{.. "password": "<your_password>", ..}``
+
 
 #. **Mandatory security configuration**
 
@@ -145,6 +153,7 @@ The following steps will install Alyvix Service on your machine:
    * Copy the JWT certificate file from your monitoring system into the folder above,
      renaming it to :file:`public.pem`.
 
+
 #. **Start Alyvix Service**
 
    Run **Alyvix Service** within Windows Services **Task Manager > Services Tab > Alyvix Service > Start**
@@ -153,6 +162,7 @@ The following steps will install Alyvix Service on your machine:
       :width: 70%
       :align: center
       :alt: Start the Alyvix Service.
+
 
 #. **Monitoring system integration**
 
@@ -189,7 +199,7 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
 
 #. Upgrade Alyvix Core
 
-   Follow `the instructions here <https://alyvix.com/learn/getting_started/install.html#upgrading-alyvix>`_
+   Follow :ref:`the instructions here <install_upgrade>`
 
 #. Install the new version of Alyvix Service
 
@@ -231,4 +241,48 @@ the steps performed during installation.
    * :file:`C:\\ProgramData\\Alyvix\\`
 
 #. If desired, remove Alyvix Core and/or Python using
-   `the Alyvix uninstall instructions <https://alyvix.com/learn/getting_started/install.html#uninstalling-alyvix-and-python>`_.
+   :ref:`the Alyvix uninstall instructions <install_uninstall>`.
+
+
+.. _unblock_alyvix_files:
+
+Unblock Alyvix Service Files
+````````````````````````````
+
+When Alyvix Service installation files are downloaded from the Internet, Windows
+may mark them with security information known as the Mark of the Web (MOTW).
+In some environments, this can prevent the installer or related files from opening correctly.
+
+If Windows blocks a downloaded Alyvix Service file, the following message may be displayed::
+
+   This file came from another computer and might be blocked to help protect this computer.
+
+Before starting the Alyvix Service installation, verify that the downloaded files are not blocked.
+Windows may mark files downloaded from the Internet with security information known as the Mark of the Web (MOTW).
+Windows can also propagate this mark from a downloaded ZIP archive to the files extracted from it,
+which can leave the installer or its dependencies blocked.
+
+Before extracting the Alyvix Service archive, unblock the downloaded ``alyvix_service_<version>.zip`` file.
+
+To unblock the downloaded ZIP file:
+
+#. Open **File Explorer**.
+#. Locate the downloaded ``alyvix_service_<version>.zip`` file.
+#. Right-click the ZIP file and select **Properties**.
+#. On the **General** tab, check the **Security** section at the bottom of the window.
+#. If the **Unblock** option is available, select it.
+#. Select **Apply**, then select **OK**.
+#. Extract the unblocked ``alyvix_service_<version>.zip`` archive.
+#. Open the extracted folder and run ``setup.exe``.
+
+.. warning::
+
+   Unblock only files downloaded from trusted sources.
+
+If Windows continues to display security warnings for trusted Alyvix Service files:
+
+* Make sure Windows and all required applications are up to date.
+* Verify that the files were downloaded from an official or trusted source.
+* Re-download the files if they may have been corrupted.
+* Check whether your organization applies security policies that block downloaded files.
+* Temporarily disable third-party download managers or security software only for testing purposes.

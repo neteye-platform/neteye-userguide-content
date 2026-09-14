@@ -20,7 +20,7 @@ We can use the following ``curl`` command to insert it:
       'https://satayo2.apps-crc.testing/satayo/api/sdk/v0/findings/credentials' \
       -H 'accept: application/json' \
       -H 'Traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01' \
-      -H 'Authorization: Bearer XmiJVCjVLEa2dc8S' \
+      -H 'Authorization: Bearer <YOUR_API_KEY>' \
       -H 'Content-Type: application/json' \
       -d '{
       "monitored_domain_id": 1,
@@ -48,7 +48,7 @@ Then suppose we want to retrieve that finding. We can do so using its identifier
       'https://satayo2.apps-crc.testing/satayo/api/sdk/v0/finding/Y3JlZGVudGlhbC0zODM5' \
       -H 'accept: application/json' \
       -H 'Traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01' \
-      -H 'Authorization: Bearer XmiJVCjVLEa2dc8S'
+      -H 'Authorization: Bearer <YOUR_API_KEY>'
 
 The API returns ``200`` with the finding details in the body:
 
@@ -104,7 +104,7 @@ Another way is to locate the finding within the list of all credential findings 
       'https://satayo2.apps-crc.testing/satayo/api/sdk/v0/findings/credential' \
       -H 'accept: application/json' \
       -H 'Traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01' \
-      -H 'Authorization: Bearer XmiJVCjVLEa2dc8S'
+      -H 'Authorization: Bearer <YOUR_API_KEY>'
 
 The API returns ``200`` with the list of findings in the body:
 

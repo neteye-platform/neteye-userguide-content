@@ -74,7 +74,7 @@ Node**, to allow for updates and license verification:
    "index.docker.io", "443 TCP", "Docker Hub container images"
    "registry-1.docker.io", "443 TCP", "Docker Hub container images"
    "production.cloudfront.docker.com", "443 TCP", "Docker Hub container images"
-   "*.cloudflarestorage.com", "443 TCP", "Container images"
+    "\*.cloudflarestorage.com", "443 TCP", "Container images"
    "rpm.rancher.io", "443 TCP", "Rancher packages"
    "2.rhel.pool.ntp.org", "123 UDP", "NTP server for time synchronization. Alternatively, an internal NTP server can be `configured <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/configuring-time-synchronization_configuring-basic-system-settings#setting-up-chrony-for-a-system-in-an-isolated-network_using-chrony>`__"
 

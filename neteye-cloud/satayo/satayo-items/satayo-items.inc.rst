@@ -978,13 +978,17 @@ SSL/TLS
 
    Reconnaissance
 
-   - `T1596.005 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+   - `T1595.002 Active Scanning: Vulnerability Scanning <https://attack.mitre.org/techniques/T1595/002/>`__
+   - `T1596.003 Search Open Technical Databases: Digital Certificates <https://attack.mitre.org/techniques/T1596/003/>`__
    - `T1592.002 Gather Victim Host Information: Software <https://attack.mitre.org/techniques/T1592/002/>`__
-   - `T1592.004 Gather Victim Host Information: Client Configurations <https://attack.mitre.org/techniques/T1592/004/>`__
 
-The **SSL/TLS item** shows information about the SSL/TLS configuration of exposed web servers on domain-related IPs.
-Checks performed may return evidence of expired SSL certificates or the use of obsolete and insecure cryptographic
-algorithms.
+The **SSL/TLS item** shows the certificates presented by the exposed services discovered on
+domain-related IPs, together with the outcome of every check performed on them. Checks may return
+evidence of expired certificates or of the use of obsolete and insecure cryptographic algorithms.
 
-Each finding is tagged with a severity level ranging from **CRITICAL** to **LOW**, or **OK** when no issue is
-detected, reflecting the risk associated with the configuration.
+Each item lists the certificate's identifying data (subject and issuer, serial number, validity
+dates, alternative names, signature and public key algorithm, key size), the certificate itself in
+PEM form, and the individual checks performed on it.
+
+Every check carries its own severity: **CRITICAL**, **HIGH**, **MEDIUM** or **LOW** for a
+certificate defect, or **OK** where the check passed.

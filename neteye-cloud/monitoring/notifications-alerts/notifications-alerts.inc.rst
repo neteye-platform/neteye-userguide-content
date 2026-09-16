@@ -10,7 +10,7 @@ requires knowing:
 * **The content that needs to be communicated**, including the objects being
   monitored that are affected, their current state, the time the event
   happened, and potentially a recommended course of action.
-* **Exactly whom to send a message to** – This can be be a single person, a
+* **Exactly whom to send a message to** – This can be a single person, a
   group of people, or even conditionally a person or group depending on the
   specific characteristics of the event or object (e.g. a Windows versus Linux
   host) involved, or the severity of the issue. In |nec| this is managed with
@@ -27,7 +27,7 @@ that users should be aware of, but are less important than *alerts*, which
 mean that something serious is occurring and action needs to be taken quickly.
 
 |nec| Support will help you define the parameters above, even including setting
-up `an SMS gateway <sms-gateway-moxa>`_ to get immediate alerts to your phone.
+up :ref:`an SMS gateway <sms-gateway-moxa>` to get immediate alerts to your phone.
 
 
 Users and User Groups

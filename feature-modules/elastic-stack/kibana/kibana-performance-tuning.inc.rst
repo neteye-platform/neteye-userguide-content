@@ -22,7 +22,7 @@ To do this, set ``csp.strict`` to **true** in the file
 
 .. rubric:: Memory
 
-Kibana has a default maximum memory limit of **1.4 GB**, and in most
+Kibana has a default memory limit that scales based on total memory available, and in most
 cases, we recommend leaving this setting to its default value. However,
 in some scenarios, such as large reporting jobs, it may make sense to
 tweak limits to meet more specific requirements.

@@ -98,6 +98,7 @@ and include `the cluster requirements specified by RedHat
    "TCP 6444", "RKE2 to function properly on 0.0.0.0", "Used in case of restore procedures"
    "TCP 9345", "RKE2 to function properly on 0.0.0.0", "RKE2 local supervisor"
    "TCP 9346", "RKE2 to function properly on 0.0.0.0", "Load balancer for the RKE2 local supervisor"
+
 **Table Notes:**
 
 .. [#f1] When using the Booth cluster ticket manager or a quorum

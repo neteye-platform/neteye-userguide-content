@@ -162,5 +162,3 @@ traffic from outside the Kubernetes cluster, such as a Gateway API listener. A `
 not all installations, as it can accommodate between 128 different |ne| nodes and 128 different Load Balancer Services.
 Furthermore, changing the Service Load Balancer CIDR after installation is possible, although not implemented by any
 |ne| command, requiring manual intervention and careful planning.
-
-

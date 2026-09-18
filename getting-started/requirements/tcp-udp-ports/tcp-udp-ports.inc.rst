@@ -93,7 +93,11 @@ and include `the cluster requirements specified by RedHat
    resources or services are added."
    "TCP 8086", "InfluxDB"
    "TCP 8000", "Lampo"
-
+   "TCP 6442", "RKE2 to function properly on 0.0.0.0", "Load balancer for the Kubernetes API server"
+   "TCP 6443", "RKE2 to function properly on 0.0.0.0", "Kubernetes API server"
+   "TCP 6444", "RKE2 to function properly on 0.0.0.0", "Used in case of restore procedures"
+   "TCP 9345", "RKE2 to function properly on 0.0.0.0", "RKE2 local supervisor"
+   "TCP 9346", "RKE2 to function properly on 0.0.0.0", "Load balancer for the RKE2 local supervisor"
 **Table Notes:**
 
 .. [#f1] When using the Booth cluster ticket manager or a quorum

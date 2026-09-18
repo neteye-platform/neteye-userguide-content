@@ -192,17 +192,4 @@ correctly:
    * - TCP 9346
      - Load balancer for the RKE2 local supervisor
 
-Required repository access
-^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The official RKE2 RPM repository must be reachable from the NetEye system at
-installation time:
-
-.. code-block:: none
-
-   https://rpm.rancher.io/
-
-.. note::
-
-   Ensure your firewall or proxy rules permit outbound HTTPS traffic to
-   ``rpm.rancher.io`` before running the installer.

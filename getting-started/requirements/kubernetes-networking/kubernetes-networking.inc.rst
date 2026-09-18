@@ -163,33 +163,4 @@ not all installations, as it can accommodate between 128 different |ne| nodes an
 Furthermore, changing the Service Load Balancer CIDR after installation is possible, although not implemented by any
 |ne| command, requiring manual intervention and careful planning.
 
-RKE2 Runtime Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When NetEye is deployed on a Kubernetes cluster managed by RKE2, the following
-additional prerequisites must be met before installation.
-
-Required ports
-^^^^^^^^^^^^^^
-
-The following TCP ports must be available on ``0.0.0.0`` for RKE2 to function
-correctly:
-
-.. list-table::
-   :header-rows: 1
-   :widths: 20 80
-
-   * - Port
-     - Description
-   * - TCP 6442
-     - Load balancer for the Kubernetes API server
-   * - TCP 6443
-     - Kubernetes API server
-   * - TCP 6444
-     - Used for restore procedures
-   * - TCP 9345
-     - RKE2 local supervisor
-   * - TCP 9346
-     - Load balancer for the RKE2 local supervisor
-
 

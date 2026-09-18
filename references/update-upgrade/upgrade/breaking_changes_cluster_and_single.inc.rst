@@ -16,7 +16,7 @@ folder ``/neteye/shared/glpi/data/marketplace`` on the host system.
 
 
 Elastic Stack Upgrade to v9.5
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In |ne| 4.50, Elastic Stack upgrades from version 9.4 to 9.5. To ensure compatibility, review the official breaking changes linked below:
 

@@ -280,6 +280,8 @@ functioning of your Elastic Stack installation:
 .. csv-table::
    :header: "Domain", "Port", "Intended Use"
 
+   "docker.elastic.co", "443 TCP", "Elastic container images"
+   "docker-auth.elastic.co", "443 TCP", "Elastic container images"
    "epr.elastic.co", "443 TCP", "Elastic Package Registry (mandatory in all SIEM installations)"
    "geoip.elastic.co", "443 TCP", "Elastic GeoIP endpoint"
    "storage.googleapis.com", "443 TCP", "GeoLite2 City, GeoLite2 Country, and GeoLite2 ASN GeoIP2 databases used by Elastic GeoIP processor"

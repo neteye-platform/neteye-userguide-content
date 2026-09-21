@@ -965,3 +965,30 @@ Several blacklists allow the removal of a resource to be requested once its repu
 
 Each Blacklist IP finding is correlated with the :ref:`IPv4 Address finding <ipv4_address_item>` for the
 same IP address, so an analyst can navigate from an IP address to its blacklist records and back.
+
+
+.. _ssl_tls_item:
+
+SSL/TLS
+=======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1595.002 Active Scanning: Vulnerability Scanning <https://attack.mitre.org/techniques/T1595/002/>`__
+   - `T1596.003 Search Open Technical Databases: Digital Certificates <https://attack.mitre.org/techniques/T1596/003/>`__
+   - `T1592.002 Gather Victim Host Information: Software <https://attack.mitre.org/techniques/T1592/002/>`__
+
+The **SSL/TLS item** shows the certificates presented by the exposed services discovered on
+domain-related IPs, together with the outcome of every check performed on them. Checks may return
+evidence of expired certificates or of the use of obsolete and insecure cryptographic algorithms.
+
+Each item lists the certificate's identifying data (subject and issuer, serial number, validity
+dates, alternative names, signature and public key algorithm, key size), the certificate itself in
+PEM form, and the individual checks performed on it.
+
+Every check carries its own severity: **CRITICAL**, **HIGH**, **MEDIUM** or **LOW** for a
+certificate defect, or **OK** where the check passed.

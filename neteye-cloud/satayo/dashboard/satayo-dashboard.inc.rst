@@ -35,30 +35,49 @@ Exposure Index
 ``````````````
 
 The **Exposure Assessment Index Value (EAIV)** panel shows the external exposure
-level of the selected organization, based on the last 12 months of scan activity. The
-value is the sum of three exposure categories:
+level of the selected organization over the last 12 months.
+
+The large number at the top of the panel is the current EAIV, that is, the overall
+exposure score of the organization at the most recent scan, obtained as the sum of the
+three exposure categories described below. The score ranges from **0**, meaning that no
+external exposure was detected, to **100**, meaning maximum exposure: the higher the
+value, the greater the potential impact of the information that an attacker could exploit.
+
+.. hint:: Hover over the information icon next to the panel title to see how the index
+   is calculated and what the thresholds mean.
+
+The graph below the counter shows how exposure evolved over the same period, with one
+line for each of the three exposure categories tracked by SATAYO:
 
 - **Infrastructure** — exposure related to your network and systems configuration.
 - **Data Files & People** — exposure related to leaked data, files, and personal information.
 - **Deep & Dark Web** — exposure related to mentions and activity found on the deep and dark web.
 
-.. hint:: Hover over the counter to see the current breakdown by category.
+Use the legend under the graph to identify each line and to understand which category is
+driving the overall score. A line that grows over time points to the area where new
+exposure is accumulating and where remediation effort is most needed.
 
-#. **0** means that no external exposure was detected.
+Each line shows one point for each of the past 12 months, based on the most recent scan
+completed in each month. If no scan was performed in a given month, its point repeats the
+previous month's value so that the trend line stays continuous. The labels on the
+horizontal axis use the ``MM/YY`` format, from the oldest month on the left to the most
+recent one on the right.
 
-#. Most organizations score below **100**, though the index has no fixed maximum: it
-   is the sum of however many checks were run during a scan, so an organization with a
-   broad digital footprint (many monitored domains) can score higher.
+.. hint:: Hover over any point of the graph to open a tooltip with the details of that
+   month: the reference :guilabel:`Date`, the value of each of the three categories, and
+   their :guilabel:`Total`, that is, the EAIV of that month. Use it to compare a past
+   month with the current value shown by the counter.
 
-The label under the counter tells you at a glance which risk band the current value
-falls into: :guilabel:`Optimal`, :guilabel:`Low`, :guilabel:`Medium`, :guilabel:`High`,
-or :guilabel:`Critical`. Its color matches the corresponding threshold line drawn on the
-graph (blue for Low, yellow for Medium, orange for High, red for Critical).
+The graph is drawn on a fixed **0–100** scale, and the horizontal dashed lines mark the
+risk thresholds:
 
-The EAIV graph shows one point for each of the past 12 months, based on the most recent
-scan completed in each month. If no scan was performed that month, its point repeats the previous
-month's value so the trend line stays continuous. Expand the graph when you need a
-larger view for trend analysis.
+- the yellow line is the :guilabel:`Medium Threshold`, set at **30**;
+- the orange line is the :guilabel:`High Threshold`, set at **60**.
+
+Hover over a dashed line to display its label and value. Values below the Medium
+Threshold indicate a contained exposure, values between the two thresholds require
+attention, and values above the High Threshold indicate an exposure level that should be
+remediated as a priority.
 
 Interpret the EAIV together with the size and digital footprint of the organization.
 A larger organization with more domains, services, and publicly accessible

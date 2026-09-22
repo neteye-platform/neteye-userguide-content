@@ -4,8 +4,8 @@ Notifications and Alerts
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 When |nec| discovers a problem via monitoring, it needs to let a pre-defined
-set of people know that some unusual or important event has occurred.  This
-requires knowing:
+set of people know that some unusual or important event has occurred. Before
+|ne| can send messages to administrators or users, it needs to know:
 
 * **The content that needs to be communicated**, including the objects being
   monitored that are affected, their current state, the time the event

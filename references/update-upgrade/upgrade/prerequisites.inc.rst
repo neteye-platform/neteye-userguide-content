@@ -46,4 +46,3 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
    * The custom variable ``nx_neteye_tenant`` has been deprecated and replaced by ``neteye_tenant``.
    * Prior to upgrading your installed NEPs, verify that the ``neteye_tenant`` variable is correctly set on all relevant Host Objects.
    * For complete details, refer to the :ref:`NEP Upgrade Guide <nep_breaking_change_tenant_custom_variable>`.
-

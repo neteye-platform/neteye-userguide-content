@@ -4,8 +4,16 @@ Notifications and Alerts
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 When |nec| discovers a problem via monitoring, it needs to let a pre-defined
-set of people know that some unusual or important event has occurred. Before
-|ne| can send messages to administrators or users, it needs to know:
+set of people know that some unusual or important event has occurred.
+
+Even before an event occurs, you must set *alerts* that specify the conditions
+that indicate whether an event is important or not, for instance when a
+service transitions to `Critical`. If it meets these conditions, we call the
+event an *incident*, and we want to send a message, or *notification*, so that
+the problem can be corrected.
+
+When an incident occurs, |ne| can send messages with actionable information
+to administrators or users. But to do that, it first needs to know:
 
 * **The content that needs to be communicated**, including the objects being
   monitored that are affected, their current state, the time the event
@@ -20,14 +28,15 @@ set of people know that some unusual or important event has occurred. Before
   to respond. Message methods may include onscreen notes, email, or SMS
   messages.
 * **How important the message is**, where more urgent messages may require
-  more immediate media, such as telephone alerts instead of email.
+  more immediate media, such as telephone notifications instead of email.
 
 In terms of severity, *notifications* are informational messages about changes
 that users should be aware of, but are less important than *alerts*, which
 mean that something serious is occurring and action needs to be taken quickly.
 
-|nec| Support will help you define the parameters above, even including setting
-up :ref:`an SMS gateway <sms-gateway-moxa>` to get immediate alerts to your phone.
+|nec| Support will help you define the parameters above, even including
+setting up :ref:`an SMS gateway <sms-gateway-moxa>` to get immediate
+notifications sent to your phone.
 
 
 Users and User Groups

@@ -5,6 +5,8 @@
 
 .. |security-directory-location| replace:: :file:`C:\\ProgramData\\Alyvix\\certs\\`
 
+.. |link-postgresql-install-18.x| replace:: `18.x <https://www.enterprisedb.com/software-downloads-postgres>`__
+
 .. |link-postgresql-install-12.x| replace:: `12.x <https://www.enterprisedb.com/software-downloads-postgres>`__
 
 .. |source-youtube| raw:: html

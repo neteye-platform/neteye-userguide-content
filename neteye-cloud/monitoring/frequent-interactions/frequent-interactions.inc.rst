@@ -8,7 +8,7 @@ monitoring has begun, you will most likely use |nec| when:
 
 * You need to make a configuration change, like adding or removing hosts,
   services or contacts, in which case you'll use the Support Portal
-* You receive a :ref:`notification <>`, so you'll want to quickly find out
+* You receive a notification, so you'll want to quickly find out
   which host or service is down and begin remediation
 * You want to proactively find problems before they happen by studying
   trends in Operations Analytics

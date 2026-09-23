@@ -48,3 +48,16 @@ explained in :ref:`icinga2-features-otlpmetricswriter`, and review any dashboard
 integrations, or alerting rules that still depend on the previous datastream naming and
 structure. If needed, update them to use the new Elasticsearch datastreams produced by the
 OTLP metrics workflow.
+
+NEP Variable Cleanup (nx_neteye_tenant)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Following the upgrade of NetEye and all installed NetEye Extra Packages (NEP), the legacy custom
+field ``nx_neteye_tenant`` is no longer required and can be safely deleted:
+
+1. In the NetEye UI, navigate to **Director > Define Data Fields** (under *Do more with custom data*).
+2. Search for ``nx_neteye_tenant`` and select it.
+3. Click **Delete**, set **Wipe related vars** to ``Yes``, and confirm deletion.
+4. Repeat if multiple field instances exist.
+
+For more details on this change, please consult the :ref:`NEP Upgrade Guide <nep_breaking_change_tenant_custom_variable>`.

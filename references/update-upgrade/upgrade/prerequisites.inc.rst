@@ -9,12 +9,14 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
 
 #. .. include:: /references/update-upgrade/update/elastic-prerequisites.inc.rst
 
-#. Starting with |ne| 4.50, |ne| services are progressively moving to Kubernetes to improve
+#. |ne| services are progressively moving to Kubernetes to improve
    scalability, security, resource management and the speed of updates.
 
-   To enable these benefits and allow Kubernetes to retrieve the container images required
-   during the upgrade and subsequent updates, ensure that all |ne| nodes can reach the
-   following domains over HTTPS (TCP port 443) before upgrading to |ne| 4.50:
+   Access to the following domains is not strictly required to upgrade to |ne| 4.50, but
+   we recommend configuring it in advance. It will be mandatory before upgrading to |ne|
+   4.51, allowing Kubernetes to retrieve the container images required during the upgrade
+   and subsequent updates. Ensure that all |ne| nodes can reach these domains over HTTPS
+   (TCP port 443):
 
 
      .. csv-table::

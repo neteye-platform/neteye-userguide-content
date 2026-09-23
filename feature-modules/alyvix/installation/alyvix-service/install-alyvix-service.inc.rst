@@ -60,9 +60,11 @@ Versions
 +-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
 | Alyvix Service Version            | Required Alyvix Core Version                 | PostgreSQL Version              | Alyvix API Version |
 +-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.8.x              | :ref:`Alyvix 3.7.x <installation_versions>`  | |link-postgresql-install-12.x|  | 3,4,5,6            |
+| Alyvix Service 2.9.x              | :ref:`Alyvix 3.8.x <installation_versions>`  | |link-postgresql-install-18.x|  | 3,4,5,6            |
 +-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.7.x              | :ref:`Alyvix 3.7.x <installation_versions>`  | |link-postgresql-install-12.x|  | 3, 4, 5            |
+| Alyvix Service 2.8.x              | :ref:`Alyvix 3.7.x <installation_versions>`  | |link-postgresql-install-18.x|  | 3,4,5,6            |
++-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
+| Alyvix Service 2.7.x              | :ref:`Alyvix 3.7.x <installation_versions>`  | |link-postgresql-install-18.x|  | 3, 4, 5            |
 +-----------------------------------+----------------------------------------------+---------------------------------+--------------------+
 | Alyvix Service 2.6.x              | :ref:`Alyvix 3.6.x <installation_versions>`  | |link-postgresql-install-12.x|  | 3, 4               |
 +-----------------------------------+----------------------------------------------+---------------------------------+--------------------+

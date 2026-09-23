@@ -50,7 +50,7 @@ structure. If needed, update them to use the new Elasticsearch datastreams produ
 OTLP metrics workflow.
 
 NEP Variable Cleanup (nx_neteye_tenant)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Following the upgrade of NetEye and all installed NetEye Extra Packages (NEP), the legacy custom
 field ``nx_neteye_tenant`` is no longer required and can be safely deleted:
@@ -60,4 +60,4 @@ field ``nx_neteye_tenant`` is no longer required and can be safely deleted:
 3. Click **Delete**, set **Wipe related vars** to ``Yes``, and confirm deletion.
 4. Repeat if multiple field instances exist.
 
-For more details on this change, please consult the :ref:`NEP Upgrade Guide <nep_breaking_change_tenant_custom_variable>`.
+For more details on this change, please consult the `NEP Updates and Upgrades section <https://neteye.guide/4.50/nep/doc/nep-updates.html>`__.

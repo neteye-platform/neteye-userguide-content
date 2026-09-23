@@ -1,12 +1,14 @@
-Typical Daily Interaction
-~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _nec-monitoring-daily-interactions:
+
+Typical Daily Interactions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the |nec| Support staff has completed your system configuration and
 monitoring has begun, you will most likely use |nec| when:
 
 * You need to make a configuration change, like adding or removing hosts,
   services or contacts, in which case you'll use the Support Portal
-* You receive a notification or alert, so you'll want to quickly find out
+* You receive a :ref:`notification <>`, so you'll want to quickly find out
   which host or service is down and begin remediation
 * You want to proactively find problems before they happen by studying
   trends in Operations Analytics
@@ -56,7 +58,7 @@ view, each host and service shown links to its Details panel.
      The Downtime Problems view
 
 For each view type you can
-`adjust the filters <https://neteye.guide/current/core-modules/director/monitoring-status.html#using-the-custom-problem-view>`_
+:ref:`adjust the filters <monitoring-module-custom-problem-view>`
 to select a subset of the monitored objects to be displayed.
 
 
@@ -98,8 +100,8 @@ until deleted.
 Acknowledging an Alert
 ``````````````````````
 
-When you've received a notification or alert, you may want to quickly let
-others know that you're aware of the issue and are working on a fix. You can
+When you've received a notification, you may want to quickly let others know
+that you're aware of the alerted incident and are working on a fix. You can
 explicitly do this for a monitored object
 `with an acknowledgement <https://icinga.com/docs/icinga-2/latest/doc/08-advanced-topics/#acknowledgements>`_,
 which will send a notification message to other users or admins.
@@ -117,7 +119,7 @@ command.
 Investigating Past Monitoring Events
 ````````````````````````````````````
 
-If you haven't arrived at NetEye because of an alert or notification (for
+If you haven't arrived at NetEye because of a notification (for
 instance you do a daily morning check) the first step is almost always to
 look at the Dashboard to see if anything important is going on.
 
@@ -135,7 +137,7 @@ show you what important events have occurred, with a customizable filter:
 
      Viewing the Event Overview in History
 
-* Notifications: All the notifications and alerts that were sent in a
+* Notifications: All the notifications that were sent in a
   given time range, beginning with the most recent
 
   .. _figure-nec-history-notifications:

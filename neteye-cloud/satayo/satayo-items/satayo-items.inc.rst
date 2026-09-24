@@ -101,7 +101,7 @@ with the corresponding finding’s preview panel automatically displayed.
 .. _domain_item:
 
 Domain
-------
+======
 
 .. admonition:: MITRE ATT&CK Techniques
 
@@ -114,9 +114,12 @@ Domain
    - `Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
 
 The domain findings list all subdomains discovered for each configured monitored domain.
-They act as a starting point to explore all other findings related to a specific domain.
-Domains are identified through multiple finding types during SATAYO scans, such as
-**Hostnames** or **Stealer Logs.**
+Domain, like an IP address, is a human-readable name that corresponds to one or more IP
+addresses, making it easier to identify and remember. It is one of the starting points for
+SATAYO’s exposure assessment analysis, and it can provide valuable information about the
+services and applications running on a network. Domains are identified through multiple
+techniques during SATAYO scans, such as DNS resolution/subdomain enumeration or
+**Stealer Logs**.
 
 .. note::
 
@@ -125,41 +128,25 @@ Domains are identified through multiple finding types during SATAYO scans, such 
    domain findings described here.
 
 Domain findings act as **aggregators**: each finding collects related evidence discovered under the
-same domain. Currently, a domain finding can aggregate **Hostnames**, **Email addresses** and
-**Stealer Logs** related to the same domain.
+same domain. Currently, a domain finding can aggregate **Services**, **Mail**, **SSL/TLS certificates**,
+**Email addresses**, and **Stealer Logs** related to the same domain, as well as the **IPv4 addresses**
+it resolves to.
 
-When a domain is found through a Stealer Log, the finding includes a **severity** field that
-reflects how sensitive the associated resource is, based on the type of website recorded in the log.
-The severity levels are:
+Additionally, a domain finding includes a property indicating whether its value is used as target of an **MX Record**.
 
+Every domain finding carries a **severity** field that reflects how sensitive it is:
+
+- **UNASSIGNED** — the default level, assigned until the finding has been reviewed and reclassified.
+  Its mere existence doesn't pose a risk, so it does not contribute directly to the
+  :abbr:`EAIV (Exposure Assessment Index Value)` score.
 - **RISK ACCEPTED** — the resource is considered low risk.
 - **POTENTIALLY CRITICAL** — the resource may pose a significant risk and warrants review.
 - **CRITICAL** — the resource is a high-value target, such as an intranet website, password manager,
   private cloud, or administrative page.
 
-The severity classification is assigned by SATAYO but can be adjusted on request if the assigned
-level does not reflect the actual sensitivity of the resource.
-
-.. _hostname_item:
-
-Hostname
-========
-
-.. admonition:: MITRE ATT&CK Techniques
-
-   The following MITRE ATT&CK techniques are used to classify this finding:
-
-   **Reconnaissance**
-
-   - `T1596 Search Open Technical Databases: DNS/Passive DNS <https://attack.mitre.org/techniques/T1596/001/>`__
-   - `T1590 Gather Victim Network Information: Domain Properties <https://attack.mitre.org/techniques/T1590/001/>`__
-   - `T1595 Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
-
-Hostname, like IP addresses, is one of the items that SATAYO finds during its analysis. It is a human-readable name that corresponds to an IP address, making it easier to identify and remember. They are one of the starting points for SATAYO’s exposure assessment analysis, and they can provide valuable information about the services and applications running on a network.
-
-They also work as **aggregators** for other items, such as **Services, Mail servers, Mail, SSL/TLS certificates**, and more.
-
-They do not contribute directly to the :abbr:`EAIV (Exposure Assessment Index Value)` score, as their mere existence doesn't pose a risk.
+The last three levels are assigned when a domain is found through a Stealer Log, based on the type
+of website recorded in the log. The severity classification is assigned by SATAYO but can be
+adjusted on request if the assigned level does not reflect the actual sensitivity of the resource.
 
 |
 
@@ -179,7 +166,7 @@ IPv4 Address
    - `T1595 Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
    - `T1596 Search Open Technical Databases: DNS/Passive DNS <https://attack.mitre.org/techniques/T1596/001/>`__
 
-The **IPv4 address item** represents a publicly reachable IP address discovered by SATAYO. It can be correlated to other items, such as **Ports** and **Hostnames**.
+The **IPv4 address item** represents a publicly reachable IP address discovered by SATAYO. It can be correlated to other items, such as **Ports** and **Domains**.
 
 |
 
@@ -218,7 +205,7 @@ Registry
    - `T1590 Gather Victim Network Information: IP Addresses <https://attack.mitre.org/techniques/T1590/005/>`__
 
 The **registry item** consists of the subnet blocks where the retrieved found IP address resides.
-The addresses inside are scanned to see if there are other resolvable hostnames that, if found, are added to the list of hostnames and constitute an additional base for future scans and analysis.
+The addresses inside are scanned to see if there are other resolvable domains that, if found, are added to the list of domains and constitute an additional base for future scans and analysis.
 
 
 .. _cve_item:
@@ -287,9 +274,9 @@ Service
    - `T1592 Gather Victim Host Information: Client Configurations <https://attack.mitre.org/techniques/T1592/004/>`__
 
 
-A **service item** represents a specific service or application exposed over HTTP on a particular port of an IP address and identified by a hostname.
+A **service item** represents a specific service or application exposed over HTTP on a particular port of an IP address and identified by a domain.
 
-It is always associated with a hostname, because the hostname is a determining factor in request routing. The HTTP server may use the hostname to route
+It is always associated with a domain, because the domain is a determining factor in request routing. The HTTP server may use the domain to route
 requests to the appropriate virtual host or service.
 
 It provides information about the exposed HTTP service and web server, including:
@@ -499,7 +486,7 @@ It is recommended to verify the authenticity of any account found in this sectio
 .. _account_password_item:
 
 Account password
-----------------
+================
 
 If credentials for an :ref:`account <account_item>` are found in a :ref:`stealer log <stealer_logs_item>` or
 data breach, SATAYO provides information about them in the account password finding. If the
@@ -607,6 +594,48 @@ For each paste found, SATAYO provides information about:
 - The date on which the paste was published.
 - Which email addresses are present in that paste.
 
+
+.. _social_media_item:
+
+Social Media
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.001 Social Media <https://attack.mitre.org/techniques/T1593/001/>`__
+
+   Resource Development
+
+   - `T1586.001 Social Media Accounts <https://attack.mitre.org/techniques/T1586/001/>`__
+
+The **Social Media item** represents an account on a social network or another online platform
+that uses the name, domain, or identity of the monitored organization. Such an account may
+legitimately represent the organization, or it may have been created by a third party to
+simulate its identity, with the goal of establishing trust relationships with victims and
+preparing social engineering or phishing activities.
+
+Each finding corresponds to a single account profile and is identified by its **URL**, which
+links to the profile on the external platform so that it can be reviewed directly.
+
+For each account found, SATAYO provides information about:
+
+- **Time**: the date on which the account was detected.
+- **Name**: the platform hosting the account, such as a social network, a code-sharing site, or another online service.
+- **Category**: the type of platform on which the account was detected, for example coding, business, or social networking.
+- **Url**: the address of the account profile on the external platform.
+- **Full name**: the display name shown on the profile.
+- **Username**: the account handle used on the platform.
+- **Biography**: the profile description published on the account.
+- **External URL**: an additional address referenced from the profile, such as a personal or corporate website.
+- **Business Account**: whether the platform marks the account as a business profile.
+- **Business Category**: the business classification declared on the profile, when the account is a business profile.
+
+Platforms expose different sets of attributes, therefore some of these fields may be empty
+for a given account.
 
 .. _sandboxes_item:
 
@@ -730,3 +759,236 @@ For each file found, SATAYO provides information such as the title, author, crea
 
 It is recommended to check the contents of these files and remove them from the Internet if they contain
 confidential information. The link to the file is provided so that it can be verified.
+
+
+.. _phone_number_item:
+
+Phone Number
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1594 Search Victim-Owned Websites <https://attack.mitre.org/techniques/T1594/>`__
+
+The **Phone Number item** shows every phone number published within the institutional website
+of the analyzed domain. It is suggested not to publish direct telephone numbers of personnel
+working within the organization, as they could favor the activity of a social engineer.
+
+For each phone number found, SATAYO provides information such as:
+
+- **Prefix**: the country code associated with the phone number, along with the country name.
+- **Phone**: the phone number as published on the website.
+- **Name**: the name of the person or office associated with the phone number, when available.
+- **Subtitle**: additional context about the role or department associated with the phone number, when available.
+- **Location**: the address associated with the phone number, when available.
+- **Source**: the link to the page on which the phone number was found.
+
+Some of these fields may be empty, depending on the information published on the source page.
+
+
+.. _storage_item:
+
+Storage
+=======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.003 Search Open Websites/Domains: Code Repositories <https://attack.mitre.org/techniques/T1593/003/>`__
+   - `T1596 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+   Discovery
+
+   - `T1619 Cloud Storage Object Discovery <https://attack.mitre.org/techniques/T1619/>`__
+
+The **Storage item** represents a publicly exposed storage resource belonging to the organization, such as an Amazon S3, Google Cloud Storage, or Azure Blob Storage.
+When a storage resource is found to be publicly accessible, its internal content is listed.
+
+For each storage resource found, SATAYO provides information about:
+
+- The URL of the storage resource.
+- The type of storage resource (e.g. S3 bucket).
+- The number of files it contains.
+
+Storage findings represent publicly exposed storage resources that may contain leaked files or sensitive data.
+They expand the investigation surface for company-related data leak exposure.
+
+
+.. _credit_card_item:
+
+Credit Card
+===========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1589 Gather Victim Identity Information <https://attack.mitre.org/techniques/T1589/>`__
+   - `T1597 Search Closed Sources <https://attack.mitre.org/techniques/T1597/>`__
+
+   Impact
+
+   - `T1657 Financial Theft <https://attack.mitre.org/techniques/T1657/>`__
+
+The **Credit Card item** represents a credit card issued by the monitored organization and offered for sale
+within an underground marketplace. Cards are stolen through a multitude of techniques, including phishing
+campaigns, data breaches, sniffing on public Wi-Fi networks, and physical cloning at ATMs.
+
+Each finding corresponds to a single card published by a seller, and it is identified by the marketplace on
+which it was detected together with the identifier assigned to the listing.
+
+.. note::
+
+   This finding is available only to credit institutions that issue credit cards.
+
+For each card detected, SATAYO provides information about:
+
+- **Inserted**: the date on which the card was detected within the marketplace.
+- **Source**: the marketplace on which the card is offered for sale.
+- **Source ID**: the identifier assigned to the listing by the marketplace.
+- **Bank**: the name of the institution that issued the card, as declared by the seller.
+- **Hidden CC**: the partial card number published by the seller. Marketplaces usually mask most of the digits and expose only the initial part, which identifies the issuing circuit and the institution.
+- **Card Type**: the type of card declared within the listing.
+- **Expiration Date**: the expiration date of the card. Cards that are still valid represent a more urgent risk, as they can be used for fraudulent transactions.
+- **CVR**: the validity rate declared for the card, expressed as a percentage. Sellers use this value to indicate how likely the card is to be still usable.
+- **Reviews**: the feedback published within the marketplace about the listing or the seller.
+- **Country**, **State**, **City** and **ZIP**: the geographic information associated with the card.
+- **Seller DB**: the name of the archive the seller attributes the card to. The same archive is often used to sell several cards originating from the same compromise.
+- **Seller Tag**: the nickname used by the seller within the marketplace.
+- **Seller Rate**: the reputation score of the seller within the marketplace.
+- **Price**: the price at which the card is offered for sale.
+
+The following flags indicate which additional data is offered for sale together with the card, without
+disclosing its content:
+
+- **CVV**: whether the card verification value is included.
+- **Holder Name**: whether the name of the cardholder is included.
+- **Date of birth**: whether the cardholder's date of birth is included.
+- **SSN**: whether the social security number of the cardholder is included.
+- **EMail**: whether the email address of the cardholder is included.
+- **Phone**: whether the phone number of the cardholder is included.
+- **Address**: whether the address of the cardholder is included.
+
+More data associated with the card increases the risk of fraud, identity theft, and social engineering
+attacks against the cardholder. It is recommended to block or reissue the cards detected in this section
+and to inform the cardholder of the exposure.
+
+
+.. _mobile_app_item:
+
+Mobile App
+==========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1592.002 Gather Victim Host Information: Software <https://attack.mitre.org/techniques/T1592/002/>`__
+
+The **Mobile App item** shows organization-related mobile applications uploaded to the Play Store or other
+third-party stores.
+
+Applications are scanned periodically, and different versions of the same application may be visible.
+For each application found, SATAYO provides information about:
+
+- The version of the application.
+- Whether an antimalware engine detected malware in that version.
+
+If malware is detected in a version, it is flagged, helping analysts identify potentially malicious or risky
+mobile applications associated with the organization.
+
+
+.. _blacklist_domain_item:
+
+Blacklist Domain
+=================
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1596.005 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+The **Blacklist Domain item** shows organization-related domains that are listed in external blacklists,
+identified from the blacklist records associated with a domain.
+
+The presence of a domain within a blacklist can compromise the provision of services and
+damage the organization's reputation:
+if browsers or organizations enforce controls such as content filtering,
+connections to a blacklisted domain may be terminated or refused.
+Reviewing these findings allows a threat intelligence analyst to assess the reputational and operational risk
+associated with a blacklisted domain and take appropriate remediation action.
+
+Several blacklists allow the removal of a resource to be requested once its reputation has been verified.
+
+
+.. _blacklist_ip_item:
+
+Blacklist IP
+============
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1596.005 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+The **Blacklist IP item** shows organization-related IP addresses that are listed in external blacklists,
+identified from the blacklist records associated with an IP address.
+
+For each finding, SATAYO reports the blacklisted IP address, the type of blacklist it appears in, and
+any additional data provided by the blacklist source, such as the reason for the listing.
+
+The presence of an IP address within a blacklist can compromise the provision of services and
+damage the organization's reputation:
+if mail servers or organizations enforce controls such as reputation filtering,
+messages and connections originating from a blacklisted IP address may be rejected or silently dropped.
+Reviewing these findings allows a threat intelligence analyst to assess the reputational and operational risk
+associated with a blacklisted IP address and take appropriate remediation action.
+
+Several blacklists allow the removal of a resource to be requested once its reputation has been verified.
+
+Each Blacklist IP finding is correlated with the :ref:`IPv4 Address finding <ipv4_address_item>` for the
+same IP address, so an analyst can navigate from an IP address to its blacklist records and back.
+
+
+.. _ssl_tls_item:
+
+SSL/TLS
+=======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1595.002 Active Scanning: Vulnerability Scanning <https://attack.mitre.org/techniques/T1595/002/>`__
+   - `T1596.003 Search Open Technical Databases: Digital Certificates <https://attack.mitre.org/techniques/T1596/003/>`__
+   - `T1592.002 Gather Victim Host Information: Software <https://attack.mitre.org/techniques/T1592/002/>`__
+
+The **SSL/TLS item** shows the certificates presented by the exposed services discovered on
+domain-related IPs, together with the outcome of every check performed on them. Checks may return
+evidence of expired certificates or of the use of obsolete and insecure cryptographic algorithms.
+
+Each item lists the certificate's identifying data (subject and issuer, serial number, validity
+dates, alternative names, signature and public key algorithm, key size), the certificate itself in
+PEM form, and the individual checks performed on it.
+
+Every check carries its own severity: **CRITICAL**, **HIGH**, **MEDIUM** or **LOW** for a
+certificate defect, or **OK** where the check passed.

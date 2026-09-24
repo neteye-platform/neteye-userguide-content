@@ -9,23 +9,40 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
 
 #. .. include:: /references/update-upgrade/update/elastic-prerequisites.inc.rst
 
-#. To prepare for integration of RKE2, please ensure that the following requirements are met:
+#. |ne| services are progressively moving to Kubernetes to improve
+   scalability, security, resource management and the speed of updates.
 
-   - The system must have at least 12GB of disk space available on the :file:`/neteye/local/rke2` directory for the RKE2 installation.
+   Access to the following domains is not strictly required to upgrade to |ne| 4.50, but
+   we recommend configuring it in advance. It will be mandatory before upgrading to |ne|
+   4.51, allowing Kubernetes to retrieve the container images required during the upgrade
+   and subsequent updates. Ensure that all |ne| nodes can reach these domains over HTTPS
+   (TCP port 443):
 
-   .. note:: It is recommended to create a separate logical volume for the :file:`/neteye/local/rke2` directory to avoid running out of disk space on the root filesystem.
 
-   - The following ports must be available for RKE2 to function properly on `0.0.0.0`:
+     .. csv-table::
+        :header: "Domain", "Port", "Intended Use"
+        :widths: 25, 15, 60
 
-     - TCP 6442: load balancer for the Kubernetes API server
-     - TCP 6443: Kubernetes API server
-     - TCP 6444: used in case of restore procedures
-     - TCP 9345: RKE2 local supervisor
-     - TCP 9346: load balancer for the RKE2 local supervisor
+        "ghcr.io", "443 TCP", "GitHub container images"
+        "api.github.com", "443 TCP", "GitHub container images"
+        "pkg-containers.githubusercontent.com", "443 TCP", "GitHub container images"
+        "quay.io", "443 TCP", "Quay container images"
+        "cdn01.quay.io", "443 TCP", "Quay container images"
+        "docker.io", "443 TCP", "Docker Hub container images"
+        "hub.docker.com", "443 TCP", "Docker Hub container images"
+        "auth.docker.io", "443 TCP", "Docker Hub container images"
+        "index.docker.io", "443 TCP", "Docker Hub container images"
+        "registry-1.docker.io", "443 TCP", "Docker Hub container images"
+        "production.cloudfront.docker.com", "443 TCP", "Docker Hub container images"
+        "\*.cloudflarestorage.com", "443 TCP", "Container images"
+        "rpm.rancher.io", "443 TCP", "Rancher packages"
+        "docker.elastic.co", "443 TCP", "Elastic container images (only with the Elastic Stack)"
+        "docker-auth.elastic.co", "443 TCP", "Elastic container images (only with the Elastic Stack)"
 
-   - RKE2 official RPM repository must be reachable from the |ne| system. The repository URL is :file:`https://rpm.rancher.io/`.
+.. important::
 
-   - In case of cluster installations, you must ensure the correct roles are assigned to the nodes in order to meet the minimum requirements for a Kubernetes cluster.
-     For more information on the roles and their requirements, please refer to the :ref:`kubernetes-roles` section.
+   If you are using **NetEye Extra Packages (NEP)** with multi-tenancy:
 
-   - You should have created and synced on all nodes the :file:`/etc/neteye-environment.yaml`. For more information please refer to *Step 9* of the :ref:`ne-setup-part-one` section.
+   * The custom variable ``nx_neteye_tenant`` has been deprecated and replaced by ``neteye_tenant``.
+   * Prior to upgrading your installed NEPs, verify that the ``neteye_tenant`` variable is correctly set on all relevant Host Objects.
+   * For complete details, refer to the `NEP Updates and Upgrades section <https://neteye.guide/4.50/nep/doc/nep-updates.html>`__.

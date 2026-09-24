@@ -10,5 +10,4 @@ Monitoring
    monitoring/monitoring-views.rst
    monitoring/downtime.rst
    monitoring/notifications-alerts.rst
-   monitoring/business-monitoring.rst
    monitoring/vmd.rst

@@ -125,6 +125,30 @@ this panel focuses on remediation workload, not on overall findings volume, whic
    dedicated :guilabel:`Findings` page, already filtered by the selected group and ticket state,
    so you can start investigating without having to rebuild the filter yourself.
 
+Attack Surface Composition
+``````````````````````````
+
+The **Attack Surface Composition** panel shows the distribution of findings by source.
+
+The platform scans publicly accessible sources across the **Surface**, **Deep**, and
+**Dark Web** for evidence linked to your organization. Each of these layers is shown as
+a section of the iceberg visualization, together with the number of findings detected in
+that layer and its percentage of the total number of findings:
+
+- **Surface Web** – the publicly indexed part of the internet, reachable through standard
+  search engines and browsers. It covers assets and services directly exposed by the
+  monitored perimeter, for example :ref:`domains <domain_item>` and
+  :ref:`exposed services <service_item>`.
+- **Deep Web** – content not indexed by standard search engines, typically sitting behind
+  authentication or surfacing in leaked data collections. It covers findings such as
+  :ref:`data breaches <data_breach_item>` and :ref:`stealer logs <stealer_logs_item>`.
+- **Dark Web** – content only reachable through specialized, anonymized networks and tools,
+  such as onion sites and illegal marketplaces. SATAYO reports this evidence as
+  :ref:`Deep & Dark Web findings <deep_dark_web_item>`.
+
+.. hint:: Select the arrow next to a layer to drill down into the findings detected
+   in that specific source.
+
 New Findings
 ````````````
 

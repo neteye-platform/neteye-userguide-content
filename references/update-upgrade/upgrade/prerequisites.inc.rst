@@ -9,12 +9,14 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
 
 #. .. include:: /references/update-upgrade/update/elastic-prerequisites.inc.rst
 
-#. Starting with |ne| 4.50, |ne| services are progressively moving to Kubernetes to improve
+#. |ne| services are progressively moving to Kubernetes to improve
    scalability, security, resource management and the speed of updates.
 
-   To enable these benefits and allow Kubernetes to retrieve the container images required
-   during the upgrade and subsequent updates, ensure that all |ne| nodes can reach the
-   following domains over HTTPS (TCP port 443) before upgrading to |ne| 4.50:
+   Access to the following domains is not strictly required to upgrade to |ne| 4.50, but
+   we recommend configuring it in advance. It will be mandatory before upgrading to |ne|
+   4.51, allowing Kubernetes to retrieve the container images required during the upgrade
+   and subsequent updates. Ensure that all |ne| nodes can reach these domains over HTTPS
+   (TCP port 443):
 
 
      .. csv-table::
@@ -36,3 +38,11 @@ Before starting the upgrade, carefully read the latest release notes on `NetEye'
         "rpm.rancher.io", "443 TCP", "Rancher packages"
         "docker.elastic.co", "443 TCP", "Elastic container images (only with the Elastic Stack)"
         "docker-auth.elastic.co", "443 TCP", "Elastic container images (only with the Elastic Stack)"
+
+.. important::
+
+   If you are using **NetEye Extra Packages (NEP)** with multi-tenancy:
+
+   * The custom variable ``nx_neteye_tenant`` has been deprecated and replaced by ``neteye_tenant``.
+   * Prior to upgrading your installed NEPs, verify that the ``neteye_tenant`` variable is correctly set on all relevant Host Objects.
+   * For complete details, refer to the `NEP Updates and Upgrades section <https://neteye.guide/4.50/nep/doc/nep-updates.html>`__.

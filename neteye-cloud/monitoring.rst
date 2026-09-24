@@ -10,4 +10,5 @@ Monitoring
    monitoring/monitoring-views.rst
    monitoring/frequent-interactions.rst
    monitoring/downtime.rst
+   monitoring/notifications-alerts.rst
    monitoring/vmd.rst

@@ -992,3 +992,32 @@ PEM form, and the individual checks performed on it.
 
 Every check carries its own severity: **CRITICAL**, **HIGH**, **MEDIUM** or **LOW** for a
 certificate defect, or **OK** where the check passed.
+
+
+.. _ransomware_item:
+
+Ransomware
+==========
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1591 Gather Victim Org Information <https://attack.mitre.org/techniques/T1591/>`__
+   - `T1597 Search Closed Sources <https://attack.mitre.org/techniques/T1597/>`__
+   - `T1597.002 Search Closed Sources: Purchase Technical Data <https://attack.mitre.org/techniques/T1597/002/>`__
+
+   Initial Access
+
+   - `T1199 Trusted Relationship <https://attack.mitre.org/techniques/T1199/>`__
+
+The **Ransomware item** reports victims published on ransomware leak sites worldwide.
+
+For each victim, SATAYO provides:
+
+- **Publication date**: date the victim's information was published on the leak site.
+- **Group**: the ransomware gang that claimed the attack.
+- **Sector**: industry the victim operates in.
+- **Country**: country where the victim is located.

@@ -35,10 +35,10 @@ The principle interface elements are:
 .. rst-class:: bignums
 
 #. The **file tabs** show the primary tab and any opened secondary :file:`.alvyix`
-   `test case files <https://alyvix.com/learn/test_case_data_format.html#test-case-data-format-top>`__.  Switching between tabs shows the
-   test case objects contained in each file.  A new file can be loaded by clicking on the
-   |plus-icon| button. Similarly, the |times-icon| button next to a non-primary tab will
-   remove that tab (note that you cannot remove the primary tab).
+   `test case files <https://alyvix.com/learn/test_case_data_format.html#test-case-data-format-top>`__.
+   Switching between tabs shows the test case objects contained in each file.  A new file can be loaded
+   by clicking on the |alyvix-plus-icon| button. Similarly, the |alyvix-times-icon| button next to a
+   non-primary tab will remove that tab (note that you cannot remove the primary tab).
 #. The **list headers** :ref:`categorize the properties <alyvix_selector_interface_headers>` of each
    object, allowing you to sort on some fields and find the details of a particular test case
    object at a glance.
@@ -50,7 +50,7 @@ The principle interface elements are:
 #. The **filtering and search** fields let you select all test case objects with a given
    :ref:`screen resolution <alyvix_selector_interface_grab_resolution>` and scaling factor, or
    that contain a given text string in either the :guilabel:`Name` or :guilabel:`Date modified`
-   fields.  The :guilabel:`Search` field uses a non-regex substring search, and the |times-icon|
+   fields.  The :guilabel:`Search` field uses a non-regex substring search, and the |alyvix-times-icon|
    action clears this field.
 #. The **test case object buttons**, :wbutton:`GRAB`, :wbutton:`EDIT`,
    :wbutton:`DUPLICATE` and :rbutton:`REMOVE` act on the :ref:`currently selected test case
@@ -69,8 +69,8 @@ Selector List Headers
 
 The test case object list headers describe the contents of their respective columns.
 The list can be sorted on the first three columns by clicking on the header name, with the
-|sort-up-icon| and |sort-down-icon| icons indicating whether the sort order is ascending or
-descending.
+|alyvix-sort-up-icon| and |alyvix-sort-down-icon| icons indicating whether the sort order
+is ascending or descending.
 
 The list headers have the following characteristics:
 
@@ -133,11 +133,11 @@ can be entered.  When a value is not valid you will see an error message like th
 
    The values of test case objects in secondary tabs cannot be changed.
 
-When Selector is being used as part of Alyvix Editor, the |4arrows-icon| and |lineadd-icon| action
-icons at the start of each row allow you to
+When Selector is being used as part of Alyvix Editor, the |alyvix-4arrows-icon|
+and |alyvix-lineadd-icon| action icons at the start of each row allow you to
 :ref:`add the corresponding test case object to the scripting panel <alyvix_editor_scripting_node_add>`
 by using *drag-and-drop* or appending  it to the
-:ref:`scripting panel <alyvix_editor_scripting_panel_top>`.  The |play-icon| action will
+:ref:`scripting panel <alyvix_editor_scripting_panel_top>`.  The |alyvix-play-icon| action will
 :ref:`execute that test case object <alyvix_editor_interface_debug>`
 as if it were the only scripted element in its test case.
 
@@ -270,7 +270,7 @@ the most frequent.  Each is suited to a particular combination of these three pa
   like when there are cookie notices or popups overlaid intermittently on a web page that may cover
   a button you need to press, or an application retains persistent state (especially in a multi-user
   scenario) so that window size or position may differ over time.  Using a test case object that
-  looks for them, in conjunction with an |if-false| scripting element and an action that
+  looks for them, in conjunction with an |alyvix-if-false| scripting element and an action that
   standardizes the interface, such as removing a cookie notice or maximizing a window.
 
 |

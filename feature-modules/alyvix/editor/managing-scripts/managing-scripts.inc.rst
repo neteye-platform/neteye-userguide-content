@@ -25,11 +25,11 @@ From the script management panel you can:
 * **Delete** an existing section or map element with the :gbutton:`REMOVE` action
 * Use the **drag** icon for shifting a section or map element and drop it at any desired point
   in the currently opened script in the scripting panel
-* Use the |lineadd-icon| action to **add** a Section (as a |run| expression) or a Map (as a |for|
+* Use the |alyvix-lineadd-icon| action to **add** a Section (as a |alyvix-run| expression) or a Map (as a |alyvix-for|
   expression) to the bottom of the currently opened script in the scripting panel
-* Use the |play-icon| action to immediately :ref:`debug a Section script <alyvix_editor_interface_debug>`
+* Use the |alyvix-play-icon| action to immediately :ref:`debug a Section script <alyvix_editor_interface_debug>`
   against the current interface as though :ref:`you had pressed <alyvix_editor_run_script>` the
-  |runblue| button
+  |alyvix-runblue| button
 
 
 
@@ -45,7 +45,7 @@ The following scripts are predefined and are
 .. rst-class:: bignums-xl
 
 #. **Main:**  The principal script that is invoked when launching a test case from either Alyvix
-   Editor (via the |runblue| button) or Robot
+   Editor (via the |alyvix-runblue| button) or Robot
 #. **Fail:**  A script that is executed if one of the test case objects in the Main script having
    the :guilabel:`Break` flag **set** exceeds its timeout
 #. **Exit:**  A separate script that is always run once the Main or Fail script terminates, allowing you
@@ -91,13 +91,13 @@ scripts or subscripts.  This can greatly help improve the readability of scripts
 they become very long.
 
 When you insert or replace a test case object with a section in the scripting panel, the color
-will become dark green to indicate it is a section.  A link icon |link-icon| will appear, and
+will become dark green to indicate it is a section.  A link icon |alyvix-link-icon| will appear, and
 clicking on it will load that section in the scripting panel.
 
 .. note::
 
-   You cannot use a section as the antecedent (condition) in an |if-true| or |if-false| expression,
-   although you can use it as the consequent, or as the argument of a |for| expression.
+   You cannot use a section as the antecedent (condition) in an |alyvix-if-true| or |alyvix-if-false| expression,
+   although you can use it as the consequent, or as the argument of a |alyvix-for| expression.
 
 .. tip::
 
@@ -160,7 +160,7 @@ one was built incorrectly.
 
 There are two main problems to overcome when debugging scripts:
 
-* Executing the main script either via the |runblue| :ref:`button in Editor <alyvix_editor_run_script>`
+* Executing the main script either via the |alyvix-runblue| :ref:`button in Editor <alyvix_editor_run_script>`
   or via `Alyvix Robot <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-cli-options>`__ will launch the script from the very first
   node, although what you often need during debugging is to start at an intermediate stage
 * When starting at an intermediate stage, the application or browser's interface must match the
@@ -170,7 +170,7 @@ There are several methods you can use to debug both individual nodes and parts o
 opposed to the entire script:
 
 * Use the **Disable/Enable** functionality to temporarily turn off nodes in the scripting panel
-  that don't need to be tested, and then press the |runblue| button.  Note that when done, you
+  that don't need to be tested, and then press the |alyvix-runblue| button.  Note that when done, you
   must remember to re-enable the scripting nodes.
 * Use the `Play` action :ref:`in Selector <alyvix_selector_interface_list>` to run either a
   single test case object or to run a single :ref:`section <alyvix_editor_interface_sections>`.

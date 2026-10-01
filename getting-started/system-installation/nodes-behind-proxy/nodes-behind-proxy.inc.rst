@@ -95,7 +95,7 @@ Configuring Kibana
 If you have installed the :ref:`Elastic Stack module <elastic-stack>`, your proxy configuration must be
 provided to the Kibana service for it to reach the :code:`epr.elastic.co` repository in order to handle the integration of the Elastic Agents.
 To accomplish this, you can append the following line to the Kibana service configuration file at
-:file:`/neteye/shared/kibana/conf/kibana.yml`:
+:file:`/neteye/local/kibana/conf/kibana_user_customization.yml`:
 
 .. code:: yaml
 
@@ -103,23 +103,15 @@ To accomplish this, you can append the following line to the Kibana service conf
 
 .. note::
 
-   If you are in a cluster environment, please apply this change on the node the `kibana` service is running on.
+   If you are in a cluster environment, please apply this change on each `kibana` node.
 
 After making this change, if your Kibana instance was already configured you must restart the service in order to apply
 the new settings as shown below; otherwise this operation will be taken care of by the :command:`neteye install`
 command.
 
-On a Single Node environment:
-
 .. code:: bash
 
-   # systemctl restart kibana-logmanager
-
-On a Cluster environment:
-
-.. code:: bash
-
-   # pcs resource restart kibana
+   # systemctl restart kibana
 
 Configuring Elasticsearch plugins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

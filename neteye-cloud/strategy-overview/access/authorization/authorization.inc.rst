@@ -165,57 +165,81 @@ in group names is the most common cause.
 
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-The next step is to take each group and map it to one or more specific module
-[permissions](https://neteye.guide/current/getting-started/setup/authorization/roles.html)
+Each group claim is then mapped to one or more specific
+`module permissions <https://neteye.guide/current/getting-started/setup/authorization/roles.html>`__
 that are added to the user's profile.
 
-The NetEye Cloud authorization system uses a set of pre-defined tables for this mapping.
-Each table corresponds to a contract type, so first the correct table is selected by
-extracting the contract type from the group.
+.. figure:: /neteye-cloud/strategy-overview/img/authorizationFlow.jpg
 
-Next, the column associated with the access level is selected in that table. Finally,
-for each row in the table where the corresponding access level is ``yes``, the
-permission in the ``Name`` field is added to the user's profile.
+   How an OIDC token is converted in stages into module permissions
 
-The following tables indicate which permissions will be granted to users for a
-particular pair <Contract Value, Access Level>:
 
-+---------------------------------------------------------------------------+-----------------------------------------+
-| **ASSET Permissions**                                                     | **Access Level**                        |
-+============================+==============================================+=============+=============+=============+
-| **Name**                   | **Description**                              | **Viewer**  | **Editor**  | **Admin**   |
-+----------------------------+----------------------------------------------+-------------+-------------+-------------+
-| ``module/assetmanagement`` | *Generic access to module Access Management* |     yes     |     yes     |    yes      |
-+----------------------------+----------------------------------------------+-------------+-------------+-------------+
-| ``glpi/profile``           | *GLPI Profile assigned*                      | Asset       | Asset       | Asset Mgmt. |
-|                            |                                              | Management  | Management  | Admin       |
-+----------------------+-----+-------------------------+--------------------+----------+--+-------------+-------------+
-| **Group Names**      | **Viewer**                    | **Editor**                    | **Admin**                    |
-+----------------------+-------------------------------+-------------------------------+------------------------------+
-| ASSET                | grp[CODE]-necloud-ast-viewer  | grp[CODE]-necloud-ast-editor  | grp[CODE]-necloud-ast-admin  |
-+----------------------+-------------------------------+-------------------------------+------------------------------+
+The following table lists the available Customer Roles for each |nec|
+Contract type, indicating whether the contract grants WebUI access and which
+Access Levels (Viewer, Editor, Admin) are currently available or still to be
+defined.
 
-|
+.. table::
+   :widths: 20 20 20 40
 
-+---------------------------------------------------------+---------------------------------------------------------+
-| ELK Permissions                                         | Access Level                                            |
-+===================+=====================================+==============================+============+=============+
-| **Name**          | **Description**                     | **Viewer**                   | **Editor** | **Admin**   |
-+-------------------+-------------------------------------+------------------------------+------------+-------------+
-| ``module/kibana`` | *Generic access to module Kibana*   | {fab}`check;sd-text-success` |     yes    |    yes      |
-+-------------------+-------------------------------------+------------------------------+------------+-------------+
-| ``kibana/roles``  | *Kibana Roles assigned*             | APM Data Viewer              |                          |
-|                   |                                     | APM Space Viewer             | APM Kibana Editor        |
-|                   |                                     | APM Observability Viewer     |                          |
-+-------------------+-------------------------------------+------------------------------+--------------------------+
-
-+----------------------+-------------------------------+-------------------------------+------------------------------+
-| **Group Names**      | **Viewer**                    | **Editor**                    | **Admin**                    |
-+======================+===============================+===============================+==============================+
-| ELK                  | grp[CODE]-necloud-elk-viewer  | grp[CODE]-necloud-elk-editor  | grp[CODE]-necloud-elk-admin  |
-+----------------------+-------------------------------+-------------------------------+------------------------------+
-
-|
+   +------------+----------------+--------------+--------------------------------+
+   | Contract   | Has WebUI      | Access Level | Status                         |
+   |            | Access         |              |                                |
+   +============+================+==============+================================+
+   | ``ASSET``  | Yes            | Viewer       | Available                      |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | Not defined (Fallback as       |
+   |            |                |              | Viewer)                        |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | Available                      |
+   +------------+----------------+--------------+--------------------------------+
+   | ``ELK``    | Yes            | Viewer       | Available                      |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | Available                      |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | Not defined (Fallback as       |
+   |            |                |              | Viewer)                        |
+   +------------+----------------+--------------+--------------------------------+
+   | ``MON``    | Yes            | Viewer       | Available                      |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | Available                      |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | Available                      |
+   +------------+----------------+--------------+--------------------------------+
+   | ``SOC``    | Yes            | Viewer       | Available                      |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | N/A                            |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | N/A                            |
+   +------------+----------------+--------------+--------------------------------+
+   | ``SOC_ADS``| Yes            | Viewer       | Available                      |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | N/A                            |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | N/A                            |
+   +------------+----------------+--------------+--------------------------------+
+   | ``TEL``    | Yes            | Viewer       | Yes                            |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | Not defined (Fallback as       |
+   |            |                |              | Viewer)                        |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | Not defined (Fallback as       |
+   |            |                |              | Viewer)                        |
+   +------------+----------------+--------------+--------------------------------+
+   | ``TRACE``  | Yes            | Viewer       | Yes                            |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | Not defined (Fallback as       |
+   |            |                |              | Viewer)                        |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | Not defined (Fallback as       |
+   |            |                |              | Viewer)                        |
+   +------------+----------------+--------------+--------------------------------+
+   | ``SATAYO`` | Yes            | Viewer       | Not defined                    |
+   +            +                +--------------+--------------------------------+
+   |            |                | Editor       | Not defined                    |
+   +            +                +--------------+--------------------------------+
+   |            |                | Admin        | Available                      |
+   +------------+----------------+--------------+--------------------------------+
 
 
 Tenant Restrictions

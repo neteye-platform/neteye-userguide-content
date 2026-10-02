@@ -1,5 +1,3 @@
-
-
 .. _alyvix_designer_options_test_case_object:
 
 Test Case Object Options
@@ -321,5 +319,5 @@ used and their meanings.
 
    When using :guilabel:`SET POINT`, the direction of the arrow to the right of the icon is
    indicative of the direction of the point that was set compared to the center of the selection
-   or subselection.  For instance, an arrow like |smalltab| |mousearrow| |smalltab| means the click
-   point will be below and slightly to the left of the selection.
+   or subselection.  For instance, an arrow like |smalltab| |alyvix-mousearrow| |smalltab| means
+   the click point will be below and slightly to the left of the selection.

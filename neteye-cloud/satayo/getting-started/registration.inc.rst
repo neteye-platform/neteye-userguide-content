@@ -11,7 +11,7 @@ User registration for |sat| is managed through the service provider (**Würth IT
 Initial user accounts are typically provisioned together during the onboarding of the organization
 
 .. note::
-   User accounts are provisioned **globally at the |neb| platform level** rather than
+   User accounts are provisioned **globally at the |ne| platform level** rather than
    specifically for |sat|. Because |sat| operates as an integrated feature module
    within |nec|, your |nec| user account provides access across relevant
    modules according to your assigned permissions.

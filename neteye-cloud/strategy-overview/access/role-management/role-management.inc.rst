@@ -3,7 +3,7 @@
 Roles and Permissions
 ---------------------
 
-NetEye.Cloud uses role-based authorization to determine which modules
+|nec| uses role-based authorization to determine which modules
 users can access and which operations they can perform. Authentication
 verifies a user's identity; authorization grants the permissions needed
 for that user's tasks. Signing in through Single Sign-On (SSO) does not
@@ -61,21 +61,21 @@ Who Manages Roles?
 **With an Identity Provider and Group Claims enabled**, your
 organization manages role assignments through group memberships in its
 own Identity Provider (IdP). During login, the IdP supplies those groups
-in the authentication token, and NetEye.Cloud maps recognized groups to
+in the authentication token, and |nec| maps recognized groups to
 the configured contract types, access levels and module permissions.
 Routine access changes through existing mapped groups do not require
 a service request.
 
-Group names must match the mappings agreed with the NetEye.Cloud Team.
+Group names must match the mappings agreed with the |nec| Team.
 Creating or renaming a group in the IdP alone does not create a new role
-or change the platform's permissions. NetEye.Cloud controls the mapping
+or change the platform's permissions. |nec| controls the mapping
 and grants access only within the company's active contracts and tenant.
 Unrecognized group claims are silently ignored and grant no permissions.
 
-**Without Group Claims, or when using local NetEye.Cloud accounts**,
-the NetEye.Cloud Team manages authorization on your behalf. Requests to
+**Without Group Claims, or when using local** |nec| **accounts**,
+the |nec| Team manages authorization on your behalf. Requests to
 change roles or add or remove service access must be submitted through
-the `NetEye.Cloud service request process
+the |nec| `service request process
 <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portal/13/group/34/create/188>`_.
 
 For more information about these management options, see
@@ -89,7 +89,7 @@ Managing Role Assignments
    assigning only one level for each contract type.
 #. For self-managed authorization, add or remove the user's membership
    in the corresponding mapped IdP groups. Coordinate any new group
-   mapping with the NetEye.Cloud Team. For delegated authorization,
+   mapping with the |nec| Team. For delegated authorization,
    request the change through the service request process.
 #. Have the user log out and log back in, then verify that the expected
    modules, data and operations are available.

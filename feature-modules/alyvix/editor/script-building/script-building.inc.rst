@@ -26,23 +26,23 @@ Adding Scripting Nodes
 There are several methods you can use to create a new scripting node in the scripting panel:
 
 * **Immediately insert a node at the bottom** of the currently displayed script in the scripting
-  panel with the |lineadd-icon| action:
+  panel with the |alyvix-lineadd-icon| action:
 
-  * In Selector, |lineadd-icon| adds the associated test case object as a new |run| scripting node.
-  * Clicking on |lineadd-icon| of a section will add it as a |run| expression, while a map will
-    appear as a |for| scripting node.
+  * In Selector, |alyvix-lineadd-icon| adds the associated test case object as a new |alyvix-run| scripting node.
+  * Clicking on |alyvix-lineadd-icon| of a section will add it as a |alyvix-run| expression, while a map will
+    appear as a |alyvix-for| scripting node.
 
-* **Drag and Drop to any location** in the scripting panel with the |4arrows-icon| action:
+* **Drag and Drop to any location** in the scripting panel with the |alyvix-4arrows-icon| action:
 
   * Drag a test case object from Selector to create a new *scripting node* (see below) that
-    appears as a |run| expression :ref:`in light green <alyvix_editor_scripting_node_legend>`,
+    appears as a |alyvix-run| expression :ref:`in light green <alyvix_editor_scripting_node_legend>`,
     indicating this test case object will be executed when its script is invoked.
   * Drag a :ref:`section or map into the script management panel <alyvix_editor_script_mgmt_top>`.
-    As above, a section or map will show up as a |run| or |for| expression respectively.
+    As above, a section or map will show up as a |alyvix-run| or |alyvix-for| expression respectively.
 
 
   When you drag a test case object, section or map and hover over an available position, the mouse
-  pointer will switch from the |ban-icon| icon to showing the name of the test case object, moving
+  pointer will switch from the |alyvix-ban-icon| icon to showing the name of the test case object, moving
   other scripting nodes out of the way if necessary:
 
   .. image:: images/ae_insert_test_case_object.png
@@ -59,8 +59,8 @@ also select multiple scripting nodes as usual in Windows with the usual :kbd:`Ct
 
 Two adjacent scripting nodes will be executed in sequence, with the lower node inheriting the
 state of the GUI that was modified by the node preceding it.  So for instance in the script
-above, the |run|:runblock:`enter_login` node would be executed before
-|run|:runblock:`check_login_success`.  The other types of scripting nodes are explained in the
+above, the |alyvix-run|:runblock:`enter_login` node would be executed before
+|alyvix-run|:runblock:`check_login_success`.  The other types of scripting nodes are explained in the
 following section.
 
 
@@ -79,7 +79,7 @@ There are four modes for scripting nodes that can be used in the scripting panel
 
    ..
 
-   |run| + :file:`Object/Section`
+   |alyvix-run| + :file:`Object/Section`
 
 #. *Conditionally true* --- Run the test case object in the first (antecedent) node as normal
    (including any actions).  If it had at least one group where **all** of the
@@ -88,7 +88,7 @@ There are four modes for scripting nodes that can be used in the scripting panel
 
    ..
 
-   |if-true| + :file:`Object` + |run| + :file:`Object/Section`
+   |alyvix-if-true| + :file:`Object` + |alyvix-run| + :file:`Object/Section`
 
 #. *Conditionally false* --- Run the test case object in the first (antecedent) node as normal
    (including any actions).  If **none** of the groups matched, then also run the second
@@ -96,7 +96,7 @@ There are four modes for scripting nodes that can be used in the scripting panel
 
    ..
 
-   |if-false| + :file:`Object` + |run| + :file:`Object/Section`
+   |alyvix-if-false| + :file:`Object` + |alyvix-run| + :file:`Object/Section`
 
    Note that **you should clear** the :guilabel:`Break` flag on the antecedent, or else Alyvix
    will stop test case execution since that test case object failed, rather than continuing on
@@ -108,13 +108,13 @@ There are four modes for scripting nodes that can be used in the scripting panel
    `measures for each iteration <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-result-cli-measures>`__ will appear in the output.
 
 
-   |for| + :file:`Map Name` + |run| + :file:`Object/Section`
+   |alyvix-for| + :file:`Map Name` + |alyvix-run| + :file:`Object/Section`
 
 Double-clicking on a scripting node's mode will cycle it through the other modes in this order:
 
-|run| **>** |if-true| **>** |if-false| **>** |run|
+|alyvix-run| **>** |alyvix-if-true| **>** |alyvix-if-false| **>** |alyvix-run|
 
-Note that double-clicking on the |for| mode won't change it since it's based on a map rather
+Note that double-clicking on the |alyvix-for| mode won't change it since it's based on a map rather
 than a test case object.
 
 
@@ -146,7 +146,7 @@ illustrates an example script, where each color is explained in the table below.
    +-------------+---------------------------------------------------------------------+
    | Red         | An unspecified scripting element serving as a consequent            |
    +-------------+---------------------------------------------------------------------+
-   | Orange      | An enabled map element within a |for| scripting node                |
+   | Orange      | An enabled map element within a |alyvix-for| scripting node         |
    +-------------+---------------------------------------------------------------------+
    | Dark green  | An enabled Section script (subroutine)  ---  Clicking on the "link" |
    |             | icon will switch to the scripting panel for that Section            |

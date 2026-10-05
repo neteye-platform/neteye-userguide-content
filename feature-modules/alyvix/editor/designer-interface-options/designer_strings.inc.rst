@@ -82,7 +82,7 @@ in the :guilabel:`String` field normally.  However, some special characters, edi
 key combinations must be escaped.  The :ref:`table below <alyvix_designer_options_strings_special>`
 lists the full set of special keys that can be used.
 
-In the following example, a test case object with an Excel\ |trade| spreadsheet as a target would
+In the following example, a test case object with an Excel\ |trademark| spreadsheet as a target would
 put the words "First", "Second" and "Third" in three adjacent columns.
 
 .. code-block::

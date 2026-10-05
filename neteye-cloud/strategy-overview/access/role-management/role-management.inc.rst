@@ -84,6 +84,8 @@ For more information about these management options, see
 Managing Role Assignments
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+In order to manage your role assignments:
+
 #. Identify the subscribed contract types the user needs for their work.
 #. Choose the lowest available access level that meets those needs,
    assigning only one level for each contract type.

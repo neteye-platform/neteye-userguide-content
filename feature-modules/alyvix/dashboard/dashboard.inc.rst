@@ -14,7 +14,7 @@ about the Alyvix installation components that require attention, such as expired
 failing Test Cases or outdated Time Periods. This allows you to take immediate actions to keep your Alyvix
 installation always in a healthy state.
 
-.. _figure-alyvix-dashboard:
+.. _figure-alyvix_dashboard:
 
 .. figure:: /feature-modules/alyvix/img/alyvix-dashboard.png
    :alt: The Alyvix Dashboard

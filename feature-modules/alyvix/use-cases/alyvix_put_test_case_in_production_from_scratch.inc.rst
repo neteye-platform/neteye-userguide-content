@@ -1,26 +1,27 @@
-.. _alyvix-put-test-case-in-production:
+.. _alyvix_put_test_case_in_production:
 
 Put Test Case in Production
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section explains how to put an Alyvix test case in production.
 
-.. _prerequisites:
+
+.. _alyvix_prerequisites:
 
 Prerequisites
 `````````````
 
 #. In order to be able to put a test case in production, the Alyvix Node
-   should be installed as described in section :ref:`install-alyvix-node`, and
-   then :ref:`configured <alyvix-create-an-alyvix-node>` in the Director Module.
-   You should also follow the :ref:`alyvix-nodes-authentication` guide to
+   should be installed as described in section :ref:`alyvix_install_alyvix_node`, and
+   then :ref:`configured <alyvix_create_an_alyvix_node>` in the Director Module.
+   You should also follow the :ref:`alyvix_nodes_authentication` guide to
    configure secure communication with |ne|.
 
 #. A new test case file should be created using `Alyvix built-in tools <https://alyvix.com/learn/test_case_building.html>`_.
 
 #. To run a test case with an Alyvix Service, the Node must have a valid license.
    You can download the license request key and then upload the obtained
-   license activation key directly from NetEye, as described in the :ref:`alyvix-license-tab` section.
+   license activation key directly from NetEye, as described in the :ref:`alyvix_license_tab` section.
 
 .. note:: The interval between obtaining the license request key and activating the license
    in NetEye may take some time. Thus, make sure your license is activated before
@@ -34,8 +35,9 @@ Step 1. Create Alyvix Sessions
 ``````````````````````````````
 
 A test case should be run within a session. To add it, switch to the
-:ref:`nodes list <alyvix-nodes-list>`, select the Alyvix node and click the :guilabel:`New Session` button in the
-:ref:`alyvix-sessions-tab`.
+:ref:`nodes list <alyvix_nodes_list>`, select the Alyvix node and click the :guilabel:`New Session` button in the
+:ref:`alyvix_sessions_tab`.
+
 
 .. _alyvix_create_a_time_period:
 
@@ -63,16 +65,16 @@ to be run.
    If you modify an existing Time Period which is already associated with an Alyvix Test Case, you should synchronize
    the changes with Alyvix in the Node's **Time Periods** tab. Click
    the :guilabel:`Sync with NetEye` button to sync all time periods definitions with the Alyvix Node, as described in the
-   :ref:`alyvix-timeperiods-tab` section.
+   :ref:`alyvix_timeperiods_tab` section.
 
 Step 3. Create Alyvix Test Cases
 ````````````````````````````````
 
-Once you have added a session on the Alyvix node, switch to the :ref:`test cases list <alyvix-test-case-list>`
+Once you have added a session on the Alyvix node, switch to the :ref:`test cases list <alyvix_test_cases_list>`
 and click :guilabel:`Create`.
 
 - Select the node to run a test case on
-- Specify its definition by choosing the file previously created on the Alyvix Node as stated in :ref:`prerequisites`.
+- Specify its definition by choosing the file previously created on the Alyvix Node as stated in :ref:`alyvix_prerequisites`.
 
 Step 4. Run Test Cases
 ``````````````````````
@@ -87,7 +89,7 @@ arrow button in correspondence with the session previously defined to open the s
 Step 5. Check Test Case Results
 ```````````````````````````````
 
-Once the test case has been executed, switch to the :ref:`alyvix-test-case-reports-tab` to visualize its runs.
+Once the test case has been executed, switch to the :ref:`alyvix_test_case_reports_tab` to visualize its runs.
 
 - Click a specific run to open the Report view, which shows the details and all its transactions
 - Select a transaction to consult its parameters and understand how it performed.

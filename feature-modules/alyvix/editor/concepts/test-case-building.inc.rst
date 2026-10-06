@@ -1,5 +1,4 @@
 
-
 When you build a test case, you're creating a set of visual templates that can be matched
 against your app interfaces in real time, allowing Alyvix to interact with those interfaces
 just like a person would.
@@ -35,7 +34,7 @@ include detailed mini-tutorials and topic-based videos on how to use Alyvix Edit
 All of the Alyvix applications can be launched from the Windows Command Prompt or PowerShell.
 Note that they inherit the permissions of the shell they were launched from.
 
-.. _test_case_building_designer:
+.. _alyvix_test_case_building_designer:
 
 .. rubric:: The Designer Panel
 
@@ -49,7 +48,7 @@ Designer bundles this set of graphic elements and actions, each called a *compon
 single *test case object*, which you can then use as a building block to compose more
 complicated behaviors with scripts using Alyvix Editor.
 
-.. _test_case_building_designer_launch:
+.. _alyvix_test_case_building_designer_launch:
 
 The following sections of the guide present further information on Alyvix Designer:
 
@@ -89,7 +88,7 @@ with the following command line options:
 
 
 
-.. _test_case_building_selector:
+.. _alyvix_test_case_building_selector:
 
 .. rubric:: The Selector Panel
 
@@ -98,7 +97,7 @@ of all of your test case objects created with Designer, such as copying test cas
 to other Alyvix files, and set *monitoring* parameters like warning, critical and timeout
 values.  It also provides options to view, edit and delete test cases objects.
 
-.. _test_case_building_selector_launch:
+.. _alyvix_test_case_building_selector_launch:
 
 Selector is organized as a set of tabbed panels representing one or more test case files, and
 a list of test case objects within each tab.  This allows you to quickly switch between them and
@@ -128,7 +127,7 @@ with the following command line options:
 
 
 
-.. _test_case_building_editor:
+.. _alyvix_test_case_building_editor:
 
 .. rubric:: Alyvix Editor
 
@@ -137,7 +136,7 @@ with Designer and Selector. These scripts allows you to create complex interacti
 the test case objects in a specific order. And it saves everything -- scripts, test case
 objects, and monitoring parameters -- in a single :file:`.alyvix` test case file.
 
-.. _test_case_building_editor_launch:
+.. _alyvix_test_case_building_editor_launch:
 
 The following sections of the guide present further information about Alyvix Editor:
 

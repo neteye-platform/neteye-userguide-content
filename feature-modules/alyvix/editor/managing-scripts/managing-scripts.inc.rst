@@ -91,7 +91,7 @@ scripts or subscripts.  This can greatly help improve the readability of scripts
 they become very long.
 
 When you insert or replace a test case object with a section in the scripting panel, the color
-will become dark green to indicate it is a section.  A link icon |alyvix-link-icon| will appear, and
+will become dark green to indicate it is a section.  A link icon |alyvix-ext-link-icon| will appear, and
 clicking on it will load that section in the scripting panel.
 
 .. note::

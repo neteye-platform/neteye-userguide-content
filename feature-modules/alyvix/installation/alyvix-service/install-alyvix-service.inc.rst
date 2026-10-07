@@ -108,7 +108,7 @@ The following steps will install Alyvix Service on your machine:
 
 #. **Install Alyvix Core**
 
-   Follow :ref:`the installation instructions <install_alyvix_core>`
+   Follow :ref:`the installation instructions <alyvix_core_system_requirements_top>`
    for Python and Alyvix. |br|
 
 #. **Install PostgreSQL**

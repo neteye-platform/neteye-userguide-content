@@ -34,10 +34,10 @@ or maintain additional plugins on every endpoint. It supports:
 
 .. _nec_monitoring_figure_autodiscovery_screenshot:
 
-.. figure:: /neteye-cloud/monitoring/img/autodiscovery-architecture.png
-   :alt: Screenshot of the Autodiscovery GUI
+.. figure:: /neteye-cloud/monitoring/img/autodiscovery-added-services.png
+   :alt: Screenshot of services added to cloud monitoring by Autodiscovery
 
-   The Autodiscovery interface
+   Services now monitored (right) due to Autodiscovery on a Windows host (left)
 
 Because of the additional monitoring objects that Autodiscovery adds,
 activation must be explicitly requested through the Support Portal.

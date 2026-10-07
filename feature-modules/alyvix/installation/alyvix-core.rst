@@ -1,4 +1,4 @@
-.. _install_alyvix_core:
+.. _alyvix_install_alyvix_core:
 
 Install Alyvix Core
 ~~~~~~~~~~~~~~~~~~~

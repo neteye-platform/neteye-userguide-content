@@ -9,7 +9,7 @@ The Editor interface includes the Alyvix :ref:`Selector <alyvix_selector_interfa
 and :ref:`Designer <alyvix_designer_interface_overview>` modules as collapsible panels,
 which lets you easily inspect and choose test case objects to include when building your scripts.
 
-To :ref:`run Alyvix Editor from the command prompt <test_case_building_editor_launch>`,
+To :ref:`run Alyvix Editor from the command prompt <alyvix_test_case_building_editor_launch>`,
 use the following command:
 
 .. code-block:: doscon

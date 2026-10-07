@@ -14,7 +14,8 @@ For an easier lookup of the relevant information related to the test cases and t
 it is possible to search the table, by using the search bar, and sort the various columns,
 clicking their name.
 
-.. _figure-alyvix-testcases-page:
+
+.. _figure_alyvix_testcases_page:
 
 .. figure:: /feature-modules/alyvix/img/alyvix-testcases-page.png
    :alt: The Alyvix test cases page
@@ -28,7 +29,8 @@ Furthermore, when visualizing the test cases, it is possible to add a test case 
 the `Create` button. A side panel will open with the possibility to schedule a test case on one
 of the available nodes.
 
-.. _alyvix-test-case-details:
+
+.. _alyvix_test_case_details:
 
 Manage Test Cases details
 `````````````````````````
@@ -37,7 +39,8 @@ You can view the details of a particular test case by clicking it in the test ca
 panel for a selected test case will appear on the right, with details being grouped into Sessions and
 General tabs.
 
-.. _alyvix-test-case-sessions-tab:
+
+.. _alyvix_test_case_sessions_tab:
 
 Sessions Tab
 ++++++++++++
@@ -54,7 +57,8 @@ button for a particular session item.
 
    The session details of a test case
 
-.. _alyvix-test-case-general-tab:
+
+.. _alyvix_test_case_general_tab:
 
 General Tab
 +++++++++++
@@ -75,7 +79,7 @@ General test case details include:
   and another test case **test_case_B** for department **depB**. You want that users of department **depA** only see **test_case_A**,
   and similar for department **depB**. To achieve this, you can assign the tag ``depA`` to test case **test_case_A** and tag ``depB``
   to test case **test_case_B**, and then configure the role of department **depA** users to be restricted on tags ``depA``, as
-  described in the :ref:`alyvix-tenant-viewer-role` section.
+  described in the :ref:`alyvix_tenant_viewer_role` section.
   You can associate multiple tags by selecting them in the dropdown list. If the tag you are looking for is not
   present, you can create a new one using the dedicated form by clicking the 'Add' button.
 
@@ -84,14 +88,15 @@ arguments and the Time Period.
 
 .. note:: In case the node has some time periods out of sync with respect to the corresponding definition in the
           Director, before updating a Test Case it will be necessary to sync the time periods definitions with the Alyvix Node, as
-          mentioned in the :ref:`alyvix-timeperiods-tab` section.
+          mentioned in the :ref:`alyvix_timeperiods_tab` section.
 
 .. figure:: /feature-modules/alyvix/img/alyvix-testcase-details-general.png
    :alt: The Alyvix test cases general details
 
    The general details of a test case
 
-.. _alyvix-test-case-reports-tab:
+
+.. _alyvix_test_case_reports_tab:
 
 Reports Tab
 +++++++++++

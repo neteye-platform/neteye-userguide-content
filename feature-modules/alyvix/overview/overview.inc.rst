@@ -1,4 +1,4 @@
-
+.. _alyvix_overview:
 
 Alyvix is a synthetic monitoring system based on computer vision which synthesizes
 real users without being hardwired to application engines.
@@ -11,7 +11,7 @@ More information about Alyvix is available on the `official website <https://www
 and in the `official documentation <https://www.alyvix.com/learn/index.html>`_.
 
 
-.. _alyvix-nodes-architectures:
+.. _alyvix_nodes_architectures:
 
 Architecture of Alyvix Nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,10 +19,10 @@ Architecture of Alyvix Nodes
 This section provides information about the supported Alyvix node types.
 As explained below, currently |ne| supports four different types of node:
 
-- :ref:`alyvix-multitenant-tenant-specific-node`
-- :ref:`alyvix-multitenant-tenant-shared-node`
-- :ref:`alyvix-single-tenant-via-satellite-node`
-- :ref:`alyvix-single-tenant-direct-to-master-node`
+- :ref:`alyvix_multitenant_tenant_specific_node`
+- :ref:`alyvix_multitenant_tenant_shared_node`
+- :ref:`alyvix_single_tenant_via_satellite_node`
+- :ref:`alyvix_single_tenant_direct_to_master_node`
 
 The main differences between them reside in the adopted Tenancy configuration and
 the way they communicate with the |ne| Master.
@@ -32,7 +32,8 @@ while NATS serves as a communication channel to send the performance metrics fro
 The choice of using one rather than the other boils down to your infrastructure
 and purpose of the node.
 
-.. _alyvix-multitenant-tenant-specific-node:
+
+.. _alyvix_multitenant_tenant_specific_node:
 
 Multitenant - Tenant Specific
 `````````````````````````````
@@ -56,14 +57,16 @@ in the Host configuration in the Icinga Director.
    the API/HTTP communication is still direct between the |ne| Master and
    the Alyvix node
 
-.. _figure-alyvix-tenant-specific-node-architecture-diagram:
+
+.. _alyvix_figure_alyvix_tenant_specific_node_architecture_diagram:
 
 .. figure:: /feature-modules/alyvix/overview/img/alyvix-tenant-specific-node-architecture-diagram.png
    :alt: Communication between the Alyvix node and the |ne| Master through Satellites
 
    Communication between the Alyvix node and the |ne| Master through Satellites
 
-.. _alyvix-multitenant-tenant-shared-node:
+
+.. _alyvix_multitenant_tenant_shared_node:
 
 Multitenant - Tenant Shared
 ```````````````````````````
@@ -77,19 +80,21 @@ In this case, the |ne| Master will communicate directly with the Alyvix node wit
 Satellites. For this reason, all the sessions running on the node must be configured to be
 related to one specific Tenant from the available ones.
 
-.. _figure-alyvix-tenant-shared-node-architecture-diagram:
+
+.. _alyvix_figure_alyvix_tenant_shared_node_architecture_diagram:
 
 .. figure:: /feature-modules/alyvix/overview/img/alyvix-tenant-shared-node-architecture-diagram.png
    :alt: Direct communication between the Alyvix node and the |ne| Master
 
    Direct communication between the Alyvix node and the |ne| Master
 
-.. _alyvix-single-tenant-via-satellite-node:
+
+.. _alyvix_single_tenant_via_satellite_node:
 
 Single Tenant - Via Satellite
 `````````````````````````````
 
-This node is equivalent to the :ref:`alyvix-multitenant-tenant-specific-node`
+This node is equivalent to the :ref:`alyvix_multitenant_tenant_specific_node`
 node but for single Tenant environments. Note that in single Tenant environments
 the only Tenant available is always the Master Tenant.
 
@@ -97,25 +102,28 @@ the only Tenant available is always the Master Tenant.
    the API/HTTP communication is still direct between the |ne| Master and
    the Alyvix nodes
 
-.. _alyvix-single-tenant-direct-to-master-node:
+
+.. _alyvix_single_tenant_direct_to_master_node:
 
 Single Tenant - Direct to Master
 ````````````````````````````````
 
-This node is equivalent to the :ref:`alyvix-multitenant-tenant-shared-node`
+This node is equivalent to the :ref:`alyvix_multitenant_tenant_shared_node`
 node but for single Tenant environments. Note that in single Tenant environments
 the only Tenant available is always the Master Tenant.
 
-.. _alyvix-roles:
+
+.. _alyvix_roles:
 
 Roles
 ~~~~~
 
 The following roles are currently supported in the NetEye Alyvix integration. For more information about how to
 configure IcingaWeb2 roles to match the one described below, please consult
-the :ref:`alyvix-permissions-roles` section.
+the :ref:`alyvix_permissions_roles` section.
 
-.. _alyvix-super-admin-role:
+
+.. _alyvix_super_admin_role:
 
 Super Admin
 ```````````
@@ -123,7 +131,8 @@ Super Admin
 A user having the `Super Admin` role is considered as an administrator of each configured Alyvix node and hence has
 their full control, with all capabilities.
 
-.. _alyvix-tenant-admin-role:
+
+.. _alyvix_tenant_admin_role:
 
 Tenant Admin
 ````````````
@@ -131,15 +140,16 @@ Tenant Admin
 A user having the `Tenant Admin` role is considered as an administrator of one (or more) NetEye Tenants,
 associated to his role.
 
-As an administrator of a tenant, the user has administrative access on all the :ref:`alyvix-multitenant-tenant-specific-node`
+As an administrator of a tenant, the user has administrative access on all the :ref:`alyvix_multitenant_tenant_specific_node`
 nodes associated with that tenant.
 
-On :ref:`alyvix-multitenant-tenant-shared-node` nodes, the `Tenant Admin` has control over objects specific to the
+On :ref:`alyvix_multitenant_tenant_shared_node` nodes, the `Tenant Admin` has control over objects specific to the
 tenants under their administration. This includes editing their tenants' Sessions, creating Test Cases, adding and
 editing their tags and monitoring their results. However, they do not have authority to manage global configurations
 of the node, such as creating new Sessions or managing the license.
 
-.. _alyvix-tenant-viewer-role:
+
+.. _alyvix_tenant_viewer_role:
 
 Tenant Viewer
 `````````````
@@ -147,16 +157,16 @@ Tenant Viewer
 A user with `Tenant Viewer` role is granted read-only access to one or more NetEye Tenants
 associated with their role.
 
-Within the :ref:`alyvix-multitenant-tenant-specific-node` nodes, the `Tenant Viewer` can observe
+Within the :ref:`alyvix_multitenant_tenant_specific_node` nodes, the `Tenant Viewer` can observe
 activities and data pertinent to their assigned tenants.
 
 Optionally, the Tenant Viewer can be limited to viewing a specific subset of the Alyvix Test Cases of the Tenant.
 This restriction is based on the tags assigned to their role, acting as filters. Consequently, the Tenant Viewer
 gains visibility solely into the Test Cases linked with the designated tags. This filtering functionality is exclusive
 to the `Tenant Viewer` role and can be set up by following the steps outlined in the
-:ref:`Tenant Viewer Configuration <alyvix-tenant-viewer-configuration>` section.
+:ref:`Tenant Viewer Configuration <alyvix_tenant_viewer_configuration>` section.
 
-On :ref:`alyvix-multitenant-tenant-shared-node` nodes, similar to a `Tenant Admin` user, the `Tenant Viewer`
+On :ref:`alyvix_multitenant_tenant_shared_node` nodes, similar to a `Tenant Admin` user, the `Tenant Viewer`
 can view tenant-specific objects, including Sessions and Test Cases, and monitor their outcomes. However,
 they do not have permissions to observe global characteristics such as configurations, available sessions
 or licenses.

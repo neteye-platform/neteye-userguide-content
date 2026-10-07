@@ -1,4 +1,4 @@
-.. _dashboard:
+.. _alyvix_dashboard:
 
 Dashboard
 ---------

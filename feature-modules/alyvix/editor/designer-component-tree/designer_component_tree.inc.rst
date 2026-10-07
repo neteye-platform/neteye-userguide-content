@@ -1,5 +1,4 @@
 
-
 You can use Alyvix Designer to create *selections* on the screen.  These graphical
 regions (images or GUI objects like boxes or text) are later matched against a live
 application interface by Alyvix Robot.  Designer lets you combine *selections* and

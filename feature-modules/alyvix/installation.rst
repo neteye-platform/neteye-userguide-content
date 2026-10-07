@@ -1,5 +1,5 @@
 
-.. _install_top:
+.. _alvyix_install_top:
 
 
 Alyvix Installation and Upgrade

@@ -1,4 +1,5 @@
 .. _visualize_alyvix_performance_metrics_in_elastic:
+.. _alyvix_visualize_alyvix_performance_metrics_in_elastic:
 
 Visualize Alyvix Performance Metrics in Elastic Observability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,7 +20,7 @@ the following prerequisites must be met:
 
 - The Alyvix node must be updated to Alyvix Service version 2.7.2 or later.
 
-- The :ref:`neteye-alyvix <alyvix-overview>` and the :ref:`neteye-elastic-stack <elastic-feature-module>` modules must be installed in the |ne| system and enabled
+- The :ref:`neteye-alyvix <alyvix_overview>` and the :ref:`neteye-elastic-stack <elastic-feature-module>` modules must be installed in the |ne| system and enabled
   for the |ne| Tenants to which the metrics belong to.
   Please refer to the :ref:`neteye-components` for installing additional |ne| modules and to the
   :ref:`neteye-tenant-config-modify` or the :ref:`neteye-tenant-config-create`
@@ -28,13 +29,13 @@ the following prerequisites must be met:
 
   .. note::
 
-    If the Alyvix node is a :ref:`alyvix-multitenant-tenant-specific-node` or a :ref:`alyvix-single-tenant-via-satellite-node`,
+    If the Alyvix node is a :ref:`alyvix_multitenant_tenant_specific_node` or a :ref:`alyvix_single_tenant_via_satellite_node`,
     and the Alyvix node cannot be reached directly by the |ne| Master, then the OTEL configuration should be done manually
     on the Alyvix node. To perform the configuration of such Alyvix nodes, you can follow the dedicated section
     about how to :ref:`alyvix_node_manual_otel_configuration`.
 
 - The TCP port 8200 of the |ne| Master or the |ne| Satellite, depending on the
-  :ref:`architecture of the Alyvix node <alyvix-nodes-architectures>`, should be reachable by the Alyvix node.
+  :ref:`architecture of the Alyvix node <alyvix_nodes_architectures>`, should be reachable by the Alyvix node.
 
 - If the Alyvix node is connected to a |ne| Satellite, the Elastic APM Server should be installed and
   configured on the |ne| Satellite.
@@ -43,7 +44,7 @@ Step 1. Put a Test Case in Production
 `````````````````````````````````````
 
 First of all, ensure Alyvix is set to generate the metrics that you would like to collect,
-:ref:`putting a Test Case in production <alyvix-put-test-case-in-production>`.
+:ref:`putting a Test Case in production <alyvix_put_test_case_in_production>`.
 
 
 Step 2. Configure the Alyvix Node
@@ -54,12 +55,12 @@ Alyvix node and the Elastic APM server must be configured.
 
 - Use the :ref:`neteye-alyvix-node-setup` command to automatically configure the OTEL connection
   between the Alyvix node and the |ne| Master or the |ne| Satellite, depending on the
-  :ref:`architecture of the Alyvix node <alyvix-nodes-architectures>`. The command will automatically
+  :ref:`architecture of the Alyvix node <alyvix_nodes_architectures>`. The command will automatically
   configure the Alyvix node to send the metrics to the APM Server running on the |ne| Master or on the |ne| Satellite.
   The command will take care of creating the necessary authentication credentials for the Alyvix node
   on the APM server related to every tenant that is using the Alyvix node.
 
-.. _view-metrics:
+.. _alyvix_view_metrics:
 
 Step 3. Enjoy your metrics
 ``````````````````````````

@@ -1,6 +1,6 @@
 
 The actions that a |ne| user can perform on the Alyvix module are based
-on the user :ref:`role <alyvix-roles>`, defined by the |ne| user permissions. The roles are assigned based on the
+on the user :ref:`role <alyvix_roles>`, defined by the |ne| user permissions. The roles are assigned based on the
 user's IcingaWeb2 permissions as follows:
 
 .. _alyvix-super-admin-configuration:
@@ -39,7 +39,7 @@ in the `Access Control` as follows:
 .. image:: /feature-modules/alyvix/img/alyvix-tenant-admin-permissions.png
   :width: 49 %
 
-.. _alyvix-tenant-viewer-configuration:
+.. _alyvix_tenant_viewer_configuration:
 
 Tenant Viewer
 `````````````
@@ -57,7 +57,7 @@ Tenant Viewer role for Alyvix, you should :ref:`enable <neteye-tenant-config-mod
    This restriction allows the user to see only the Test Cases associated with the tags specified in their
    role configuration. If no tags are defined, the user can see all the Test Cases of the tenant.
    To link Test Cases with the relevant tags, multiple tags can be assigned through the dedicated Test Case
-   settings in the :ref:`alyvix-test-case-general-tab`
+   settings in the :ref:`alyvix_test_case_general_tab`
 #. Enable the **General Module Access** for the Icinga DB (possibly restricting the hosts visible by the user)
 
 .. image:: /feature-modules/alyvix/img/alyvix-tenant-viewer-inherit-permissions.png

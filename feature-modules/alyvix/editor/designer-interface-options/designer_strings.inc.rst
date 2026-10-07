@@ -1,5 +1,3 @@
-
-
 .. _alyvix_designer_options_strings_top:
 
 The String Field

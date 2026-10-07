@@ -1,63 +1,22 @@
-Icinga 2 v2.16 migration tasks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Keycloak in Kubernetes and the |ne| Operator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section explains how to migrate Icinga 2 features ``ElasticsearchWriter`` and ``ElasticsearchDatastreamWriter`` that have been deprecated in v2.16 and
-will be removed in future releases. Moreover, it explains how to migrate to the new ``FilterExpression`` permission
-that will also be enforced in future releases.
+After a successful upgrade, you will be required to perform and verify the migration of the Keycloak systemd/pcs
+instance to the new Keycloak deployment in Kubernetes, which will be an upgrade prerequisite check for future releases.
+To automate this process, the product ships 3 utility tools and scripts that allow you to perform the validation and
+migration.
 
-These procedure should be executed after the |ne| 4.50 upgrade, to ensure a smooth transition to future
-NetEye versions.
-
-
-FilterExpression Permission
-```````````````````````````
-
-Icinga 2 v2.16 introduces the ``FilterExpression`` permission, which controls whether an
-``ApiUser`` is allowed to use DSL filter expressions in API requests. This permission is
-required for future Icinga 2 releases and should be prepared in advance.
-
-In |ne| 4.50, existing API users can still use DSL filters, since the permission is not yet
-fully enforced. Starting with the next upstream Icinga 2 release (v2.17), however, it will be enforced
-and access will be denied unless the permission is explicitly granted.
-
-To prepare your environment, review all Icinga2 ``ApiUser`` entries and enable ``FilterExpression`` for
-those users that need to query the API with DSL filters.
-
-NetEye also provides a service check named
-``neteye-local!icinga2-filter-expression-permission-configured-neteyelocal``, which enters a
-warning state when an ``ApiUser`` has used DSL filters in the last 24 hours without the
-``FilterExpression`` permission enabled. This allows you to identify affected users before the
-permission becomes mandatory.
-
-For more information you can refer to the `official Icinga 2 documentation <https://icinga.com/docs/icinga-2/snapshot/doc/16-upgrading-icinga-2/#new-filter-expression-permission>`_.
-
-
-Deprecation of ElasticsearchWriter and Elasticsearch Datastream Writer
-``````````````````````````````````````````````````````````````````````
-
-Starting with Icinga 2 v2.16, the legacy ``ElasticsearchWriter`` and
-``ElasticsearchDatastreamWriter`` Icinga2 features are deprecated and will be removed in a
-future NetEye release. They are replaced by the upstream ``OTLPWriter`` model, which is exposed in
-NetEye through the :ref:`icinga2-features-otlpmetricswriter` feature.
-
-If your environment still uses either of these legacy writers, you should migrate to the
-recommended OTLP-based solution to ensure compatibility with future NetEye releases.
-
-To migrate, disable the deprecated Icinga 2 feature, enable the new OTLP-based writer as
-explained in :ref:`icinga2-features-otlpmetricswriter`, and review any dashboards,
-integrations, or alerting rules that still depend on the previous datastream naming and
-structure. If needed, update them to use the new Elasticsearch datastreams produced by the
-OTLP metrics workflow.
-
-NEP Variable Cleanup (nx_neteye_tenant)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Following the upgrade of NetEye and all installed NetEye Extra Packages (NEP), the legacy custom
-field ``nx_neteye_tenant`` is no longer required and can be safely deleted:
-
-1. In the NetEye UI, navigate to **Director > Define Data Fields** (under *Do more with custom data*).
-2. Search for ``nx_neteye_tenant`` and select it.
-3. Click **Delete**, set **Wipe related vars** to ``Yes``, and confirm deletion.
-4. Repeat if multiple field instances exist.
-
-For more details on this change, please consult the `NEP Updates and Upgrades section <https://neteye.guide/4.50/nep/doc/nep-updates.html>`__.
+1. :command:`neteye config auth switch-to-kube`:
+   This command will switch the authentication configuration from the systemd/pcs instance to the new Keycloak
+   deployment in Kubernetes by updating the necessary configuration files. After successful execution, the systemd/pcs
+   instance will be disabled, and you will be required to test the new environment to ensure that authentication is
+   working as expected.
+2. :command:`neteye config auth rollback-from-kube`:
+   Should any issues arise with the new Keycloak deployment in Kubernetes, this command will allow you to roll back the
+   authentication configuration to the previous systemd/pcs instance by restoring the necessary configuration files.
+3. :command:`neteye config auth cleanup-keycloak-pcs`:
+   Finally, once you are satisfied with the new Keycloak deployment, this command will clean up the old systemd/pcs
+   instance by removing any remaining configuration files and data related to the previous Keycloak deployment. Backups
+   of the old configuration files will be created in the :file:`/root/keycloak_upgrade_<timestamp>.bck` directory. This
+   step is non-reversible, and you will not be able to roll back to the previous systemd/pcs instance
+   after executing this command.

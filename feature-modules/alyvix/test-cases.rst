@@ -1,5 +1,5 @@
 
-.. _alyvix-test-case-list:
+.. _alyvix_test_cases_list:
 
 Test Case Management
 --------------------

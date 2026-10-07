@@ -1,4 +1,4 @@
-.. _test_case_building_top:
+.. _alyvix_test_case_building_top:
 
 Building Tools
 ~~~~~~~~~~~~~~

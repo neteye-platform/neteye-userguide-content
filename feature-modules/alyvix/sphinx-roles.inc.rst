@@ -9,11 +9,13 @@
 .. |python-download-link-3147| replace:: `Python 3.14.7 <https://www.python.org/ftp/python/3.14.7/python-3.14.7-amd64.exe>`__
 .. |python-download-link-397| replace:: `Python 3.9.7 <https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe>`__
 .. |python-download-link-379| replace:: `Python 3.7.9 <https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__
-.. |python-download-link| replace:: `64-bit Windows installer for Python version 3.14.7 <https://www.python.org/ftp/python/3.14.7/python-3.14.7-amd64.exe>`__
 .. |python-remove-name| replace:: :file:`Python 3.14.7 (64-bit)`
 
-
 .. ### Icons and symbols
+.. |alyvix-ext-link-icon| image:: /feature-modules/alyvix/img/external_link.svg
+   :height: 1em
+   :width: 10%
+
 .. |alyvix-play-icon| raw:: html
 
    <i class="fas fa-play fa-smaller"></i>
@@ -41,10 +43,6 @@
 .. |alyvix-4arrows-icon| raw:: html
 
    <i class="fa fa-smaller fa-arrows"></i>
-
-.. |alyvix-link-icon| raw:: html
-
-   <i class="fa fa-smaller fa-link"></i>
 
 .. |alyvix-lineadd-icon| image:: /feature-modules/alyvix/editor/images/lineadd_icon.png
    :class: inline-image-higher

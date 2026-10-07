@@ -4,75 +4,82 @@ If it does, you will then need to install Python on your Windows machine before 
 Alyvix itself.
 
 
-.. _alyvix_system_requirements_top:
+.. _alyvix_core_system_requirements_top:
 
 System Requirements
 ```````````````````
 
-.. note::
+Alyvix assumes that you have **one virtual or physical machine** exclusively
+dedicated to running Alyvix test cases. You should check that your designated
+machine and the account on that machine meet the following requirements
+before you install Alyvix:
 
-   Alyvix assumes that you have **one virtual or physical machine** exclusively dedicated to
-   running Alyvix test cases.
+.. table::
+   :widths: 25 75
 
-You should check that your designated machine and the account on that machine meet the following
-requirements before you install Alyvix:
-
-+---------------------+--------------------------------------------------------------------------+
-|                     | Minimum                                                                  |
-+---------------------+--------------------------------------------------------------------------+
-| :file:`Operating`   | **Windows 10 (64-bit) Pro or Enterprise**                                |
-| :file:`System`      | -or- **Windows Server 2016, 2019 or 2022**                               |
-|                     | (32-bit versions of Windows are :warn:`not` compatible                   |
-|                     | with Alyvix)                                                             |
-+---------------------+--------------------------------------------------------------------------+
-| :file:`Processor`   | 2 CPUs                                                                   |
-+---------------------+--------------------------------------------------------------------------+
-| :file:`Memory`      | 4GB RAM                                                                  |
-+---------------------+--------------------------------------------------------------------------+
-| :file:`Graphics`    | 24-bit RGB or 32-bit RGBA screen color depth                             |
-+---------------------+--------------------------------------------------------------------------+
-| :file:`Application` | Users defined on Alyvix Server must have the proper permissions          |
-| :file:`Permissions` | to run and interact with the application interface being monitored       |
-+---------------------+--------------------------------------------------------------------------+
+   +---------------------+--------------------------------------------------------------------------+
+   | **Characteristic**  | **Minimum Requirement**                                                  |
+   +---------------------+--------------------------------------------------------------------------+
+   | **Operating**       | **Windows 10 (64-bit) Pro or Enterprise**                                |
+   | **System**          | -or- **Windows Server 2016, 2019 or 2022**                               |
+   |                     | (32-bit versions of Windows are :file:`not` compatible                   |
+   |                     | with Alyvix)                                                             |
+   +---------------------+--------------------------------------------------------------------------+
+   | **Processor**       | 2 CPUs                                                                   |
+   +---------------------+--------------------------------------------------------------------------+
+   | **Memory**          | 4GB RAM                                                                  |
+   +---------------------+--------------------------------------------------------------------------+
+   | **Graphics**        | 24-bit RGB or 32-bit RGBA screen color depth                             |
+   +---------------------+--------------------------------------------------------------------------+
+   | **Application**     | Users defined on Alyvix Server must have the proper permissions          |
+   | **Permissions**     | to run and interact with the application interface being monitored       |
+   +---------------------+--------------------------------------------------------------------------+
 
 |
 
 
-.. _alyvix_installation_versions:
+.. _alyvix_core_installation_versions:
 
 Versions
 ````````
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix Version | Python Version Required      | Install Command                                                                                        |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.8.0   | |python-download-link-3147|  | ``pip install alyvix==3.8.0 --extra-index-url https://alyvix.github.io/alyvix-python-packages/simple/``|
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.7.1   | |python-download-link-397|   | ``pip install alyvix==3.7.1``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.7.0   | |python-download-link-397|   | ``pip install alyvix==3.7.0``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.6.0   | |python-download-link-397|   | ``pip install alyvix==3.6.0``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.5.0   | |python-download-link-397|   | ``pip install alyvix==3.5.0``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.4.0   | |python-download-link-397|   | ``pip install alyvix==3.4.0``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.3.2   | |python-download-link-397|   | ``pip install alyvix==3.3.2``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.3.1   | |python-download-link-397|   | ``pip install alyvix==3.3.1``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.2.3   | |python-download-link-397|   | ``pip install alyvix==3.2.3``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.2.0   | |python-download-link-397|   | ``pip install alyvix==3.2.0``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
-| Alyvix 3.1.6   | |python-download-link-379|   | ``pip install alyvix==3.1.6``                                                                          |
-+----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
+
+Ensure that the Alyvix Core version you want to install is compatible with
+your installed version of PostgreSQL.
+
+.. table::
+   :widths: 25 25 50
+
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix Version** | **Python Version Required**  | **Install Command**                                                                                 |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.8.0**   | |python-download-link-3147|  | pip install alyvix==3.8.0 --extra-index-url https://alyvix.github.io/alyvix-python-packages/simple/ |
+   |                    | |alyvix-ext-link-icon|       |                                                                                                     |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.7.1**   | |python-download-link-397|   | pip install alyvix==3.7.1                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.7.0**   | |python-download-link-397|   | pip install alyvix==3.7.0                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.6.0**   | |python-download-link-397|   | pip install alyvix==3.6.0                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.5.0**   | |python-download-link-397|   | pip install alyvix==3.5.0                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.4.0**   | |python-download-link-397|   | pip install alyvix==3.4.0                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.3.2**   | |python-download-link-397|   | pip install alyvix==3.3.2                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.3.1**   | |python-download-link-397|   | pip install alyvix==3.3.1                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.2.3**   | |python-download-link-397|   | pip install alyvix==3.2.3                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.2.0**   | |python-download-link-397|   | pip install alyvix==3.2.0                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
+   | **Alyvix 3.1.6**   | |python-download-link-379|   | pip install alyvix==3.1.6                                                                           |
+   +--------------------+------------------------------+-----------------------------------------------------------------------------------------------------+
 
 |
 
 
-.. _alyvix_install_release_python_install:
-
+.. _alyvix_core_install_release_python_install:
 
 Installing Python
 `````````````````
@@ -80,12 +87,12 @@ Installing Python
 Follow this procedure to install Python on your system:
 
 
-#. Download the |python-download-link|.
-   Note that Alyvix is :warn:`not` compatible with 32-bit versions of Python.
+#. Download the 64-bit Windows installer from the link in the Versions table above.
+   Note that Alyvix is :file:`not` compatible with 32-bit versions of Python.
 
 #. Start the installation:
 
-   1. :warn:`Right-click` on the downloaded executable and select **"Run as administrator"**
+   1. :file:`Right-click` on the downloaded executable and select **"Run as administrator"**
    2. Check the box **"Add Python 3.14 to PATH"** at the bottom
    3. Choose the option **"Customize installation"**
 
@@ -93,21 +100,27 @@ Follow this procedure to install Python on your system:
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The first panel of the python installation process.
 
+   |
+
 #. On the second panel all the option boxes should already be checked.  Click **"Next"** to
-   continue.
+   continue. |br|
 
    .. image:: /feature-modules/alyvix/installation/alyvix-core/img/python-install-02.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The second panel of the python installation process.
 
+   |
+
 #. On the third panel, make sure the advanced options are set as shown below.  Then under
    **"Customize install location"**, insert the recommended location :file:`C:\\Python314\\`.
    Finally, click on **"Install"**.  At this point Python will begin installing, typically
-   requiring about 5 minutes.
+   requiring about 5 minutes. |br|
 
    .. image:: /feature-modules/alyvix/installation/alyvix-core/img/python-install-03.png
       :class: image-boxshadow image-very-large zoomable-image
       :alt: The third panel of the python installation process.
+
+   |
 
 #. The installation is correct if the following command returns a version number rather than an
    error message (if not, you will need to edit your ``Path`` environment variable):
@@ -118,10 +131,10 @@ Follow this procedure to install Python on your system:
       C:\> python --version
       Python 3.14.7
 
+|
 
 
-.. _alyvix_install_release_alyvix_install:
-
+.. _alyvix_core_install_alyvix_release:
 
 Installing Alyvix
 `````````````````
@@ -168,9 +181,10 @@ The Alyvix installer is launched from the command prompt that, like the Python i
 We recommend you place your Alyvix test cases in a separate data directory reserved for test cases,
 such as :file:`C:\\Alyvix\\Testcases\\`.
 
+|
 
 
-.. _alyvix_install_upgrade:
+.. _alyvix_core_install_upgrade:
 
 Upgrading Alyvix
 ````````````````
@@ -191,11 +205,11 @@ Only two steps are needed to upgrade to the latest version:
 
      * If you have Python 3.7.9 installed, uninstall it, then manually remove its
        containing folder (e.g., ``C:\Python37\``) and re-install Alyvix with *pip* as shown in
-       the section :ref:`Installing Alyvix <alyvix_install_release_alyvix_install>` above.
+       the section :ref:`Installing Alyvix <alyvix_core_install_alyvix_release>` above.
 
      * If you have Python 3.9.7 installed, uninstall it, then manually remove its
        containing folder (e.g., ``C:\Python39\``) and re-install Alyvix with *pip* as shown in
-       the section :ref:`Installing Alyvix <alyvix_install_release_alyvix_install>` above.
+       the section :ref:`Installing Alyvix <alyvix_core_install_alyvix_release>` above.
 
      * If you have Python 3.14.7 installed, then you can use the *pip --upgrade* command:
 
@@ -204,9 +218,10 @@ Only two steps are needed to upgrade to the latest version:
 
           C:\> pip install --upgrade alyvix
 
+|
 
 
-.. _alyvix_install_offline_install:
+.. _alyvix_core_install_offline_install:
 
 Offline Installation
 ````````````````````
@@ -224,18 +239,18 @@ The following steps will then enable you to install Alyvix on the target machine
 #. On the *installer* Windows **64-bit** machine with an existing **Python 3** installation:
 
    * Create a new directory with appropriate permissions
-   * Download the |python-download-link| to that directory
+   * Download the 64-bit Windows installer for |python-download-link-3147| to that directory
    * Download the Alyvix application and its dependencies with this command:
 
      .. code-block:: doscon
         :class: short-code-block
 
-        C:\...\MyFolder> pip download alyvix
+        C:\...\MyFolder> pip download alyvix |br|
 
-#. Copy the entire directory onto the target machine
+#. Copy the entire directory onto the target machine |br|
 
 #. Use the Python installer now on the target machine to
-   :ref:`install Python following the instructions above <alyvix_install_release_python_install>`
+   :ref:`install Python following the instructions above <alyvix_core_install_release_python_install>`
 
 #. Open a command prompt in the directory on the target machine and install Alyvix with this
    command:
@@ -255,9 +270,10 @@ The following steps will then enable you to install Alyvix on the target machine
    If the :ref:`Editor window <alyvix_editor_interface_top>` appears, the installation was
    successful.
 
+|
 
 
-.. _alyvix_install_uninstall:
+.. _alyvix_core_install_uninstall:
 
 Uninstalling Alyvix and Python
 ``````````````````````````````
@@ -283,9 +299,10 @@ directory.
 The Python installer does not remove environment variables, so if desired you can manually
 remove them at **System Properties > Environment Variables > System Variables > Path**.
 
+|
 
 
-.. _alyvix_install_troubleshooting:
+.. _alyvix_core_install_troubleshooting:
 
 Installation Troubleshooting
 ````````````````````````````
@@ -294,7 +311,7 @@ Below are some potential installation problems and their solutions.
 
 .. admonition::  "Python" command does nothing or launches Microsoft Store on Windows 10
 
-   This error occurs when during :ref:`installation steps #2 and #4 <alyvix_install_release_python_install>`
+   This error occurs when during :ref:`installation steps #2 and #4 <alyvix_core_install_release_python_install>`
    you forgot to check the boxes to add Python to the path and environment variables.  Typing the
    :command:`python` command in the command prompt under this condition will launch Microsoft Store
    in an attempt to install it that way.

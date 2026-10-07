@@ -1,90 +1,98 @@
 
-
 Before installing Alyvix Service, first check that your setup meets the system requirements.
 
-Note that Alyvix Service also requires Alyvix to be installed on the same machine.
-Alyvix, also known as *Alyvix Core* to distinguish it from *Alyvix Service*,
-is a free and open source engine for designing and building GUI test cases that show what
-a task and its interface should look like and how they behave, and then later running them
-autonomously on the local Windows machine.
-
-
-.. _system_requirements_alyvix_service:
+.. _alyvix_service_system_requirements:
 
 System Requirements
 ```````````````````
 
-.. note::
+Alyvix Service assumes that you have one virtual or physical machine exclusively
+dedicated to running Alyvix test cases, with *Alyvix Core* already installed.
+You should check that each of these designated machines meets all the
+requirements here before installing Alyvix Service:
 
-   Alyvix Service assumes that you have one virtual or physical machine exclusively dedicated to running
-   Alyvix test cases.
+.. table::
+   :widths: 24 38 38
 
-You should check that your designated machine and the account on that machine meet the following
-requirements before you install Alyvix Service:
-
-+---------------------+--------------------------------+-----------------------------------------+
-|                     | Minimum                        | Recommended                             |
-+---------------------+--------------------------------+-----------------------------------------+
-| :file:`Operating`   | **Windows 10 (64-bit)**        | **Windows Server 2016, 2019 or 2022**   |
-| :file:`System`      | **Pro or Enterprise**          | (English language)                      |
-|                     +--------------------------------+-----------------------------------------+
-|                     | (32-bit versions of Windows are :warn:`not` compatible with Alyvix       |
-|                     | Service)                                                                 |
-+---------------------+--------------------------------+-----------------------------------------+
-| :file:`Processor`   | 2 CPUs                         | 2 CPUs base **+** 2 CPUs per session    |
-+---------------------+--------------------------------+-----------------------------------------+
-| :file:`Memory`      | 4GB RAM                        | 4GB RAM base **+** 4GB RAM per session  |
-+---------------------+--------------------------------+-----------------------------------------+
-| :file:`Graphics`    | 24-bit RGB or 32-bit RGBA screen color depth                             |
-+---------------------+--------------------------------+-----------------------------------------+
-| :file:`Remote`      | Users defined on Alyvix Service must have RDP access (through RDC        |
-| :file:`Desktop`     | *mstsc.exe*) to the machine itself (e.g. the user must be a Remote       |
-|                     | Desktop User, and the firewall must not be set to block local RDC)       |
-|                     +--------------------------------+-----------------------------------------+
-|                     | **1 session only:** No Windows | **Multiple sessions in parallel:**      |
-|                     | Terminal Server available;     | Windows Terminal Server allows          |
-|                     | 1 test case executed at a time | multiple test cases to run at once      |
-+---------------------+--------------------------------+-----------------------------------------+
-| :file:`Application` | Users defined on Alyvix Service must have the proper permissions         |
-| :file:`Permissions` | to run and interact with the application interface being monitored       |
-+---------------------+--------------------------------+-----------------------------------------+
+   +------------------------------+--------------------------------+-----------------------------------------+
+   |                              | **Minimum**                    | **Recommended**                         |
+   +------------------------------+--------------------------------+-----------------------------------------+
+   | **Operating System**         | **Windows 10 (64-bit)**        | **Windows Server 2016, 2019 or 2022**   |
+   |                              | **Pro or Enterprise**          | (English language)                      |
+   |                              +--------------------------------+-----------------------------------------+
+   |                              | (32-bit versions of Windows are :file:`not` compatible with              |
+   |                              | Alyvix Service)                                                          |
+   +------------------------------+--------------------------------+-----------------------------------------+
+   | **Processor**                | 2 CPUs                         | 2 CPUs base **+** 2 CPUs per session    |
+   +------------------------------+--------------------------------+-----------------------------------------+
+   | **Memory**                   | 4GB RAM                        | 4GB RAM base **+** 4GB RAM per session  |
+   +------------------------------+--------------------------------+-----------------------------------------+
+   | **Graphics**                 | 24-bit RGB or 32-bit RGBA screen color depth                             |
+   +------------------------------+--------------------------------+-----------------------------------------+
+   | **Remote Desktop**           | Users defined on Alyvix Service must have RDP access (through RDC        |
+   |                              | *mstsc.exe*) to the machine itself (e.g. the user must be a Remote       |
+   |                              | Desktop User, and the firewall must not be set to block local RDC)       |
+   +------------------------------+--------------------------------+-----------------------------------------+
+   |                              | **1 session only:** No Windows | **Multiple sessions in parallel:**      |
+   |                              | Terminal Server available;     | Windows Terminal Server allows          |
+   |                              | 1 test case executed at a time | multiple test cases to run at once      |
+   +------------------------------+--------------------------------+-----------------------------------------+
+   | **Application Permissions**  | Users defined on Alyvix Service must have the proper permissions         |
+   |                              | to run and interact with the application interface being monitored       |
+   +------------------------------+--------------------------------+-----------------------------------------+
 
 |
 
 
-.. _installation_versions_alyvix_service:
+.. _alyvix_service_installation_versions:
 
 Versions
 ````````
 
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service Version            | Required Alyvix Core Version                        | PostgreSQL Version              | Alyvix API Version |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.9.x              | :ref:`Alyvix 3.8.x <alyvix_installation_versions>`  | |link-postgresql-install-18.x|  | 3,4,5,6            |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.8.x              | :ref:`Alyvix 3.7.x <alyvix_installation_versions>`  | |link-postgresql-install-18.x|  | 3,4,5,6            |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.7.x              | :ref:`Alyvix 3.7.x <alyvix_installation_versions>`  | |link-postgresql-install-18.x|  | 3, 4, 5            |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.6.x              | :ref:`Alyvix 3.6.x <alyvix_installation_versions>`  | |link-postgresql-install-12.x|  | 3, 4               |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.5.x              | :ref:`Alyvix 3.6.x <alyvix_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1, 2, 3         |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.4.x              | :ref:`Alyvix 3.5.x <alyvix_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1, 2            |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.3.x              | :ref:`Alyvix 3.5.x <alyvix_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.2.x              | :ref:`Alyvix 3.5.x <alyvix_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.1.x              | :ref:`Alyvix 3.4.x <alyvix_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
-| Alyvix Service 2.0.x              | :ref:`Alyvix 3.3.x <alyvix_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1               |
-+-----------------------------------+-----------------------------------------------------+---------------------------------+--------------------+
+Ensure that the Alyvix Service version you want to install is compatible with
+the installed versions of Alyvix Core and PostgreSQL.
+
+.. table::
+   :widths: 30 25 25 20
+
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | **Alyvix Service Version**        | **Required Alyvix Core Version**                         | **PostgreSQL Version**          | **Alyvix API Version** |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.9.x              | :ref:`Alyvix 3.8.x <alyvix_core_installation_versions>`  | |link-postgresql-install-18.x|  | 3,4,5,6                |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.8.x              | :ref:`Alyvix 3.7.x <alyvix_core_installation_versions>`  | |link-postgresql-install-18.x|  | 3,4,5,6                |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.7.x              | :ref:`Alyvix 3.7.x <alyvix_core_installation_versions>`  | |link-postgresql-install-18.x|  | 3, 4, 5                |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.6.x              | :ref:`Alyvix 3.6.x <alyvix_core_installation_versions>`  | |link-postgresql-install-12.x|  | 3, 4                   |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.5.x              | :ref:`Alyvix 3.6.x <alyvix_core_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1, 2, 3             |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.4.x              | :ref:`Alyvix 3.5.x <alyvix_core_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1, 2                |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.3.x              | :ref:`Alyvix 3.5.x <alyvix_core_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1                   |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.2.x              | :ref:`Alyvix 3.5.x <alyvix_core_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1                   |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.1.x              | :ref:`Alyvix 3.4.x <alyvix_core_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1                   |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
+   | Alyvix Service 2.0.x              | :ref:`Alyvix 3.3.x <alyvix_core_installation_versions>`  | |link-postgresql-install-12.x|  | 0, 1                   |
+   |                                   |                                                          | |alyvix-ext-link-icon|          |                        |
+   +-----------------------------------+----------------------------------------------------------+---------------------------------+------------------------+
 
 |
 
 
-.. _installation_steps_alyvix_service:
+.. _alyvix_service_installation_steps:
 
 Installation Steps
 ``````````````````
@@ -95,20 +103,19 @@ The following steps will install Alyvix Service on your machine:
 
    Choose your `preferred subscription plan <https://alyvix.com/service#plans>`_ and get in touch with us
    `to request it <https://alyvix.com/team>`_, providing a machine IP from where you will download the
-   software package.  You'll obtain access to `our repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_.
-
+   software package.  You'll obtain access to
+   `our repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_. |br|
 
 #. **Install Alyvix Core**
 
-   Follow :ref:`the installation instructions <alyvix_install_alyvix_core>`
-   for Python and Alyvix.
-
+   Follow :ref:`the installation instructions <alyvix_core_system_requirements_top>`
+   for Python and Alyvix. |br|
 
 #. **Install PostgreSQL**
 
    Download and run the most recent version of
    `the PostgreSQL 12.X installer <https://www.enterprisedb.com/downloads/postgres-postgresql-downloads>`_
-   for the **Windows x86-64** architecture.  Be sure to run it :warn:`in administrator mode`. |br|
+   for the **Windows x86-64** architecture.  Be sure to run it :file:`in administrator mode`.
 
    Click "Next" to accept all the defaults until it asks you to set the password.  Change the
    default password to ensure the security of your system, and make a note of it so that
@@ -119,24 +126,22 @@ The following steps will install Alyvix Service on your machine:
       :align: center
       :alt: Use a secure password and remember it.
 
-   Continue clicking "Next" to accept the remaining defaults and complete the installation.
-
+   Continue clicking "Next" to accept the remaining defaults and complete the installation. |br|
 
 #. **Install Alyvix Service**
 
    Download the most recent version of the installer (:file:`alyvix_service_<version>.zip`) from
    `the repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_, and run the :file:`setup.exe`
-   installer which can be found inside the .zip file :warn:`in administrator mode`. |br|
+   installer which can be found inside the .zip file :file:`in administrator mode`. |br|
 
    .. note:: See how to
-      :ref:`unblock_alyvix_files` in case Windows blocks a downloaded Alyvix Service file.
+      :ref:`alyvix_service_unblock_alyvix_files` in case Windows blocks a downloaded Alyvix Service file.
 
    Set the database password from step #3 as follows:
 
-   * Open the file |config-file-location| :warn:`in administrator mode`
-   * Paste the password in this line: |br1|
-     ``"database":{.. "password": "<your_password>", ..}``
-
+   * Open the file |config-file-location| :file:`in administrator mode`
+   * Paste the password into this line: |br1|
+     ``"database":{.. "password": "<your_password>", ..}`` |br|
 
 #. **Mandatory security configuration**
 
@@ -153,8 +158,7 @@ The following steps will install Alyvix Service on your machine:
 
    * Create the folder :file:`C:\\ProgramData\\Alyvix\\certs\\jwt\\`
    * Copy the JWT certificate file from your monitoring system into the folder above,
-     renaming it to :file:`public.pem`.
-
+     renaming it to :file:`public.pem`. |br|
 
 #. **Start Alyvix Service**
 
@@ -165,6 +169,7 @@ The following steps will install Alyvix Service on your machine:
       :align: center
       :alt: Start the Alyvix Service.
 
+   |
 
 #. **Monitoring system integration**
 
@@ -175,7 +180,7 @@ The following steps will install Alyvix Service on your machine:
 |
 
 
-.. _install_upgrade_alyvix_service:
+.. _alyvix_service_install_upgrade:
 
 Upgrading
 `````````
@@ -202,7 +207,7 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
 
 #. Upgrade Alyvix Core
 
-   Follow :ref:`the instructions here <alyvix_install_upgrade>`
+   Follow :ref:`the instructions here <alyvix_core_install_upgrade>` |br|
 
 #. Install the new version of Alyvix Service
 
@@ -213,7 +218,7 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
      * |mapping-file-location|
      * |security-directory-location|
 
-#. Run Alyvix Service
+#. Run Alyvix Service:
 
    * Start Alyvix Service:  **Windows Services > Alyvix Service > start**
    * Sign out of the current session
@@ -221,7 +226,7 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
 |
 
 
-.. _uninstallation_steps:
+.. _alyvix_service_uninstallation_steps:
 
 Uninstalling Alyvix Service
 ```````````````````````````
@@ -229,14 +234,14 @@ Uninstalling Alyvix Service
 The following steps will remove Alyvix Service from your machine.  Basically you will need to reverse
 the steps performed during installation.
 
-#. Disable the relevant Alyvix Nodes within your integrated monitoring system.
+#. Disable the relevant Alyvix Nodes within your integrated monitoring system
 
 #. Stop Alyvix Service under the Services tree:
    **Start > Computer Management > Services and Applications > Services > Alyvix Service**
 
 #. Uninstall Alyvix Service:
-   **Start > Settings > Apps > Alyvix Service > Uninstall** |br|
-   If desired, also uninstall PostgreSQL the same way.
+   **Start > Settings > Apps > Alyvix Service > Uninstall** --
+   if desired, also uninstall PostgreSQL the same way.
 
 #. Remove these two directories:
 
@@ -244,10 +249,12 @@ the steps performed during installation.
    * :file:`C:\\ProgramData\\Alyvix\\`
 
 #. If desired, remove Alyvix Core and/or Python using
-   :ref:`the Alyvix uninstall instructions <alyvix_install_uninstall>`.
+   :ref:`the Alyvix uninstall instructions <alyvix_core_install_uninstall>`
+
+|
 
 
-.. _unblock_alyvix_files:
+.. _alyvix_service_unblock_alyvix_files:
 
 Unblock Alyvix Service Files
 ````````````````````````````
@@ -289,3 +296,25 @@ If Windows continues to display security warnings for trusted Alyvix Service fil
 * Re-download the files if they may have been corrupted.
 * Check whether your organization applies security policies that block downloaded files.
 * Temporarily disable third-party download managers or security software only for testing purposes.
+
+|
+
+
+.. _alyvix_service_install_troubleshooting:
+
+Installation Troubleshooting
+````````````````````````````
+
+Below are some potential installation problems and their solutions.
+
+.. admonition::  My test case runs, but no reports appear
+
+    If the monitoring system allows you to configure a test case, and you can
+    see that the test case is being scheduled and is running correctly, double
+    check in Alyvix Editor that it has at least one step with the
+    `"Measure" flag <alyvix_selector_interface_top>`_
+    checked.
+
+    If no measurement boxes checked, then no measurements will be sent to the
+    monitoring system, and its report generator will thus not have any data to
+    create a report with.

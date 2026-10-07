@@ -37,12 +37,12 @@ sent by other hosts.
 The forwarding of the node's own logs is controlled by the environment variable
 `TORNADO_RSYSLOG_FORWARD_LOCAL_LOGS`, which is set for the rsyslog service by
 the configuration file
-:file:`/usr/lib/systemd/system/rsyslog.service.d/10-neteye-tornado.conf` shipped
-with the |ne| Tornado package. A log is considered local when it reaches
-rsyslog from the loopback address (`127.0.0.1` or `::1`), which is the case for
-all logs generated on the node. The forwarding is enabled by default, meaning
-no action is required if you want to keep this behavior. Logs received from
-other hosts are always forwarded, regardless of this setting.
+:file:`/usr/lib/systemd/system/rsyslog.service.d/10-neteye-tornado.conf`
+shipped. A log is considered local when it reaches rsyslog from the loopback
+address (`127.0.0.1` or `::1`), which is the case for all logs generated on the
+node. The forwarding is enabled by default, meaning no action is required if you
+want to keep this behavior. Logs received from other hosts are always forwarded,
+regardless of this setting.
 
 To disable the forwarding of the node's own logs, first create the directory
 :file:`/etc/systemd/system/rsyslog.service.d` if it does not exist yet:

@@ -21,22 +21,23 @@ Step 1. Put a Test Case in Production
 `````````````````````````````````````
 
 First of all, ensure Alyvix is set to generate the metrics that you would like to collect,
-:ref:`putting a Test Case in production <alyvix-put-test-case-in-production>`.
+:ref:`putting a Test Case in production <alyvix_put_test_case_in_production>`.
 
-.. _visualize-alyvix-performance-metrics-configure-the-alyvix-node:
+
+.. _alyvix_visualize_alyvix_performance_metrics_configure_the_alyvix_node:
 
 Step 2. Configure the Alyvix Node
 `````````````````````````````````
 
 After having configured a Test Case to generate metrics, the connection between the
 Alyvix node and |ne| must be configured. The configuration procedure depends on the
-:ref:`architecture of the Alyvix node <alyvix-nodes-architectures>`.
+:ref:`architecture of the Alyvix node <alyvix_nodes_architectures>`.
 The node can belong to one of the following types:
 
-- :ref:`alyvix-multitenant-tenant-specific-node`
-- :ref:`alyvix-single-tenant-via-satellite-node`
-- :ref:`alyvix-multitenant-tenant-shared-node`
-- :ref:`alyvix-single-tenant-direct-to-master-node`
+- :ref:`alyvix_multitenant_tenant_specific_node`
+- :ref:`alyvix_single_tenant_via_satellite_node`
+- :ref:`alyvix_multitenant_tenant_shared_node`
+- :ref:`alyvix_single_tenant_direct_to_master_node`
 
 Please make sure to follow the steps related to the architecture of your Alyvix node.
 
@@ -70,7 +71,7 @@ which will configure Alyvix to send metrics to the Satellite via a NATS channel:
 
 **Multitenant - Tenant Shared**
 
-- Configure a Tenant for each session by entering the Tenant name in the :ref:`alyvix-sessions-tab`.
+- Configure a Tenant for each session by entering the Tenant name in the :ref:`alyvix_sessions_tab`.
   Furthermore use the :ref:`neteye-alyvix-node-setup` to automatically configure the NATS channels for the
   direct communication to the |ne| Master.
 
@@ -80,7 +81,8 @@ which will configure Alyvix to send metrics to the Satellite via a NATS channel:
   direct communication to the |ne| Master. Please note that in this case the Tenant related to all the
   sessions on the Alyvix node will be the Master Tenant.
 
-.. _configure-metrics:
+
+.. _alyvix_configure_metrics:
 
 Step 3. Configure the retention of your metrics
 ```````````````````````````````````````````````

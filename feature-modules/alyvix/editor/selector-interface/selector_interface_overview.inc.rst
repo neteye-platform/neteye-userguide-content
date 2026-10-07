@@ -1,5 +1,4 @@
 
-
 Alyvix Selector allows you to organize individual test case objects, copy test case objects
 from one file to another, and visualize and change basic test case parameters.
 
@@ -15,7 +14,7 @@ and if desired, to import them into the primary tab (the values of test case obj
 tabs cannot be changed).
 
 Note that you can start Alyvix Selector as a standalone module from the command prompt (you can
-find information about its :ref:`command arguments here <test_case_building_selector_launch>`):
+find information about its :ref:`command arguments here <alyvix_test_case_building_selector_launch>`):
 
 .. code-block:: doscon
    :class: medium-code-block
@@ -155,7 +154,7 @@ Test Case Object Actions
 The :nobutton:`Delay [sec] <n>` control together with the  :wbutton:`ADD` button allows you to
 add a completely new test case object by launching Designer directly from the Selector interface
 with the specified countdown delay in seconds, just as if you had used Designer's :file:`--delay`
-:ref:`option <test_case_building_designer_launch>` from the command prompt.  This action is
+:ref:`option <alyvix_test_case_building_designer_launch>` from the command prompt.  This action is
 available regardless of whether any test case objects are selected.
 
 The :wbutton:`GRAB` button allows you to (1) replace the existing screen capture of the current

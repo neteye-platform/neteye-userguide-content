@@ -4,7 +4,7 @@ If it does, you will then need to install Python on your Windows machine before 
 Alyvix itself.
 
 
-.. _system_requirements_top:
+.. _alyvix_system_requirements_top:
 
 System Requirements
 ```````````````````
@@ -38,7 +38,7 @@ requirements before you install Alyvix:
 |
 
 
-.. _installation_versions:
+.. _alyvix_installation_versions:
 
 Versions
 ````````
@@ -71,7 +71,7 @@ Versions
 |
 
 
-.. _install_release_python_install:
+.. _alyvix_install_release_python_install:
 
 
 Installing Python
@@ -120,7 +120,7 @@ Follow this procedure to install Python on your system:
 
 
 
-.. _install_release_alyvix_install:
+.. _alyvix_install_release_alyvix_install:
 
 
 Installing Alyvix
@@ -170,7 +170,7 @@ such as :file:`C:\\Alyvix\\Testcases\\`.
 
 
 
-.. _install_upgrade:
+.. _alyvix_install_upgrade:
 
 Upgrading Alyvix
 ````````````````
@@ -191,11 +191,11 @@ Only two steps are needed to upgrade to the latest version:
 
      * If you have Python 3.7.9 installed, uninstall it, then manually remove its
        containing folder (e.g., ``C:\Python37\``) and re-install Alyvix with *pip* as shown in
-       the section :ref:`Installing Alyvix <install_release_alyvix_install>` above.
+       the section :ref:`Installing Alyvix <alyvix_install_release_alyvix_install>` above.
 
      * If you have Python 3.9.7 installed, uninstall it, then manually remove its
        containing folder (e.g., ``C:\Python39\``) and re-install Alyvix with *pip* as shown in
-       the section :ref:`Installing Alyvix <install_release_alyvix_install>` above.
+       the section :ref:`Installing Alyvix <alyvix_install_release_alyvix_install>` above.
 
      * If you have Python 3.14.7 installed, then you can use the *pip --upgrade* command:
 
@@ -206,7 +206,7 @@ Only two steps are needed to upgrade to the latest version:
 
 
 
-.. _install_offline_install:
+.. _alyvix_install_offline_install:
 
 Offline Installation
 ````````````````````
@@ -235,7 +235,7 @@ The following steps will then enable you to install Alyvix on the target machine
 #. Copy the entire directory onto the target machine
 
 #. Use the Python installer now on the target machine to
-   :ref:`install Python following the instructions above <install_release_python_install>`
+   :ref:`install Python following the instructions above <alyvix_install_release_python_install>`
 
 #. Open a command prompt in the directory on the target machine and install Alyvix with this
    command:
@@ -257,7 +257,7 @@ The following steps will then enable you to install Alyvix on the target machine
 
 
 
-.. _install_uninstall:
+.. _alyvix_install_uninstall:
 
 Uninstalling Alyvix and Python
 ``````````````````````````````
@@ -285,7 +285,7 @@ remove them at **System Properties > Environment Variables > System Variables > 
 
 
 
-.. _install_troubleshooting:
+.. _alyvix_install_troubleshooting:
 
 Installation Troubleshooting
 ````````````````````````````
@@ -294,7 +294,7 @@ Below are some potential installation problems and their solutions.
 
 .. admonition::  "Python" command does nothing or launches Microsoft Store on Windows 10
 
-   This error occurs when during :ref:`installation steps #2 and #4 <install_release_python_install>`
+   This error occurs when during :ref:`installation steps #2 and #4 <alyvix_install_release_python_install>`
    you forgot to check the boxes to add Python to the path and environment variables.  Typing the
    :command:`python` command in the command prompt under this condition will launch Microsoft Store
    in an attempt to install it that way.

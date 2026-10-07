@@ -36,8 +36,8 @@ To create a new connection in the RDP Client:
       The RDP Client connection details
 
    .. note:: For looking up certain details that are to be provided for establishing a new connection,
-      open the NetEye Alyvix UI and navigate to the :ref:`Nodes page <alyvix-nodes-list>`.
-      From there you can select a Node and review all available sessions in the :ref:`Sessions tab <alyvix-sessions-tab>`.
+      open the NetEye Alyvix UI and navigate to the :ref:`Nodes page <alyvix_nodes_list>`.
+      From there you can select a Node and review all available sessions in the :ref:`Sessions tab <alyvix_sessions_tab>`.
 
 
    - **Name:** A descriptive name for the connection
@@ -60,4 +60,4 @@ Connecting to a Node
 2. Click **Connect**.
 3. Upon a successful connection, you will log in to the remote Windows machine.
 
-You can now use the :ref:`Alyvix Editor <test_case_building_top>` to build, modify, or repair test cases directly on the Node.
+You can now use the :ref:`Alyvix Editor <alyvix_test_case_building_top>` to build, modify, or repair test cases directly on the Node.

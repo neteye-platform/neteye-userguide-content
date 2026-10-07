@@ -1,16 +1,16 @@
 AutoDiscovery
 ~~~~~~~~~~~~~
 
-Over time, monitoring configurations can slowly drift when compared to the
-real world. To keep those configurations aligned with infrastructure changes,
-|nec| Autodiscovery continuously and automatically scans for hardware
+As your computing environment changes, monitoring settings can become outdated
+over time. To keep those configurations aligned with infrastructure changes,
+|nec| AutoDiscovery continuously and automatically scans for hardware
 and service changes, imports them, and manages them as monitored objects.
 
-With Autodiscovery, teams don’t need to request individual additions or removals
+With AutoDiscovery, teams don’t need to request individual additions or removals
 as their environments evolve.  It reduces manual setup, avoids monitoring gaps,
 and prevents obsolete checks from accumulating.
 
-Autodiscovery checks hosts and creates monitoring objects for new components.
+AutoDiscovery checks hosts and creates monitoring objects for new components.
 Different discovery types can be set for different hosts, making it practical
 for environments where application installations, service retirements, and
 storage changes happen regularly. You can create your own matching discovery
@@ -20,9 +20,9 @@ removable drives.
 .. _nec_monitoring_figure_autodiscovery_architecture:
 
 .. figure:: /neteye-cloud/monitoring/img/autodiscovery-architecture.png
-   :alt: Diagram of the Autodiscovery architecture
+   :alt: Diagram of the AutoDiscovery architecture
 
-   How Autodiscovery works
+   How AutoDiscovery works
 
 Discovery uses a host’s Icinga 2 Agent, with discovery plugins centrally
 maintained on the |nec| Satellite, so customers don’t need to install
@@ -35,9 +35,9 @@ or maintain additional plugins on every endpoint. It supports:
 .. _nec_monitoring_figure_autodiscovery_screenshot:
 
 .. figure:: /neteye-cloud/monitoring/img/autodiscovery-added-services.png
-   :alt: Screenshot of services added to cloud monitoring by Autodiscovery
+   :alt: Screenshot of services added to cloud monitoring by AutoDiscovery
 
-   Services now monitored (right) due to Autodiscovery on a Windows host (left)
+   Services now monitored (right) due to AutoDiscovery on a Windows host (left)
 
-Because of the additional monitoring objects that Autodiscovery adds,
+Because of the additional monitoring objects that AutoDiscovery adds,
 activation must be explicitly requested through the Support Portal.

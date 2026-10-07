@@ -3,7 +3,7 @@ AutoDiscovery
 
 Over time, monitoring configurations can slowly drift when compared to the
 real world. To keep those configurations aligned with infrastructure changes,
-NetEye Cloud Autodiscovery continuously and automatically scans for hardware
+|nec| Autodiscovery continuously and automatically scans for hardware
 and service changes, imports them, and manages them as monitored objects.
 
 With Autodiscovery, teams don’t need to request individual additions or removals
@@ -13,9 +13,9 @@ and prevents obsolete checks from accumulating.
 Autodiscovery checks hosts and creates monitoring objects for new components.
 Different discovery types can be set for different hosts, making it practical
 for environments where application installations, service retirements, and
-storage changes happen regularly. Create your own matching discovery rules to
-filter over custom variables, services by name, or even excluding removable
-drives.
+storage changes happen regularly. You can create your own matching discovery
+rules to filter over custom variables, services by name, or even excluding
+removable drives.
 
 .. _nec_monitoring_figure_autodiscovery_architecture:
 
@@ -25,7 +25,7 @@ drives.
    How Autodiscovery works
 
 Discovery uses a host’s Icinga 2 Agent, with discovery plugins centrally
-maintained on the NetEye Cloud Satellite, so customers don’t need to install
+maintained on the |nec| Satellite, so customers don’t need to install
 or maintain additional plugins on every endpoint. It supports:
 
 * Windows Services and volumes on Windows servers and workstations

@@ -14,7 +14,7 @@ an Alyvix node in NetEye to be able to monitor and configure it from the NetEye 
 a few steps that you will find below.
 
 Alyvix Service is available under its own product license. You can find out
-more on how to obtain Alyvix license in its `installation guide <https://alyvix.com/learn/service/install.html#installation-steps>`_.
+more on how to obtain Alyvix license in its :ref:`installation guide <alyvix_service_installation_steps>`.
 
 
 .. include:: overview/overview.inc.rst

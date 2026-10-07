@@ -19,7 +19,7 @@ the capture process is underway).  It then displays the screen capture at full r
 purple crosshairs that track the mouse, and a semi-transparent reminder
 :nobutton:`PRESS ESC TO OPEN DIALOG` is overlaid at the top left as shown here:
 
-.. image:: images/ad_main_screen_edit_message_h150.png
+.. image:: images/ad-main-screen-edit-message-h150.png
    :class: image-boxshadow
    :width: 80%
    :alt: The initial Alyvix Designer selection cursor
@@ -38,7 +38,7 @@ Pressing :kbd:`Escape` will bring up the Designer interface as in the following 
 no groups (or components) have yet been defined.  The principle interface elements are (the
 standalone version of Alyvix Designer is shown here):
 
-.. figure:: /feature-modules/alyvix/editor/images/ad_main_screen_initial_numbered.png
+.. figure:: /feature-modules/alyvix/editor/images/ad-main-screen-initial-numbered.png
    :figwidth: 50%
    :alt: The empty Alyvix Designer interface
 
@@ -91,7 +91,7 @@ Selections (and subselections) can be made with the mouse in one of two ways:
 For instance, you can manually select the Windows Start button using the left mouse button as
 shown in the middle image here:
 
-.. figure:: /feature-modules/alyvix/editor/images/ad_screen_capture_combined.png
+.. figure:: /feature-modules/alyvix/editor/images/ad-screen-capture-combined.png
    :alt: Before and after creating a selection in the screen capture.
 
 
@@ -158,7 +158,7 @@ When in screen capture mode, pressing the :kbd:`Escape` key will return you to e
 Designer or Editor interface.  As you make new selections and subselections, they will appear as
 components within the :ref:`component tree <alyvix_designer_component_tree_top>` as shown here:
 
-.. image:: images/ad_main_screen_new_component2.png
+.. image:: images/ad-main-screen-new-component2.png
    :class: image-boxshadow zoomable-image
    :width: 50%
    :alt: Adding a first component in the Alyvix Designer interface

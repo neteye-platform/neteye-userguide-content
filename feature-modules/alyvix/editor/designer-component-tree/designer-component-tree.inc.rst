@@ -26,7 +26,7 @@ displayed as the *component tree*, where there are three types:
 Structure of the Component Tree
 ```````````````````````````````
 
-.. image:: images/ad_main_screen_initial_top.png
+.. image:: images/ad-main-screen-initial-top.png
    :class: image-boxshadow zoomable-image
    :width: 50%
    :alt: An empty component tree
@@ -41,7 +41,7 @@ indicated by the purple/red color.  The three color sets (red, green and blue) a
 distinguish the three groups, and a group's elements may in fact change color if you reorder
 or remove one.
 
-.. image:: images/ad_main_screen_components.png
+.. image:: images/ad-main-screen-components.png
    :class: image-boxshadow zoomable-image
    :width: 50%
    :alt: A tree with a single root, group and component
@@ -70,7 +70,7 @@ Alyvix's visual recognition capability is based on two well-known open source sy
   project, which lets Alyvix find writing in regions and convert it to computer-readable
   text, regardless of the font and font size used
 
-.. image:: images/ad_component_types.png
+.. image:: images/ad-component-types.png
    :class: image-boxshadow zoomable-image
    :width: 50%
    :alt: A tree with a single root, group and component

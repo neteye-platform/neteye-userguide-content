@@ -7,7 +7,7 @@ When a component in a test case object matches an area currently onscreen, its *
 be executed, and then the contents of its :guilabel:`String` field will be typed out as a
 sequence of keystrokes, one at a time, to the window in focus when the test case object matched.
 
-.. image:: images/ad_action_string_sized.png
+.. image:: images/ad-action-string-sized.png
    :class: image-boxshadow zoomable-image
    :width: 80%
    :alt: The mouse action selection dropdown.

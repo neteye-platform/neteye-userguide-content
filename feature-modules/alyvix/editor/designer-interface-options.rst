@@ -18,4 +18,4 @@ The parameters and settings for Alyvix Designer are divided into:
 
 
 .. include:: designer-interface-options/designer-interface-options.inc.rst
-.. include:: designer-interface-options/designer_strings.inc.rst
+.. include:: designer-interface-options/designer-strings.inc.rst

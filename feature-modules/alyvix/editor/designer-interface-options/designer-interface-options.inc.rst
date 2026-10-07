@@ -6,7 +6,7 @@ Test Case Object Options
 At the top of the Designer panel (the version in Alyvix Editor) are the options relating
 to the test case object as a whole:
 
-.. image:: images/ad_testcase_options_sized.png
+.. image:: images/ad-testcase-options-sized.png
    :class: image-boxshadow zoomable-image
    :width: 80%
    :alt: The test case options.
@@ -31,7 +31,7 @@ of their type, and what happens if they fail to be detected:
     * **Disappear:**  If the groups and components of a test case object were initially present,
       Alyvix will detect when they are no longer visible
 
-      .. image:: images/appeardisappear_h120.png
+      .. image:: images/appeardisappear-h120.png
          :class: image-boxshadow zoomable-image
          :alt: Visual appearance and disappearance timeline.
 
@@ -74,7 +74,7 @@ with the final test case object.
 The root component options can be found at the bottom of the Designer interface when the root
 node **S** is selected:
 
-.. image:: images/ad_root_options_run.png
+.. image:: images/ad-root-options-run.png
    :class: image-boxshadow zoomable-image
    :width: 80%
    :alt: Options for the root element.
@@ -101,7 +101,7 @@ should not include any quotation marks even if there are spaces in the path.
 The **Kill** option instead allows you to select a currently running process to terminate, or
 type one in if it's not currently running:
 
-.. image:: images/ad_root_options_kill.png
+.. image:: images/ad-root-options-kill.png
    :class: image-boxshadow zoomable-image
    :width: 80%
    :alt: Options for the root element.
@@ -124,7 +124,7 @@ subselection on the captured screen, such as an icon.  As shown here, it has the
 options to choose which visual aspect of the image to match against (an Operations tutorial
 video is available that `explains the image options <https://alyvix.com/learn/videos_and_tutorials/operations_tutorials.html#operations-tutorials-image>`__):
 
-.. image:: images/ad_type_submenu_image_sized.png
+.. image:: images/ad-type-submenu-image-sized.png
    :class: image-boxshadow zoomable-image
    :width: 80%
    :alt: Options for the image type.
@@ -146,7 +146,7 @@ buttons, text boxes, panels or windows.  As shown here, it has the following opt
 Operations tutorial video is available that
 `explains the rect options <https://alyvix.com/learn/videos_and_tutorials/operations_tutorials.html#operations-tutorials-rect>`__):
 
-.. image:: images/ad_type_submenu_rect_sized.png
+.. image:: images/ad-type-submenu-rect-sized.png
    :class: image-boxshadow zoomable-image
    :width: 80%
    :alt: Options for the rect type.
@@ -182,7 +182,7 @@ limitations to note:
    The text type's *Detect* option will determine that a match was correctly made if the text
    scraped from the region of interest  matches the condition specified in the first two fields.
 
-   .. image:: images/ad_type_submenu_text_detect_sized.png
+   .. image:: images/ad-type-submenu-text-detect-sized.png
      :class: image-boxshadow zoomable-image
      :alt: Options for the detect text type.
 
@@ -216,7 +216,7 @@ limitations to note:
    :ref:`pattern is used later <alyvix_designer_options_strings_map_extract>`
    in the String field of another test case, this cached value will be returned.
 
-  .. image:: images/ad_type_submenu_text_map_sized.png
+  .. image:: images/ad-type-submenu-text-map-sized.png
     :class: image-boxshadow zoomable-image
     :alt: Options for the map text type.
 
@@ -231,7 +231,7 @@ optionally set up an immediate mouse and/or keyboard action which is unique to e
 The actions on all components in a group will be performed in the top-to-bottom order found
 in the component tree.
 
-.. image:: images/ad_action_string_sized.png
+.. image:: images/ad-action-string-sized.png
    :class: image-boxshadow zoomable-image
    :width: 80%
    :alt: The mouse action selection dropdown.
@@ -285,31 +285,31 @@ used and their meanings.
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
    | **Icon**                                                                                                 |  **Description**                                  |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_move.png          |  Move the mouse to a new position                 |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-move.png          |  Move the mouse to a new position                 |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_click_left.png    |  Click the left mouse button                      |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-click-left.png    |  Click the left mouse button                      |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_click_right.png   |  Click the right mouse button                     |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-click-right.png   |  Click the right mouse button                     |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_scroll_down.png   |  Scroll downwards                                 |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-scroll-down.png   |  Scroll downwards                                 |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_scroll_up.png     |  Scroll upwards                                   |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-scroll-up.png     |  Scroll upwards                                   |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_hold.png          |  Hold the object under the mouse                  |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-hold.png          |  Hold the object under the mouse                  |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_release_none.png  |  Release the held object where it is              |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-release-none.png  |  Release the held object where it is              |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_release_up.png    |  Release the held object upwards                  |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-release-up.png    |  Release the held object upwards                  |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_release_down.png  |  Release the held object downwards                |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-release-down.png  |  Release the held object downwards                |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_release_left.png  |  Release the held object leftwards                |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-release-left.png  |  Release the held object leftwards                |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_mouse_release_right.png |  Release the held object rightwards               |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-mouse-release-right.png |  Release the held object rightwards               |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_keyboard.png            |  Enter text into the field in focus               |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-keyboard.png            |  Enter text into the field in focus               |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
-   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon_keyboard_paren.png      |  Enter parameterized text into the field in focus |
+   | .. image:: /feature-modules/alyvix/editor/designer-interface-options/images/icon-keyboard-paren.png      |  Enter parameterized text into the field in focus |
    +----------------------------------------------------------------------------------------------------------+---------------------------------------------------+
 
 |

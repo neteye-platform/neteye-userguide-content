@@ -30,7 +30,7 @@ The example of the rsyslog event is:
 .. rubric:: Disabling Rsyslog events coming from |ne| nodes
 
 |ne| forwards the logs handled by rsyslog to the Tornado event engine, where
-they are processed as events of type syslog. These include the system logs of
+they are processed as events of type `syslog`. These include the system logs of
 the |ne| node itself and, if rsyslog is configured to receive them, the logs
 sent by other hosts.
 
@@ -40,11 +40,11 @@ the configuration file
 :file:`/usr/lib/systemd/system/rsyslog.service.d/10-neteye-tornado.conf`. A log
 is considered local when it reaches rsyslog from the loopback address
 (`127.0.0.1` or `::1`), which is the case for all logs generated on the node.
-The forwarding is enabled by default, meaning no action is required if you want
-to keep this behavior. Logs received from other hosts are always forwarded,
+Forwarding is enabled by default, meaning no action is required if you want to
+keep this behavior. Logs received from other hosts are always forwarded,
 regardless of this setting.
 
-To disable the forwarding of the node's own logs, first create the directory
+To disable forwarding of the node's own logs, first create the directory
 :file:`/etc/systemd/system/rsyslog.service.d` if it does not exist yet:
 
 .. code:: bash
@@ -73,15 +73,15 @@ steps has no effect on the running service.
 
 .. warning::
 
-    Disabling the forwarding stops the system log events of the |ne| node from
+    Disabling forwarding stops the system log events of the |ne| node from
     appearing in Tornado. Event rules and dashboards that rely on these events
-    will no longer receive data; events from other hosts are not affected. To
-    disable the forwarding, do not edit the package file
+    will no longer receive data; events from other hosts are not affected. When
+    disabling forwarding, do not edit the package file
     :file:`/usr/lib/systemd/system/rsyslog.service.d/10-neteye-tornado.conf`, as
-    it belongs to the NetEye Tornado package and is replaced on every update.
+    it belongs to the |ne| Tornado package and is replaced on every update.
 
-To enable the forwarding of the node's own logs again, remove the override file
-you created:
+To re-enable forwarding of the node's own logs, remove the override file you
+created:
 
 .. code:: bash
 
@@ -89,4 +89,4 @@ you created:
     sudo systemctl daemon-reload
     sudo systemctl restart rsyslog
 
-With no override present, the package default (enabled) applies again.
+With no override present, the package default (enabled) continues to apply.

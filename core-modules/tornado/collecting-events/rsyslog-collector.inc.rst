@@ -49,7 +49,7 @@ To disable forwarding of the node's own logs, first create the directory
 
 .. code:: bash
 
-    sudo mkdir -p /etc/systemd/system/rsyslog.service.d
+    # mkdir -p /etc/systemd/system/rsyslog.service.d
 
 Then create the file
 :file:`/etc/systemd/system/rsyslog.service.d/tornado-rsyslog-collector.conf`
@@ -64,8 +64,8 @@ Finally, apply the change:
 
 .. code:: bash
 
-    sudo systemctl daemon-reload
-    sudo systemctl restart rsyslog
+    # systemctl daemon-reload
+    # systemctl restart rsyslog
 
 Note that the setting takes effect only after `systemctl daemon-reload` followed
 by a restart of the rsyslog service; changing configuration files without these
@@ -85,8 +85,8 @@ created:
 
 .. code:: bash
 
-    sudo rm /etc/systemd/system/rsyslog.service.d/tornado-rsyslog-collector.conf
-    sudo systemctl daemon-reload
-    sudo systemctl restart rsyslog
+    # rm /etc/systemd/system/rsyslog.service.d/tornado-rsyslog-collector.conf
+    # systemctl daemon-reload
+    # systemctl restart rsyslog
 
 With no override present, the package default (enabled) continues to apply.

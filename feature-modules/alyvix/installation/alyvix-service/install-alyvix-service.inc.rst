@@ -164,7 +164,7 @@ The following steps will install Alyvix Service on your machine:
 
    Run **Alyvix Service** within Windows Services **Task Manager > Services Tab > Alyvix Service > Start**
 
-   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/service_alyvix_restart.png
+   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/service-alyvix-restart.png
       :width: 70%
       :align: center
       :alt: Start the Alyvix Service.

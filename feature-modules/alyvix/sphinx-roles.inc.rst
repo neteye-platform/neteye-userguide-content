@@ -44,15 +44,15 @@
 
    <i class="fa fa-smaller fa-arrows"></i>
 
-.. |alyvix-lineadd-icon| image:: /feature-modules/alyvix/editor/images/lineadd_icon.png
+.. |alyvix-lineadd-icon| image:: /feature-modules/alyvix/editor/images/lineadd-icon.png
    :class: inline-image-higher
    :width: 5%
 
-.. |alyvix-runblue| image:: /feature-modules/alyvix/editor/images/button_run_blue.png
+.. |alyvix-runblue| image:: /feature-modules/alyvix/editor/images/button-run-blue.png
    :class: inline-image-higher button-boxshadow
    :width: 10%
 
-.. |alyvix-mousearrow| image:: /feature-modules/alyvix/editor/images/icon_mouse_click_left_point_inline.png
+.. |alyvix-mousearrow| image:: /feature-modules/alyvix/editor/images/icon-mouse-click-left-point-inline.png
    :class: inline-image button-boxshadow
    :width: 5%
 

@@ -5,7 +5,7 @@ Quick Install Guide
 ```````````````````
 To add Alyvix Service to a node in NetEye, follow these steps:
 
-#. Install Alyvix Service according to its `installation instructions <https://alyvix.com/learn/service/install.html>`_
+#. Install Alyvix Service according to its :ref:`installation instructions <alyvix_service_installation_steps>`
 #. Configure :ref:`authentication <alyvix_nodes_authentication>` (certificates and JWT)
 #. Choose a NetEye/Alyvix tenant architecture :ref:`(single or multi-tenant) <alyvix_nodes_architectures>`
 #. Configure :ref:`multitenancy <alyvix_network_architecture>` and :ref:`role mappings <alyvix_role_mappings>` based on the chosen architecture

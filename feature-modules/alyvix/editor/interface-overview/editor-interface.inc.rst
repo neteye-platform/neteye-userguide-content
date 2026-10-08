@@ -18,7 +18,7 @@ use the following command:
 
 This loads the Editor interface, whose layout has the following elements:
 
-.. figure:: /feature-modules/alyvix/editor/images/ae_full_interface_numbered.png
+.. figure:: /feature-modules/alyvix/editor/images/ae-full-interface-numbered.png
    :alt: Alyvix Editor with Designer and Selector.
 
 
@@ -40,7 +40,7 @@ Editor-Specific Features
 
 The principle interface elements specific to Alyvix Editor are:
 
-.. figure:: /feature-modules/alyvix/editor/images/ae_main_screen_numbered.png
+.. figure:: /feature-modules/alyvix/editor/images/ae-main-screen-numbered.png
    :alt: The Alyvix Editor interface.
 
 
@@ -96,7 +96,7 @@ without making any changes, the fastest way isn't to return to editing the test 
 via the Designer panel.  Instead you can use the monitor tab to see the screen capture for
 the currently selected test case object.
 
-.. image:: images/ae_monitor_tab_sized.png
+.. image:: images/ae-monitor-tab-sized.png
    :class: image-boxshadow zoomable-image
    :alt: An example Monitor tab screenshot
 
@@ -120,7 +120,7 @@ When run, Editor will be minimized until the scripted interaction has completed,
 the Editor window will return, and the output will appear in the Console tab at the top of the
 :ref:`scripting panel <alyvix_editor_scripting_panel_top>`:
 
-.. image:: /feature-modules/alyvix/editor/images/ae_console_result.png
+.. image:: /feature-modules/alyvix/editor/images/ae-console-result.png
    :class: image-boxshadow image-very-large zoomable-image
    :alt: The results of running the script in Alyvix Editor
 
@@ -131,7 +131,7 @@ the `Test Execution <https://alyvix.com/learn/test_case_execution.html#alyvix-ro
 If a failure was caused by a simple sequential scripting node, then the annotated screenshot
 describing the failure will be displayed below the output in the Console tab:
 
-.. image:: images/ae_console_tab_error.png
+.. image:: images/ae-console-tab-error.png
    :class: image-boxshadow image-very-large zoomable-image
    :alt: A matching error displayed in the console tab
 

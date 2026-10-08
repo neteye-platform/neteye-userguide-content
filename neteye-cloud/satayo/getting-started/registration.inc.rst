@@ -40,3 +40,12 @@ to the service provider.
 
 Once the registration request is processed by the service provider, each user receives
 a confirmation email containing instructions on how to complete their account setup and to access |ne|.
+
+IP Whitelisting
+===============
+
+The whitelist of the network :command:`82.193.25.0/24` is requested. Whitelisting this network,
+which is used to manage active scanning activities and that is
+`managed directly <https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=82.193.25.0%20-%2082.193.25.255&type=inetnum>`_
+by Wurth IT Italy, is strongly recommended to allow SATAYO to obtain more consistent information about the services exposed
+on the infrastructure being analyzed.

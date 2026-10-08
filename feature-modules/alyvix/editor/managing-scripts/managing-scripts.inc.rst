@@ -2,7 +2,7 @@
 The script management panel organizes and provides quick access to the scripts and sections
 necessary for creating complex behaviors.  The script management panel is divided into three parts:
 
-.. image:: images/ae_script_management_panel_h230.png
+.. image:: images/ae-script-management-panel-h230.png
    :class: image-boxshadow zoomable-image
    :width: 50%
    :alt: The script management panel.
@@ -91,7 +91,7 @@ scripts or subscripts.  This can greatly help improve the readability of scripts
 they become very long.
 
 When you insert or replace a test case object with a section in the scripting panel, the color
-will become dark green to indicate it is a section.  A link icon |alyvix-link-icon| will appear, and
+will become dark green to indicate it is a section.  A link icon |alyvix-ext-link-icon| will appear, and
 clicking on it will load that section in the scripting panel.
 
 .. note::
@@ -133,7 +133,7 @@ The first step after creating a map is to define the set of keys and values that
 the number of keys in the map.)  The map interface is shown here, with the available actions
 listed below:
 
-.. image:: images/ae_basic_map_example.png
+.. image:: images/ae-basic-map-example.png
    :class: image-boxshadow image-very-large zoomable-image
    :alt: The Map interface.
 

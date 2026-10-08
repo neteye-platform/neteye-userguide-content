@@ -25,7 +25,7 @@ find information about its :ref:`command arguments here <alyvix_test_case_buildi
 
 This will bring up the Selector interface:
 
-.. figure:: /feature-modules/alyvix/editor/images/as_main_screen_numbered.png
+.. figure:: /feature-modules/alyvix/editor/images/as-main-screen-numbered.png
    :alt: The Alyvix Selector interface.
 
 
@@ -124,7 +124,7 @@ can be entered.  When a value is not valid you will see an error message like th
 
 .. _alyvix_selector_interface_list_controls:
 
-.. image:: images/as_name_validation.png
+.. image:: images/as-name-validation.png
    :class: image-boxshadow zoomable-image
    :alt: The Alyvix Selector interface.
 

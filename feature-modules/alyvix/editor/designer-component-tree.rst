@@ -4,4 +4,4 @@ Designer: Component Tree
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /feature-modules/alyvix/sphinx-roles.inc.rst
-.. include:: designer-component-tree/designer_component_tree.inc.rst
+.. include:: designer-component-tree/designer-component-tree.inc.rst

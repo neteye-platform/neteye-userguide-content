@@ -6,9 +6,8 @@ SATAYO REST API
 The **SATAYO REST API** allows technical integrations to retrieve and, when
 authorized, insert SATAYO findings for their tenant.
 
-Every customer has a dedicated SATAYO instance. In the examples below,
-replace ``<satayo-host>`` with the host name of your instance, for example
-by exporting it once in your shell:
+In the examples below, replace ``<satayo-host>`` with the host name of your
+SATAYO instance, for example by exporting it once in your shell:
 
 .. code-block:: bash
 
@@ -66,31 +65,7 @@ expires, request a new one in the same way.
 If the client ID or secret is wrong, the identity provider answers with
 ``401`` and ``"error": "invalid_client"``.
 
-Step 2 (Optional): Inspect the Token
-------------------------------------
-
-The access token is a JSON Web Token (JWT). Its permissions are carried in the
-``idp_groups`` claim. To check which groups your client belongs to, decode the
-token payload:
-
-.. code-block:: bash
-
-    jq -R 'split(".")[1] | gsub("-";"+") | gsub("_";"/") | @base64d | fromjson
-           | {azp, preferred_username, idp_groups}' <<<"$TOKEN"
-
-For a read-only client, the output looks like the following:
-
-.. code-block:: json
-
-    {
-      "azp": "<client-id>",
-      "preferred_username": "service-account-<client-id>",
-      "idp_groups": [
-        "/findings-readers"
-      ]
-    }
-
-Step 3: Call the API
+Step 2: Call the API
 --------------------
 
 Send the token in the ``Authorization`` header of every request. For example,
@@ -149,9 +124,16 @@ Common Request Options
   ``limit``.
 * **Closed findings**: only open findings are returned by default. Add
   ``includeclosed=true`` to include closed ones.
-* **Tracing**: you can optionally pass a W3C ``traceparent`` header, for
-  example ``Traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01``,
-  to correlate your requests with SATAYO logs when contacting support.
+* **Tracing**: you can optionally pass a
+  `W3C Trace Context <https://www.w3.org/TR/trace-context/#traceparent-header>`__
+  ``traceparent`` header to correlate your requests with SATAYO logs when
+  contacting support. Its format is
+  ``00-<trace-id>-<parent-id>-<flags>``, where ``<trace-id>`` is 32 and
+  ``<parent-id>`` is 16 random hexadecimal characters, and ``<flags>`` is
+  ``01``, for example
+  ``Traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01``.
+  If your HTTP client or tracing library already generates this header, you
+  do not need to set it manually.
 
 Unknown query parameters are rejected with ``422``.
 

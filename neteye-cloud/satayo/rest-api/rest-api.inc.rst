@@ -7,11 +7,7 @@ The **SATAYO REST API** allows technical integrations to retrieve and, when
 authorized, insert SATAYO findings for their tenant.
 
 In the examples below, replace ``<satayo-host>`` with the host name of your
-SATAYO instance, for example by exporting it once in your shell:
-
-.. code-block:: bash
-
-    export SATAYO_HOST=<satayo-host>
+SATAYO instance.
 
 The API is available at the following base URL:
 
@@ -48,6 +44,7 @@ secret you received:
 
 .. code-block:: bash
 
+    export SATAYO_HOST=<satayo-host>
     export SATAYO_CLIENT_ID=<client-id>
     export SATAYO_CLIENT_SECRET=<client-secret>
 

@@ -33,8 +33,8 @@ Requirements
 
 To use the SATAYO MCP Server you need:
 
-* a SATAYO account, the same you use to log in to the SATAYO web interface;
-* an AI assistant that supports remote MCP servers over the **Streamable
+* A SATAYO account, the same you use to log in to the SATAYO web interface.
+* An AI assistant that supports remote MCP servers over **Streamable
   HTTP** transport, with **OAuth** authentication, and **version 2026-07-28**
   of the MCP specification. Older clients that support only earlier versions
   of the specification cannot connect, so keep your assistant up to date.
@@ -95,11 +95,11 @@ host name of your SATAYO instance:
 
 The options mean:
 
-* ``satayo``: the name you give to the server in Claude Code. You can choose
+* ``satayo``: The name you give to the server in Claude Code. You can choose
   any name.
-* ``--client-id satayo2-mcp-client``: the OAuth Client ID to use for signing
+* ``--client-id satayo2-mcp-client``: The OAuth Client ID to use for signing
   in.
-* ``--callback-port 7777``: the local port where Claude Code receives the
+* ``--callback-port 7777``: The local port where Claude Code receives the
   result of the login. You can use any free port.
 
 By default the server is available only to you, and only in the current
@@ -132,7 +132,7 @@ Run the following command in a terminal:
 
     claude mcp get satayo
 
-If everything works, the output contains ``Status: ✔ Connected``. You can
+If everything works, the output will show ``Status: ✔ Connected``. You can
 also type ``/mcp`` in Claude Code and select the ``satayo`` server to see the
 list of available tools.
 
@@ -149,7 +149,7 @@ example:
 * *"Summarize the SATAYO attack surface composition and tell me which
   findings I should look at first."*
 
-The first time Claude Code uses a SATAYO tool, it asks for your permission.
+The first time Claude Code uses a SATAYO tool, it will ask for your permission.
 You can allow it once or for the whole session.
 
 Sharing the Configuration with Your Team
@@ -174,7 +174,7 @@ content:
       }
     }
 
-The file does not contain any credential, so you can safely commit it to your
+This file does not contain any credentials, so you can safely commit it to your
 repository. Each team member signs in with their own SATAYO account, as
 described in `Step 2: Sign In`_, and sees only the data they are allowed to
 see.
@@ -195,7 +195,7 @@ call the server manually:
 
     npx @modelcontextprotocol/inspector
 
-In the MCP Inspector, select the **Streamable HTTP** transport, enter the
+In the MCP Inspector, select **Streamable HTTP** transport, enter the
 **Server URL** and the **OAuth Client ID** from the `Connection Settings`_,
 and connect.
 
@@ -221,6 +221,6 @@ Troubleshooting
    * - The assistant cannot register a client, or asks for a Client ID
      - Set the OAuth Client ID ``satayo2-mcp-client``, as described in
        `Connection Settings`_.
-   * - Every question returns no results
+   * - Questions do not return results
      - Ask the assistant to call the ``whoami`` tool to check which
        organizations and monitored domains you can see.

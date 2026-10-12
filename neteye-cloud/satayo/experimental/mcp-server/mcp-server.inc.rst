@@ -62,8 +62,7 @@ Replace ``<satayo-host>`` with the host name of your SATAYO instance.
    * - **OAuth Client Secret**
      - None, leave it empty
    * - **OAuth Callback URL**
-     - Any address on ``http://localhost`` or ``http://127.0.0.1``, on any
-       port
+     - Any address on ``http://localhost``, on any port
 
 Most assistants find all the other information, such as the address of the
 SATAYO login page, automatically.
@@ -214,8 +213,8 @@ Troubleshooting
      - You are not signed in, or your session expired. In Claude Code, run
        ``/mcp`` and sign in again.
    * - The SATAYO login page shows ``Invalid parameter: redirect_uri``
-     - The callback URL of your assistant is not on ``localhost`` or
-       ``127.0.0.1``. Configure the assistant to use a local callback URL.
+     - The callback URL of your assistant is not on ``localhost``.
+       Configure the assistant to use a callback URL on ``http://localhost``.
    * - The assistant reports ``Unsupported protocol version``
      - Your assistant does not support version 2026-07-28 of the MCP
        specification. Update it to the latest version.

@@ -11,4 +11,5 @@ Monitoring
    monitoring/frequent-interactions.rst
    monitoring/downtime.rst
    monitoring/notifications-alerts.rst
+   monitoring/autodiscovery.rst
    monitoring/vmd.rst

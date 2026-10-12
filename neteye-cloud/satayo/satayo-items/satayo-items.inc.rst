@@ -292,6 +292,13 @@ Also **service metadata**, such as:
 - exposed server headers
 - unencrypted protocols in use
 - detected technologies
+- **robots.txt** content
+
+The **robots.txt** file is publicly accessible and fetched without interacting with any protected
+area of the service, making it a passive reconnaissance source. It is intended to instruct search
+engine crawlers which paths should or should not be indexed, but in doing so it can unintentionally
+reveal internal paths, administrative panels, or other resources not meant for public disclosure.
+Reviewing its content helps an analyst identify information that is being unintentionally exposed.
 
 
 Linked Domains

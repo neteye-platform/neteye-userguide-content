@@ -293,12 +293,18 @@ Also **service metadata**, such as:
 - unencrypted protocols in use
 - detected technologies
 - **robots.txt** content
+- **HTTP methods** supported by the service
 
 The **robots.txt** file is publicly accessible and fetched without interacting with any protected
 area of the service, making it a passive reconnaissance source. It is intended to instruct search
 engine crawlers which paths should or should not be indexed, but in doing so it can unintentionally
 reveal internal paths, administrative panels, or other resources not meant for public disclosure.
 Reviewing its content helps an analyst identify information that is being unintentionally exposed.
+
+The **HTTP methods** supported by the service are shown as informational context rather than as a
+finding. Knowing which methods are available — such as ``GET``, ``POST``, ``PUT``, ``DELETE``, or
+``OPTIONS`` — helps an analyst identify the service's attack surface and assess the risk associated
+with methods that are not required for normal operation.
 
 
 Linked Domains

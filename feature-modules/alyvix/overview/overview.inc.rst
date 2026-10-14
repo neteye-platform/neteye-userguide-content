@@ -1,14 +1,29 @@
 .. _alyvix_overview:
 
-Alyvix is a synthetic monitoring system based on computer vision which synthesizes
-real users without being hardwired to application engines.
+Overview
+--------
 
-NetEye integration with Alyvix allows currently the monitoring of Alyvix nodes,
-with planned support for scheduling test cases, assigning test cases to sessions
+Alyvix is a synthetic monitoring system that tracks the performance and
+availability of applications and services on Windows systems. Unlike RUM or
+web-based monitoring which relies on a browser engine, Alyvix is based on computer
+vision, synthesizing real users carrying out tasks in an application's interface
+without needing to be integrated into the application itself.
+
+Alyvix is not included in |ne| Core, but must be installed as an additional
+Feature Module. |ne| integration with Alyvix allows for the monitoring of Alyvix
+nodes, and supports scheduling test cases, assigning test cases to sessions
 on different Alyvix machines, and more.
 
-More information about Alyvix is available on the `official website <https://www.alyvix.com/>`_
-and in the `official documentation <https://www.alyvix.com/learn/index.html>`_.
+In order to start using :ref:`Alyvix within NetEye <neteye-components>`, follow the
+procedure described in :ref:`neteye-components-install`.
+
+After the Alyvix Feature Module has been installed, it is possible to
+:ref:`install and configure <alyvix_install_alyvix_node>` an Alyvix node within
+|ne| so that you can monitor it from the |ne| UI in just a few steps.
+
+Alyvix Service is available under its own product license. You can find more
+information on how to manage an Alyvix license in the
+:ref:`installation guide <alyvix_license_tab>`.
 
 
 .. _alyvix_nodes_architectures:

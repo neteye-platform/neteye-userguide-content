@@ -1,7 +1,4 @@
 
-.. _alvyix_install_top:
-
-
 Alyvix Installation and Upgrade
 -------------------------------
 

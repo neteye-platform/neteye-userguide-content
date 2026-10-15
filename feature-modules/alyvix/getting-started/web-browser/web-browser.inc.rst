@@ -73,7 +73,7 @@ root node component:
 .. image:: img/gs_blank_desktop.png
    :class: image-boxshadow
    :width: 40%
-   :alt: Setting up the 5-second delay before capturing the screen
+   :alt: Selector's Appear/Disappear field and root node component
 
 Rather than directly clicking on an icon to launch our desired browser, we'll
 use this step to launch it directly and pass it a few startup parameters so
@@ -191,15 +191,15 @@ You can now add the two steps to the Script panel by dragging them or by
 pressing their :ref:`add step <alyvix_selector_interface_list_controls>` actions
 next to the black "Play" icon as shown in Step #4 above.
 
-.. rubric:: 8. Script panel
-
-This will add the two steps to the Script panel, so they can then be run in
-that specific sequence:
+Make sure the two steps are in the correct order in the Script panel, as they
+will then be run in that specific sequence:
 
 .. image:: img/gs_script_panel.png
    :class: image-boxshadow
    :width: 70%
    :alt: The Script panel after adding the steps
+
+.. rubric:: 8. Running the test case
 
 Let's check our test case works by calling Alyvix Robot using the ``Run`` button
 at the top left. When the test case runs you'll see the browser launch, the web

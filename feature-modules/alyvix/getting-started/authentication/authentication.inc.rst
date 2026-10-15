@@ -126,7 +126,7 @@ Continue button.
 .. rubric:: 4. Entering the password
 
 When that runs, a second page appears where we can enter the password, and we
-do the same thing with the password cipher in the that String field:
+do the same thing with the password cipher in its :guilabel:`String` field:
 
 .. image:: img/gs_authentication_field2.png
    :class: image-boxshadow

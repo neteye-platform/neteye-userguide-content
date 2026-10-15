@@ -48,14 +48,14 @@ side of the Start Menu.  This will *autocontour* the icon.
 
 .. rubric:: 4. Escape
 
-Press :kbd:`Escape` again to return you to Editor with the new selection in the
+Press :kbd:`Escape` again to return to Editor with the new selection in the
 Designer panel at the right.  Assign a *left click* action as in the previous
 example by changing the value of the :guilabel:`Action` dropdown from ``None``
 to ``Click``:
 
 .. image:: img/ad_settings_click.png
    :class: image-boxshadow
-   :alt: Select Settings after the 5-second screen capture delay
+   :alt: Assign the left click action to the Settings icon
    :width: 60%
 
 |

@@ -14,6 +14,13 @@ A
       Agents, can be grouped into tenants, like Icinga Agent for Active monitoring purposes, Elastic Agent,
       Telegraf Agent, APM agent, AX Monitor Agent, etc.
 
+   Autocontour (Alyvix)
+      Autocontour is an Alyvix feature that automatically detects the boundaries of an
+      onscreen object and creates a selection around it.  It can greatly speed up your
+      interactions with Alyvix Designer, as it's much quicker to *right-click* on an icon
+      than to draw a box around it.  Toggling the :kbd:`Space` key will show candidate
+      automatic selections.
+
    Availability
       *Availability* is a key performance indicator for Service Level Agreement (SLA) contracts. It
       is a metric that measures how much a given monitored object is working as expected and is
@@ -81,6 +88,18 @@ C
       Some clients, also known as agents, are to be configured manually
       in order to send data to a Satellite or to the Master, as in
       the case of a Telegraf agent.
+
+   Component (Alyvix)
+      An Alyvix *component* is a visual element on the screen capture that
+      has a specific type (image, rect, or text) and is either the *principle component*
+      of a group or a *subcomponent*. A component represents the link between that
+      visual element and a logical element that Alyvix can logically interact with
+      Unless moved, components are positioned in the component tree according to the
+      order they were created.
+
+   Component Tree (Alyvix)
+      The Alyvix *component tree* reflects the hierarchy of components in a given
+      test case object in Alyvix's Designer panel.
 
    Corporate Network
 
@@ -191,6 +210,21 @@ F
       It corresponds, in terms of content, to the |ne| Minor version released every two months.
 
 
+G
+--
+.. glossary::
+   :sorted:
+
+   Grafana
+      Grafana is an open-source platform for monitoring and observability. It provides
+      tools to query, visualize, drill down into, and understand metrics stored in
+      time-series databases where the data is derived from objects monitored by NetEye.
+
+   Group (Alyvix)
+      A *group* in a test case object consists of a main component and up to 4 subcomponents
+      that must all match against the current screen during test case execution in order
+      for their actions to be carried out.
+
 H
 --
 .. glossary::
@@ -232,6 +266,11 @@ M
 --
 .. glossary::
    :sorted:
+
+   Map (Alvyix)
+      A *map* is a user-defined table of strings, consisting of a column of *keys*, and
+      one or more columns of values. Maps can be used for transforming an extracted
+      value by looping over a test case object with keys as parameters.
 
    Master
       The **Master** is a |ne| instance that holds configuration
@@ -430,6 +469,11 @@ R
       A realm role is a role assigned to a user or group within a realm,
       granting permissions to manage configurations in the authentication admin console.
 
+   Region of Interest (Alvyix)
+      A *region of interest* (RoI) is the area around a subselection in which that
+      subselection must appear somewhere in the larger region during execution for a
+      match to be valid.  It's especially useful when the selection is at the edge of
+      a resizeable region such as a window.
 
    Repository Mirror
       Repository mirroring allows you to create and maintain a synchronized copy of
@@ -448,6 +492,12 @@ R
    Resource Report
       A type of an :ref:`SLM report <monitor-slm-resoure-reports>` based on a resource contract.
 
+   Root Element (Alyvix)
+      The *root element* of a test case object holds the captured screen which serves as the
+      image source for creating components. It's shown in Alyvix Designer as the root of the
+      component tree, and all groups and their subcomponents are dependent on it.
+
+
 S
 --
 .. glossary::
@@ -465,6 +515,17 @@ S
       data to the Master to be processed. Satellite
       can also execute checks on its own, and pass the results to the
       Master afterwards.
+
+   Section (Alyvix)
+      A *section* is a user-defined subscript that can be called by one or more of the
+      *main*, *fail* or *exit* scripts. Sections are helpful whenever there are repetitive
+      sequences of actions to carry out.
+
+   Selection (Alvyix)
+      A *selection* is a rectangular area within a screen capture that serves as the
+      principal anchor for an entire group.  Unlike a *subselection*, a *selection* has no
+      Region of Interest -- it can match anywhere on the screen.  For further information,
+      see the Designer Interface Overview section.
 
    Service Level Agreement
       A *Service Level Agreement* is a contractual commitment between a service provider and a client
@@ -552,6 +613,12 @@ S
       another (e.g., from UP to DOWN) or a service changes from one *Service State* to another (e.g.,
       from WARNING to OK).
 
+   Subselection (Alyvix)
+      A *subselection* is a rectangular area within a screen capture that has an associated
+      Region of Interest and is relative to a Selection. During execution, the RoI is positioned
+      relative to the location of the detected *selection*, and the *subselection* must match
+      an area within that RoI.
+
 T
 --
 .. glossary::
@@ -583,6 +650,24 @@ T
       NATS Server provides support for a secure, TLS-based, multi-tenancy, that can be secured using
       multiple NATS accounts, so that each Tenant's data flow is isolated.
       This grants self-contained, isolated communications from multiple clients to a single server.
+
+   Test Case (Alyvix)
+      A *test case* is the sum total of the screen capture, all test case objects (containing
+      the component tree and its components), and any mappings and scripts using those objects.
+      It's saved in a file with an *.alyvix* extension, and can be loaded by Alyvix applications.
+
+   Test Case Object (Alyvix)
+      A *test case object* is a named object within a test case, consisting of a screen capture
+      and all the components within the component tree based on that screen capture. A single
+      test case can contain multiple test case objects, and all test case objects can be used
+      for creating scripts within their test case.
+
+   Test Case Script (Alyvix)
+      A *test case script* is a sequence of instructions (each consisting of one or more
+      test case objects) describing, during the execution phase:
+
+      * The order to compare test case objects against the graphical interface of the application being run
+      * The script expression mode for the node (run, conditional, or loop)
 
    Time Frame
       Within the Icinga 2 Reporting module, a *Time Frame* specifies the starting and ending times

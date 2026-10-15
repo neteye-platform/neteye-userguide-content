@@ -93,6 +93,11 @@ and include `the cluster requirements specified by RedHat
    resources or services are added."
    "TCP 8086", "InfluxDB"
    "TCP 8000", "Lampo"
+   "TCP 6442", "RKE2 to function properly on 0.0.0.0", "Load balancer for the Kubernetes API server"
+   "TCP 6443", "RKE2 to function properly on 0.0.0.0", "Kubernetes API server"
+   "TCP 6444", "RKE2 to function properly on 0.0.0.0", "Used in case of restore procedures"
+   "TCP 9345", "RKE2 to function properly on 0.0.0.0", "RKE2 local supervisor"
+   "TCP 9346", "RKE2 to function properly on 0.0.0.0", "Load balancer for the RKE2 local supervisor"
 
 **Table Notes:**
 
@@ -275,6 +280,8 @@ functioning of your Elastic Stack installation:
 .. csv-table::
    :header: "Domain", "Port", "Intended Use"
 
+   "docker.elastic.co", "443 TCP", "Elastic container images"
+   "docker-auth.elastic.co", "443 TCP", "Elastic container images"
    "epr.elastic.co", "443 TCP", "Elastic Package Registry (mandatory in all SIEM installations)"
    "geoip.elastic.co", "443 TCP", "Elastic GeoIP endpoint"
    "storage.googleapis.com", "443 TCP", "GeoLite2 City, GeoLite2 Country, and GeoLite2 ASN GeoIP2 databases used by Elastic GeoIP processor"

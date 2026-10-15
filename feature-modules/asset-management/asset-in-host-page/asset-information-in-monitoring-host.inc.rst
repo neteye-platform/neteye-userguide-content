@@ -34,7 +34,7 @@ Linking hosts to assets directly
 
 It is also possible to force the link between a host and a specific asset by specifying
 an **Asset ID** and **Asset Type** as custom variables in the host configuration
-**Custom properties** collapsible section.
+**Asset Management settings** collapsible section.
 
 .. figure:: ./img/link-asset-to-host-directly.png
 

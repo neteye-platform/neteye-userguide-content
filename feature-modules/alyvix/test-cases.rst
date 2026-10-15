@@ -1,7 +1,7 @@
 
-.. _alyvix-test-case-list:
+.. _alyvix_test_cases_list:
 
 Test Case Management
 --------------------
 
-.. include:: test-cases/test_cases.inc.rst
+.. include:: test-cases/test-cases.inc.rst

@@ -1,4 +1,4 @@
-.. _rdp-monitor-local-client:
+.. _alyvix_rdp_monitor_local_client:
 
 RDP Client
 ----------

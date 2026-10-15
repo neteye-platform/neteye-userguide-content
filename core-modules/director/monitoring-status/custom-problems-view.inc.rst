@@ -1,3 +1,5 @@
+.. _monitoring-module-custom-problem-view:
+
 Using the Custom Problem View
 `````````````````````````````
 

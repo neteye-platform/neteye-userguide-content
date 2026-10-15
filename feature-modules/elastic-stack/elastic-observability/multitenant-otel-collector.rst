@@ -40,3 +40,35 @@ with the following extension to automatically manage the OAuth authentication an
 
 
 Otherwise, any application that supports the OpenTelemetry protocol and OAuth authentication can be configured to send telemetry data to the collector, using the same credentials and endpoint.
+
+
+.. _cross-tenant-otel-collector:
+
+Cross-Tenant OpenTelemetry Collector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the per-tenant OIDC/gRPC pipeline, the NetEye OpenTelemetry Collector
+provides a second, independent ingestion path for cross-tenant clients.
+
+This path is designed for clients — primarily the Icinga 2 ``OTLPMetricsWriter`` running
+on the NetEye master — that monitor hosts belonging to many tenants at once and therefore
+cannot be associated with a single tenant at the transport level.
+
+
+How It Works
+````````````
+
+* **Protocol:** OTLP over HTTP (not gRPC). The client connects to
+  ``otel-collector-crosstenant.rke2.neteyelocal`` on port **443** (the Cilium Gateway VIP),
+  which routes traffic to the collector's port 4318 via an HTTPRoute.
+
+* **Tenant identification:** The tenant is carried **inside the data** as a resource
+  attribute.
+
+  The collector's ``transform/crosstenant`` processor reads
+  ``icinga2.custom.tenant`` (the attribute set by the Icinga 2 preconfigured writer)
+  and writes it to ``data_stream.namespace``. Hosts without a
+  ``vars.neteye_tenant`` value route to the ``master`` namespace.
+
+* **Target data streams:** ``metrics-generic.otel-<tenant>`` — one data stream per
+  tenant, identical in structure to what the per-tenant gRPC pipeline produces.

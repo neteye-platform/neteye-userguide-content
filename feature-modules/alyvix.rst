@@ -8,8 +8,10 @@ Visual Monitoring with Alyvix
 
    alyvix/overview.rst
    alyvix/user-roles.rst
+   alyvix/installation.rst
    alyvix/nodes.rst
    alyvix/rdp-monitor.rst
+   alyvix/getting-started.rst
    alyvix/editor.rst
    alyvix/test-cases.rst
    alyvix/dashboard.rst

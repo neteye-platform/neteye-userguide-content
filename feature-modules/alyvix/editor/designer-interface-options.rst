@@ -1,10 +1,9 @@
-
 .. _alyvix_designer_options:
 
 Designer: Interface Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /feature-modules/alyvix/editor/sphinx-roles.inc.rst
+.. include:: /feature-modules/alyvix/sphinx-roles.inc.rst
 
 The parameters and settings for Alyvix Designer are divided into:
 
@@ -19,4 +18,4 @@ The parameters and settings for Alyvix Designer are divided into:
 
 
 .. include:: designer-interface-options/designer-interface-options.inc.rst
-.. include:: designer-interface-options/designer_strings.inc.rst
+.. include:: designer-interface-options/designer-strings.inc.rst

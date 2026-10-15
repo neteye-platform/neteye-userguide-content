@@ -8,6 +8,7 @@ Asset Management
    asset-management/overview.rst
    asset-management/permissions.rst
    asset-management/install-glpi.rst
+   asset-management/plugins.rst
    asset-management/single-tenant.rst
    asset-management/multitenancy.rst
    asset-management/satellite.rst

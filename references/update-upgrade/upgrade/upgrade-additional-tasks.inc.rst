@@ -1,21 +1,22 @@
-The IDO database is not removed automatically during the upgrade, so if you want to delete it you have to run the following commands:
+Keycloak in Kubernetes and the |ne| Operator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   .. code:: bash
+After a successful upgrade, you will be required to perform and verify the migration of the Keycloak systemd/pcs
+instance to the new Keycloak deployment in Kubernetes, which will be an upgrade prerequisite check for future releases.
+To automate this process, the product ships 3 utility tools and scripts that allow you to perform the validation and
+migration.
 
-      mysql -e "DROP DATABASE icinga;"
-      mysql -e "DROP USER 'icinga'@'localhost';"
-
-If you have the Elastic Stack installed, the ``retention-policy-neteyelocal``
-service will be removed during the upgrade procedure. After the upgrade is
-complete, you will need to Director deploy to make the changes effective.
-
-Keycloak Hostname Strict Mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To avoid disrupting existing installations, the upgrade keeps ``KC_HOSTNAME_STRICT`` disabled
-(``false``), so the public hostname continues to be resolved dynamically from incoming requests.
-
-.. important:: Configuring a fixed hostname is a **prerequisite for upgrading to NetEye 4.50**.
-   This requirement is enforced for security reasons.
-   Follow the :ref:`Keycloak Hostname Configuration <hostname-configuration-upgrade-migration>`
-   section to complete this configuration.
+1. :command:`neteye config auth switch-to-kube`:
+   This command will switch the authentication configuration from the systemd/pcs instance to the new Keycloak
+   deployment in Kubernetes by updating the necessary configuration files. After successful execution, the systemd/pcs
+   instance will be disabled, and you will be required to test the new environment to ensure that authentication is
+   working as expected.
+2. :command:`neteye config auth rollback-from-kube`:
+   Should any issues arise with the new Keycloak deployment in Kubernetes, this command will allow you to roll back the
+   authentication configuration to the previous systemd/pcs instance by restoring the necessary configuration files.
+3. :command:`neteye config auth cleanup-keycloak-pcs`:
+   Finally, once you are satisfied with the new Keycloak deployment, this command will clean up the old systemd/pcs
+   instance by removing any remaining configuration files and data related to the previous Keycloak deployment. Backups
+   of the old configuration files will be created in the :file:`/root/keycloak_upgrade_<timestamp>.bck` directory. This
+   step is non-reversible, and you will not be able to roll back to the previous systemd/pcs instance
+   after executing this command.

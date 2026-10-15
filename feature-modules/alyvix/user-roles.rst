@@ -1,5 +1,5 @@
 
-.. _alyvix-permissions-roles:
+.. _alyvix_permissions_roles:
 
 User Roles
 ----------

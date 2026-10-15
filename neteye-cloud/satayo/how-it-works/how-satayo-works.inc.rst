@@ -50,7 +50,8 @@ if you want to be notified of new research or discoveries.
 
 The evidence collected by SATAYO are ordered in multiple :ref:`Findings<satayo_findings>` that can be reviewed.
 A number called **Exposure Assessment Index Value (EAIV)** is calculated based on the evidence and highlights the :command:`Exposure Assessment` of the domain.
-This value ranges from **0** to **100**, where zero means no exposure at all and 100 is the maximum value.
+This value should range from **0** to **100** most of the time, where zero means no exposure at all and 100 is the maximum value. In some cases, the value
+can exceed 100 if the organization has a very high exposure.
 The higher the value, the higher the possible attack surface, with more information available online and potentially exploitable by threat actors.
 Of course, as the company gets bigger, so will the score.
 

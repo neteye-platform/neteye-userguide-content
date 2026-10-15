@@ -1,4 +1,4 @@
-.. _authorization-draft:
+.. _authorization-procedure:
 
 Authorization
 -------------
@@ -18,8 +18,6 @@ then the appropriate groups and permissions will be handled via requests to the
 already familiar with. If not, the information below will assist you in
 configuring the required information in your IdP to grant your users the
 necessary permissions.
-
-
 
 OIDC and Group Claims
 ~~~~~~~~~~~~~~~~~~~~~
@@ -52,19 +50,14 @@ The authenticated user is issued a token containing their group claims in
      ]
    }
 
-Each individual element of a group claim contains the information necessary
-to tell NetEye the exact permissions a user should have.  A group element
-consists of a code supplied by WITIT identifying the company/tenant, a Contract Type and an Access Level:
-
-.. code::
-
-   grp[Company Code]-necloud-<contracttype>-<accesslevel>
-
 Customers manage group memberships in their own Identity Provider –
-they decide who gets which groups. However, the mapping from groups
-to actual permissions is controlled entirely on the NetEye.Cloud platform
-side and reflects only the contracts and access levels that are active for
-the company/tenant.
+they decide who gets which groups, and how group claims are structured so
+that they represent specific NetEye Cloud Access Levels, for example the
+string `neteye-cloud-mon-viewer`.
+
+However, the mapping from groups to actual permissions is controlled entirely
+on the NetEye.Cloud platform side and reflects only the contracts and access
+levels that are active for the company/tenant.
 
 A customer cannot grant access to contracts they have not subscribed to,
 nor can they affect another tenant's permissions. Group names that do not match
@@ -76,19 +69,18 @@ any server-side configuration are silently ignored.
    login process, permissions are effectively updated during login, so any change
    to permissions will require logging out and logging back in.
 
-
-
-Parsing the Group Claims
-~~~~~~~~~~~~~~~~~~~~~~~~
+Resolving Group Claims
+~~~~~~~~~~~~~~~~~~~~~~
 Assigning permissions to an authenticated user entails reading the group names
 from the group claims in the token, mapping each group to its contract type
 and access level via the tenant's `idp_groups_mapping` configuration, and
-then applying the corresponding permissions as defined in the Access-to-Permissions Map.
+then applying the corresponding permissions as defined in the
+Access-to-Permissions Map show below.
 
 At the same time, an administrator can configure the appropriate group
 claims in their IDP by reversing the process.
 
-The elements of a group claim are:
+The elements involved in creating a group claim are:
 
 * **Company Code:** The unique tenant ID that ensures a company's data
   and infrastructure cannot be viewed or modified by someone outside
@@ -112,25 +104,25 @@ contracts may not utilize all three levels; if a group indicates a contract
 with an access level that is not a valid combination, the access role will
 default to Viewer.
 
-As an example, given a company named ACME with a user who uses monitoring and the Elastic Stack,
-and needing viewing and editor roles respectively, you would see the following group
-claims:
+As an example, given a company (named 'COMPANY') with a user who uses
+monitoring and the Elastic Stack, and needing viewing and editor roles
+respectively, you might see something like the following:
 
 .. code:: json
 
    "group": [
-     "grp[ACME]-necloud-elk-editor",
-     "grp[ACME]-necloud-mon-viewer"
+     "COMPANY-neteye-cloud-elk-editor",
+     "COMPANY-neteye-cloud-mon-viewer"
    ]
 
-Whereas the following group claim would not be allowed as it provides multiple roles
-for the same contract type:
+Whereas the following group claim would not be allowed as it provides multiple
+roles for the same contract type:
 
 .. code:: json
 
    "group": [
-     "grp[ACME]-necloud-elk-editor",
-     "grp[ACME]-necloud-elk-viewer"
+     "COMPANY-neteye-cloud-elk-editor",
+     "COMPANY-neteye-cloud-elk-viewer"
    ]
 
 A group is thus a **<Contract, Access Level>** pair in the correct format,
@@ -150,14 +142,15 @@ permissions from that group.
 
 As a result:
 
-* A user with some matching and some non-matching groups will only receive permissions for the matching ones.
-* A user with no matching groups will be able to log in (authentication succeeds) but will see no data in the UI,
-  since no permissions are granted.
+* A user with some matching and some non-matching groups will only receive
+  permissions for the matching ones.
+* A user with no matching groups will be able to log in (authentication
+  succeeds) but will see no data in the UI, since no permissions are granted.
 
 This silent behavior makes it important to verify that group names configured
-in the Identity Provider exactly match those agreed upon with WITIT.
-When a user reports being able to log in but not seeing expected data, a mismatch
-in group names is the most common cause.
+in the Identity Provider exactly match those agreed upon with |witit|.
+When a user reports being able to log in but not seeing expected data, a
+mismatch in group names is the most common cause.
 
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,7 +163,7 @@ that are added to the user's profile.
    How an OIDC token is converted in stages into module permissions
 
 
-The following table lists the available Customer Roles for each NetEye.Cloud
+The following table lists the available Customer Roles for each |nec|
 Contract type, indicating whether the contract grants WebUI access and which
 Access Levels (Viewer, Editor, Admin) are currently available or still to be
 defined.
@@ -237,8 +230,6 @@ defined.
    |            |                | Admin        | Available                      |
    +------------+----------------+--------------+--------------------------------+
 
-
-
 Tenant Restrictions
 ~~~~~~~~~~~~~~~~~~~
 
@@ -256,7 +247,6 @@ This means the authorization outcome has two layers:
 - Permissions determine what operations the user can perform (view, edit, administer) within each module.
 - Restrictions determine which data those operations apply to, scoped to the user's company/tenant.
 
-
 Compliance
 ~~~~~~~~~~
 Login attempts – whether successful or not – are logged with the user identity,
@@ -264,7 +254,6 @@ action, and timestamp.
 
 These logs are retained in compliance with applicable regulations, including
 the Italian Data Protection Authority's requirements for system administrator access logging.
-
 
 IdP/User Configuration Procedure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

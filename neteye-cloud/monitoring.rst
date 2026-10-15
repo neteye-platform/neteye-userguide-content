@@ -8,6 +8,8 @@ Monitoring
    monitoring/concepts.rst
    monitoring/monitoring-environment.rst
    monitoring/monitoring-views.rst
+   monitoring/frequent-interactions.rst
    monitoring/downtime.rst
-   monitoring/business-monitoring.rst
+   monitoring/notifications-alerts.rst
+   monitoring/autodiscovery.rst
    monitoring/vmd.rst

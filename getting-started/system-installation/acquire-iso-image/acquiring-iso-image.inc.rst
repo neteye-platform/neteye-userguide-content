@@ -17,7 +17,7 @@ command::
 
 Verify now the imported key::
 
-  # gpg --fingerprint net.support@wuerth-phoenix.com
+  # gpg --fingerprint info.italy@wuerth-it.com
 
 If the fingerprint matches the one reported on the |ne| blog, you have
 the right key installed on your system.
@@ -50,7 +50,7 @@ The output will look something like this:
 
        gpg: Signature made Tue 29 Sep 2020 03:50:01 PM CEST
        gpg:               using RSA key B6777D151A0C0C60
-       gpg: Good signature from "Wuerth Phoenix <net.support@wuerth-phoenix.com>" [unknown]
+       gpg: Good signature from "Würth IT Italy s.r.l. <info.italy@wuerth-it.com>" [unknown]
        gpg: WARNING: This key is not certified with a trusted signature!
        gpg:          There is no indication that the signature belongs to the owner.
        Primary key fingerprint: E610 174A 971E 5643 BC89  A4C2 B677 7D15 1A0C 0C60

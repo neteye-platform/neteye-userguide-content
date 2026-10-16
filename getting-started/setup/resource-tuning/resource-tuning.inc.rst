@@ -78,14 +78,15 @@ It can still be changed per environment, following the procedure below.
    Elapsed time of ``icinga2 daemon -C`` for
    different values of ``Configuration.Concurrency``, on a 16-core system.
 
-To persist a different value for a single environment, edit the
-Icinga 2 systemd unit with ``systemctl edit icinga2.service`` and
-override the start command with the chosen number of threads::
+To persist a different value in your environment, add the following line to
+``/neteye/shared/icinga2/conf/sysconfig/icinga2``::
 
-  [Service]
-  ExecStart=/usr/sbin/icinga2 daemon --close-stdio -e ${ICINGA2_ERROR_LOG} -DConfiguration.Concurrency=<number-of-threads>
+   ICINGA2_CONCURRENCY=<number-of-threads>
 
-Then restart Icinga 2 and verify the override is active::
+Replace ``<number-of-threads>`` with a value between 1 and the number of
+available CPU cores in your system.
+
+Then reload systemd, restart Icinga 2, and verify that the override is active::
 
   systemctl daemon-reload
   systemctl restart icinga2.service

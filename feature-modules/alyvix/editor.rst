@@ -14,3 +14,5 @@ Test Case Building
    editor/designer-interface-options.rst
    editor/designer-component-tree.rst
    editor/selector-interface.rst
+   editor/test-case-execution.rst
+   editor/test-case-format.rst

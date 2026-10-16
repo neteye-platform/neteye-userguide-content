@@ -77,12 +77,11 @@ highlight where the left mouse button is.
 .. rubric:: 6. Save the new test case
 
 Click the ``SAVE`` button at the top of the screen to save this new
-*test case*. Since we started Editor with the option ``-f start-test``, the
-resulting file will be saved as :file:`start-test.alyvix` in the directory
-we were in at Step 1.
+*test case*. Since we started Editor with the option ``-f start-test``,
+:ref:`the resulting file <alyvix_test_case_data_format_top>` will be saved as
+:file:`start-test.alyvix` in the directory we were in at Step 1.
 
 .. todo: nobutton
-.. todo: :ref:`the resulting file <test_case_data_format_top>`
 
 .. rubric:: 7. Change the file name
 

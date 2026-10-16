@@ -148,6 +148,11 @@ The last three levels are assigned when a domain is found through a Stealer Log,
 of website recorded in the log. The severity classification is assigned by SATAYO but can be
 adjusted on request if the assigned level does not reflect the actual sensitivity of the resource.
 
+When a domain is found to be archived in the `Wayback Machine <https://web.archive.org/>`__,
+SATAYO provides links to the corresponding archived snapshots. This allows an analyst to view
+historical information about the domain, such as content that was previously published and may
+no longer be available on the live site.
+
 |
 
 .. _ipv4_address_item:

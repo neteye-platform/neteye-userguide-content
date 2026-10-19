@@ -11,3 +11,4 @@ Test Case Building Tutorials
    getting-started/windows-settings.rst
    getting-started/web-browser.rst
    getting-started/authentication.rst
+   getting-started/alyvix-videos.rst

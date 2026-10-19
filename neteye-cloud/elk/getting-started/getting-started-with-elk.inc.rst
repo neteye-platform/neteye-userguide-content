@@ -18,7 +18,7 @@ Opening Log Analytics
 Log in to NetEye Cloud (``https://neteye.cloud``). On the start screen, click
 **Log Analytics**, which opens Kibana on the Log Analytics home page.
 
-.. figure:: /neteye-cloud/elk/img/log-analytics.png
+.. figure:: /neteye-cloud/elk/getting-started/img/log-analytics.png
    :alt: Log Analytics home page
 
    Log Analytics home page

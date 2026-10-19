@@ -1,6 +1,6 @@
 .. _elk-getting-started:
 
-Getting started with ELK
+Getting Started with ELK
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 NetEye.Cloud includes **Log Analytics**, which is based on the Elastic Stack.

@@ -7,21 +7,56 @@ Reporting a CRA Incident
 Use the address below to notify |witit| of an event that falls under Article 14 of the
 Cyber Resilience Act, that is:
 
- * a **vulnerability in** |ne| **that is being actively exploited** —
-   `report an actively exploited vulnerability
-   <mailto:security.neteye@wuerth-it.com?subject=Vulnerability>`_, or
- * a **severe security incident affecting the security of** |ne| —
-   `report a severe security incident
-   <mailto:security.neteye@wuerth-it.com?subject=Security%20Incident>`_.
+ * a **vulnerability in** |neb| **that is being actively exploited**, or
+ * a **severe security incident affecting the security of** |neb|.
 
-.. important:: **CRA incident contact:** `security.neteye@wuerth-it.com
-   <mailto:security.neteye@wuerth-it.com>`_
+.. important::
 
    Report as soon as you become aware of the situation, without waiting for a complete
    analysis. Under Article 14 of Regulation (EU) 2024/2847, |witit| must submit an early
    warning to the competent CSIRT and to ENISA **within 24 hours** of becoming aware of an
    actively exploited vulnerability or a severe incident. Every hour of delay in reaching us
    reduces the time available to assess the situation and to warn other users.
+
+   .. raw:: html
+
+      <p style="text-align: right; margin-top: 1rem;"><a href="#" id="cra-report-trigger" class="cra-report-button">Report a CRA incident</a></p>
+      <style>
+        .atlwdg-trigger { display: none !important; }
+        .cra-report-button {
+          display: inline-block;
+          padding: 0.6rem 1.2rem;
+          background-color: var(--primary-color, #00A976);
+          color: #ffffff !important;
+          border: 1px solid transparent;
+          border-radius: 2px;
+          font-weight: 600;
+          text-decoration: none !important;
+          cursor: pointer;
+        }
+        .cra-report-button:hover,
+        .cra-report-button:focus {
+          background-color: var(--primary-color-light, #0BB798);
+          color: #ffffff !important;
+        }
+        .cra-report-button:focus-visible {
+          outline: 2px solid var(--cds-focus, #00A976);
+          outline-offset: 2px;
+        }
+      </style>
+      <script type="text/javascript">
+        window.ATL_JQ_PAGE_PROPS = {
+          "triggerFunction": function (showCollectorDialog) {
+            var trigger = document.getElementById("cra-report-trigger");
+            if (!trigger) { return; }
+            trigger.addEventListener("click", function (event) {
+              event.preventDefault();
+              showCollectorDialog();
+            });
+          }
+        };
+      </script>
+      <script type="text/javascript" src="https://siwuerthphoenix.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-bxy8hv/b/1/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&amp;collectorId=850240eb"></script>
 
 Please include, as far as it is known to you at the time of reporting:
 

@@ -54,7 +54,7 @@ You can add a visualization to a dashboard in two ways:
   :ref:`elk-visualize-library`).
 * Click **From library** to add a visualization you created earlier.
 
-.. figure:: /neteye-cloud/elk/analytics/img/visulization.png
+.. figure:: /neteye-cloud/elk/analytics/img/visualization.png
    :alt: Add Visualization
 
    Adding visualization

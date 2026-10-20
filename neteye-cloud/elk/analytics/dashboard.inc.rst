@@ -11,13 +11,13 @@ information at a glance. For a full description of every feature, see the
 official Elastic documentation on
 `Dashboards <https://www.elastic.co/docs/explore-analyze/dashboards>`_.
 
-.. note::
+.. rubric:: Roles and Permissions
 
-   **Roles and Permissions**
+Depending on the role defined by the contract with your organization, you might have different permissions:
 
-   * **VIEWER**: Read
-   * **EDITOR**: Create, Read, Update and Delete
-   * **ADMIN**: Create, Read, Update and Delete
+* **VIEWER**: Read
+* **EDITOR**: Create, Read, Update and Delete
+* **ADMIN**: Create, Read, Update and Delete
 
 The search bar, filters and time interval work the same way in Dashboards
 as in Discover (see :ref:`elk-discover`).
@@ -32,7 +32,7 @@ Click **Create dashboard** to open a new, empty dashboard:
 
 .. figure:: /neteye-cloud/elk/analytics/img/create-dashboard.png
 
-   Log Analytics home page
+   Creating a new dashboard
 
 
 * Click **Save** to save the dashboard. You can also choose whether to
@@ -40,7 +40,7 @@ Click **Create dashboard** to open a new, empty dashboard:
 * Click **Settings** to change the dashboard settings, including the title,
   description and tags.
 
-.. figure:: /neteye-cloud/elk/analytics/img/settings.png
+.. figure:: /neteye-cloud/elk/analytics/img/dashboard-settings.png
    :alt: Settings
 
    Dashboard settings
@@ -57,7 +57,7 @@ You can add a visualization to a dashboard in two ways:
 .. figure:: /neteye-cloud/elk/analytics/img/visualization.png
    :alt: Add Visualization
 
-   Adding visualization
+   Adding a visualization
 
 Add Controls to a Dashboard
 ```````````````````````````

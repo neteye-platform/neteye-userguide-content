@@ -7,7 +7,16 @@ Canvas
 Canvas lets you create **highly customized visual presentations** based on
 Elasticsearch data. You can design **interactive workpads** that combine
 charts, metrics, text, images and other visual elements in a free-form
-layout. For a full description of every feature, see the official Elastic
+layout.
+
+Canvas works much like a presentation application such as PowerPoint, where
+Canvas is the application, each workpad is a separate presentation, and each page
+within a workpad is like a slide.
+
+You can create as many workpads as you need, but Canvas displays only one workpad at a time.
+To switch to a different workpad, return to the Canvas list and open the workpad you want.
+
+For a full description of every feature, see the official Elastic
 documentation on
 `Canvas <https://www.elastic.co/docs/explore-analyze/visualize/canvas>`_.
 
@@ -15,13 +24,13 @@ Canvas goes beyond standard dashboards. Use it to build more flexible,
 presentation-style views, for example for reports, monitoring screens or
 executive summaries.
 
-.. note::
+.. rubric:: Roles and Permissions
 
-   **Roles and Permissions**
+Depending on the role defined by the contract with your organization, you might have different permissions:
 
-   * **VIEWER**: Read
-   * **EDITOR**: Create, Read, Update and Delete
-   * **ADMIN**: Create, Read, Update and Delete
+* **VIEWER**: Read
+* **EDITOR**: Create, Read, Update and Delete
+* **ADMIN**: Create, Read, Update and Delete
 
 Create a Workpad
 ````````````````

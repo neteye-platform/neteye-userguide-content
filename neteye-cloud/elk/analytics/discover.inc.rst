@@ -10,13 +10,13 @@ changes over a selected time range. For a full description of every
 feature, see the official Elastic documentation on
 `Discover <https://www.elastic.co/docs/explore-analyze/discover>`_.
 
-.. note::
+.. rubric:: Roles and Permissions
 
-   **Roles and permissions**
+Depending on the role defined by the contract with your organization, you might have different permissions:
 
-   * **VIEWER**: Read
-   * **EDITOR**: Create, Read and Update
-   * **ADMIN**: Create, Read and Update
+* **VIEWER**: Read
+* **EDITOR**: Create, Read and Update
+* **ADMIN**: Create, Read and Update
 
 With Discover you can:
 
@@ -35,15 +35,20 @@ With Discover you can:
 Data Views
 ``````````
 
-A **data view** is a configuration that tells Kibana which Elasticsearch
-data to use. It selects one or more indices or data streams and makes them
-available for analysis in Discover, Dashboards and visualizations.
+A **data view** is a configuration that tells Kibana which subset of Elasticsearch data to use.
+It selects one or more indices or data streams and makes them
+available for analysis in Discover, Dashboards and Visualizations.
 
 Every search in Discover runs on a single data view. To change it, open the
 data view selector in the top-left corner of Discover and pick a data view
 from the list. From the same menu you can also create a new data view by
 giving it a name and an index pattern that matches the indices or data
 streams you want to analyze.
+
+.. figure:: /neteye-cloud/elk/analytics/img/discover-data-view.png
+   :alt: Selecting a Data View
+
+   Selecting a data view
 
 Exploring your Data
 ```````````````````

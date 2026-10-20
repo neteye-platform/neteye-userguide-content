@@ -11,19 +11,19 @@ and spot geographic patterns. For a full description of every feature, see
 the official Elastic documentation on
 `Maps <https://www.elastic.co/docs/explore-analyze/visualize/maps>`_.
 
-.. note::
+.. rubric:: Roles and Permissions
 
-   **Roles and Permissions**
+Depending on the role defined by the contract with your organization, you might have different permissions:
 
-   * **VIEWER**: Read
-   * **EDITOR**: Create, Read, Update and Delete
-   * **ADMIN**: Create, Read, Update and Delete
+* **VIEWER**: Read
+* **EDITOR**: Create, Read, Update and Delete
+* **ADMIN**: Create, Read, Update and Delete
 
 With Maps you can:
 
 * **represent data** on a map
 * **analyze** events or metrics by location
-* identify geographic concentrations or distributions
+* **identify** geographic concentrations or distributions
 * **combine** multiple layers of geographic information
 * **interact** with the map through zoom, filters and exploration tools
 
@@ -73,7 +73,6 @@ category:
 
    .. figure:: /neteye-cloud/elk/analytics/img/choose-data-view.png
 
-      Choosing the data view for the map layer
 
 #. Choose the
    `geo_point <https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/geo-point>`_
@@ -81,14 +80,12 @@ category:
 
    .. figure:: /neteye-cloud/elk/analytics/img/choose-geo-point-field.png
 
-      Choosing the geo_point field for the map layer
 
 #. Configure the layer. The following options control how data is displayed
    and how you interact with it on the map:
 
    .. figure:: /neteye-cloud/elk/analytics/img/configure-layer.png
 
-      Configuring the map layer
 
    * **Layer settings**: the general configuration of the layer, such as
      name, visibility and basic behavior

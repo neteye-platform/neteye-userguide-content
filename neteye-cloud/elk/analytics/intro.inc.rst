@@ -5,13 +5,13 @@ Analytics
 ~~~~~~~~~
 
 The Analytics area of Kibana is where you work with the data your
-NetEye.Cloud tenant collects in Elasticsearch. Logs, events and metrics are
+|nec| tenant collects in Elasticsearch. Logs, events and metrics are
 stored as indexed documents, and Analytics gives you the tools to search
 them, look at them in detail and turn them into visual information you can
 share.
 
 This section covers the Analytics applications available in your tenant,
-starting with the simplest way of working with data and moving on to more
+starting with the simplest way of working with data, and moving on to more
 structured views:
 
 * **Discover**: search and explore raw documents over a chosen time range,

@@ -3,7 +3,7 @@
 Getting Started with ELK
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-NetEye.Cloud includes **Log Analytics**, which is based on the Elastic Stack.
+|nec| includes **Log Analytics**, which is based on the Elastic Stack.
 Elasticsearch stores and indexes the data collected from your environment, such
 as logs, metrics and traces. Kibana is the interface you use to work with that
 data. This chapter explains how to open Log Analytics and how its features are
@@ -15,7 +15,7 @@ chapter with more detail.
 Opening Log Analytics
 `````````````````````
 
-Log in to NetEye Cloud (``https://neteye.cloud``). On the start screen, click
+Log in to |nec| (``https://neteye.cloud``). On the start screen, click
 **Log Analytics**, which opens Kibana on the Log Analytics home page.
 
 .. figure:: /neteye-cloud/elk/getting-started/img/log-analytics.png
@@ -25,7 +25,7 @@ Log in to NetEye Cloud (``https://neteye.cloud``). On the start screen, click
 
 The home page shows the two main areas of Log Analytics: **Analytics** and
 **Observability**. Click either one to open it. To go straight to a specific
-feature, open the menu (☰) in the top-left corner. It lists the features of
+feature, open the menu (☰) in the top left corner. It lists the features of
 each area.
 
 The two areas use the same data but for different purposes. In Analytics, you
@@ -48,7 +48,7 @@ Analytics
 `````````
 
 Analytics is where you turn the data collected in Elasticsearch into
-information you can read and interpret. You use it to search events, logs,
+information you can read and interpret. You use it to search for events, logs,
 metrics and other indexed data, and to filter them by time range, field or
 value. You can also look at trends, distributions and comparisons, and build
 the charts, tables and dashboards used for analysis and reporting.
@@ -162,4 +162,4 @@ requires in its *Roles and permissions* section.
 .. note::
 
    If a feature or action described in this guide isn't available to you, ask
-   your NetEye.Cloud administrator to check your role.
+   your |nec| administrator to check your role.

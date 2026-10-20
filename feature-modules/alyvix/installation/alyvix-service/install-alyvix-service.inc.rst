@@ -14,32 +14,32 @@ requirements here before installing Alyvix Service:
 .. table::
    :widths: 24 38 38
 
-   +------------------------------+--------------------------------+-----------------------------------------+
-   |                              | **Minimum**                    | **Recommended**                         |
-   +------------------------------+--------------------------------+-----------------------------------------+
-   | **Operating System**         | **Windows 10 (64-bit)**        | **Windows Server 2016, 2019 or 2022**   |
-   |                              | **Pro or Enterprise**          | (English language)                      |
-   |                              +--------------------------------+-----------------------------------------+
-   |                              | (32-bit versions of Windows are :file:`not` compatible with              |
-   |                              | Alyvix Service)                                                          |
-   +------------------------------+--------------------------------+-----------------------------------------+
-   | **Processor**                | 2 CPUs                         | 2 CPUs base **+** 2 CPUs per session    |
-   +------------------------------+--------------------------------+-----------------------------------------+
-   | **Memory**                   | 4GB RAM                        | 4GB RAM base **+** 4GB RAM per session  |
-   +------------------------------+--------------------------------+-----------------------------------------+
-   | **Graphics**                 | 24-bit RGB or 32-bit RGBA screen color depth                             |
-   +------------------------------+--------------------------------+-----------------------------------------+
-   | **Remote Desktop**           | Users defined on Alyvix Service must have RDP access (through RDC        |
-   |                              | *mstsc.exe*) to the machine itself (e.g. the user must be a Remote       |
-   |                              | Desktop User, and the firewall must not be set to block local RDC)       |
-   +------------------------------+--------------------------------+-----------------------------------------+
-   |                              | **1 session only:** No Windows | **Multiple sessions in parallel:**      |
-   |                              | Terminal Server available;     | Windows Terminal Server allows          |
-   |                              | 1 test case executed at a time | multiple test cases to run at once      |
-   +------------------------------+--------------------------------+-----------------------------------------+
-   | **Application Permissions**  | Users defined on Alyvix Service must have the proper permissions         |
-   |                              | to run and interact with the application interface being monitored       |
-   +------------------------------+--------------------------------+-----------------------------------------+
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   |                              | **Minimum**                    | **Recommended**                               |
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   | **Operating System**         | **Windows 10 (64-bit)**        | **Windows Server 2016, 2019, 2022 or 2025**   |
+   |                              | **Pro or Enterprise**          | (English language)                            |
+   |                              +--------------------------------+-----------------------------------------------+
+   |                              | (32-bit versions of Windows are :file:`not` compatible with                    |
+   |                              | Alyvix Service)                                                                |
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   | **Processor**                | 2 CPUs                         | 2 CPUs base **+** 2 CPUs per session          |
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   | **Memory**                   | 4GB RAM                        | 4GB RAM base **+** 4GB RAM per session        |
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   | **Graphics**                 | 24-bit RGB or 32-bit RGBA screen color depth                                   |
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   | **Remote Desktop**           | Users defined on Alyvix Service must have RDP access (through RDC              |
+   |                              | *mstsc.exe*) to the machine itself (e.g. the user must be a Remote             |
+   |                              | Desktop User, and the firewall must not be set to block local RDC)             |
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   |                              | **1 session only:** No Windows | **Multiple sessions in parallel:**            |
+   |                              | Terminal Server available;     | Windows Terminal Server allows                |
+   |                              | 1 test case executed at a time | multiple test cases to run at once            |
+   +------------------------------+--------------------------------+-----------------------------------------------+
+   | **Application Permissions**  | Users defined on Alyvix Service must have the proper permissions               |
+   |                              | to run and interact with the application interface being monitored             |
+   +------------------------------+--------------------------------+-----------------------------------------------+
 
 |
 

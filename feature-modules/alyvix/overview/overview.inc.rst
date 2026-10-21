@@ -14,6 +14,21 @@ Feature Module. |ne| integration with Alyvix allows for the monitoring of Alyvix
 nodes, and supports scheduling test cases, assigning test cases to sessions
 on different Alyvix machines, and more.
 
+.. note::
+
+   You can also view videos about the basic concepts involved in synthetic
+   monitoring and Alyvix:
+
+   * `(2'40") <https://youtu.be/42aKU7L5QYc>`__ 2-minute introduction to Alyvix Core
+   * `(5'58") <https://youtu.be/KnQT7U8Fxoo>`__ 5-minute introduction to Alyvix Core
+   * `(4'16") <https://youtu.be/aTyxldL7pN4>`__ Synthetic and visual monitoring
+   * `(1'53") <https://youtu.be/TzdrJvhyZ8g>`__ Why you need monitoring
+   * `(3'13") <https://youtu.be/ib4CsKK7qhw>`__ What is monitoring
+   * `(3'09") <https://youtu.be/KtIU5HlrPTk>`__ How monitoring works
+   * `(2'48") <https://youtu.be/O3KE6rs0ljs>`__ How monitoring checks work
+   * `(3'38") <https://youtu.be/0g1k3r6J5xY>`__ Interpreting monitoring check results
+   * `(3'38") <https://youtu.be/E9pJbtWujSM>`__ Monitoring Mobile Apps
+
 In order to start using :ref:`Alyvix within NetEye <neteye-components>`, follow the
 procedure described in :ref:`neteye-components-install`.
 

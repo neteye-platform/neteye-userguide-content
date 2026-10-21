@@ -3,6 +3,13 @@ Before installing Alyvix, first check that your environment meets the system req
 If it does, you will then need to install Python on your Windows machine before installing
 Alyvix itself.
 
+.. note::
+
+   You can also `view a video version <https://youtu.be/Mh7CSwCNMo8>`__ of this
+   page on YouTube, as well as additional
+   :ref:`introductory videos <alyvix_overview_top>` and
+   :ref:`tutorial videos <alyvix_video_list>`.
+
 
 .. _alyvix_core_system_requirements_top:
 

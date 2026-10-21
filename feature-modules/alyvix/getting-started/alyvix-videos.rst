@@ -1,7 +1,7 @@
 
 .. _alyvix_video_list:
 
-Example: Alyvix Video Index
+Alyvix Tutorial Video Index
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /feature-modules/alyvix/sphinx-roles.inc.rst

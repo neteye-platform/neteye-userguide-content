@@ -1,34 +1,15 @@
 
 .. _alyvix_videos_list_top:
 
-This page presents all Alyvix video tutorials, grouped by type.
+This page presents available Alyvix tutorials in video format, grouped by type.
 The links will take you directly to the corresponding video on
-`YouTube <https://www.youtube.com/@alyvix8723>`__.
+`YouTube <https://www.youtube.com/@alyvix8723>`__.  There are also Alyvix
+videos on installation and configuration for :ref:`Alyvix Core <alyvix_install_alyvix_core>`
+and :ref:`Alyvix Service <alyvix_install_alyvix_service>`, and on
+:ref:`basic concepts <alyvix_overview_top>` in Alyvix and synthetic
+monitoring in general.
 
-.. todo: :shadow:
-
-.. rubric:: 1. *Basic Concepts* video tutorials that show you how to use visual
-   monitoring and how to approach a problem with Alyvix
-
-* `(2'40") <https://youtu.be/42aKU7L5QYc>`__ |smalltab| 2-minute Introduction to Alyvix Core version 3.6.0
-* `(5'58") <https://youtu.be/KnQT7U8Fxoo>`__ |smalltab| 5-minute Introduction to Alyvix Core version 3.1.0
-* `(4'16") <https://youtu.be/aTyxldL7pN4>`__ |smalltab| Visual Monitoring
-* `(1'53") <https://youtu.be/TzdrJvhyZ8g>`__ |smalltab| Why you need monitoring
-* `(3'13") <https://youtu.be/ib4CsKK7qhw>`__ |smalltab| What is monitoring
-* `(3'09") <https://youtu.be/KtIU5HlrPTk>`__ |smalltab| How monitoring works
-* `(2'48") <https://youtu.be/O3KE6rs0ljs>`__ |smalltab| How monitoring checks work
-* `(3'38") <https://youtu.be/0g1k3r6J5xY>`__ |smalltab| Interpreting monitoring check results
-* `(3'38") <https://youtu.be/E9pJbtWujSM>`__ |smalltab| Monitoring Mobile Apps
-
-.. rubric:: 2. How to *install and configure* Alyvix within |ne|
-
-* `(2'59") <https://youtu.be/Mh7CSwCNMo8>`__ |smalltab| Install Alyvix Core and Python
-* `(4'03") <https://youtu.be/8vRCGsR9Xhc>`__ |smalltab| Install Alyvix Service
-* `(4'29") <https://youtu.be/ElP_A9XwwpY>`__ |smalltab| Install the *alyvix-neteye* module in |ne|
-* `(3'05") <https://youtu.be/8sH1AWTOQxo>`__ |smalltab| Enable Alyvix test cases in |ne|
-* `(7'50") <https://youtu.be/C3GiaQoyhCQ>`__ |smalltab| Run an RDC test case in Alyvix on |ne|
-
-.. rubric:: 3. *Best Practices* when creating Alyvix test cases
+.. rubric:: 1. *Best Practices* when creating Alyvix test cases
 
 * `(9'30") <https://youtu.be/5eIUWNqnnoo>`__ |smalltab| Best Practices #1 when building test cases
 * `(9'54") <https://youtu.be/iAMYxK97fFk>`__ |smalltab| Best Practices #2 when building test cases
@@ -39,7 +20,7 @@ The links will take you directly to the corresponding video on
 * `(5'48") <https://youtu.be/pWVGW4Aj1c0>`__ |smalltab| Multitenant Synthetic Monitoring with Alyvix
 * `(6'20") <https://youtu.be/K8Kpf6Hmr34>`__ |smalltab| Integrated Multitenant Synthetic Monitoring
 
-.. rubric:: 4. *Operations tutorials* with in-depth explanations of how to
+.. rubric:: 2. *Operations tutorials* with in-depth explanations of how to
    use specific features in the Alyvix Core interface
 
 * `(2'20") <https://youtu.be/rC_bjgXCcZ4>`__ |smalltab| Image Components
@@ -52,7 +33,7 @@ The links will take you directly to the corresponding video on
 * `(4'38") <https://youtu.be/5jlelr0YlhI>`__ |smalltab| Section Logic
 * `(6'42") <https://youtu.be/3QDEJldCzzw>`__ |smalltab| Selections and Groups
 
-.. rubric:: 5. *Production Systems tutorials* describing techniques based on
+.. rubric:: 3. *Production Systems tutorials* describing techniques based on
    examples using real world applications
 
 * `(7'10") <https://youtu.be/9LZPbx8FNxU>`__ |smalltab| VPN for Remote Monitoring

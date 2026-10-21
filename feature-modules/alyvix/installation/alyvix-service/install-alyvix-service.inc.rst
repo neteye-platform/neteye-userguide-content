@@ -1,6 +1,18 @@
 
 Before installing Alyvix Service, first check that your setup meets the system requirements.
 
+.. note::
+
+   You can also view video versions of this page on YouTube:
+
+   * `(4'03") <https://youtu.be/8vRCGsR9Xhc>`__ |smalltab| Install Alyvix Service
+   * `(4'29") <https://youtu.be/ElP_A9XwwpY>`__ |smalltab| Install the *alyvix-neteye* module in |ne|
+   * `(3'05") <https://youtu.be/8sH1AWTOQxo>`__ |smalltab| Enable Alyvix test cases in |ne|
+   * `(7'50") <https://youtu.be/C3GiaQoyhCQ>`__ |smalltab| Run an RDC test case in Alyvix on |ne|
+
+   as well as additional :ref:`introductory videos <alyvix_overview_top>` and
+   :ref:`tutorial videos <alyvix_video_list>`.
+
 .. _alyvix_service_system_requirements:
 
 System Requirements

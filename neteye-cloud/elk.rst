@@ -6,3 +6,4 @@ ELK - Log Analytics
     :maxdepth: 2
 
     elk/getting-started.rst
+    elk/analytics.rst

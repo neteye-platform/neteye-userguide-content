@@ -3,11 +3,11 @@
 Getting Started with ELK
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-NetEye.Cloud includes **Log Analytics**, which is based on the Elastic Stack.
+|nec| includes **Log Analytics**, which is based on the Elastic Stack.
 Elasticsearch stores and indexes the data collected from your environment, such
 as logs, metrics and traces. Kibana is the interface you use to work with that
 data. This chapter explains how to open Log Analytics and how its features are
-organised, so you know where to go for each task. Each feature has its own
+organized, so you know where to go for each task. Each feature has its own
 chapter with more detail.
 
 .. _elk-opening-log-analytics:
@@ -15,7 +15,7 @@ chapter with more detail.
 Opening Log Analytics
 `````````````````````
 
-Log in to NetEye Cloud (``https://neteye.cloud``). On the start screen, click
+Log in to |nec| (``https://neteye.cloud``). On the start screen, click
 **Log Analytics**, which opens Kibana on the Log Analytics home page.
 
 .. figure:: /neteye-cloud/elk/getting-started/img/log-analytics.png
@@ -25,12 +25,12 @@ Log in to NetEye Cloud (``https://neteye.cloud``). On the start screen, click
 
 The home page shows the two main areas of Log Analytics: **Analytics** and
 **Observability**. Click either one to open it. To go straight to a specific
-feature, open the menu (☰) in the top-left corner. It lists the features of
+feature, open the |menu| in the top left corner. It lists the features of
 each area.
 
 The two areas use the same data but for different purposes. In Analytics, you
-explore the data and present it: you search, filter, aggregate and visualise
-it. Observability is organised around the systems, applications and services
+explore the data and present it: you search, filter, aggregate and visualize
+it. Observability is organized around the systems, applications and services
 you monitor. It shows their health and performance and helps you troubleshoot
 them. In daily work you'll often use both. For example, you might notice a
 problem in Observability and then look at the underlying data in more detail
@@ -48,7 +48,7 @@ Analytics
 `````````
 
 Analytics is where you turn the data collected in Elasticsearch into
-information you can read and interpret. You use it to search events, logs,
+information you can read and interpret. You use it to search for events, logs,
 metrics and other indexed data, and to filter them by time range, field or
 value. You can also look at trends, distributions and comparisons, and build
 the charts, tables and dashboards used for analysis and reporting.
@@ -79,7 +79,7 @@ detail. This makes it a better fit for presentation-oriented output, such as a
 status screen or a report.
 
 **Maps** displays data that has a geographic component on interactive maps.
-You can place events, assets or metrics by location and analyse how they are
+You can place events, assets or metrics by location and analyze how they are
 distributed across regions, sites or specific areas.
 
 **Graph** helps you explore relationships between entities in your data. It
@@ -88,7 +88,7 @@ when you're looking for links that aren't visible in a list of events, for
 example between users, hosts and addresses involved in the same activity.
 
 **Machine Learning** detects anomalies and unusual patterns in your data. It
-highlights behaviour that differs from the norm, so you can notice issues or
+highlights behavior that differs from the norm, so you can notice issues or
 unexpected trends that a fixed threshold wouldn't catch.
 
 .. _elk-observability:
@@ -102,9 +102,9 @@ can look at the health, performance and availability of a service in one
 place. You can also correlate information from different sources. This makes
 it easier to find errors, slowdowns and anomalies, and to work out their cause.
 
-**Overview** summarises the whole observability environment. It shows the
+**Overview** summarizes the whole observability environment. It shows the
 health, performance and status of your systems and applications at a high
-level. Use it to see quickly whether anything needs attention before you go
+level. Use it to quickly see whether anything needs attention before you go
 into a specific area.
 
 **Logs** gives you central access to application and infrastructure logs. You
@@ -114,7 +114,7 @@ know roughly when and where a problem happened.
 
 **Infrastructure** is about hosts, containers and other infrastructure
 resources. It shows metrics such as CPU, memory, disk and network usage. These
-help you find bottlenecks and unusual system behaviour, and decide whether a
+help you find bottlenecks and unusual system behavior, and decide whether a
 problem comes from the underlying resources.
 
 **Applications** covers application performance monitoring. It shows response
@@ -126,17 +126,17 @@ you find the service where the problem starts.
 It covers aspects such as page load times and frontend responsiveness. Use it
 to find issues that affect end users, even when the backend looks healthy.
 
-**Synthetics** checks the availability and behaviour of services with
+**Synthetics** checks the availability and behavior of services with
 simulated tests. It checks whether websites, APIs or endpoints are reachable
 and respond as expected from the user's point of view. Because the tests run
-independently of real traffic, you can detect a problem even when no user is
+independently of real traffic, you can detect a problem even when no user has been
 affected yet.
 
 **Alerts** lists the alerts triggered by the rules defined in your environment.
 You can follow the warnings and incidents these rules generate and respond to
 them promptly.
 
-**Cases** is for organising and tracking incidents and operational issues. In
+**Cases** is for organizing and tracking incidents and operational issues. In
 a case, you document the problem, add comments, assign actions and follow the
 resolution step by step. This is useful when several people work on the same
 issue.
@@ -162,4 +162,4 @@ requires in its *Roles and permissions* section.
 .. note::
 
    If a feature or action described in this guide isn't available to you, ask
-   your NetEye.Cloud administrator to check your role.
+   your |nec| administrator to check your role.

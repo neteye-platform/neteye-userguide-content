@@ -14,7 +14,7 @@
 .. ### Icons and symbols
 .. |alyvix-ext-link-icon| image:: /feature-modules/alyvix/img/external_link.svg
    :height: 1em
-   :width: 10%
+   :width: 3%
 
 .. |alyvix-play-icon| raw:: html
 

@@ -3,8 +3,8 @@
 
 Install an Alyvix Node
 ```````````````````````
-In order to start using Alyvix Service, first you have to install
-an Alyvix Node as recommended in the official `Alyvix Service user guide <https://alyvix.com/learn/service/install.html#installation-steps>`_.
+In order to start using Alyvix Service, first you have to install an Alyvix Node
+as recommended in the official :ref:`Alyvix Service user guide <alyvix_service_uninstallation_steps>`.
 
 .. note::
 
@@ -57,11 +57,25 @@ be used in |ne| granted the latter supports the new API version.
 
 The upgrade of |ne| and Alyvix is done individually.
 
-`Alyvix service version <https://alyvix.com/learn/service/install.html#versions>`__
+:ref:`Alyvix service version <alyvix_service_installation_versions>`
 serves as an indicator of which API version is exposed by each Alyvix service version.
 
-
 |ne| |neteye_version| version supports Alyvix API v3, v4, v5.
+
+The API documentation can be viewed on any Alyvix Node that uses Alyvix Service
+via a Rest API. To view the API documentation, use a browser and one of the
+following URLs:
+
+* :code:`[alyvix_node_ip]/api_versions/apidocs`
+
+  This displays a list of API versions available on that Alyvix Node.
+
+* :code:`[alyvix_node_ip]/[version]/apidocs`
+
+  This displays the API documentation for that version, directly from the Node itself.
+  For example:  :code:`[alyvix_node_ip]/v6/apidocs`
+
+|
 
 
 .. _alyvix_nodes_authentication:
@@ -115,7 +129,7 @@ Example usage:
 
 The generated certificates must be copied and renamed inside the Alyvix nodes according to the documentation.
 For the details on where to store the certificates on the Alyvix nodes, please consult the
-`official Alyvix documentation <https://alyvix.com/learn/service/install.html#installation-steps>`_.
+:ref:`official Alyvix documentation <alyvix_service_uninstallation_steps>`.
 
 JWT Authentication
 ++++++++++++++++++
@@ -138,7 +152,7 @@ key pair, which is stored on the |ne| host under
 In order for Alyvix to verify the JWT token, copy the public key file
 :file:`/neteye/shared/icingaweb2/conf/modules/neteye/jwt-keys/multipurpose-jwt.pub`
 inside each Alyvix node. For more information please refer to the
-`official Alyvix documentation <https://alyvix.com/learn/service/install.html#installation-steps>`_.
+:ref:`official Alyvix documentation <alyvix_service_uninstallation_steps>`.
 
 
 .. _alyvix_role_mappings:
@@ -146,11 +160,12 @@ inside each Alyvix node. For more information please refer to the
 Role Mappings
 +++++++++++++
 
-For Alyvix to correctly evaluate the permissions defined in the JWT and thus correctly
-authenticate the user of the JWT, the following mappings need to be copied inside each Alyvix node.
-For more information, please refer to the
-`official Alyvix documentation <https://alyvix.com/learn/service/monitoring_integrations/neteye_integration.html#monitoring-integrations-neteye>`__.
-Please select the proper mapping based on the architecture of the Alyvix node to be configured.
+For Alyvix to correctly evaluate the permissions defined in the JWT and thus
+correctly authenticate the user of the JWT, the following mappings need to be
+copied inside each Alyvix node. For more information, please refer to the
+:ref: `Alyvix architecture documentation <alyvix_nodes_architectures>`.
+Please select the proper mapping based on the architecture of the Alyvix node
+to be configured.
 
 **Role mappings for** :ref:`alyvix_multitenant_tenant_shared_node`
 

@@ -54,13 +54,13 @@ As explained below, currently |ne| supports four different types of node:
 - :ref:`alyvix_single_tenant_via_satellite_node`
 - :ref:`alyvix_single_tenant_direct_to_master_node`
 
-The main differences between them reside in the adopted Tenancy configuration and
-the way they communicate with the |ne| Master.
-There are two types of communication involved: HTTPS and NATS.
-|ne| communicates with the Alyvix Service via API calls through the HTTPS communication channels,
-while NATS serves as a communication channel to send the performance metrics from the Alyvix nodes to the |ne| Master.
-The choice of using one rather than the other boils down to your infrastructure
-and purpose of the node.
+The main differences between them reside in the adopted Tenancy configuration
+and the way they communicate with the |ne| Master. There are two types of
+communication involved: HTTPS and NATS. |ne| communicates with the Alyvix
+Service via API calls through the HTTPS communication channels, while NATS
+serves as a communication channel to send the performance metrics from the
+Alyvix nodes to the |ne| Master. The choice of using one rather than the other
+boils down to your infrastructure and purpose of the node.
 
 
 .. _alyvix_multitenant_tenant_specific_node:

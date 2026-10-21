@@ -4,7 +4,7 @@ Selector panel, specifying the ordering as well as the mode of use, whether *seq
 *conditional* or *loop*.  The scripting panel uses the *blocks-based* approach to scripting,
 letting you drag and drop test case objects, sections and maps, and then reorder and edit them.
 
-When Alyvix Robot `executes a script <https://alyvix.com/learn/test_case_execution.html#test-case-execution-top>`__, it will interact with the
+When Alyvix Robot :ref:`executes a script <alyvix_test_case_execution_top>`, it will interact with the
 web browser, other app, or even Windows itself, by following your script step by step, executing
 each test case object in the order indicated by the script.
 
@@ -105,8 +105,7 @@ There are four modes for scripting nodes that can be used in the scripting panel
 #. *Loop* --- For each item contained in a map, execute the specified scripting node once for
    each row in the :ref:`map's table <alyvix_editor_interface_maps>`.  When run in
    :bolditalic:`CLI output mode`, the
-   `measures for each iteration <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-result-cli-measures>`__ will appear in the output.
-
+   :ref:`measures for each iteration <alyvix_robot_result_cli_measures>` will appear in the output.
 
    |alyvix-for| + :file:`Map Name` + |alyvix-run| + :file:`Object/Section`
 

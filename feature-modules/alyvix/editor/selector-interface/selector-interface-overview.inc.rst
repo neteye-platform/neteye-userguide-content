@@ -7,7 +7,7 @@ application, it allows you to quickly select test case objects in order to creat
 :ref:`scripted interactions <alyvix_editor_scripting_panel_top>`.
 
 The Selector interface is centered around a list of all test case objects in a given test case,
-with a separate tab for each :file:`.alyvix` `file <https://alyvix.com/learn/test_case_data_format.html#test-case-data-format-file>`__.
+with a separate tab for each :file:`.alyvix` :ref:`file <alyvix_test_case_data_format_file>`.
 The *primary* tab (the first one opened, with the blue background) is the only file whose objects
 can be changed.  Any other *secondary* tabs are used to view and filter their test case objects,
 and if desired, to import them into the primary tab (the values of test case objects in secondary
@@ -34,7 +34,7 @@ The principle interface elements are:
 .. rst-class:: bignums
 
 #. The **file tabs** show the primary tab and any opened secondary :file:`.alvyix`
-   `test case files <https://alyvix.com/learn/test_case_data_format.html#test-case-data-format-top>`__.
+   :ref:`test case files <test-case-data-format-top>`.
    Switching between tabs shows the test case objects contained in each file.  A new file can be loaded
    by clicking on the |alyvix-plus-icon| button. Similarly, the |alyvix-times-icon| button next to a
    non-primary tab will remove that tab (note that you cannot remove the primary tab).
@@ -90,7 +90,7 @@ The list headers have the following characteristics:
   :ref:`described in further detail below <alyvix_selector_interface_time_measure_break>`.
 * **Measure:**  Tells Robot whether or not to output the measurement data of a given step in the
   console output.  When a test case has completed execution, only test case objects whose measure
-  flag is set will have their `timing data <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-result-cli>`__ included.
+  flag is set will have their :ref:`timing data <alyvix_robot_result_cli>` included.
 * **Warning, Critical:**  The threshold values set for integration with a monitoring system
 * **Resolution:**  The horizontal and vertical pixel resolution, and the scaling factor (Windows
   zoom) of the test case object's :ref:`screen capture <alyvix_selector_interface_grab_resolution>`.
@@ -197,7 +197,7 @@ screen capture with a new one, and to add an additional screen capture at a diff
 than the existing one.
 
 When the resolution of the Windows desktop matches one of the resolutions recorded in the test case
-object, Selector will overwrite that `screen capture <https://alyvix.com/learn/test_case_data_format.html#test-case-data-format-components>`__
+object, Selector will overwrite that :ref:`screen capture <alyvix_test_case_data_format_components>`
 in the object with the new version.
 
 This replacement allows you to keep a test case up-to-date, which can be useful for times when
@@ -226,7 +226,7 @@ Interactions - Timeout, Measure, Break
 The user interface elements for *timeout*, *break* and *measure* are described in
 :ref:`the List Headers section above <alyvix_selector_interface_headers>`.  Briefly, *timeout*
 and *break* affect Alyvix's behavior, while *measure* serves to indicate that Alyvix should
-`measure <https://alyvix.com/learn/test_case_execution.html#test-case-execution-measurements>`__ and `report <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-result-cli>`__
+:ref:`measure <test_case_execution_measurements>` and :ref:`report <alyvix_robot_result_cli>`
 the time until detection at the end of the test case run.  These three parameters can help you
 judge availability and responsiveness.
 

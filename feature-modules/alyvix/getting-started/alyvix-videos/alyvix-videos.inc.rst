@@ -9,6 +9,8 @@ and :ref:`Alyvix Service <alyvix_install_alyvix_service>`, and on
 :ref:`basic concepts <alyvix_overview_top>` in Alyvix and synthetic
 monitoring in general.
 
+.. _alyvix_videos_list_best_practices:
+
 .. rubric:: 1. *Best Practices* when creating Alyvix test cases
 
 * `(9'30") <https://youtu.be/5eIUWNqnnoo>`__ |smalltab| Best Practices #1 when building test cases
@@ -19,6 +21,8 @@ monitoring in general.
 * `(5'56") <https://youtu.be/gSBOp_RDrpk>`__ |smalltab| Identifying Performance Degradation in Elastic
 * `(5'48") <https://youtu.be/pWVGW4Aj1c0>`__ |smalltab| Multitenant Synthetic Monitoring with Alyvix
 * `(6'20") <https://youtu.be/K8Kpf6Hmr34>`__ |smalltab| Integrated Multitenant Synthetic Monitoring
+
+.. _alyvix_videos_list_operations_tutorials:
 
 .. rubric:: 2. *Operations tutorials* with in-depth explanations of how to
    use specific features in the Alyvix Core interface
@@ -32,6 +36,8 @@ monitoring in general.
 * `(6'14") <https://youtu.be/gwaZjmSzOkw>`__ |smalltab| Conditionals and Loops
 * `(4'38") <https://youtu.be/5jlelr0YlhI>`__ |smalltab| Section Logic
 * `(6'42") <https://youtu.be/3QDEJldCzzw>`__ |smalltab| Selections and Groups
+
+.. _alyvix_videos_list_production_systems_tutorials:
 
 .. rubric:: 3. *Production Systems tutorials* describing techniques based on
    examples using real world applications

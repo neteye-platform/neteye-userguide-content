@@ -11,7 +11,7 @@ Integration with :ref:`Alyvix <visual-monitoring-alyvix>` allows you to visually
 Windows application (for example ERPs) and any web app through |ne|'s User Interface,
 continuously measuring workflows like a human user would.
 
-For more information, please consult the `official Alyvix documentation <https://alyvix.com/learn/introduction.html>`__.
+For more information, please consult the :ref:`Alyvix documentation <alyvix_overview_top>`.
 
 **Elastic RUM**
 

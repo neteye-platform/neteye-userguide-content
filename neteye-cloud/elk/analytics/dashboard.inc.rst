@@ -50,8 +50,7 @@ Add Visualizations to a Dashboard
 
 You can add a visualization to a dashboard in two ways:
 
-* Click **Visualization** to create a new visualization with Lens (see
-  :ref:`elk-visualize-library`).
+* Click **Visualization** to create a new visualization with Lens.
 * Click **From library** to add a visualization you created earlier.
 
 .. figure:: /neteye-cloud/elk/analytics/img/visualization.png

@@ -2,7 +2,7 @@
 .. _elk-discover:
 
 Discover
-~~~~~~~
+~~~~~~~~
 
 Discover lets you **search and explore indexed data** in detail. Use it to
 look at raw documents, check what they contain and see how your data

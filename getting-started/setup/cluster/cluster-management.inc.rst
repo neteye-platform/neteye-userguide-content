@@ -2,11 +2,7 @@
 Service Resource Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To manage service resources, several scripts have been developed by
-the NetEye team and are provided with every NetEye installation. These
-scripts are wrappers of the PCS and DRBD APIs and their use is
-showcased in section :ref:`cluster-add-resource`.  Examples of
-commands that are useful for NetEye Cluster troubleshooting are
+Examples of commands that are useful for NetEye Cluster troubleshooting are
 introduced in section :ref:`cluster-management-commands`.
 
 

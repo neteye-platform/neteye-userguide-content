@@ -2,11 +2,7 @@
 Service Resource Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To manage service resources, several scripts have been developed by
-the NetEye team and are provided with every NetEye installation. These
-scripts are wrappers of the PCS and DRBD APIs and their use is
-showcased in section :ref:`cluster-add-resource`.  Examples of
-commands that are useful for NetEye Cluster troubleshooting are
+Examples of commands that are useful for NetEye Cluster troubleshooting are
 introduced in section :ref:`cluster-management-commands`.
 
 
@@ -88,86 +84,6 @@ executing the install procedure focused on the service you want to apply the cha
 Where the ``<service_name>`` is the name of the service you want to apply the changes to.
 
 Please refer to :ref:`neteye-install-advanced` for more information about the :command:`neteye install` command.
-
-.. _cluster-add-resource:
-
-Adding a Service Resource to a Cluster
-``````````````````````````````````````
-
-Service resources can be added by modifying an existing template,
-located under the :file:`/usr/share/neteye/cluster/templates/`
-directory, then copying it to a suitable location, and finally using
-it in a script.
-
-For example, consider the :file:`Services-core-nats-server.conf.tpl`
-template.
-
-.. code-block:: json
-
-   {
-       "volume_group": "vg00",
-       "ip_pre" : "192.168.1",
-       "Services": [
-           {
-               "name": "nats-server",
-               "ip_post": "48",
-               "drbd_minor": 23,
-               "drbd_port": 7810,
-               "folder": "/neteye/shared/nats-server/",
-               "collocation_resource": "cluster_ip",
-               "size": "1024"
-           }
-       ]
-   }
-
-Copy it, then edit it.
-
-.. code:: bash
-
-   cluster# cd /usr/share/neteye/cluster/templates/
-   cluster# cp Services-core-nats-server.conf.tpl  /tmp/Services-core-nats-server.conf
-   cluster# vi /tmp/Services-core-nats-server.conf
-
-.. hint:: You can copy the edited file to any other location, to be
-   used for reference or in case you need to change settings at any
-   point in the future.
-
-In the file, make sure to change the following values to match your
-infrastructure network:
-
-* `ip_pre`: the :ref:`corporate network address
-  <neteye-cluster-architecture>` of the node (i.e., the first three
-  octets).
-* `ip_post`: the IP address of the node (**only** the last octet)
-
-Once done, make sure that the JSON file you saved is valid
-syntactically, for example by using the :command:`jq` utility::
-
-  cluster# jq . /tmp/Services-core-nats-server.conf
-
-A valid file will be displayed on, but if there is some **syntactic**
-mistake in the file, an explanatory message will provide a hint to fix
-the problem. Some possible message is shown next.
-
-.. container:: codeblock
-
-   .. code::
-
-      parse error: Expected separator between values at line 7, column 21
-
-      parse error: Objects must consist of key:value pairs at line 12, column 10
-
-.. note:: Even if multiple errors are present in the file, only one
-   error message is shown at a time, so always run ``jq`` until you
-   see the whole content of the file instead of error messages: this
-   will prove the file contains valid JSON.
-
-Finally, let the cluster pick up the changes and configuration.
-
-.. code-block:: bash
-
-   cluster# cd /usr/share/neteye/scripts/cluster
-   cluster# ./cluster_service_setup.pl -c /tmp/Services-core-nats-server.conf
 
 
 .. _cluster-management-commands:

@@ -1,5 +1,5 @@
 
-.. _elk-analytics:
+.. _elk-analytics-overview:
 
 Analytics
 ~~~~~~~~~

@@ -22,7 +22,7 @@ so that metric payloads are forwarded to the NetEye :ref:`cross-tenant-otel-coll
 stored in Elasticsearch datastreams.
 
 Once activated, the writer publishes check performance data to datastreams named in the format
-``metrics-generic.otel-<neteye_tenant>``. These datastreams use the component template
+``metrics-icinga2.otel-<neteye_tenant>``. These datastreams use the component template
 ``metrics-otel@custom``, which allows additional optimizations such as lifecycle management.
 
 To enable the feature run the following commands on the node that owns icinga2-master:

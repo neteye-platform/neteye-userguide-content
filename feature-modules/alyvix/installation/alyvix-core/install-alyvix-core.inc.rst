@@ -333,7 +333,7 @@ Below are some potential installation problems and their solutions.
    file :file:`vcomp140.dll` be present in Windows during installation by *pip*:
 
    .. code-block:: doscon
-      :class: nocopy
+      :class: no-copybutton
 
       File "C:\Python39\lib\site-packages\alyvix\core\tesserocr\__init__.py", line 1, in <module> from ._tesserocr import *
       ImportError: DLL load failed: The specified module could not be found.
@@ -349,7 +349,7 @@ Below are some potential installation problems and their solutions.
    automatically generated, unique path name.
 
    .. code-block:: doscon
-      :class: nocopy
+      :class: no-copybutton
 
       WindowsError: [Error 206] The filename or extension is too long: <path/file>
 

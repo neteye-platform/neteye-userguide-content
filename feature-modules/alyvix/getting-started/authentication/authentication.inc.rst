@@ -8,20 +8,19 @@ When building a test case in Alyvix, where do you store those credentials,
 and how are you going to retrieve them when you need them, while keeping
 them secure?
 
-Alyvix stores its test cases in an open file format, with the full specification
-published in this guide. So if someone manages to obtain your test case files,
-they could then look at anything in them, including those credentials. Alyvix
-provides a method to encrypt credentials so that they can be stored and
-decrypted securely, when needed.
-
-.. todo: :ref:`publish the full specification <test_case_data_format_top>`
+Alyvix stores its test cases in an open file format, with the
+:ref:`full specification <alyvix_test_case_data_format_top>` published in this
+guide. So if someone manages to obtain your test case files, they could then
+look at anything in them, including those credentials. Alyvix provides a method
+to encrypt credentials so that they can be stored and decrypted securely, when
+needed.
 
 Let's start by creating a simple test case that logs in to **www.dropbox.com**
 with our credentials and then logs out again, using the best practices described
 :ref:`in this previous tutorial <alyvix_example_test_case_web_browser>`.
 
 
-.. _getting_started_authentication_cipher:
+.. _alyvix_getting_started_authentication_cipher:
 
 Prepare using Alyvix Cipher
 ===========================
@@ -29,10 +28,10 @@ Prepare using Alyvix Cipher
 Before starting the test case build, let's encrypt our credentials so they're
 ready to use. We'll make up a private key (remember to keep it securely locked
 away, and not on the same computer that the test case runs on), and use it as
-one of the arguments to the ``alyvix_cipher`` command.  We'll just have to do
-this once for each credential, regardless of how many test cases it's used in.
-
-.. todo: :ref:`alyvix_cipher command <alyvix_robot_cipher_encryption>`:
+one of the arguments to the
+:ref:`alyvix_cipher command <alyvix_robot_cipher_encryption>` command.  We'll
+just have to do this once for each credential, regardless of how many test
+cases it's used in.
 
 .. code-block::
 
@@ -60,7 +59,7 @@ Note that the ``==`` at the end of the cipher is what tells Alyvix that it
 **is** a cipher.
 
 
-.. _getting_started_authentication_build_start:
+.. _alyvix_getting_started_authentication_build_start:
 
 Initial Build Steps
 ===================

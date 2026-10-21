@@ -25,7 +25,7 @@ Log in to |nec| (``https://neteye.cloud``). On the start screen, click
 
 The home page shows the two main areas of Log Analytics: **Analytics** and
 **Observability**. Click either one to open it. To go straight to a specific
-feature, open the menu (☰) in the top left corner. It lists the features of
+feature, open the |menu| in the top left corner. It lists the features of
 each area.
 
 The two areas use the same data but for different purposes. In Analytics, you

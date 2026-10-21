@@ -70,5 +70,5 @@ How It Works
   and writes it to ``data_stream.namespace``. Hosts without a
   ``vars.neteye_tenant`` value route to the ``master`` namespace.
 
-* **Target data streams:** ``metrics-generic.otel-<tenant>`` — one data stream per
+* **Target data streams:** ``metrics-icinga2.otel-<tenant>`` — one data stream per
   tenant, identical in structure to what the per-tenant gRPC pipeline produces.

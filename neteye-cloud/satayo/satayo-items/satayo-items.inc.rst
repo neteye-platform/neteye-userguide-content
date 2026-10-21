@@ -148,6 +148,11 @@ The last three levels are assigned when a domain is found through a Stealer Log,
 of website recorded in the log. The severity classification is assigned by SATAYO but can be
 adjusted on request if the assigned level does not reflect the actual sensitivity of the resource.
 
+When a domain is found to be archived in the `Wayback Machine <https://web.archive.org/>`__,
+SATAYO provides links to the corresponding archived snapshots. This allows an analyst to view
+historical information about the domain, such as content that was previously published and may
+no longer be available on the live site.
+
 |
 
 .. _ipv4_address_item:
@@ -1034,3 +1039,31 @@ For each victim, SATAYO provides:
 - **Group**: the ransomware gang that claimed the attack.
 - **Sector**: industry the victim operates in.
 - **Country**: country where the victim is located.
+
+
+.. _favicon_item:
+
+Favicon
+=======
+
+.. admonition:: MITRE ATT&CK Techniques
+
+   The following MITRE ATT&CK techniques are used to classify this finding:
+
+   Reconnaissance
+
+   - `T1593.002 Search Open Websites/Domains: Search Engines <https://attack.mitre.org/techniques/T1593/002/>`__
+   - `T1594 Search Victim-Owned Websites <https://attack.mitre.org/techniques/T1594/>`__
+   - `T1596.005 Search Open Technical Databases: Scan Databases <https://attack.mitre.org/techniques/T1596/005/>`__
+
+The **Favicon item** shows hosts that do not belong to the organization but serve up a favicon
+matching one of the organization's legitimate favicons. Favicons act as a fingerprint: using
+search engines such as Shodan, SATAYO identifies other hosts on the internet that reuse the same
+icon, potentially revealing additional assets related to the organization.
+
+A match found on a foreign host can indicate:
+
+- an unknown in-house asset that was not a part of the configured monitoring perimeter;
+- a partner or a CDN legitimately delivering organization-branded content;
+- a service that copies the organization's appearance, as is common with phishing sites that
+  reuse a legitimate favicon to appear more trustworthy to potential victims.

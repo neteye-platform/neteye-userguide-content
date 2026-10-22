@@ -66,14 +66,14 @@ The API documentation can be viewed on any Alyvix Node that uses Alyvix Service
 via a Rest API. To view the API documentation, use a browser and one of the
 following URLs:
 
-* :code:`[alyvix_node_ip]/api_versions/apidocs`
+* :code:`<alyvix_node_ip>/api_versions/apidocs`
 
   This displays a list of API versions available on that Alyvix Node.
 
-* :code:`[alyvix_node_ip]/[version]/apidocs`
+* :code:`<alyvix_node_ip>/<version>/apidocs`
 
   This displays the API documentation for that version, directly from the Node itself.
-  For example:  :code:`[alyvix_node_ip]/v6/apidocs`
+  For example:  :code:`<alyvix_node_ip>/v6/apidocs`
 
 |
 
@@ -129,7 +129,7 @@ Example usage:
 
 The generated certificates must be copied and renamed inside the Alyvix nodes according to the documentation.
 For the details on where to store the certificates on the Alyvix nodes, please consult the
-:ref:`official Alyvix documentation <alyvix_service_uninstallation_steps>`.
+:ref:`official Alyvix documentation <alyvix_service_installation_steps>`.
 
 JWT Authentication
 ++++++++++++++++++
@@ -163,7 +163,7 @@ Role Mappings
 For Alyvix to correctly evaluate the permissions defined in the JWT and thus
 correctly authenticate the user of the JWT, the following mappings need to be
 copied inside each Alyvix node. For more information, please refer to the
-:ref: `Alyvix architecture documentation <alyvix_nodes_architectures>`.
+:ref:`Alyvix architecture documentation <alyvix_nodes_architectures>`.
 Please select the proper mapping based on the architecture of the Alyvix node
 to be configured.
 

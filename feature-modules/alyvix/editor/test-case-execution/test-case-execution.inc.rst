@@ -249,8 +249,6 @@ For instance, the following example might be output after running
 ``FOR:my_map``\ ``Run:dataentry`` (note that individual map results appear in
 the output with the pattern *<object_name>_<map_name>-<key_name>*):
 
-.. todo: |alyvix-for|:forblock:`my_map`\ |alyvix-run|:runblock:`dataentry`
-
 .. code-block::
    :class: no-copybutton
 

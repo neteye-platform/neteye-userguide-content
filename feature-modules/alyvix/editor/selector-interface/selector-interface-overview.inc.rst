@@ -133,8 +133,6 @@ can be entered.  When a value is not valid you will see an error message like th
 
    The values of test case objects in secondary tabs cannot be changed.
 
-.. todo: |alyvix-4arrows-icon|
-
 When Selector is being used as part of Alyvix Editor, the ``4 arrows icon``
 and |alyvix-lineadd-icon| action icons at the start of each row allow you to
 :ref:`add the corresponding test case object to the scripting panel <alyvix_editor_scripting_node_add>`

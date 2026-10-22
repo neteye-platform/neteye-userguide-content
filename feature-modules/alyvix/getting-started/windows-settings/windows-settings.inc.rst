@@ -72,8 +72,6 @@ object from :guilabel:`VisualObject1` to a new one like :guilabel:`PressSettings
 
 .. rubric:: 6. Script
 
-.. todo: |alyvix-4arrows-icon|
-
 Using its ``4 arrows icon`` icon seen above, drag the new test case object
 into the Scripting panel underneath the existing script element (similarly,
 clicking the |alyvix-lineadd-icon| icon will add it to the end of the script):

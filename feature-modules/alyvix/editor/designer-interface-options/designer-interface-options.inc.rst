@@ -62,7 +62,8 @@ assigned to that row's component.
 Root Component Options
 ++++++++++++++++++++++
 
-The root element options take effect when the test case object is :ref:`first executed <alyvix_robot_result_cli_measures>`.
+The root element options take effect when the test case object is
+:ref:`first executed <alyvix_robot_result_cli_measures>`.
 These options allow you to set up the proper environment for
 the application you want to automate, which is especially helpful when a test case object
 will be the very first :ref:`scripted node <alyvix_editor_scripting_panel_top>`.

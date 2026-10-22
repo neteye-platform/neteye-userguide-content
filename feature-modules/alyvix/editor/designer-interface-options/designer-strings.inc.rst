@@ -38,7 +38,8 @@ the :guilabel:`String` field, in which case that field specifies how they should
 * **External sources:**
 
   * :bolditalic:`Map values:`  The source of the text is fields in the Map itself
-  * :bolditalic:`CLI arguments:`  Text derived from command line parameters passed to `Alyvix Robot <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-cli-options>`__
+  * :bolditalic:`CLI arguments:`  Text derived from command line parameters passed to
+    :ref:`Alyvix Robot <alyvix_robot_cli_options>`
 
 The extraction and mapping functions have a common purpose:  to substitute text from a source
 string into a template string, and then send the resulting string to the application.
@@ -154,7 +155,7 @@ into a table on a web page or in a spreadsheet with this :guilabel:`String` fiel
 .. rubric:: CLI Arguments via the Alyvix Robot *-\ -args* parameter
 
 Text can also be inserted from a command line parameter passed to Alyvix Robot.  To use this
-capability, `pass Alyvix Robot the argument <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-cli-launch>`__ as a simple keyword
+capability, :ref:`pass Alyvix Robot the argument <alyvix_robot_cli_launch>` as a simple keyword
 after the ``-a`` parameter, and type the ``{<number>}`` notation into the :guilabel:`String` field
 of the test case object that should insert the text.  For instance in the string below, passing the
 parameter ``-a Red`` will result in the text ``Color: Red`` appearing in the target text field of
@@ -175,7 +176,7 @@ You may have noticed that both :bolditalic:`map loops` and :bolditalic:`CLI argu
 ``{<n>}`` notation.  In fact, this notation is just a shortcut, which can be very useful since
 it's rare to have to use both at the same time.  Still, should you need to insert an indexed key
 when both a loop is running and you passed arguments via the command line, then the ``{<n>}``
-notation will return the `map value <https://alyvix.com/learn/test_case_data_format.html#test-case-data-format-description>`__ before it would
+notation will return the :ref:`map value <alyvix_test_case_data_format_description>` before it would
 return the value from the CLI argument list.  To ensure you are inserting the string from the
 source you intended, you can use the following expanded notation:
 

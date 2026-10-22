@@ -40,7 +40,7 @@ Top level Scripts
 
 
 The following scripts are predefined and are
-`executed by Alyvix Robot <https://alyvix.com/learn/test_case_execution.html#test-case-execution-top>`__:
+:ref:`executed by Alyvix Robot <alyvix_test_case_execution_top>`:
 
 .. rst-class:: bignums-xl
 
@@ -142,7 +142,7 @@ listed below:
 * X --- Delete a row or the rightmost column
 
 When a test case containing a map is executed, measurements are collected for each iteration
-of the map.  `These measurements are output <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-result-cli-measures>`__ when
+of the map.  :ref:`These measurements are output <alyvix_robot_result_cli_measures>` when
 execution in CLI mode has completed.
 
 
@@ -161,7 +161,7 @@ one was built incorrectly.
 There are two main problems to overcome when debugging scripts:
 
 * Executing the main script either via the |alyvix-runblue| :ref:`button in Editor <alyvix_editor_run_script>`
-  or via `Alyvix Robot <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-cli-options>`__ will launch the script from the very first
+  or via :ref:`Alyvix Robot <alyvix_robot_cli_options>` will launch the script from the very first
   node, although what you often need during debugging is to start at an intermediate stage
 * When starting at an intermediate stage, the application or browser's interface must match the
   expectations of the (first) test case object being debugged

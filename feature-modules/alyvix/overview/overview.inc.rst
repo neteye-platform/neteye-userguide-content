@@ -5,14 +5,53 @@ Overview
 
 Alyvix is a synthetic monitoring system that tracks the performance and
 availability of applications and services on Windows systems. Unlike RUM or
-web-based monitoring which relies on a browser engine, Alyvix is based on computer
-vision, synthesizing real users carrying out tasks in an application's interface
-without needing to be integrated into the application itself.
+web-based monitoring which relies on a browser engine, Alyvix is based on
+computer vision, synthesizing real users carrying out tasks in an application's
+interface without needing to be integrated into the application itself.
+
+**Alyvix Service** lets you scale up synthetic monitoring by managing all of
+your Alyvix test cases at a single point. You can schedule end-user bots
+to run continuously and in parallel, with the following features:
+
+* **Session Management:**   Keeps multiple Windows Service sessions alive
+* **Test Case Scheduling:**  Runs Alyvix test cases continuously, regularly,
+  and in parallel
+* **Measurement Web APIs:**  Provides recorded measurements and screenshots
+  on demand
+* **Transaction Reporting:**  Helps you find and view the certified results for
+  each test case run
+
+Alyvix Service runs on Windows, opening multiple, independent sessions on a
+private network. On each session it schedules the monitoring of test cases,
+collects their measurements, and logs the sets of Alyvix test cases you select.
+Everything from configuration to reporting is managed by a set of RESTful
+endpoints, so you can access any part of Alyvix Service within |ne|.
+
+The following are important concepts in Alyvix Service:
+
+* **Session:**  A two-way connection between Alyvix Service and a target
+  Windows session that allows Alyvix Service to run test cases and gather
+  metrics from that target session
+* **Scheduling:**  A process that ensures that multiple Alyvix test cases are
+  run at set intervals on the proper sessions
+* **Report:**  A human-readable document that shows concrete proof of how a
+  specific test case run performed, supported with screenshots
 
 Alyvix is not included in |ne| Core, but must be installed as an additional
 Feature Module. |ne| integration with Alyvix allows for the monitoring of Alyvix
 nodes, and supports scheduling test cases, assigning test cases to sessions
 on different Alyvix machines, and more.
+
+In order to start using :ref:`Alyvix within NetEye <neteye-components>`, follow the
+procedure described in :ref:`neteye-components-install`.
+
+After the Alyvix Feature Module has been installed, it is possible to
+:ref:`install and configure <alyvix_install_alyvix_node>` an Alyvix node within
+|ne| so that you can monitor it from the |ne| UI in just a few steps.
+
+Alyvix Service is available under its own product license. You can find more
+information on how to manage an Alyvix license in the
+:ref:`installation guide <alyvix_license_tab>`.
 
 .. note::
 
@@ -29,16 +68,7 @@ on different Alyvix machines, and more.
    * `(3'38") <https://youtu.be/0g1k3r6J5xY>`__ Interpreting monitoring check results
    * `(3'38") <https://youtu.be/E9pJbtWujSM>`__ Monitoring Mobile Apps
 
-In order to start using :ref:`Alyvix within NetEye <neteye-components>`, follow the
-procedure described in :ref:`neteye-components-install`.
-
-After the Alyvix Feature Module has been installed, it is possible to
-:ref:`install and configure <alyvix_install_alyvix_node>` an Alyvix node within
-|ne| so that you can monitor it from the |ne| UI in just a few steps.
-
-Alyvix Service is available under its own product license. You can find more
-information on how to manage an Alyvix license in the
-:ref:`installation guide <alyvix_license_tab>`.
+|
 
 
 .. _alyvix_nodes_architectures:
@@ -54,13 +84,13 @@ As explained below, currently |ne| supports four different types of node:
 - :ref:`alyvix_single_tenant_via_satellite_node`
 - :ref:`alyvix_single_tenant_direct_to_master_node`
 
-The main differences between them reside in the adopted Tenancy configuration and
-the way they communicate with the |ne| Master.
-There are two types of communication involved: HTTPS and NATS.
-|ne| communicates with the Alyvix Service via API calls through the HTTPS communication channels,
-while NATS serves as a communication channel to send the performance metrics from the Alyvix nodes to the |ne| Master.
-The choice of using one rather than the other boils down to your infrastructure
-and purpose of the node.
+The main differences between them reside in the adopted Tenancy configuration
+and the way they communicate with the |ne| Master. There are two types of
+communication involved: HTTPS and NATS. |ne| communicates with the Alyvix
+Service via API calls through the HTTPS communication channels, while NATS
+serves as a communication channel to send the performance metrics from the
+Alyvix nodes to the |ne| Master. The choice of using one rather than the other
+boils down to your infrastructure and purpose of the node.
 
 
 .. _alyvix_multitenant_tenant_specific_node:

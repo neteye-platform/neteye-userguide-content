@@ -17,7 +17,7 @@ Prerequisites
    You should also follow the :ref:`alyvix_nodes_authentication` guide to
    configure secure communication with |ne|.
 
-#. A new test case file should be created using `Alyvix built-in tools <https://alyvix.com/learn/test_case_building.html>`_.
+#. A new test case file should be created using :ref:`Alyvix built-in tools <alyvix_test_case_building_top>`.
 
 #. To run a test case with an Alyvix Service, the Node must have a valid license.
    You can download the license request key and then upload the obtained

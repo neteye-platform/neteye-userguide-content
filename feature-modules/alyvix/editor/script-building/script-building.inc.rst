@@ -4,7 +4,7 @@ Selector panel, specifying the ordering as well as the mode of use, whether *seq
 *conditional* or *loop*.  The scripting panel uses the *blocks-based* approach to scripting,
 letting you drag and drop test case objects, sections and maps, and then reorder and edit them.
 
-When Alyvix Robot `executes a script <https://alyvix.com/learn/test_case_execution.html#test-case-execution-top>`__, it will interact with the
+When Alyvix Robot :ref:`executes a script <alyvix_test_case_execution_top>`, it will interact with the
 web browser, other app, or even Windows itself, by following your script step by step, executing
 each test case object in the order indicated by the script.
 
@@ -32,14 +32,13 @@ There are several methods you can use to create a new scripting node in the scri
   * Clicking on |alyvix-lineadd-icon| of a section will add it as a |alyvix-run| expression, while a map will
     appear as a |alyvix-for| scripting node.
 
-* **Drag and Drop to any location** in the scripting panel with the |alyvix-4arrows-icon| action:
+* **Drag and Drop to any location** in the scripting panel with the ``4 arrows icon`` action:
 
   * Drag a test case object from Selector to create a new *scripting node* (see below) that
     appears as a |alyvix-run| expression :ref:`in light green <alyvix_editor_scripting_node_legend>`,
     indicating this test case object will be executed when its script is invoked.
   * Drag a :ref:`section or map into the script management panel <alyvix_editor_script_mgmt_top>`.
     As above, a section or map will show up as a |alyvix-run| or |alyvix-for| expression respectively.
-
 
   When you drag a test case object, section or map and hover over an available position, the mouse
   pointer will switch from the |alyvix-ban-icon| icon to showing the name of the test case object, moving
@@ -105,8 +104,7 @@ There are four modes for scripting nodes that can be used in the scripting panel
 #. *Loop* --- For each item contained in a map, execute the specified scripting node once for
    each row in the :ref:`map's table <alyvix_editor_interface_maps>`.  When run in
    :bolditalic:`CLI output mode`, the
-   `measures for each iteration <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-result-cli-measures>`__ will appear in the output.
-
+   :ref:`measures for each iteration <alyvix_robot_result_cli_measures>` will appear in the output.
 
    |alyvix-for| + :file:`Map Name` + |alyvix-run| + :file:`Object/Section`
 

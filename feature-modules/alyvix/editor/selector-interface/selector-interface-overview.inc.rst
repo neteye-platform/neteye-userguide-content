@@ -7,7 +7,7 @@ application, it allows you to quickly select test case objects in order to creat
 :ref:`scripted interactions <alyvix_editor_scripting_panel_top>`.
 
 The Selector interface is centered around a list of all test case objects in a given test case,
-with a separate tab for each :file:`.alyvix` :ref:`file <alyvix_test_case_data_format_file>`.
+with a separate tab for each :ref:`.alyvix file <alyvix_test_case_data_format_file>`.
 The *primary* tab (the first one opened, with the blue background) is the only file whose objects
 can be changed.  Any other *secondary* tabs are used to view and filter their test case objects,
 and if desired, to import them into the primary tab (the values of test case objects in secondary
@@ -34,7 +34,7 @@ The principle interface elements are:
 .. rst-class:: bignums
 
 #. The **file tabs** show the primary tab and any opened secondary :file:`.alvyix`
-   :ref:`test case files <test-case-data-format-top>`.
+   :ref:`test case files <alyvix_test_case_data_format_top>`.
    Switching between tabs shows the test case objects contained in each file.  A new file can be loaded
    by clicking on the |alyvix-plus-icon| button. Similarly, the |alyvix-times-icon| button next to a
    non-primary tab will remove that tab (note that you cannot remove the primary tab).
@@ -126,13 +126,16 @@ can be entered.  When a value is not valid you will see an error message like th
 
 .. image:: images/as-name-validation.png
    :class: image-boxshadow zoomable-image
+   :width: 80%
    :alt: The Alyvix Selector interface.
 
 .. note::
 
    The values of test case objects in secondary tabs cannot be changed.
 
-When Selector is being used as part of Alyvix Editor, the |alyvix-4arrows-icon|
+.. todo: |alyvix-4arrows-icon|
+
+When Selector is being used as part of Alyvix Editor, the ``4 arrows icon``
 and |alyvix-lineadd-icon| action icons at the start of each row allow you to
 :ref:`add the corresponding test case object to the scripting panel <alyvix_editor_scripting_node_add>`
 by using *drag-and-drop* or appending  it to the

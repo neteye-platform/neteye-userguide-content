@@ -50,20 +50,16 @@ Editor with a new file name not already in our test case directory:
 
 To give us time to arrange the desktop the way we want it before capturing the
 screen, we can set the screen capture delay by changing the number in
-``Delay [sec] 0`` at the bottom of Alyvix Editor from ``0`` seconds
+:nobutton:`Delay [sec] 0` at the bottom of Alyvix Editor from ``0`` seconds
 to something higher like ``5``:
-
-.. todo: :nobutton:
 
 .. image:: img/as_delay_five_seconds.png
    :class: image-boxshadow
    :width: 30%
    :alt: Setting up the 5-second delay before capturing the screen
 
-Now click on ``ADD`` and then immediately press :kbd:`Escape` to return to
-Alyvix Editor.
-
-.. todo: :wbutton:
+Now click on :nobutton:`ADD` and then immediately press :kbd:`Escape` to return
+to Alyvix Editor.
 
 .. rubric:: 3. Launch the browser
 
@@ -148,11 +144,9 @@ In step #4 we launched a browser, but that step didn't actually measure
 anything.  Suppose though that we want to see how long it took to load the
 page, and then follow our best practices and exit the application.
 
-To do that, click on ``ADD`` at the bottom of Alyvix Editor again to capture the
+To do that, click on :wbutton:`ADD` at the bottom of Alyvix Editor again to capture the
 screen showing our maximized browser, then mark up these two screen elements
 that will indicate the page successfully loaded:
-
-.. todo: :wbutton:
 
 .. image:: img/gs_measure_step.png
    :class: image-boxshadow
@@ -201,12 +195,10 @@ will then be run in that specific sequence:
 
 .. rubric:: 8. Running the test case
 
-Let's check our test case works by calling Alyvix Robot using the ``Run`` button
-at the top left. When the test case runs you'll see the browser launch, the web
-page load, and then the browser will disappear. Alyvix Editor will then appear
-again with the Console panel displaying the timing data for our steps:
-
-.. todo: |runblue|
+Let's check our test case works by calling Alyvix Robot using the |alyvix-runblue|
+button at the top left. When the test case runs you'll see the browser launch,
+the web page load, and then the browser will disappear. Alyvix Editor will then
+appear again with the Console panel displaying the timing data for our steps:
 
 .. image:: img/gs_console_panel_result.png
    :class: image-boxshadow
@@ -216,9 +208,8 @@ again with the Console panel displaying the timing data for our steps:
 |
 
 Congratulations, you did it!  You can now optionally save your test case and
-exit Alyvix Editor using the ``SAVE`` and ``EXIT`` buttons at the top.
-
-.. todo: :nobutton:
+exit Alyvix Editor using the :nobutton:`SAVE` and :nobutton:`EXIT` buttons at
+the top.
 
 If you prefer you can watch a video version of this tutorial example on
 `YouTube <https://youtu.be/KnQT7U8Fxoo>`_.

@@ -32,7 +32,7 @@ There are several methods you can use to create a new scripting node in the scri
   * Clicking on |alyvix-lineadd-icon| of a section will add it as a |alyvix-run| expression, while a map will
     appear as a |alyvix-for| scripting node.
 
-* **Drag and Drop to any location** in the scripting panel with the |alyvix-4arrows-icon| action:
+* **Drag and Drop to any location** in the scripting panel with the ``4 arrows icon`` action:
 
   * Drag a test case object from Selector to create a new *scripting node* (see below) that
     appears as a |alyvix-run| expression :ref:`in light green <alyvix_editor_scripting_node_legend>`,
@@ -40,6 +40,7 @@ There are several methods you can use to create a new scripting node in the scri
   * Drag a :ref:`section or map into the script management panel <alyvix_editor_script_mgmt_top>`.
     As above, a section or map will show up as a |alyvix-run| or |alyvix-for| expression respectively.
 
+.. todo: |alyvix-4arrows-icon|
 
   When you drag a test case object, section or map and hover over an available position, the mouse
   pointer will switch from the |alyvix-ban-icon| icon to showing the name of the test case object, moving

@@ -98,10 +98,10 @@ with the corresponding finding’s preview panel automatically displayed.
 |
 
 
-.. _domain_item:
+.. _dns_entry_item:
 
-Domain
-======
+DNS Entry
+=========
 
 .. admonition:: MITRE ATT&CK Techniques
 
@@ -113,11 +113,11 @@ Domain
    - `Gather Victim Network Information: Domain Properties <https://attack.mitre.org/techniques/T1590/001/>`__
    - `Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
 
-The domain findings list all subdomains discovered for each configured monitored domain.
-Domain, like an IP address, is a human-readable name that corresponds to one or more IP
+The DNS Entry findings list all subdomains discovered for each configured monitored domain.
+A DNS entry, like an IP address, is a human-readable name that corresponds to one or more IP
 addresses, making it easier to identify and remember. It is one of the starting points for
 SATAYO’s exposure assessment analysis, and it can provide valuable information about the
-services and applications running on a network. Domains are identified through multiple
+services and applications running on a network. DNS entries are identified through multiple
 techniques during SATAYO scans, such as DNS resolution/subdomain enumeration or
 **Stealer Logs**.
 
@@ -125,16 +125,16 @@ techniques during SATAYO scans, such as DNS resolution/subdomain enumeration or
 
    The domain sub-types — *Suspicious*, *Correlated*, *Similar*, *TLD*, and *Phishing* — listed in
    the :ref:`scan-by-type` table refer to the configured monitored domain itself, not to the
-   domain findings described here.
+   DNS Entry findings described here.
 
-Domain findings act as **aggregators**: each finding collects related evidence discovered under the
-same domain. Currently, a domain finding can aggregate **Services**, **Mail**, **SSL/TLS certificates**,
+DNS Entry findings act as **aggregators**: each finding collects related evidence discovered under the
+same domain. Currently, a DNS Entry finding can aggregate **Services**, **Mail**, **SSL/TLS certificates**,
 **Email addresses**, and **Stealer Logs** related to the same domain, as well as the **IPv4 addresses**
 it resolves to.
 
-Additionally, a domain finding includes a property indicating whether its value is used as target of an **MX Record**.
+Additionally, a DNS Entry finding includes a property indicating whether its value is used as target of an **MX Record**.
 
-Every domain finding carries a **severity** field that reflects how sensitive it is:
+Every DNS Entry finding carries a **severity** field that reflects how sensitive it is:
 
 - **UNASSIGNED** — the default level, assigned until the finding has been reviewed and reclassified.
   Its mere existence doesn't pose a risk, so it does not contribute directly to the
@@ -144,11 +144,11 @@ Every domain finding carries a **severity** field that reflects how sensitive it
 - **CRITICAL** — the resource is a high-value target, such as an intranet website, password manager,
   private cloud, or administrative page.
 
-The last three levels are assigned when a domain is found through a Stealer Log, based on the type
+The last three levels are assigned when a DNS entry is found through a Stealer Log, based on the type
 of website recorded in the log. The severity classification is assigned by SATAYO but can be
 adjusted on request if the assigned level does not reflect the actual sensitivity of the resource.
 
-When a domain is found to be archived in the `Wayback Machine <https://web.archive.org/>`__,
+When a DNS entry is found to be archived in the `Wayback Machine <https://web.archive.org/>`__,
 SATAYO provides links to the corresponding archived snapshots. This allows an analyst to view
 historical information about the domain, such as content that was previously published and may
 no longer be available on the live site.
@@ -171,7 +171,7 @@ IPv4 Address
    - `T1595 Active Scanning: Wordlist Scanning <https://attack.mitre.org/techniques/T1595/003/>`__
    - `T1596 Search Open Technical Databases: DNS/Passive DNS <https://attack.mitre.org/techniques/T1596/001/>`__
 
-The **IPv4 address item** represents a publicly reachable IP address discovered by SATAYO. It can be correlated to other items, such as **Ports** and **Domains**.
+The **IPv4 address item** represents a publicly reachable IP address discovered by SATAYO. It can be correlated to other items, such as **Ports** and **DNS Entries**.
 
 |
 

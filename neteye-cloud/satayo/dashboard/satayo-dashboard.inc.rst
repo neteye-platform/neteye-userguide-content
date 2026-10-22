@@ -137,7 +137,7 @@ that layer and its percentage of the total number of findings:
 
 - **Surface Web** – the publicly indexed part of the internet, reachable through standard
   search engines and browsers. It covers assets and services directly exposed by the
-  monitored perimeter, for example :ref:`domains <domain_item>` and
+  monitored perimeter, for example :ref:`DNS entries <dns_entry_item>` and
   :ref:`exposed services <service_item>`.
 - **Deep Web** – content not indexed by standard search engines, typically sitting behind
   authentication or surfacing in leaked data collections. It covers findings such as

@@ -52,6 +52,6 @@ while measuring response time.
 
 .. note::
    You can find further examples, conceptual descriptions, and production-oriented use
-   cases on the :ref:`Video Tutorials <video_tutorials_list_top>` page.
+   cases on the :ref:`Video Tutorials <alyvix_videos_list_top>` page.
 
 |

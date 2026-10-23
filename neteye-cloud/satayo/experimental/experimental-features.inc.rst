@@ -3,7 +3,7 @@
 Experimental Features
 ~~~~~~~~~~~~~~~~~~~~~
 
-This section describes the SATAYO features that are made available in an
+This section describes the |sat| features that are made available in an
 early stage, so that you can try them in advance.
 
 .. warning::
@@ -13,7 +13,7 @@ early stage, so that you can try them in advance.
 
 Some experimental features, such as the :ref:`satayo-mcp-server`, are
 available to every user. Others are hidden until you switch them on for
-yourself: open the **Settings** menu in the header of the SATAYO web
+yourself: open the **Settings** menu in the header of the |sat| web
 interface, select **Experimental features**, and turn on the toggle in the
 **Enabled** column of the feature you want to try. The change applies
 immediately and is saved in your user account, so it follows you on every

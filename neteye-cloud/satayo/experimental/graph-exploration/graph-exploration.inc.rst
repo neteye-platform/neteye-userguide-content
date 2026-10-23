@@ -10,7 +10,7 @@ Graph Exploration
 
 **Graph Exploration** shows your :ref:`findings <satayo_findings>` as an
 interactive graph, so that you can see how they connect to each other. Two
-findings are connected when SATAYO marks them as related, or when they share
+findings are connected when |sat| marks them as related, or when they share
 a value, such as a domain, an IP address or an email address.
 
 Starting from a single finding, you can expand the graph step by step and
@@ -20,9 +20,9 @@ which exposed email addresses belong to the same domain.
 Enable the Feature
 ==================
 
-Graph Exploration is hidden until you switch it on for your user:
+Graph Exploration is hidden until you switch it on for a particular user:
 
-#. Open the **Settings** menu in the header of the SATAYO web interface.
+#. Open the **Settings** menu in the header of the |sat| web interface.
 #. Select **Experimental features**.
 #. Turn on the toggle in the **Enabled** column of the **Graph exploration**
    row.
@@ -66,7 +66,7 @@ The graph contains two kinds of nodes, connected by two kinds of lines.
    * - Element
      - Meaning
    * - **Circle**
-     - A finding. Its colour shows the priority of its ticket: *Highest or
+     - A finding. Its color shows the priority of its ticket: *Highest or
        High*, *Medium*, *Low or Lowest*, or *No ticket priority*.
    * - **Rounded square**
      - A value that two or more findings share. It can be a domain, an IPv4
@@ -74,17 +74,21 @@ The graph contains two kinds of nodes, connected by two kinds of lines.
        username, an author, a domain registrant, a Google Analytics ID or a
        certificate organization.
    * - **Dashed line**
-     - A related finding, as stored by SATAYO.
+     - A related finding, as stored by |sat|.
    * - **Solid line**
      - Goes from a finding to a value that the finding contains, or to the
        finding that represents that value, for example an *Email Address*
        finding.
 
-Markers on the nodes show the finding currently displayed in the preview, the
-nodes that are still loading, and the nodes that have more results than the
-ones shown.
+In addition, a node can be marked in one of the following ways:
 
-To display the legend of shapes, colours, lines and markers, click the **i**
+* **A ring around the node**: the finding is the one currently displayed in
+  the preview.
+* **A faded node**: its connections are still loading.
+* **(+N) after the node's label**: the node has N more connected findings
+  than the ones shown in the graph.
+
+To display the legend of shapes, colors, lines and markers, click the **i**
 button in the bottom-left corner of the graph.
 
 Explore the Graph

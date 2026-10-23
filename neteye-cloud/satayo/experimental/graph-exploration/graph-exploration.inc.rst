@@ -88,7 +88,7 @@ In addition, a node can be marked in one of the following ways:
 * **(+N) after the node's label**: the node has N more connected findings
   than the ones shown in the graph.
 
-To display the legend of shapes, colors, lines and markers, click the **i**
+To display the legend of shapes, colors, lines and markers, click the **ⓘ**
 button in the bottom-left corner of the graph.
 
 Explore the Graph
@@ -100,7 +100,7 @@ Explore the Graph
   that value.
 * **Click Close** under a node to hide the connections that the node opened.
 * **Select an organization** in the organization selector in the header to
-  hide the findings of the other organizations.
+  hide the findings of other organizations.
 
 Each expansion of the graph is a step in your browser history: you can use
 the browser's **Back** and **Forward** buttons to move through your

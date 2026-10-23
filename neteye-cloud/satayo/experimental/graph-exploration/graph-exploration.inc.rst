@@ -88,7 +88,7 @@ In addition, a node can be marked in one of the following ways:
 * **(+N) after the node's label**: the node has N more connected findings
   than the ones shown in the graph.
 
-To display the legend of shapes, colors, lines and markers, click the **ⓘ**
+To display the legend of shapes, colors, lines and markers, click the **i**
 button in the bottom-left corner of the graph.
 
 Explore the Graph

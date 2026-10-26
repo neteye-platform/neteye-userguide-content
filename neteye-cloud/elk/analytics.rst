@@ -1,6 +1,11 @@
 
 .. include:: analytics/intro.inc.rst
-.. include:: analytics/discover.inc.rst
-.. include:: analytics/dashboard.inc.rst
-.. include:: analytics/canvas.inc.rst
-.. include:: analytics/maps.inc.rst
+
+.. toctree::
+   :maxdepth: 2
+
+   analytics/discover.rst
+   analytics/dashboard.rst
+   analytics/canvas.rst
+   analytics/maps.rst
+   analytics/machine-learning.rst

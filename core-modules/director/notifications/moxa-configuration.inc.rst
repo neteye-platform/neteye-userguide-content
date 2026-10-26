@@ -20,8 +20,8 @@ are sourced from `Moxa
 and are tested for compatibility with the notification strategy of
 NetEye.
 
-If you are interested in the SMS LAN Gateway, please contact `the
-NetEye support <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__.
+If you are interested in the SMS LAN Gateway, please contact
+`NetEye Support <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__.
 
 How It Works
 ~~~~~~~~~~~~

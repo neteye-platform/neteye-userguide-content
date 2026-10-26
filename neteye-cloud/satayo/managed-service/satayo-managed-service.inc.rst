@@ -2,7 +2,7 @@
 SaaS & Managed Mode
 ~~~~~~~~~~~~~~~~~~~
 
-In addition to the standard SaaS platform access, SATAYO also offers an
+In addition to the standard SaaS platform access, |sat| also offers an
 optional **SaaS & Managed** modality. This service combines the platform's
 automated monitoring capabilities with continuous evaluation performed by
 the Cyber Threat Intelligence team.
@@ -26,8 +26,8 @@ On top of that, the following is included in this version of the service:
   with a default allocation of 2% of the annual service subscription,
   which may be increased if necessary)
 
-The Cyber Threat Intelligence team manages the analysis of suspicious results, while
-tickets with mitigation instructions are opened for you in Jira.
+The Cyber Threat Intelligence team manages the analysis of suspicious results,
+while tickets with mitigation instructions are opened for you in Jira.
 You are automatically notified when a new ticket is available.
 You also have the option to open tickets on your own and request analysis
 of a specific piece of evidence that you feel is important.
@@ -44,21 +44,23 @@ allowing you to monitor the progress and resolution of issues
 directly through the platform.
 
 Organizations that already operate an internal SOC may prefer the basic
-**SaaS** option. In this case, SATAYO findings can be integrated into the
+**SaaS** option. In this case, |sat| findings can be integrated into the
 organization's existing processes and ticketing infrastructure. When
-external systems are used (for example Jira), providing and managing your own licenses
-and API access is up to you.
+external systems are used (for example Jira), providing and managing your own
+licenses and API access is up to you.
 
 Help Center
 ```````````
 
-The `Help Center of Würth IT Italy <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__,
-is the place where you can open tickets or requests for malfunctions, information,
-help with configurations or anything you need.
+You can open tickets or requests for information, fixing malfunctions, help
+with configurations or anything else you need at |support|_.
 
-The Help Center is based on Atlassian Jira and you need a Jira account to open requests.
+|witit|'s Help Center is based on Atlassian Jira and you need a Jira account
+to open requests.
 
-In case you don't have it, it can be easily `created here <https://siwuerthphoenix.atlassian.net/servicedesk/customer/user/signup?destination=portals>`__.
+If you don't have an account, you can easily
+`create one here <https://siwuerthphoenix.atlassian.net/servicedesk/customer/user/signup?destination=portals>`__.
 Simply enter your email address and you will receive a link to finalize the registration.
 
-SATAYO results are analyzed by our analysts and the analyses are communicated to you through this portal.
+|sat| results are analyzed by our analysts and the analyses are communicated
+to you through this portal.

@@ -73,7 +73,7 @@ follow up afterwards.
 .. note:: This address is intended for actively exploited vulnerabilities and severe
    incidents only. For all other security findings, including vulnerabilities that are not
    known to be exploited, use the regular channels described in
-   :ref:`Reporting Vulnerabilities <report-vulnarability>`. Reports sent to either address
+   :ref:`Reporting Vulnerabilities <report-vulnerability>`. Reports sent to either address
    reach the same security team, so a report sent to the wrong address is never lost — it
    may simply be handled with a different priority.
 
@@ -154,8 +154,8 @@ for example under NIS2, DORA or data protection law.
 Related Information
 -------------------
 
-    * :ref:`Reporting Vulnerabilities <report-vulnarability>` — how to report a security
+    * :ref:`Reporting Vulnerabilities <report-vulnerability>` — how to report a security
       finding that is not known to be exploited
-    * :ref:`Definition of a Vulnerability <vulnarability-definition>` — what we treat as a
+    * :ref:`Definition of a Vulnerability <vulnerability-definition>` — what we treat as a
       vulnerability
     * :ref:`Bugfix Policy <bugfix-policy>` — resolution timeframes and severity levels

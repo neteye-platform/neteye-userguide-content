@@ -1,8 +1,8 @@
-..  _report-vulnarability:
+..  _report-vulnerability:
 
 Reporting Vulnerabilities
 -------------------------
-If you believe you have found a security issue that meets |ne| :ref:`vulnarability-definition`,
+If you believe you have found a security issue that meets |ne| :ref:`vulnerability-definition`,
 please submit the report to our security team via one of the methods below.
 
-.. include:: reporting/report-vulnarability.inc.rst
+.. include:: reporting/report-vulnerability.inc.rst

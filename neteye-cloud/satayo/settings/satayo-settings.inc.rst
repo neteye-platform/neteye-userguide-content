@@ -3,7 +3,7 @@
 Settings
 ~~~~~~~~
 
-The **Settings** area shows how |sat| is configured for your tenant. To open
+The **Settings** area shows how |sat| is configured for your tenant and all its organizations. To open
 it, select the **Settings** (gear) icon in the header of the |sat| web
 interface and choose one of the pages in the menu. The same pages are listed
 in the side navigation of the Settings area.

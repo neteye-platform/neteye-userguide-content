@@ -6,7 +6,7 @@ Keywords
 |sat| uses keywords to detect data and information that are not directly
 associated with your monitored assets, for example in forums, messaging
 systems, social networks, and public source code. The **Keywords** page
-lists the keywords configured for your organization, with one row for each
+lists the keywords configured for your tenant and all its organizations, with one row for each
 monitoring service.
 
 To open the page, select the **Settings** icon in the header of the |sat|

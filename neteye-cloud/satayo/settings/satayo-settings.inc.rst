@@ -56,4 +56,3 @@ one row per setting and the following columns.
 
 If the settings cannot be loaded, an error message is shown together with a
 Retry button.
-

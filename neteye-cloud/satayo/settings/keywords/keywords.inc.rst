@@ -53,4 +53,3 @@ Services
 
    The Keywords row of the :ref:`satayo-global-settings` page
    counts only the general keywords.
-

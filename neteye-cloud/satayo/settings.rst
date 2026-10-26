@@ -5,4 +5,3 @@
 
    settings/global-settings.rst
    settings/keywords.rst
-

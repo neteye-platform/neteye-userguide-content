@@ -88,4 +88,3 @@ The page shows the following requirements.
        :ref:`credit card <credit_card_item>` evidence. This row is shown only
        when at least one BIN is configured.
      - Configured
-

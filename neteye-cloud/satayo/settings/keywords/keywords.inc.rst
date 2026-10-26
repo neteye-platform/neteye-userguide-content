@@ -6,17 +6,17 @@ Keywords
 |sat| uses keywords to detect data and information that are not directly
 associated with your monitored assets, for example in forums, messaging
 systems, social networks, and public source code. The **Keywords** page
-lists the keywords configured for your tenant and all its organizations, with one row for each
-monitoring service.
+lists the keywords configured for your tenant and all its organizations, with
+one row for each monitoring service.
 
 To open the page, select the **Settings** icon in the header of the |sat|
-web interface and choose Keywords. The page is available only to
-the tenant administrator and is read-only, as described in
+web interface and choose **Keywords**. The page is available only to
+users with the **Tenant Admin** role and is read-only, as described in
 :ref:`satayo-settings`.
 
 For each service, the page shows the number of configured keywords and a
 preview of the first five. When more keywords are configured,
-View All opens a window with the complete list. A service
+**View All** opens a window with the complete list. A service
 without keywords is shown with the **No data** status.
 
 Services

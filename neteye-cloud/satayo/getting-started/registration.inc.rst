@@ -6,7 +6,7 @@ Getting Started
 Registration
 ============
 
-User registration for |sat| is managed through the service provider (**|witit|**).
+User registration for |sat| is managed through the service provider (|witit|).
 
 Initial user accounts are typically provisioned together during the onboarding of the organization.
 
@@ -47,5 +47,5 @@ IP Whitelisting
 We recommend whitelisting the network :command:`82.193.25.0/24`, which is used
 to manage active scanning activities and that is
 `managed directly <https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=82.193.25.0%20-%2082.193.25.255&type=inetnum>`_
-by |witit|, is strongly recommended to allow |sat| to obtain more consistent information about the services exposed
-on the infrastructure being analyzed.
+by |witit|. We also strongly recommended allowing |sat| to obtain more consistent
+information about the services exposed on the infrastructure being analyzed.

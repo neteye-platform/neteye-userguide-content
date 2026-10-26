@@ -62,5 +62,5 @@ If you don't have an account, you can easily
 `create one here <https://siwuerthphoenix.atlassian.net/servicedesk/customer/user/signup?destination=portals>`__.
 Simply enter your email address and you will receive a link to finalize the registration.
 
-|sat| results are analyzed by our analysts and the analyses are communicated
+|sat| results are reviewed by our analysts and then communicated
 to you through this portal.

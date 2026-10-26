@@ -9,18 +9,19 @@ Technological solutions adopted
 
 |witit| will configure and make use of the following technological solutions:
 
-.. rubric:: NetEye SIEM
+.. rubric:: |ne| SIEM
 
-NetEye for years has been recognized in the market as a stable and highly flexible platform
-in the IT Monitoring market. **NetEye SIEM** is the natural evolution of the platform toward
-the System Information Event Management segment and integrates the ELK stack in the `Enterprise version <https://www.elastic.co/subscriptions>`__.
+|ne| for years has been recognized in the market as a stable and highly flexible
+platform in the IT Monitoring market. |neb| **SIEM** is the natural evolution of
+the platform toward the System Information Event Management segment and integrates
+the ELK stack in the `Enterprise version <https://www.elastic.co/subscriptions>`__.
 
 The Elastic Stack (aka ELK) is a robust solution for search, log management, and data analysis.
 Elasticsearch, Logstash, Kibana and Elastic Agent are the macro components of the solution that combine to provide a single platform
 for data storage, data retrieval, data sorting, and data analysis.
 
 |witit|, through its partnership and close working relationship with the Elastic development team,
-is able to offer the solution fully integrated within NetEye.
+is able to offer the solution fully integrated within |ne|.
 
 .. rubric:: |sat|
 
@@ -29,19 +30,21 @@ make it a key tool for all organizations that need to monitor their exposure wit
 domain sources, found in the Surface, Deep & Dark Web.
 
 The platform has an API (Application Programming Interface) and allows for the integration of collected
-evidence with NetEye SIEM. |sat|, for the monitored organization, is able to continuously calculate
+evidence with |ne| SIEM. |sat|, for the monitored organization, is able to continuously calculate
 the Exposure Assessment Index Value, a value ranging from 0 to 100 that indicates how exposed
 that particular organization is.
 
-Check out more information on |sat| following the `link <https://www.wuerth-it.it/prodotto/cyber-security-threat-intelligence/>`__.
+You can find more information about |sat| by following
+`this link <https://www.wuerth-it.it/prodotto/cyber-security-threat-intelligence/>`__.
 
 .. rubric:: SOC Prime
 
 SOC Prime is the leading Threat Detection Marketplace, which makes detection rules developed by the best Threat Hunters internationally available
 through an exclusive subscription.
 
-|witit|, as a SOC Prime partner, has developed an integration that allows NetEye SIEM to have on board at all times detection rules
-that are constantly updated and thus able to identify threats as they are discovered and analyzed over time.
+|witit|, as a SOC Prime partner, has developed an integration that allows |ne|
+SIEM to have on board at all times detection rules that are constantly updated
+and thus able to identify threats as they are discovered and analyzed over time.
 
 .. rubric:: Greenbone Security Manager
 
@@ -49,7 +52,7 @@ GSM is a Continuous Vulnerability Assessment platform. The Greenbone Security Fe
 more than 100,000 vulnerability tests to date and provides recognition and protection from
 vulnerabilities such as SUPERNOVA, BlueKeep and PrintNightmare.
 
-The API-equipped platform is integrated within NetEye SIEM.
+The API-equipped platform is integrated within |ne| SIEM.
 
 .. rubric:: OpenCTI
 
@@ -64,7 +67,7 @@ Today the platform has been fully released in open source and made available to 
 Cyber Threat Intelligence community to enable actors to structure, store, organize, visualize
 and share their knowledge.
 
-The platform comes with a connector that enables interaction with NetEye SIEM.
+The platform comes with a connector that enables interaction with |ne| SIEM.
 
 Monitoring Perimeter
 ````````````````````
@@ -73,7 +76,7 @@ The Monitoring perimeter is based on the list of host objects and services to be
 It is provided by the customer during onboarding and can be tweaked later in the process of monitoring
 for existing contracts.
 
-The NetEye SIEM platform will receive as input the data/logs/flows collected from the |ne| satellites
+The |ne| SIEM platform will receive as input the data/logs/flows collected from the |ne| satellites
 installed in the customer's network and from the |sat| platform in the cloud of |witit|.
 
 Architecture

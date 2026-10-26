@@ -80,8 +80,7 @@ At this point you can proceed to restore the cluster to high availability operat
 
 #. Run the checks in the section :ref:`Checking that the Cluster Status
    is Normal <check-cluster-status>`.  If any of the above checks fail,
-   please contact `our service and support team <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__
-   before proceeding.
+   please contact |support|_ before proceeding.
 
 #. Re-enable fencing on the last standard node, if it was enabled prior to
    the upgrade::

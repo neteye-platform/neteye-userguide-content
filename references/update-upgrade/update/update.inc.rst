@@ -3,12 +3,12 @@
 Update Procedure
 ================
 
-This guide will lead you through the steps of updating NetEye.
+This guide will lead you through the steps of updating |ne|.
 
 Prerequisites
 -------------
 
-#. NetEye must be up and running in a healthy state.
+#. |ne| must be up and running in a healthy state.
 
 #. .. include:: /references/update-upgrade/update/free-disk-space.inc.rst
 
@@ -17,8 +17,8 @@ Prerequisites
 
 .. _neteye-update-single:
 
-Update NetEye Single Instance
------------------------------
+Update |ne| Single Instance
+---------------------------
 
 #. Run the update command:
 
@@ -28,9 +28,9 @@ Update NetEye Single Instance
 
    After the command was executed, the output will inform if the update was successful or not:
 
-   * In case of successful update you might need to restart NetEye to properly apply the updates.
+   * In case of successful update you might need to restart |ne| to properly apply the updates.
      If the reboot is not needed, please skip the next step.
-   * In case the command fails refer to the :ref:`troubleshooting section<update-ts>`.
+   * In case the command fails refer to the :ref:`troubleshooting section <update-ts>`.
 
 #. Reboot the node to apply the updates correctly if required:
 
@@ -38,7 +38,7 @@ Update NetEye Single Instance
 
       neteye# neteye node reboot
 
-#. Finally, to ensure that any potentially stopped and/or newly installed NetEye
+#. Finally, to ensure that any potentially stopped and/or newly installed |ne|
    services are running, use the command
 
    .. code:: bash
@@ -48,8 +48,8 @@ Update NetEye Single Instance
 
 .. _neteye-update-cluster:
 
-Update NetEye Cluster
----------------------
+Update |ne| Cluster
+-------------------
 
 Updating a cluster will take a nontrivial amount of time, however no
 downtime needs to be planned.
@@ -72,7 +72,7 @@ After the command was executed, the output will inform if the update was success
 
 * In case of successful update you might need to restart the nodes to properly apply the updates.
   If the reboot is not needed, please skip the next step.
-* In case the command fails refer to the :ref:`troubleshooting section<update-ts>`.
+* In case the command fails refer to the :ref:`troubleshooting section <update-ts>`.
 
 2. Reboot Nodes
 ~~~~~~~~~~~~~~~
@@ -85,7 +85,7 @@ Restart each node, **one at a time**, to apply the updates correctly.
 
          cluster-node-N# neteye node reboot
 
-#.  In case of a standard NetEye node, put it back online once the reboot is finished
+#.  In case of a standard |ne| node, put it back online once the reboot is finished
 
       .. code:: bash
 
@@ -100,9 +100,8 @@ You can now reboot the next node.
 At this point you can proceed to restore the cluster to high availability operation.
 
 #. Run the checks in the section :ref:`Checking that the Cluster Status
-   is Normal <check-cluster-status>`.  If any of the above checks fail,
-   please call `our service and support team <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__
-   before proceeding.
+   is Normal <check-cluster-status>`. If any of the above checks fail,
+   please contact us through |support|_ before proceeding.
 
 #. Re-enable fencing on the last standard node, if it was enabled prior to
    the update::
@@ -112,8 +111,8 @@ At this point you can proceed to restore the cluster to high availability operat
 
 .. _neteye-update-satellites:
 
-NetEye Satellites
------------------
+|ne| Satellites
+---------------
 
 .. include:: /references/update-upgrade/update/satellite-update.inc.rst
 

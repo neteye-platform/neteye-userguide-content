@@ -33,7 +33,7 @@ To obtain a client ID and secret for your integration, contact
 
    The client secret grants access to your findings. Store it in a secret
    manager or in an environment variable, never in source code or in a shared
-   repository. If it is compromised, contact Support to have it rotated.
+   repository. If it is compromised, contact |support|_ to have it rotated.
 
 Step 1: Request an Access Token
 -------------------------------

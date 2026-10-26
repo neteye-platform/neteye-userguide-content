@@ -3,7 +3,7 @@
 .. _elk-ml-results-analysis:
 
 Investigating Anomalies
-----------------------
+-----------------------
 
 Once an anomaly detection job is running, you can review and investigate its results directly
 in Kibana through two complementary views. The **Anomaly Explorer** gives an overview of

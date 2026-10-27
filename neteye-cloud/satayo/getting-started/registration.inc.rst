@@ -6,7 +6,7 @@ Getting Started
 Registration
 ============
 
-User registration for |sat| is managed through the service provider (**Würth IT**).
+User registration for |sat| is managed through the service provider (|witit|).
 
 Initial user accounts are typically provisioned together during the onboarding of the organization.
 
@@ -17,7 +17,7 @@ Initial user accounts are typically provisioned together during the onboarding o
    modules according to your assigned permissions.
 
 Registration is one of the preparatory steps in the onboarding procedure. To register new
-or additional users after onboarding, contact Würth IT `support <https://servicedesk.wuerth-it.it>`__.
+or additional users after onboarding, contact |support|_.
 
 When requesting new user accounts, provide the following required information for each user:
 
@@ -44,8 +44,8 @@ a confirmation email containing instructions on how to complete their account se
 IP Whitelisting
 ===============
 
-The whitelist of the network :command:`82.193.25.0/24` is recommended. Whitelisting this network,
-which is used to manage active scanning activities and that is
+We recommend whitelisting the network :command:`82.193.25.0/24`, which is used
+to manage active scanning activities and that is
 `managed directly <https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=82.193.25.0%20-%2082.193.25.255&type=inetnum>`_
-by Wurth IT Italy, is strongly recommended to allow SATAYO to obtain more consistent information about the services exposed
-on the infrastructure being analyzed.
+by |witit|. We also strongly recommended allowing |sat| to obtain more consistent
+information about the services exposed on the infrastructure being analyzed.

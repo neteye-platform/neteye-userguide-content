@@ -12,12 +12,11 @@ be able to use any NetEye module, so permissions determine not only what you
 can do within a particular module, but also whether you can even access a
 module at all.
 
-If your users are entirely managed by Wuerth IT and thus not provided by your IdP,
+If your users are entirely managed by |witit| and thus not provided by your IdP,
 then the appropriate groups and permissions will be handled via requests to the
-`Management Portal <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__ you are
-already familiar with. If not, the information below will assist you in
-configuring the required information in your IdP to grant your users the
-necessary permissions.
+|support|_ you are already familiar with. If not, the information below will
+assist you in configuring the required information in your IdP to grant your
+users the necessary permissions.
 
 OIDC and Group Claims
 ~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +86,7 @@ The elements involved in creating a group claim are:
   that company.
 * **Contract Type:** Aligned with the set of NetEye modules, a contract
   type may also refer to a defined subset of a module's functionality.
-  Examples include MON, ELK, SATAYO and SOC.
+  Examples include MON, ELK, |sat| and SOC.
 * **Access Levels:** The various levels of usage types needed to accomplish
   specific types of tasks.  These roles are:
 
@@ -129,7 +128,7 @@ A group is thus a **<Contract, Access Level>** pair in the correct format,
 enforced with a tenancy constraint. This allows the IdP owner to configure
 permissions independently for each module.
 
-The group name must be jointly determined with Wuerth-IT to ensure it is not
+The group name must be jointly determined with |witit| to ensure it is not
 duplicated. Successful configuration of the IdP by the customer thus means all
 groups are properly configured and added as group claims during authentication.
 

@@ -15,5 +15,5 @@ Complete the upgrade process by launching the following script::
    to perform the upgrade **manually** and only if all
    previous steps have been completed **successfully**. If you
    encounter any errors or problems during the upgrade process, please
-   contact our `our service and support team <https://siwuerthphoenix.atlassian.net/servicedesk/customer/portals>`__ to
+   contact our service and support team via |support|_ to
    evaluate the best way forward for upgrading your NetEye system.

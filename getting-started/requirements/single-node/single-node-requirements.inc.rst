@@ -20,8 +20,8 @@ requirements. Moreover, disk space may also become an issue when the
 amount of logs produced by a |ne| installation or by its monitored
 objects is very large.
 
-You can always contact the official channels---sales,
-consultants, or |support|_---for advice on how to tailor the system
+You can always contact the official channels -- sales,
+consultants or |support|_ -- for advice on how to tailor the system
 according to your needs.
 
 .. _table-req:

@@ -1,13 +1,13 @@
 .. _satayo-rest-api:
 
-SATAYO REST API
-~~~~~~~~~~~~~~~
+|sat| REST API
+~~~~~~~~~~~~~~
 
 The **SATAYO REST API** allows technical integrations to retrieve and, when
-authorized, insert SATAYO findings for their tenant.
+authorized, insert |sat| findings for their tenant.
 
 In the examples below, replace ``<satayo-host>`` with the host name of your
-SATAYO instance.
+|sat| instance.
 
 The API is available at the following base URL:
 
@@ -22,9 +22,8 @@ The API uses OAuth 2.0 bearer tokens. Integrations authenticate as a
 *service account* using the **client credentials** grant: there is no user
 name or password involved, only a client ID and a client secret.
 
-To obtain a client ID and secret for your integration, contact Würth IT
-`support <https://servicedesk.wuerth-it.it>`__, specifying which permissions the
-integration needs:
+To obtain a client ID and secret for your integration, contact
+|support|_ specifying which permissions the integration needs:
 
 * **Read**: retrieve findings of your tenant. This is the standard access level
   for integrations.
@@ -34,12 +33,12 @@ integration needs:
 
    The client secret grants access to your findings. Store it in a secret
    manager or in an environment variable, never in source code or in a shared
-   repository. If it is compromised, contact support to have it rotated.
+   repository. If it is compromised, contact |support|_ to have it rotated.
 
 Step 1: Request an Access Token
 -------------------------------
 
-Request a token from the SATAYO identity provider, passing the client ID and
+Request a token from the |sat| identity provider, passing the client ID and
 secret you received:
 
 .. code-block:: bash
@@ -103,7 +102,7 @@ The raw OpenAPI document is available at
 .. note::
 
    The Swagger UI and the OpenAPI document require authentication. Log in to
-   the SATAYO web interface first, then open the link in the same browser.
+   the |sat| web interface first, then open the link in the same browser.
    Unauthenticated requests receive ``404``.
 
 While you are logged in, the requests you send from the Swagger UI use your
@@ -123,8 +122,8 @@ Common Request Options
   ``includeclosed=true`` to include closed ones.
 * **Tracing**: you can optionally pass a
   `W3C Trace Context <https://www.w3.org/TR/trace-context/#traceparent-header>`__
-  ``traceparent`` header to correlate your requests with SATAYO logs when
-  contacting support. Its format is
+  ``traceparent`` header to correlate your requests with |sat| logs when
+  contacting |support|_. Its format is
   ``00-<trace-id>-<parent-id>-<flags>``, where ``<trace-id>`` is 32 and
   ``<parent-id>`` is 16 random hexadecimal characters, and ``<flags>`` is
   ``01``, for example

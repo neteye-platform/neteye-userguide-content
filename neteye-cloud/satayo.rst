@@ -14,4 +14,5 @@ Cyber Threat Intelligence - SATAYO
    satayo/satayo-items.rst
    satayo/rest-api.rst
    satayo/managed-service.rst
+   satayo/settings.rst
    satayo/experimental.rst

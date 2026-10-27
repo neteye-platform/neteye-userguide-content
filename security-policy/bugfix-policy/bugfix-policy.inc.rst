@@ -121,20 +121,22 @@ Exploitation of such vulnerabilities usually requires local or physical system a
 Vulnerabilities in third party code that are unreachable from |ne| code may be downgraded
 to low severity.
 
+..  _neteye-bugfix-policy-os:
+
 Operating System
 ~~~~~~~~~~~~~~~~
 
-In NetEye we rely on the Red Hat Enterprise Linux 8 (RHEL 8) as an OS.
-This means that in terms of `RedHat Lifecycle policy <https://access.redhat.com/support/policy/updates/errata>`__ all OS packages will receive
-security updates and bug fixes.
+|ne| relies on the Red Hat Enterprise Linux 8 (RHEL 8) as an OS.
+This means that in terms of `RedHat Lifecycle policy <https://access.redhat.com/support/policy/updates/errata>`__
+all OS packages will receive security updates and bug fixes.
 
 Open Source Stack
 ~~~~~~~~~~~~~~~~~
 
-There are a number of third-party software integrated within NetEye, which function
-in accordance with their own licenses and bug-fixing policies.
+There are a number of third-party software integrated within |ne|, which
+function in accordance with their own licenses and bug-fixing policies.
 
 We actively cooperate with all third parties in order to fix vulnerabilities
 for the convenience of our customers. On top of that, |witit| is always aiming
-to detect vulnerabilities and report them to the software producers in order for them
-to process according to their own security policies.
+to detect vulnerabilities and report them to the software producers in order
+for them to process according to their own security policies.

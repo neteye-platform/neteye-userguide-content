@@ -1,3 +1,5 @@
+.. _neteye-satellite-install:
+
 A **Satellite** is a |ne| instance which depends on a main |ne|
 installation, the **Master**, and carries out tasks such as:
 

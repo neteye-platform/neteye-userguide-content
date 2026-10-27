@@ -21,22 +21,21 @@ Select a single **organization** when you want to focus on one monitored perimet
 Select :guilabel:`All Organizations` when you want an aggregated overview across
 all organizations available to you.
 
-The Dashboard has two sections. Switch between them with the icons in the sidebar on the
-left of the page:
+The Dashboard contains two tabs:
 
-- **Dashboard overview** (first icon) shows the panels that summarize the current state of
+- **Dashboard overview** shows the panels that summarize the current state of
   the monitored perimeter, described in the sections below.
-- **Dashboard report** (second icon) shows how exposure evolves over time, in the
+- **Dashboard report** shows how exposure evolves over time, in the
   :ref:`Exposition Categories <satayo-dashboard-exposition-categories>` panel.
 
-The selected organization applies to both sections. When you change it, you stay in the
-section you are viewing. Each section also keeps its state while you look at the other one,
+The selected organization applies to both tabs. When you change it, you stay in the
+tab you are viewing. Each tab also keeps its state while you look at the other one,
 so when you switch back, its panels are shown as you left them, without loading again.
 
-The address in your browser always describes what the Dashboard shows: the selected
+The URL in your browser always describes what the Dashboard shows: the selected
 organization and the choices you make in the
 :ref:`Exposition Categories <satayo-dashboard-exposition-categories>` panel. Bookmark or
-share the address to open the same view again, or reload the page without losing your
+share the URL to open the same view again, or reload the page without losing your
 selection.
 
 Thus, in general, the Dashboard gives you a quick understanding of what has changed
@@ -336,8 +335,8 @@ Every point is a score of the selected organization, calculated from its scans:
 
 .. tip:: Hover over any point of the graph to see its date and the value of each line.
 
-Your Choices Are Kept
-'''''''''''''''''''''
+Saved Preferences
+'''''''''''''''''
 
 The panel stores its three choices in the URL of the page, together with the selected
 organization:

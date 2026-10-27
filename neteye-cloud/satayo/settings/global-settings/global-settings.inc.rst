@@ -6,8 +6,9 @@ Global Settings
 The **Global settings** page is available only to users with the
 **Tenant Admin** role and is read-only, as described in
 :ref:`satayo-settings`. It summarizes the intelligence requirements configured
-for your organization. Clearly defined requirements, such as the Priority
-Intelligence Requirements described in
+for your organization, that is the information about your assets and context
+that |sat| needs in order to monitor the threats relevant to you. Clearly
+defined requirements, such as the Priority Intelligence Requirements described in
 :doc:`/neteye-cloud/satayo/threat-intelligence-lifecycle`, allow the analysis
 team to focus on the resources that matter most to you and to respond faster.
 
@@ -17,7 +18,7 @@ web interface and choose **Global settings**.
 Requirements
 ============
 
-The page shows the following requirements.
+The **Global settings** page shows the following requirements.
 
 .. list-table::
    :header-rows: 1

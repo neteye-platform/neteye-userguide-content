@@ -265,7 +265,7 @@ Exposition Categories
 The **Exposition categories** panel is the only panel of the **Dashboard report** section.
 It shows how the exposure of the selected organization evolves over time, and which kinds
 of findings drive it. Use it to see whether exposure is growing or shrinking, to compare
-periods, and to find the finding types that need remediation first.
+periods, and to locate the finding types that need remediation first.
 
 The panel has three dropdowns at the top. Each choice redraws the graph immediately:
 
@@ -304,7 +304,7 @@ granularity, for example to look at the full history or at the last month day by
 A Single Group
 ''''''''''''''
 
-Select a group in the :guilabel:`Show` dropdown to see what makes up its exposure. The graph
+Select a group in the :guilabel:`Show` dropdown to see what its exposure consists of. The graph
 then shows one line for each finding type of the group, for example :guilabel:`Port`,
 :guilabel:`CVE`, and :guilabel:`SSL/TLS` for **Infrastructure**. Each line shows the score
 of that finding type: the higher the line, the more that finding type adds to the exposure

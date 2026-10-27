@@ -61,7 +61,7 @@ three exposure categories described below. The score ranges from **0**, meaning 
 external exposure was detected, to **100**, meaning maximum exposure: the higher the
 value, the greater the potential impact of the information that an attacker could exploit.
 
-.. hint:: Hover over the information icon next to the panel title to see how the index
+.. tip:: Hover over the information icon next to the panel title to see how the index
    is calculated and what the thresholds mean.
 
 The graph below the counter shows how exposure evolved over the same period, with one
@@ -81,7 +81,7 @@ previous month's value so that the trend line stays continuous. The labels on th
 horizontal axis use the ``MM/YY`` format, from the oldest month on the left to the most
 recent one on the right.
 
-.. hint:: Hover over any point of the graph to open a tooltip with the details of that
+.. tip:: Hover over any point of the graph to open a tooltip with the details of that
    month: the reference :guilabel:`Date`, the value of each of the three categories, and
    their :guilabel:`Total`, that is, the EAIV of that month. Use it to compare a past
    month with the current value shown by the counter.
@@ -139,7 +139,7 @@ ticket, or whose ticket is still open or in progress, are not counted in any of 
 this panel focuses on remediation workload, not on overall findings volume, which the
 :guilabel:`Findings` panel already covers.
 
-.. hint:: Select a count to drill down into exactly the findings behind it. You are taken to the
+.. tip:: Select a count to drill down into exactly the findings behind it. You are taken to the
    dedicated :guilabel:`Findings` page, already filtered by the selected group and ticket state,
    so you can start investigating without having to rebuild the filter yourself.
 
@@ -164,7 +164,7 @@ that layer and its percentage of the total number of findings:
   such as onion sites and illegal marketplaces. SATAYO reports this evidence as
   :ref:`Deep & Dark Web findings <deep_dark_web_item>`.
 
-.. hint:: Select the arrow next to a layer to drill down into the findings detected
+.. tip:: Select the arrow next to a layer to drill down into the findings detected
    in that specific source.
 
 New Findings
@@ -189,7 +189,7 @@ require operational handling. When a finding has been acknowledged and a ticket 
 the Dashboard can show the related severity level and make it easier to understand which
 findings are already part of the remediation workflow.
 
-.. hint:: Use this panel during your daily review to detect new exposure early. Start from groups
+.. tip:: Use this panel during your daily review to detect new exposure early. Start from groups
    with the highest number of findings, then check whether any of them have critical severity,
    linked tickets, or a recent increase compared to previous scans. Open the dedicated :guilabel:`Findings`
    page when you need evidence, affected domains, source information, timestamps,
@@ -224,7 +224,7 @@ If no tickets are displayed, it can mean that no tickets were created for the se
 organization and period, or that your account does not have permission to view them.
 In this case, the panel shows an empty state instead of ticket data.
 
-.. hint:: Open the dedicated
+.. tip:: Open the dedicated
    :guilabel:`Tickets` page when you need full ticket management capabilities,
    complete ticket details, comments, ownership information, or the full remediation history.
 
@@ -250,7 +250,7 @@ In this case, the panel shows an empty state instead of ticket data.
    when the issue is already being handled.
 
 
-.. hint:: Use the Findings panel first when you want to understand what SATAYO detected
+.. tip:: Use the Findings panel first when you want to understand what SATAYO detected
    and how exposure is distributed across categories or domains. Then use the
    Tickets panel to understand which of those findings are already acknowledged,
    prioritized, assigned, reviewed, or resolved. Together, the two panels help
@@ -304,7 +304,7 @@ granularity, for example to look at the full history or at the last month day by
 A Single Group
 ''''''''''''''
 
-Select a group in the :guilabel:`Show` dropdown to see what its exposure consists of. The graph
+Select a group in the :guilabel:`Show` dropdown to see what its exposure is comprised of. The graph
 then shows one line for each finding type of the group, for example :guilabel:`Port`,
 :guilabel:`CVE`, and :guilabel:`SSL/TLS` for **Infrastructure**. Each line shows the score
 of that finding type: the higher the line, the more that finding type adds to the exposure
@@ -318,8 +318,8 @@ of the group.
 - The legend under the graph names each line. Select an item in the legend to hide or show
   its line, for example to look at the smaller lines more closely.
 
-How the Points Are Calculated
-'''''''''''''''''''''''''''''
+How Points in the Graph Are Calculated
+''''''''''''''''''''''''''''''''''''''
 
 Every point is a score of the selected organization, calculated from its scans:
 
@@ -334,18 +334,18 @@ Every point is a score of the selected organization, calculated from its scans:
   domains of all your organizations, so viewing several organizations together does not
   inflate the values.
 
-.. hint:: Hover over any point of the graph to see its date and the value of each line.
+.. tip:: Hover over any point of the graph to see its date and the value of each line.
 
 Your Choices Are Kept
 '''''''''''''''''''''
 
-The panel stores its three choices in the address of the page, together with the selected
+The panel stores its three choices in the URL of the page, together with the selected
 organization:
 
 - Reload the page, or open a bookmark, to see the same report again.
-- Share the address with a colleague to show them the same report.
+- Share the URL with a colleague to show them the same report.
 - Use the browser's :guilabel:`Back` button to undo your last choice.
 
 If the data cannot be loaded, the panel shows an error message instead of an empty graph.
-Select :guilabel:`Retry` to load it again. If only a refresh fails, the panel keeps the
-graph that is already shown and warns that it shows the last loaded data.
+Select :guilabel:`Retry` to load it again. If a simple refresh fails, the panel keeps the
+graph that is already shown and warns that it shows the most recently loaded data.

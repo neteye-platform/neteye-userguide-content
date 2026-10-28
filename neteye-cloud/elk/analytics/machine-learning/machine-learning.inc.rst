@@ -24,6 +24,10 @@ Depending on the role defined by the contract with your organization, you might 
 * **EDITOR**: Read
 * **ADMIN**: Read
 
+Machine learning analyses in Kibana run as **jobs**. Jobs are created on request;
+you cannot create or manage them directly with these roles. Once an anomaly
+detection job is running, you can :ref:`review its results <elk-ml-job-results>`.
+
 Kibana supports two types of machine learning: unsupervised and supervised.
 
 Unsupervised Machine Learning

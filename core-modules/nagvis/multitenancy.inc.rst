@@ -11,6 +11,10 @@ As a consequence, NagVis can be used for a basic form of multi-tenancy. If the `
 is set on objects, an Icinga DB role can restrict each user to the objects of their own tenant.
 NagVis then only returns state information for those objects.
 
+Moreover, tenant users can create and edit maps. When adding objects to a map, a user with the
+``nagvis/edit`` permission can only select the objects they have access to, so objects belonging
+to other tenants never appear.
+
 .. warning:: The filter applies to the object's state, not to the map itself. A map is a static definition,
             so an object the user isn't allowed to see is not removed from the map. It is still drawn at its
             position, with its name, but instead of a status it shows an error saying the object does not exist.

@@ -1,6 +1,6 @@
 .. _object_filtering_and_multi-tenancy:
 
-Object filtering and multi-tenancy
+Object filtering and Multi-tenancy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Objects shown on a NagVis map are filtered through the Icinga DB restrictions that apply

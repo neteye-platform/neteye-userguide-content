@@ -1,3 +1,5 @@
+.. _neteye-command-orchestrator-architecture:
+
 Overview
 --------
 

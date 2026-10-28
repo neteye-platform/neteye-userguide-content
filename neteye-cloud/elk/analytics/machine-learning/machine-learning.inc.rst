@@ -12,13 +12,6 @@ large and complex datasets. This is especially useful when there is too much
 data to inspect visually, or when static thresholds alone can't reliably
 identify abnormal behavior.
 
-With Machine Learning, you can:
-
-* **Detect anomalies** in indexed data
-* **Identify unusual changes** in trends, counts or metric values
-* **Analyze patterns** that are difficult to detect manually
-* **Support monitoring and investigation activities** with automated insights
-
 Machine Learning takes you beyond simply observing data to a more proactive
 form of analysis, where you can detect relevant deviations faster and
 investigate them more efficiently.
@@ -37,11 +30,11 @@ Unsupervised Machine Learning
 `````````````````````````````
 
 Unsupervised learning doesn't require a training phase. The system detects
-patterns or unusual behavior directly from the data. The main approaches are
+patterns or unusual behavior itself directly from the data. Main approaches here are
 **anomaly detection** and **outlier detection**.
 
 * `Anomaly detection <https://www.elastic.co/docs/explore-analyze/machine-learning/anomaly-detection>`_
-  works with **time series data**. It builds a probabilistic model of normal
+  works with `time series data <https://en.wikipedia.org/wiki/Time_series>`_. It builds a probabilistic model of normal
   behavior and can run continuously to detect unusual events as they occur.
   Because the model evolves over time, it can also help you forecast future
   behavior.
@@ -57,16 +50,23 @@ patterns or unusual behavior directly from the data. The main approaches are
 Supervised Machine Learning
 ```````````````````````````
 
-Supervised learning requires a **training dataset**. In Kibana, the main
-supervised data frame analytics types are **classification** and
-**regression**.
+Supervised learning requires a **training dataset** that includes known
+outcomes, such as categories for classification or measured values for
+regression. These outcomes may already be available in your historical data;
+otherwise, someone in your organization or an implementation specialist must
+prepare or label the data before training. Here, supervision means learning
+from known outcomes, not a person overseeing each prediction.
+
+In Kibana, the main supervised data frame analytics types are
+**classification** and **regression**.
 
 Both types of analysis produce:
 
 * A trained model
 * An enriched copy of the dataset, with predictions added to each record
 
-You can then deploy the trained model to generate predictions on new data.
+You can then deploy the trained model to generate predictions on new data
+without manually labeling each new record.
 
 * `Classification <https://www.elastic.co/docs/explore-analyze/machine-learning/data-frame-analytics/ml-dfa-classification>`_
   predicts a **category or class**. The model learns from historical data in
@@ -80,10 +80,11 @@ You can then deploy the trained model to generate predictions on new data.
   * A DNS request comes from a malicious or a benign domain
 
 * `Regression <https://www.elastic.co/docs/explore-analyze/machine-learning/data-frame-analytics/ml-dfa-regression>`_
-  predicts a **numerical value**. The model learns the relationship between
-  the available fields and a continuous target value, then estimates that
-  value for new records. Use regression when the expected result is a
-  measurable quantity, for example to estimate:
+  predicts a **numerical value**. During training, the model learns the
+  relationship between input fields and a known numerical outcome in
+  historical records, such as a measured response time. It then uses this
+  relationship to predict that outcome for new records. Use regression when
+  the expected result is a measurable quantity, for example to estimate:
 
   * The response time of a web request
   * A cost

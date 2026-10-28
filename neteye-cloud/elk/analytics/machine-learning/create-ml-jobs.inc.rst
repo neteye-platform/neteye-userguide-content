@@ -3,8 +3,8 @@
 Creating Machine Learning Jobs
 ------------------------------
 
-Machine learning analyses in Kibana run as **jobs**. This section explains
-how to create a generic machine learning job from the Machine Learning area,
+Machine learning analyses in Kibana run as **jobs**. This chapter explains
+how to create a generic machine learning job from the Machine Learning section,
 and how to create an anomaly detection job for APM services from
 Observability.
 
@@ -112,7 +112,7 @@ To create an APM anomaly detection job:
 #. Select **Anomaly detection** and click **Create job**.
 #. Choose the environments to create the job for.
 
-The job is created and appears in the job list. From the job list you
+The job is then created and appears in the job list. From the job list you
 can open the job settings and view the job results.
 
 To understand the results, see :ref:`elk-ml-job-results`.

@@ -18,8 +18,8 @@ buttons that start a specific type of analysis.
 
 Analyze your data
    The main starting point for applying machine learning to your data.
-   From here you can access anomaly detection, to find unusual behavior,
-   and data frame analytics, to run trained analyses on datasets.
+   From here you can access anomaly detection in order to find unusual behavior,
+   and data frame analytics in order to run trained analyses on datasets.
 
 AIOps Labs
    Advanced analysis tools for operational investigations. Use them to

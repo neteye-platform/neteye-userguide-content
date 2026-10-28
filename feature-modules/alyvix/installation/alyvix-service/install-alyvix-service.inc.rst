@@ -1,18 +1,6 @@
 
 Before installing Alyvix Service, first check that your setup meets the system requirements.
 
-.. note::
-
-   You can also view video versions of this page on YouTube:
-
-   * `(4'03") <https://youtu.be/8vRCGsR9Xhc>`__ |smalltab| Install Alyvix Service
-   * `(4'29") <https://youtu.be/ElP_A9XwwpY>`__ |smalltab| Install the *alyvix-neteye* module in |ne|
-   * `(3'05") <https://youtu.be/8sH1AWTOQxo>`__ |smalltab| Enable Alyvix test cases in |ne|
-   * `(7'50") <https://youtu.be/C3GiaQoyhCQ>`__ |smalltab| Run an RDC test case in Alyvix on |ne|
-
-   as well as additional :ref:`introductory videos <alyvix_overview_top>` and
-   :ref:`tutorial videos <alyvix_video_list>`.
-
 .. _alyvix_service_system_requirements:
 
 System Requirements
@@ -103,6 +91,20 @@ the installed versions of Alyvix Core and PostgreSQL.
 
 |
 
+.. note::
+
+   You can also view video versions of this page on YouTube:
+
+   * `(4'03") <https://youtu.be/8vRCGsR9Xhc>`__ |smalltab| Install Alyvix Service
+   * `(4'29") <https://youtu.be/ElP_A9XwwpY>`__ |smalltab| Install the *alyvix-neteye* module in |ne|
+   * `(3'05") <https://youtu.be/8sH1AWTOQxo>`__ |smalltab| Enable Alyvix test cases in |ne|
+   * `(7'50") <https://youtu.be/C3GiaQoyhCQ>`__ |smalltab| Run an RDC test case in Alyvix on |ne|
+
+   as well as additional :ref:`introductory videos <alyvix_overview_top>` and
+   :ref:`tutorial videos <alyvix_video_list>`.
+
+|
+
 
 .. _alyvix_service_installation_steps:
 
@@ -113,9 +115,10 @@ The following steps will install Alyvix Service on your machine:
 
 #. **Request an Alyvix Service subscription**
 
-   Choose your `preferred subscription plan <https://alyvix.com/service#plans>`_ and get in touch with us
-   `to request it <https://alyvix.com/team>`_, providing a machine IP from where you will download the
-   software package.  You'll obtain access to
+   Choose your `preferred subscription plan <https://alyvix.com/service#plans>`_
+   and get in touch with us `to request it <https://alyvix.com/team>`_,
+   providing a machine IP from where you will download the software package.
+   You'll obtain access to
    `our repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_. |br|
 
 #. **Install Alyvix Core**
@@ -126,32 +129,39 @@ The following steps will install Alyvix Service on your machine:
 #. **Install PostgreSQL**
 
    Download and run the most recent version of
-   `the PostgreSQL 12.X installer <https://www.enterprisedb.com/downloads/postgres-postgresql-downloads>`_
-   for the **Windows x86-64** architecture.  Be sure to run it :file:`in administrator mode`.
+   `the PostgreSQL 18.X installer <https://www.enterprisedb.com/downloads/postgres-postgresql-downloads>`_
+   for the **Windows x86-64** architecture.  Be sure to run it
+   **in administrator mode**.
 
-   Click "Next" to accept all the defaults until it asks you to set the password.  Change the
-   default password to ensure the security of your system, and make a note of it so that
-   you can configure Alyvix Service to use PostGre in the next step below.
+   Click "Next" to accept all the defaults until it asks you to set the
+   password.  Change the default password to ensure the security of your system,
+   and make a note of it so that you can configure Alyvix Service to use PostGre
+   in the next step below.
 
    .. image:: /feature-modules/alyvix/installation/alyvix-service/img/postgre-install-05.png
+      :class: image-boxshadow
       :width: 70%
       :align: center
       :alt: Use a secure password and remember it.
 
-   Continue clicking "Next" to accept the remaining defaults and complete the installation. |br|
+   Continue clicking "Next" to accept the remaining defaults and complete the
+   installation. |br|
 
 #. **Install Alyvix Service**
 
-   Download the most recent version of the installer (:file:`alyvix_service_<version>.zip`) from
-   `the repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_, and run the :file:`setup.exe`
-   installer which can be found inside the .zip file :file:`in administrator mode`. |br|
+   Download the most recent version of the installer
+   (:file:`alyvix_service_<version>.zip`) from
+   `the repository <https://repo.wuerth-phoenix.com/alyvix-service/>`_, and run
+   the :file:`setup.exe` installer which can be found inside the .zip file
+   **in administrator mode**. |br|
 
    .. note:: See how to
-      :ref:`alyvix_service_unblock_alyvix_files` in case Windows blocks a downloaded Alyvix Service file.
+      :ref:`alyvix_service_unblock_alyvix_files` in case Windows blocks a
+      downloaded Alyvix Service file.
 
    Set the database password from step #3 as follows:
 
-   * Open the file |config-file-location| :file:`in administrator mode`
+   * Open the file |config-file-location| **in administrator mode**
    * Paste the password into this line: |br1|
      ``"database":{.. "password": "<your_password>", ..}`` |br|
 
@@ -161,22 +171,26 @@ The following steps will install Alyvix Service on your machine:
 
    * Create the folder :file:`C:\\ProgramData\\Alyvix\\certs\\webserver\\`
    * Save :file:`cert.crt` as an HTTPS certificate recognized by your CA
-   * Save :file:`cert.key` as the unencrypted private key corresponding to :file:`cert.crt`
+   * Save :file:`cert.key` as the unencrypted private key corresponding to
+     :file:`cert.crt`
 
-   Note that the private key is all you need, you should not be asked for an additional password.
+   Note that the private key is all you need, you should not be asked for an
+   additional password.
 
-   Next, copy the JSON Web Token (JWT), which is used for API authentication purposes,
-   from your monitoring system to Alyvix Service.
+   Next, copy the JSON Web Token (JWT), which is used for API authentication
+   purposes, from your monitoring system to Alyvix Service.
 
    * Create the folder :file:`C:\\ProgramData\\Alyvix\\certs\\jwt\\`
-   * Copy the JWT certificate file from your monitoring system into the folder above,
-     renaming it to :file:`public.pem`. |br|
+   * Copy the JWT certificate file from your monitoring system into the folder
+     above, renaming it to :file:`public.pem`. |br|
 
 #. **Start Alyvix Service**
 
-   Run **Alyvix Service** within Windows Services **Task Manager > Services Tab > Alyvix Service > Start**
+   Run **Alyvix Service** within Windows Services
+   **Task Manager > Services Tab > Alyvix Service > Start**
 
    .. image:: /feature-modules/alyvix/installation/alyvix-service/img/service-alyvix-restart.png
+      :class: image-boxshadow
       :width: 70%
       :align: center
       :alt: Start the Alyvix Service.
@@ -185,8 +199,9 @@ The following steps will install Alyvix Service on your machine:
 
 #. **Monitoring system integration**
 
-   At this point Alyvix Service is installed and running, and you can now proceed to integrate it
-   :ref:`installing the NetEye-Alyvix module <neteye-modules>` (`neteye-alyvix`) and then
+   At this point Alyvix Service is installed and running, and you can now
+   proceed to integrate it :ref:`installing the NetEye-Alyvix module <neteye-modules>`
+   (`neteye-alyvix`) and then
    :ref:`configuring how it's used within NetEye <alyvix_monitoring_integrations_neteye_checklist>`.
 
 |
@@ -197,7 +212,8 @@ The following steps will install Alyvix Service on your machine:
 Upgrading
 `````````
 
-The following steps will upgrade Alyvix Service to the latest version on your machine:
+The following steps will upgrade Alyvix Service to the latest version on your
+machine:
 
 #. Back up your existing configuration
 
@@ -217,13 +233,16 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
      (:file:`C:\\Program Files\\Alyvix\\Alyvix Service\\` for versions before 2.6.0)
    * Remove old Alyvix Client scheduled tasks:  **Windows Task Scheduler > alyvix_client<..> > delete**
 
-#. Upgrade Alyvix Core
+#. Upgrade Alyvix Core following :ref:`the instructions here <alyvix_core_install_upgrade>` |br|
 
-   Follow :ref:`the instructions here <alyvix_core_install_upgrade>` |br|
+#. *If necessary*, upgrade PostgreSQL -- when upgrading from a version of
+   Alyvix Service earlier than 2.6 to a version 2.7 or higher, you will need to
+   :ref:`upgrade PostGreSQL to version 18.x <alyvix_postgresql_upgrade>`. |br|
 
 #. Install the new version of Alyvix Service
 
-   * Run the Alyvix Service Installer (:file:`setup.exe`) found in the Alyvix Service package
+   * Run the Alyvix Service Installer (:file:`setup.exe`) found in the
+     Alyvix Service package
    * Restore the two backup files and the directory you made in step #1:
 
      * |config-file-location|
@@ -238,13 +257,88 @@ The following steps will upgrade Alyvix Service to the latest version on your ma
 |
 
 
+.. _alyvix_postgresql_upgrade:
+
+Upgrading from PostgreSQL 12 to 18
+``````````````````````````````````
+
+To upgrade from a version of Alyvix Service earlier than 2.6 to a version
+2.7 or higher, follow these steps:
+
+#. Make sure that Alyvix Service is stopped (or uninstalled), and that the
+   PostgreSQL 12 service is still running.
+
+   Start a terminal session in the Postgres 12 installation ``/bin`` folder and
+   launch the ``pg_dump`` command as follows (specifying the backup path and
+   file name, in this case ``C:\backup\alyvix_service_backup.dump``)
+   to ensure your existing database is backed up:
+
+   .. code-block:: doscon
+
+      C:\Program Files\PostgreSQL\12\bin\> pg_dump -U postgres -F c -b -v -f C:\backup\alyvix_service_backup.dump alyvix_service
+
+#. Check that the backup was performed correctly, and to be safe, make a
+   snapshot of the machine on which your DB was running.
+
+#. Go to the Control Panel and uninstall Postgres 12 (including all data):
+
+   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/postgres12-uninstall.png
+      :class: image-boxshadow
+      :width: 75%
+      :align: center
+      :alt: Uninstall Postgres 12
+
+#. Install Postgres 18 with the options shown here:
+
+   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/postgres18-install-directory.png
+      :class: image-boxshadow
+      :width: 75%
+      :align: center
+      :alt: Choose the directory for PostgreSQL 18
+
+   |
+
+   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/postgres18-install-components.png
+      :class: image-boxshadow
+      :width: 75%
+      :align: center
+      :alt: Choose the components to install for PostgreSQL 18
+
+#. Insert the same password that you used for Postgres 12 (if you decide to
+   change the password, you will also need to change it in |config-file-location|):
+
+   .. image:: /feature-modules/alyvix/installation/alyvix-service/img/postgres18-password.png
+      :class: image-boxshadow
+      :width: 75%
+      :align: center
+      :alt: Create a password for PostgreSQL 18
+
+#. Now from your terminal go into the Postgres 18 */bin* folder and create
+   the *alyvix_service* DB with the ``createdb`` command:
+
+   .. code-block:: doscon
+
+      C:\Program Files\PostgreSQL\18\bin\> createdb -U postgres alyvix_service
+
+#. Restore the backup with the ``pg_restore`` command:
+
+   .. code-block:: doscon
+
+      C:\Program Files\PostgreSQL\18\bin\> pg_restore -U postgres -d alyvix_service -v C:\backup\alyvix_service_backup.dump
+
+Finally, if you're following the procedure to upgrade Alyvix Service, return
+to the step where you will next install the new version of Alyvix Service.
+
+|
+
+
 .. _alyvix_service_uninstallation_steps:
 
 Uninstalling Alyvix Service
 ```````````````````````````
 
-The following steps will remove Alyvix Service from your machine.  Basically you will need to reverse
-the steps performed during installation.
+The following steps will remove Alyvix Service from your machine -- basically
+you will need to reverse the steps performed during installation.
 
 #. Disable the relevant Alyvix Nodes within your integrated monitoring system
 
@@ -252,8 +346,9 @@ the steps performed during installation.
    **Start > Computer Management > Services and Applications > Services > Alyvix Service**
 
 #. Uninstall Alyvix Service:
-   **Start > Settings > Apps > Alyvix Service > Uninstall** --
-   if desired, also uninstall PostgreSQL the same way.
+   **Start > Settings > Apps > Alyvix Service > Uninstall**
+
+#. If desired, also uninstall PostgreSQL the same way.
 
 #. Remove these two directories:
 
@@ -273,25 +368,31 @@ Unblock Alyvix Service Files
 
 When Alyvix Service installation files are downloaded from the Internet, Windows
 may mark them with security information known as the Mark of the Web (MOTW).
-In some environments, this can prevent the installer or related files from opening correctly.
+In some environments, this can prevent the installer or related files from
+opening correctly.
 
-If Windows blocks a downloaded Alyvix Service file, the following message may be displayed::
+If Windows blocks a downloaded Alyvix Service file, the following message may
+be displayed::
 
-   This file came from another computer and might be blocked to help protect this computer.
+   This file came from another computer and might
+   be blocked to help protect this computer.
 
-Before starting the Alyvix Service installation, verify that the downloaded files are not blocked.
-Windows may mark files downloaded from the Internet with security information known as the Mark of the Web (MOTW).
-Windows can also propagate this mark from a downloaded ZIP archive to the files extracted from it,
-which can leave the installer or its dependencies blocked.
+Before starting the Alyvix Service installation, verify that the downloaded
+files are not blocked. Windows may mark files downloaded from the Internet with
+security information known as the Mark of the Web (MOTW). Windows can also
+propagate this mark from a downloaded ZIP archive to the files extracted from
+it, which can leave the installer or its dependencies blocked.
 
-Before extracting the Alyvix Service archive, unblock the downloaded ``alyvix_service_<version>.zip`` file.
+Before extracting the Alyvix Service archive, unblock the downloaded
+``alyvix_service_<version>.zip`` file.
 
 To unblock the downloaded ZIP file:
 
 #. Open **File Explorer**.
 #. Locate the downloaded ``alyvix_service_<version>.zip`` file.
 #. Right-click the ZIP file and select **Properties**.
-#. On the **General** tab, check the **Security** section at the bottom of the window.
+#. On the **General** tab, check the **Security** section at the bottom of the
+   window.
 #. If the **Unblock** option is available, select it.
 #. Select **Apply**, then select **OK**.
 #. Extract the unblocked ``alyvix_service_<version>.zip`` archive.
@@ -301,13 +402,16 @@ To unblock the downloaded ZIP file:
 
    Unblock only files downloaded from trusted sources.
 
-If Windows continues to display security warnings for trusted Alyvix Service files:
+If Windows continues to display security warnings for trusted Alyvix Service
+files:
 
 * Make sure Windows and all required applications are up to date.
 * Verify that the files were downloaded from an official or trusted source.
 * Re-download the files if they may have been corrupted.
-* Check whether your organization applies security policies that block downloaded files.
-* Temporarily disable third-party download managers or security software only for testing purposes.
+* Check whether your organization applies security policies that block
+  downloaded files.
+* Temporarily disable third-party download managers or security software only
+  for testing purposes.
 
 |
 

@@ -34,7 +34,7 @@ Unsupervised Machine Learning
 `````````````````````````````
 
 Unsupervised learning doesn't require a training phase. The system detects
-patterns or unusual behavior itself directly from the data. Main approaches here are
+patterns or unusual behavior itself directly from the data. The main approaches here are
 **anomaly detection** and **outlier detection**.
 
 * `Anomaly detection <https://www.elastic.co/docs/explore-analyze/machine-learning/anomaly-detection>`_

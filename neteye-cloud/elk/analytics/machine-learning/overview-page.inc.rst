@@ -39,5 +39,5 @@ Management and documentation
 .. tip::
 
    If you are not sure where to start, explore your data in
-   *Visualize your data* first. Then move to *Analyze your data* for
-   continuous analysis, or to *AIOps Labs* for on-demand investigation.
+   :guilabel:`Visualize your data` first. Then move to :guilabel:`Analyze your data` for
+   continuous analysis, or to :guilabel:`AIOps Labs` for on-demand investigation.

@@ -6,8 +6,8 @@ Investigating Anomalies
 Once an anomaly detection job is running, you can review and investigate its results directly
 in Kibana through two complementary views.
 
-**Anomaly Explorer** gives an overview of
-the anomalies detected by one or more jobs and shows the entities most affected. The
+**Anomaly Explorer** gives an overview of the anomalies detected by one or more jobs and shows the entities most affected.
+It helps users understand when anomalies occurred, which services or transaction types were involved and how severe the detected behavior was.
 
 **Single Metric Viewer** focuses on a single metric series and compares its actual behavior
 with the expected baseline calculated by the model.

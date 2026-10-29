@@ -21,6 +21,23 @@ Select a single **organization** when you want to focus on one monitored perimet
 Select :guilabel:`All Organizations` when you want an aggregated overview across
 all organizations available to you.
 
+The Dashboard contains two tabs:
+
+- **Dashboard overview** shows the panels that summarize the current state of
+  the monitored perimeter, described in the sections below.
+- **Dashboard report** shows how exposure evolves over time, in the
+  :ref:`Exposition Categories <satayo-dashboard-exposition-categories>` panel.
+
+The selected organization applies to both tabs. When you change it, you stay in the
+tab you are viewing. Each tab also keeps its state while you look at the other one,
+so when you switch back, its panels are shown as you left them, without loading again.
+
+The URL in your browser always describes what the Dashboard shows: the selected
+organization and the choices you make in the
+:ref:`Exposition Categories <satayo-dashboard-exposition-categories>` panel. Bookmark or
+share the URL to open the same view again, or reload the page without losing your
+selection.
+
 Thus, in general, the Dashboard gives you a quick understanding of what has changed
 in your monitored perimeter and where you should look first. Start from the overall
 exposure index, then check new findings and related tickets to see which issues need
@@ -43,7 +60,7 @@ three exposure categories described below. The score ranges from **0**, meaning 
 external exposure was detected, to **100**, meaning maximum exposure: the higher the
 value, the greater the potential impact of the information that an attacker could exploit.
 
-.. hint:: Hover over the information icon next to the panel title to see how the index
+.. tip:: Hover over the information icon next to the panel title to see how the index
    is calculated and what the thresholds mean.
 
 The graph below the counter shows how exposure evolved over the same period, with one
@@ -63,7 +80,7 @@ previous month's value so that the trend line stays continuous. The labels on th
 horizontal axis use the ``MM/YY`` format, from the oldest month on the left to the most
 recent one on the right.
 
-.. hint:: Hover over any point of the graph to open a tooltip with the details of that
+.. tip:: Hover over any point of the graph to open a tooltip with the details of that
    month: the reference :guilabel:`Date`, the value of each of the three categories, and
    their :guilabel:`Total`, that is, the EAIV of that month. Use it to compare a past
    month with the current value shown by the counter.
@@ -121,7 +138,7 @@ ticket, or whose ticket is still open or in progress, are not counted in any of 
 this panel focuses on remediation workload, not on overall findings volume, which the
 :guilabel:`Findings` panel already covers.
 
-.. hint:: Select a count to drill down into exactly the findings behind it. You are taken to the
+.. tip:: Select a count to drill down into exactly the findings behind it. You are taken to the
    dedicated :guilabel:`Findings` page, already filtered by the selected group and ticket state,
    so you can start investigating without having to rebuild the filter yourself.
 
@@ -146,7 +163,7 @@ that layer and its percentage of the total number of findings:
   such as onion sites and illegal marketplaces. SATAYO reports this evidence as
   :ref:`Deep & Dark Web findings <deep_dark_web_item>`.
 
-.. hint:: Select the arrow next to a layer to drill down into the findings detected
+.. tip:: Select the arrow next to a layer to drill down into the findings detected
    in that specific source.
 
 New Findings
@@ -171,7 +188,7 @@ require operational handling. When a finding has been acknowledged and a ticket 
 the Dashboard can show the related severity level and make it easier to understand which
 findings are already part of the remediation workflow.
 
-.. hint:: Use this panel during your daily review to detect new exposure early. Start from groups
+.. tip:: Use this panel during your daily review to detect new exposure early. Start from groups
    with the highest number of findings, then check whether any of them have critical severity,
    linked tickets, or a recent increase compared to previous scans. Open the dedicated :guilabel:`Findings`
    page when you need evidence, affected domains, source information, timestamps,
@@ -206,7 +223,7 @@ If no tickets are displayed, it can mean that no tickets were created for the se
 organization and period, or that your account does not have permission to view them.
 In this case, the panel shows an empty state instead of ticket data.
 
-.. hint:: Open the dedicated
+.. tip:: Open the dedicated
    :guilabel:`Tickets` page when you need full ticket management capabilities,
    complete ticket details, comments, ownership information, or the full remediation history.
 
@@ -232,8 +249,102 @@ In this case, the panel shows an empty state instead of ticket data.
    when the issue is already being handled.
 
 
-.. hint:: Use the Findings panel first when you want to understand what SATAYO detected
+.. tip:: Use the Findings panel first when you want to understand what SATAYO detected
    and how exposure is distributed across categories or domains. Then use the
    Tickets panel to understand which of those findings are already acknowledged,
    prioritized, assigned, reviewed, or resolved. Together, the two panels help
    you move from detection to remediation without losing the original evidence.
+
+
+.. _satayo-dashboard-exposition-categories:
+
+Exposition Categories
+`````````````````````
+
+The **Exposition categories** panel is the only panel of the **Dashboard report** section.
+It shows how the exposure of the selected organization evolves over time, and which kinds
+of findings drive it. Use it to see whether exposure is growing or shrinking, to compare
+periods, and to locate the finding types that need remediation first.
+
+The panel has three dropdowns at the top. Each choice redraws the graph immediately:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 18 32 50
+
+   * - Dropdown
+     - Options
+     - Effect
+   * - :guilabel:`Show`
+     - :guilabel:`All groups` (default), :guilabel:`Infrastructure`,
+       :guilabel:`Data, Files & People`, :guilabel:`Deep & Dark Web`
+     - :guilabel:`All groups` draws one line for each exposure category. A single group
+       draws one line for each finding type of that group.
+   * - :guilabel:`Time range`
+     - :guilabel:`All time`, :guilabel:`12 months` (default), :guilabel:`6 months`,
+       :guilabel:`1 month`
+     - The period shown on the horizontal axis. :guilabel:`All time` starts at the first
+       period with data. The panel subtitle repeats the selected period, for example
+       *EAIV - Last 12 months*.
+   * - :guilabel:`Granularity`
+     - :guilabel:`Monthly` (default), :guilabel:`Weekly`, :guilabel:`Daily`
+     - The length of the period that each point of a line represents.
+
+All Groups
+''''''''''
+
+With :guilabel:`All groups` selected, the graph shows the same three exposure categories as
+the :guilabel:`Exposure Assessment Index Value (EAIV)` panel of the Dashboard overview:
+**Infrastructure**, **Data, Files & People**, and **Deep & Dark Web**. It uses the same fixed
+**0–100** scale and the same dashed lines for the :guilabel:`Medium Threshold` (30) and the
+:guilabel:`High Threshold` (60). Unlike the EAIV panel, you can choose the period and the
+granularity, for example to look at the full history or at the last month day by day.
+
+A Single Group
+''''''''''''''
+
+Select a group in the :guilabel:`Show` dropdown to see what its exposure is comprised of. The graph
+then shows one line for each finding type of the group, for example :guilabel:`Port`,
+:guilabel:`CVE`, and :guilabel:`SSL/TLS` for **Infrastructure**. Each line shows the score
+of that finding type: the higher the line, the more that finding type adds to the exposure
+of the group.
+
+- Only the finding types that have a score in the selected period get a line. A group with
+  no scored finding type shows an empty graph.
+- The vertical axis fits the values shown, because the score of a single finding type is
+  usually a few points. Compare the lines with each other, not with the 0–100 scale of
+  :guilabel:`All groups`.
+- The legend under the graph names each line. Select an item in the legend to hide or show
+  its line, for example to look at the smaller lines more closely.
+
+How Points in the Graph Are Calculated
+''''''''''''''''''''''''''''''''''''''
+
+Every point is a score of the selected organization, calculated from its scans:
+
+- With :guilabel:`Monthly`, each point represents one month. For each domain, the most
+  recent scan of that month is used. The labels on the horizontal axis use the ``MM/YY``
+  format.
+- With :guilabel:`Weekly` and :guilabel:`Daily`, each point represents one week (starting
+  on Monday) or one day. For each domain, the most recent scan up to the end of that week
+  or day is used. A line therefore keeps its last value until the next scan changes it.
+- When the organization has more than one domain, a point is the average across its
+  domains. With :guilabel:`All Organizations` selected, it is the average across the
+  domains of all your organizations, so viewing several organizations together does not
+  inflate the values.
+
+.. tip:: Hover over any point of the graph to see its date and the value of each line.
+
+Saved Preferences
+'''''''''''''''''
+
+The panel stores its three choices in the URL of the page, together with the selected
+organization:
+
+- Reload the page, or open a bookmark, to see the same report again.
+- Share the URL with a colleague to show them the same report.
+- Use the browser's :guilabel:`Back` button to undo your last choice.
+
+If the data cannot be loaded, the panel shows an error message instead of an empty graph.
+Select :guilabel:`Retry` to load it again. If a simple refresh fails, the panel keeps the
+graph that is already shown and warns that it shows the most recently loaded data.

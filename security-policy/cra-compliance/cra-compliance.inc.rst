@@ -4,11 +4,12 @@
 Reporting a CRA Incident
 ------------------------
 
-Use the address below to notify |witit| of an event that falls under Article 14 of the
-Cyber Resilience Act, that is:
+Use the reporting button immediately below to notify |witit| of an event that
+falls under `Article 14 <https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng#d1e2337-1-1>`__
+of the Act, that is:
 
- * a **vulnerability in** |neb| **that is being actively exploited**, or
- * a **severe security incident affecting the security of** |neb|.
+ * A **vulnerability in** |neb| **that is being actively exploited**, or
+ * A **severe security incident affecting the security of** |neb|
 
 .. important::
 
@@ -44,18 +45,7 @@ Cyber Resilience Act, that is:
           outline-offset: 2px;
         }
       </style>
-      <script type="text/javascript">
-        window.ATL_JQ_PAGE_PROPS = {
-          "triggerFunction": function (showCollectorDialog) {
-            var trigger = document.getElementById("cra-report-trigger");
-            if (!trigger) { return; }
-            trigger.addEventListener("click", function (event) {
-              event.preventDefault();
-              showCollectorDialog();
-            });
-          }
-        };
-      </script>
+      <script type="text/javascript" src="../_static/cra-report.js"></script>
       <script type="text/javascript" src="https://siwuerthphoenix.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-bxy8hv/b/1/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&amp;collectorId=850240eb"></script>
 
 Please include, as far as it is known to you at the time of reporting:
@@ -70,12 +60,15 @@ Please include, as far as it is known to you at the time of reporting:
 Do not delay the report in order to complete this information. Send what you have and
 follow up afterwards.
 
-.. note:: This address is intended for actively exploited vulnerabilities and severe
-   incidents only. For all other security findings, including vulnerabilities that are not
-   known to be exploited, use the regular channels described in
-   :ref:`Reporting Vulnerabilities <report-vulnerability>`. Reports sent to either address
-   reach the same security team, so a report sent to the wrong address is never lost — it
-   may simply be handled with a different priority.
+.. note:: This address is intended for actively exploited vulnerabilities and
+   severe incidents only. For all other security findings, including
+   vulnerabilities that are **not** known to be exploited, use the regular
+   channels described in :ref:`Reporting Vulnerabilities <report-vulnerability>`.
+   Reports sent to either address reach the same security team, so a report sent
+   to the wrong address is never lost -- it may simply be handled with a
+   different priority.
+
+|
 
 What happens after you report
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,7 +98,7 @@ for example under NIS2, DORA or data protection law.
 
    **Manufacturer:** LEGAL-ENTITY-PLACEHOLDER
 
-   **Trade name:** NetEye
+   **Trade name:** |ne|
 
    **Postal address:** POSTAL-ADDRESS-PLACEHOLDER
 
@@ -114,11 +107,11 @@ for example under NIS2, DORA or data protection law.
    Product Identification
    ----------------------
 
-   **Product name:** NetEye
+   **Product name:** |ne|
 
    **Product type:** Software product with digital elements
 
-   **Editions:** NetEye Core; NetEye Core with additional Feature Modules
+   **Editions:** |ne| Core; |ne| Core with additional Feature Modules
 
    **Version scheme:** see :ref:`NetEye Releases <intro-neteye-releases>`
 
@@ -150,6 +143,8 @@ for example under NIS2, DORA or data protection law.
    The Software Bill of Materials for |ne| is made available to market surveillance authorities
    on reasoned request. Direct such requests to `security.neteye@wuerth-it.com
    <mailto:security.neteye@wuerth-it.com>`_.
+
+|
 
 Related Information
 -------------------

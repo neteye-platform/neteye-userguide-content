@@ -133,4 +133,3 @@ Create a Maps visualization
 ```````````````````````````
 
 For details, see the :ref:`elk-maps` section.
-

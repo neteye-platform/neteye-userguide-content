@@ -77,8 +77,60 @@ follow up afterwards.
    reach the same security team, so a report sent to the wrong address is never lost — it
    may simply be handled with a different priority.
 
-What happens after you report
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|
+
+
+Manufacturer and Contact
+------------------------
+
+.. list-table::
+   :width: 75%
+   :widths: 30 70
+   :header-rows: 0
+
+   * - **Manufacturer:**
+     - Würth IT Italy S.r.l.
+   * - **Trade name:**
+     - NetEye
+   * - **Postal address:**
+     - Via Johann Kravogl 4, 39100 Bolzano BZ, Italy
+   * - **VAT ID:**
+     - 01054690217
+   * - **Email:**
+     - info.italy@wuerth-it.com
+   * - **Website:**
+     - https://www.wuerth-it.it
+
+To report vulnerabilities, see `Reporting Vulnerabilities <report-vulnerability>`.
+For incidents and actively exploited vulnerabilities under Article 14 of the
+Cyber Resilience Act, see Cyber Resilience Act Compliance.
+
+|
+
+
+Product Identification
+----------------------
+
+.. list-table::
+   :width: 75%
+   :widths: 30 70
+   :header-rows: 0
+
+   * - **Product name:**
+     - NetEye
+   * - **Product type**
+     - Software product with digital elements (full managed and self managed
+       monitoring platform)
+   * - **Editions**
+     - NetEye; NetEye with additional Feature Modules
+   * - **Version scheme**
+     - 4.x, released on a two-month cycle
+
+|
+
+
+What Happens After You Report
+-----------------------------
 
     #. We acknowledge your report and assess whether it meets the criteria of Article 14.
     #. Where it does, we notify the competent CSIRT and ENISA within the statutory deadlines
@@ -94,36 +146,6 @@ for example under NIS2, DORA or data protection law.
 
 .. Commented out for future work: the sections below are placeholders / pending
    CRA obligations. Re-enable once the content has been completed.
-
-   Manufacturer Information
-   ------------------------
-
-   .. todo:: Complete before publication. The legal entity, the postal address and a single
-      verified contact address must be stated here. The user guide currently shows two different
-      contact domains, and the footer names a different legal entity than the one used in the
-      CRA documentation.
-
-   **Manufacturer:** LEGAL-ENTITY-PLACEHOLDER
-
-   **Trade name:** NetEye
-
-   **Postal address:** POSTAL-ADDRESS-PLACEHOLDER
-
-   **Contact:** CONTACT-EMAIL-PLACEHOLDER
-
-   Product Identification
-   ----------------------
-
-   **Product name:** NetEye
-
-   **Product type:** Software product with digital elements
-
-   **Editions:** NetEye Core; NetEye Core with additional Feature Modules
-
-   **Version scheme:** see :ref:`NetEye Releases <intro-neteye-releases>`
-
-   When contacting us about a security matter, always state the full version and build
-   identifier of the installation concerned.
 
    EU Declaration of Conformity
    ----------------------------
@@ -150,6 +172,9 @@ for example under NIS2, DORA or data protection law.
    The Software Bill of Materials for |ne| is made available to market surveillance authorities
    on reasoned request. Direct such requests to `security.neteye@wuerth-it.com
    <mailto:security.neteye@wuerth-it.com>`_.
+
+|
+
 
 Related Information
 -------------------

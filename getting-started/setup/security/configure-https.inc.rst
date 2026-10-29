@@ -175,3 +175,5 @@ instance use::
 If you are on a cluster use::
 
      # pcs resource restart httpd
+
+|

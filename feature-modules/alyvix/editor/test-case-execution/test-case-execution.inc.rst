@@ -20,13 +20,11 @@ cases work properly during the development and testing phase, and that will
 give you human-readable output.
 
 * Calling Robot from :ref:`within Alyvix Editor <alyvix_editor_run_script>`
-  via the ``Run`` button to run the script currently in Editor (note that in
+  via the |alyvix-runblue| button to run the script currently in Editor (note that in
   this mode you cannot export the resulting timing data)
 * Calling Robot from the Command Prompt, passing it the name of a test case
   object, and using the default **-\ -mode** option with the ``alyvix``
   :ref:`option set <alyvix_robot_cli_options>`
-
-.. todo: |runblue|
 
 In either case, one test case is executed at a time.
 
@@ -200,10 +198,6 @@ When run from the command prompt with the default **-m alyvix** parameter,
 Alyvix Robot will return human-readable output like the following when
 successful:
 
-.. todo: :iconlink:`video||videos_and_tutorials/operations_tutorials.html#operations-tutorials-outputcomposition`
-
-.. todo: It would be better if the link pointed to our specific video tutorial rather than YouTube directly
-
 .. code-block::
    :class: no-copybutton
 
@@ -254,8 +248,6 @@ For instance, the following example might be output after running
 :ref:`the script <alyvix_editor_scripting_panel_top>`
 ``FOR:my_map``\ ``Run:dataentry`` (note that individual map results appear in
 the output with the pattern *<object_name>_<map_name>-<key_name>*):
-
-.. todo: |for|:forblock:`my_map`\ |run|:runblock:`dataentry`
 
 .. code-block::
    :class: no-copybutton
@@ -365,12 +357,10 @@ Alyvix Cipher for Encryption
 You can use a combination of a cipher and a private key to protect sensitive
 information and credentials such as user names and passwords when for instance
 you need to log in to a protected application or website.
-The ``Video Tutorials section`` provides
-examples of how you can do this using Microsoft's RDC and Citrix,
+The :ref:`Video Tutorials <alyvix_videos_list_production_systems_tutorials>`
+provides examples of how you can do this using Microsoft's RDC and Citrix,
 while a :ref:`written tutorial <alyvix_example_test_case_authentication>` in the
 Getting Started section shows an example web app login.
-
-.. todo: :ref:`Video Tutorials <production_systems_tutorials_top>`
 
 To encrypt a string, supply the text to be encrypted and your private key as
 arguments to the *alyvix_cipher* command in a command prompt:
@@ -427,7 +417,10 @@ Alyvix makes a series of screen captures multiple times a second in a process
 called ``frame grabbing``. The system hardware determines exactly when a frame
 is grabbed.
 
-.. todo: videos_and_tutorials/operations_tutorials.html#operations-tutorials-measurement
+.. note::
+   You can find a video explanation about how Alyvix measures time in the
+   :ref:`video section <alyvix_videos_list_operations_tutorials>`,
+   or directly `on YouTube <https://youtu.be/4AJz-LzXwmE>`__.
 
 At regular intervals, Alyvix takes one of those frames and tries to
 ``detect objects`` within it. The set of objects to look for is defined in the

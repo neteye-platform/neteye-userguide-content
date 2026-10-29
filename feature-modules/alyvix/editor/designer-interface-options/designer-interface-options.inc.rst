@@ -62,7 +62,8 @@ assigned to that row's component.
 Root Component Options
 ++++++++++++++++++++++
 
-The root element options take effect when the test case object is `first executed <https://alyvix.com/learn/test_case_execution.html#test-case-execution-top>`__.
+The root element options take effect when the test case object is
+:ref:`first executed <alyvix_robot_result_cli_measures>`.
 These options allow you to set up the proper environment for
 the application you want to automate, which is especially helpful when a test case object
 will be the very first :ref:`scripted node <alyvix_editor_scripting_panel_top>`.
@@ -120,9 +121,9 @@ processes, allowing you to make a quick selection with just a few keystrokes.
 .. rubric:: Image Type Options
 
 The *image* component corresponds to the pixel-by-pixel representation of the selection or
-subselection on the captured screen, such as an icon.  As shown here, it has the following
+subselection on the captured screen, such as an icon. As shown here, it has the following
 options to choose which visual aspect of the image to match against (an Operations tutorial
-video is available that `explains the image options <https://alyvix.com/learn/videos_and_tutorials/operations_tutorials.html#operations-tutorials-image>`__):
+video is available that :ref:`explains the image options <alyvix_videos_list_operations_tutorials>`):
 
 .. image:: images/ad-type-submenu-image-sized.png
    :class: image-boxshadow zoomable-image
@@ -143,8 +144,7 @@ video is available that `explains the image options <https://alyvix.com/learn/vi
 
 The *rect* component corresponds to a rectangular region on the captured screen, such as
 buttons, text boxes, panels or windows.  As shown here, it has the following options (an
-Operations tutorial video is available that
-`explains the rect options <https://alyvix.com/learn/videos_and_tutorials/operations_tutorials.html#operations-tutorials-rect>`__):
+Operations tutorial video is available that :ref:`explains the rect options <alyvix_videos_list_operations_tutorials>`):
 
 .. image:: images/ad-type-submenu-rect-sized.png
    :class: image-boxshadow zoomable-image
@@ -191,8 +191,9 @@ limitations to note:
 
     * **Regex**  The scraped (recognized) text is considered matched only if it satisfies the
       regular expression in the :guilabel:`Regex` field, once normalized as lower cased strings.
-      (An Operations tutorial video is available that `explains the regex options
-      <https://alyvix.com/learn/videos_and_tutorials/operations_tutorials.html#operations-tutorials-regex>`__).  The regular expression syntax is governed by the
+      (An Operations tutorial video is available that
+      :ref:`explains the regex options <alyvix_videos_list_operations_tutorials>`).
+      The regular expression syntax is governed by the
       `Python Regular Expression library <https://docs.python.org/3.9/library/re.html>`_.
 
       A green background color in the Regex field indicates the regex matches the scraped text, red
@@ -237,9 +238,10 @@ in the component tree.
    :alt: The mouse action selection dropdown.
 
 An **Action** creates a mouse event corresponding to one of the six types listed below
-(an Operations tutorial video is available which `explains the individual Action
-options <https://alyvix.com/learn/videos_and_tutorials/operations_tutorials.html#operations-tutorials-actions>`__).  By default, the mouse position will be set to
-the center of the component's selection or subselection.
+(an Operations tutorial video is available which
+:ref:`explains the individual Action options <alyvix_videos_list_operations_tutorials>`).
+By default, the mouse position will be set to the center of the component's
+selection or subselection.
 
     * **None (default):**  Don't perform any mouse action when a component is matched.  No mouse
       icon will be displayed to the right of the component.

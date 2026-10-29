@@ -50,9 +50,8 @@ while measuring response time.
 * Use the encrypted credentials in the login fields (Alyvix will automatically decrypt them)
 * Do a simple task and then log out
 
-|
-
-.. todo:  You can find further examples, conceptual descriptions, and production-oriented use
-          cases on the :ref:`Video Tutorials <video_tutorials_top>` page.
+.. note::
+   You can find further examples, conceptual descriptions, and production-oriented use
+   cases on the :ref:`Video Tutorials <alyvix_videos_list_top>` page.
 
 |

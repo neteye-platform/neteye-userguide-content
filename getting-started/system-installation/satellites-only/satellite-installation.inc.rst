@@ -1,3 +1,5 @@
+.. _neteye-satellite-install:
+
 A **Satellite** is a |ne| instance which depends on a main |ne|
 installation, the **Master**, and carries out tasks such as:
 
@@ -40,7 +42,7 @@ met for Satellites to operate properly.
      curl -I https://repo.wuerth-phoenix.com/rhel8/neteye-$DNF0
 
   In case the status code received in the output is other than ``200 OK``,
-  please open a ticket on the |support|_.
+  please open a ticket on |support|_.
 
 * The NATS connection between Master and Satellite is always initiated
   by the **Satellite**, not by the Master

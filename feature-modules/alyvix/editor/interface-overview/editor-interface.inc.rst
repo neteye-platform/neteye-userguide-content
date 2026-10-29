@@ -126,7 +126,7 @@ the Editor window will return, and the output will appear in the Console tab at 
 
 The structure of the output is the same regardless of whether the test case is started in Editor or
 run in the command prompt.  The effect of the *Break* and *Measure* flags are described in detail in
-the `Test Execution <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-result-cli>`__ section of the official Alyvix Guide.
+the :ref:`Test Execution <alyvix_robot_result_cli>` section of the official Alyvix Guide.
 
 If a failure was caused by a simple sequential scripting node, then the annotated screenshot
 describing the failure will be displayed below the output in the Console tab:
@@ -146,5 +146,5 @@ indicates where Alyvix expected to find the Paste icon.
 .. note::
 
    Note that currently
-   `arguments such as a private key and the verbosity level <https://alyvix.com/learn/test_case_execution.html#alyvix-robot-cli-launch>`__
+   :ref:`arguments such as a private key and the verbosity level <alyvix_robot_cli_launch>`
    for Alyvix Robot cannot be set within Editor.

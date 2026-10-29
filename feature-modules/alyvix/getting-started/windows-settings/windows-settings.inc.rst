@@ -18,10 +18,8 @@ Editor will load the :file:`start-test.alyvix` test case created in the previous
 .. rubric:: 2. Capture
 
 We want to capture the screen once the Start menu has already opened, so change
-the delay number in ``Delay [sec] 0`` from ``0`` to something higher like ``5``,
-then click on ``ADD``.
-
-.. todo: :nobutton:
+the delay number in :nobutton:`Delay [sec] 0` from ``0`` to something higher
+like ``5``, then click on :nobutton:`ADD`.
 
 You'll then have 5 seconds to open the Windows Start Menu (just click on the
 Start button yourself within that time limit) before Alyvix captures the screen.
@@ -74,11 +72,9 @@ object from :guilabel:`VisualObject1` to a new one like :guilabel:`PressSettings
 
 .. rubric:: 6. Script
 
-Using its ``4arrows-icon`` icon seen above, drag the new test case object into the
-Scripting panel underneath the existing script element (similarly, clicking the
-``lineadd-icon`` icon will add it to the end of the script):
-
-.. todo: |4arrows-icon| |lineadd-icon|
+Using its ``4 arrows icon`` icon seen above, drag the new test case object
+into the Scripting panel underneath the existing script element (similarly,
+clicking the |alyvix-lineadd-icon| icon will add it to the end of the script):
 
 .. image:: img/ae_second_script_element.png
    :class: image-boxshadow
@@ -89,18 +85,14 @@ Scripting panel underneath the existing script element (similarly, clicking the
 
 .. rubric:: 7. Run
 
-Now call Alyvix Robot by pressing the ``Run`` button at the top left. You'll
+Now call Alyvix Robot by pressing the |alyvix-runblue| button at the top left. You'll
 see the Start Menu open, and then a few seconds later a click on the Settings
 icon, at which point the Windows Settings app will open.
 
-.. todo: |runblue|
-
 .. rubric:: 8. Result
 
-At the top of Editor, open the ``Console`` panel.  This contains the
+At the top of Editor, open the :nobutton:`Console` panel.  This contains the
 timing results for each script element.
-
-.. todo: :nobutton:
 
 .. image:: img/ae_console_panel_result.png
    :class: image-boxshadow
@@ -109,9 +101,7 @@ timing results for each script element.
 
 |
 
-Finally, save and exit Alyvix Editor using the ``SAVE`` and
-``EXIT`` buttons at the top.
-
-.. todo: :nobutton:
+Finally, save and exit Alyvix Editor using the :nobutton:`SAVE` and
+:nobutton:`EXIT` buttons at the top.
 
 |

@@ -45,11 +45,11 @@
    <i class="fa fa-smaller fa-arrows"></i>
 
 .. |alyvix-lineadd-icon| image:: /feature-modules/alyvix/editor/images/lineadd-icon.png
-   :class: inline-image-higher
+   :class: inline-image-lower
    :width: 5%
 
 .. |alyvix-runblue| image:: /feature-modules/alyvix/editor/images/button-run-blue.png
-   :class: inline-image-higher button-boxshadow
+   :class: inline-image-lower button-boxshadow
    :width: 10%
 
 .. |alyvix-mousearrow| image:: /feature-modules/alyvix/editor/images/icon-mouse-click-left-point-inline.png
@@ -167,6 +167,9 @@
 
 .. role:: tablecell-type
    :class: tablecell-type
+
+.. role:: alykbd
+   :class: alykbd
 
 
 .. ### Alyvix Editor command keywords

@@ -23,11 +23,11 @@ There are three main tools for building test cases:
 For almost all cases, Alyvix Editor (which includes Designer and Selector) is all you'll need.
 
 Once you've built a test case, you can let it interact with your chosen app either by using
-`Alyvix Robot <https://alyvix.com/learn/test_case_execution.html#test-case-execution-top>`__, or testing it directly within Editor.
+:ref:`Alyvix Robot <alyvix_test_case_execution_top>`, or testing it directly within Editor.
 
-The `Test Case Data Format <https://alyvix.com/learn/test_case_data_format.html#test-case-data-format-top>`__ page provides technical details on how
-Alyvix test case files are organized and what they contain, while the
-`Getting Started <https://alyvix.com/learn/getting_started.html#getting-started-top>`__ section and official
+The :ref:`Test Case Data Format <alyvix_test_case_data_format_top>` page provides technical
+details on how Alyvix test case files are organized and what they contain, while the
+:ref:`Getting Started <alyvix_getting_started_top>` section and official
 `YouTube channel <https://www.youtube.com/@alyvix8723>`_
 include detailed mini-tutorials and topic-based videos on how to use Alyvix Editor and Robot.
 

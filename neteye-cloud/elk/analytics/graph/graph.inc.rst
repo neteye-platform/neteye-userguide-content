@@ -32,7 +32,7 @@ Depending on the role defined by the contract with your organization, you might 
 * **ADMIN**: Create, Read, Update and Delete
 
 Creating a Graph
-----------------
+````````````````
 
 #. Click the **Create graph** button.
 

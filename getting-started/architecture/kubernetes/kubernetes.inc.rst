@@ -65,6 +65,42 @@ and then in the k9s interface, you can navigate to the "Nodes" view to see the s
 
 For more information on their usage and options, please refer to the official documentation.
 
+.. _kubernetes-custom-workloads:
+
+Custom workloads on Kubernetes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can deploy your own services on the Kubernetes cluster of |ne|. Follow the best practices in this section, so that
+your custom workloads do not interfere with the |ne| components.
+
+Namespaces for custom workloads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|ne| and RKE2 use dedicated namespaces for their components. Do not deploy custom workloads in these namespaces:
+
+- All namespaces whose name starts with ``neteye-``, for example ``neteye-system`` and ``neteye-tenant-shared``
+- The namespaces of the components that |ne| installs: ``keycloak-system``, ``olmv1-system`` and ``cert-manager``
+- The Kubernetes system namespaces: ``kube-system``, ``kube-public`` and ``kube-node-lease``
+
+|ne| manages the content of these namespaces. Custom resources in these namespaces can interfere with the |ne|
+components, and |ne| does not guarantee that they are kept during an update or an upgrade.
+
+Instead, create one or more dedicated namespaces for your custom workloads, for example one namespace for each
+application. Do not use the ``neteye-`` prefix for the name of these namespaces, because |ne| can use new
+``neteye-*`` namespaces in future releases.
+
+To list the namespaces that already exist, run the following command:
+
+.. code-block:: bash
+
+   kubectl get namespaces
+
+To create a dedicated namespace, for example ``my-application``, run the following command:
+
+.. code-block:: bash
+
+   kubectl create namespace my-application
+
 .. _kubernetes_networking_architecture:
 
 Kubernetes Networking

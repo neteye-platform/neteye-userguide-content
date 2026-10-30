@@ -89,6 +89,65 @@ information on the :file:`dnf.conf` options):
   proxy_username="myuser"
   proxy_password="mypassword"
 
+.. _nodes_behind_proxy_configuring_rke2:
+
+Configuring RKE2
+~~~~~~~~~~~~~~~~
+
+|ne| uses RKE2 to run its :ref:`Kubernetes <kubernetes_architecture>` components. RKE2 runs as a systemd service and
+does not read the file :file:`/etc/profile.d/neteye-proxy.sh`. For this reason, you must configure the proxy for RKE2
+separately, for example to let the container runtime pull images from the Internet.
+
+On each |ne| Node, add the proxy settings to the file
+:file:`/neteye/local/rke2/conf/sysconfig/rke2-user-customization`. Create the file if it does not exist. |ne| does not
+overwrite this file during an update or an upgrade.
+
+.. code:: bash
+
+   HTTP_PROXY=http://<proxy_username>:<proxy_password>@<proxy_ip>:<proxy_port>
+   HTTPS_PROXY=http://<proxy_username>:<proxy_password>@<proxy_ip>:<proxy_port>
+   NO_PROXY=localhost,127.0.0.1,127.0.0.2,::1,neteyelocal # (in a cluster:,<cluster_node_ips>)
+
+RKE2 passes these variables to the container runtime (containerd), to the kubelet and to the Kubernetes control plane
+components. RKE2 automatically adds the Pod CIDR, the Service CIDR and the cluster domain to ``NO_PROXY``, so you do
+not need to add them.
+
+The ``neteyelocal`` entry is mandatory, because the RKE2 nodes connect to each other through the
+``rke2.neteyelocal`` hostname. If the node is part of a cluster, also add the IPs of each node in the cluster, as
+explained in :ref:`nodes_behind_proxy_configuring_the_environment`. Unlike the variables in
+:file:`/etc/profile.d/neteye-proxy.sh`, ``NO_PROXY`` for RKE2 also accepts networks in CIDR notation, for example
+``192.168.1.0/24``.
+
+With the configuration mentioned above, when the node is not part of a cluster, the file could look like this:
+
+.. code:: bash
+
+   HTTP_PROXY=http://myuser:mypassword@proxy.example.com:12345
+   HTTPS_PROXY=http://myuser:mypassword@proxy.example.com:12345
+   NO_PROXY=localhost,127.0.0.1,127.0.0.2,::1,neteyelocal
+
+.. tip::
+
+   If only the container runtime must use the proxy, use the variables ``CONTAINERD_HTTP_PROXY``,
+   ``CONTAINERD_HTTPS_PROXY`` and ``CONTAINERD_NO_PROXY`` instead. RKE2 passes these variables only to containerd.
+   Refer to the `RKE2 documentation <https://docs.rke2.io/advanced#configuring-an-http-proxy>`_ for more information.
+
+If RKE2 is already running on the node, restart the RKE2 service to apply the new settings. On nodes with the
+``kubernetes-master`` role, and on Single Nodes, run:
+
+.. code:: bash
+
+   # systemctl restart rke2-server
+
+On nodes with only the ``kubernetes-worker`` role, run:
+
+.. code:: bash
+
+   # systemctl restart rke2-agent
+
+In a cluster, restart the RKE2 service on one node at a time, and wait until the node is ``Ready`` in the output of
+:command:`kubectl get nodes` before you continue with the next node.
+
 Configuring Kibana
 ~~~~~~~~~~~~~~~~~~
 

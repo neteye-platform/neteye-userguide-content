@@ -9,3 +9,4 @@
    analytics/canvas.rst
    analytics/maps.rst
    analytics/machine-learning.rst
+   analytics/graph.rst

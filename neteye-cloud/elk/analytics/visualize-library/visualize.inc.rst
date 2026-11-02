@@ -3,7 +3,7 @@
 Visualize Library
 ~~~~~~~~~~~~~~~~~
 
-**Visualize Library** is where you create, store and manage reusable
+**Visualize Library** is where you create, store and manage *reusable*
 visualizations, such as charts, tables, metrics and maps. Each
 visualization is saved as its own object, separate from any dashboard, so
 you can find, open and maintain all your visualizations in one place.
@@ -34,9 +34,9 @@ places:
 * **Overview:** the library lists all saved visualizations, so you can check
   what already exists before you build something new.
 
-You build a visualization the same way in Visualize Library and in a
+You build a visualization the same way in Visualize Library as you do a
 Dashboard. The only difference is where it's saved. Use a chart inside a
-Dashboard for something only that dashboard needs, and Visualize Library for
+Dashboard for something that particular dashboard needs, and Visualize Library for
 anything you plan to reuse or share.
 
 .. rubric:: Roles and Permissions
@@ -72,20 +72,20 @@ drag it onto the chart, or drop it into the :guilabel:`Horizontal axis`,
 
 To create a Lens visualization:
 
-1. **Select the data view:** Choose the dataset you want to work with. The
+#. **Select the data view:** Choose the dataset you want to work with. The
    list of available fields depends on this choice.
 
    .. image:: images/visualize-library-lens-select-data-view.png
       :alt: Select data view
 
-2. **Choose the visualization type:** Lens suggests a chart type based on
+#. **Choose the visualization type:** Lens suggests a chart type based on
    the fields you add. You can switch to another type at any time: bar,
    line, area, pie, table, metric or heat map.
 
    .. image:: images/visualize-library-choose-type.png
       :alt: Choose visualization type
 
-3. **Add fields:** Each field plays one of two roles in the chart:
+#. **Add fields:** Each field plays one of two roles in the chart:
 
    * **Dimension:** defines how the data is grouped, for example along the
      horizontal axis or as a breakdown.
@@ -95,7 +95,7 @@ To create a Lens visualization:
    over time, text or categorical fields split data into categories, and
    numeric fields are aggregated into values.
 
-4. **Configure the fields:** Click a field in the chart configuration to
+#. **Configure the fields:** Click a field in the chart configuration to
    choose how it's processed.
 
    For metrics:
@@ -126,7 +126,7 @@ To create a Lens visualization:
    .. image:: images/visualize-lens-config-example.png
       :alt: Example Lens chart
 
-5. **Save the visualization:** When the visualization is ready, save it to
+#. **Save the visualization:** When the visualization is ready, save it to
    Visualize Library so it can be reused, or add it directly to a dashboard.
 
 Create a Maps visualization

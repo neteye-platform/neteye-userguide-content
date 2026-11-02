@@ -3,4 +3,3 @@
 
 .. toctree::
    :maxdepth: 2
-

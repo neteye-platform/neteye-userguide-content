@@ -3,5 +3,3 @@
 
 .. toctree::
    :maxdepth: 2
-
-   observability/alerts.rst

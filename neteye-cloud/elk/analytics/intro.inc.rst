@@ -28,6 +28,8 @@ structured views:
 * **Maps**: show geospatial data on interactive maps.
 * **Machine Learning**: analyze data to detect anomalies and identify
   patterns automatically.
+* **Graph**: explore connections and relationships between values in your
+  indexed data.
 
 The search bar, filters and time picker work the same way in every Analytics
 application. They're explained in detail in the Discover chapter, and the

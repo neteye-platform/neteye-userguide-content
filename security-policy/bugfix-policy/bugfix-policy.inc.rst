@@ -44,6 +44,24 @@ You should upgrade your installations when a bug fix release becomes available t
 the latest security fixes have been applied.
 
 
+.. unsupported-releases:
+
+Unsupported Releases
+~~~~~~~~~~~~~~~~~~~~
+
+Older NetEye releases remain available for reference and for existing
+installations. They do not receive security fixes.
+
+Running a release that is outside its security support period means that known
+vulnerabilities in that release will not be corrected, including vulnerabilities
+that are publicly disclosed and actively exploited. Operators running such a
+release should either upgrade to a supported release or document compensating
+controls in their own risk assessment.
+
+.. Commented for future work: Add "(see Support Period in the CRA section)"
+   w/link in Parag2-Sent1
+
+
 ..  _severity-levels:
 
 Severity Levels

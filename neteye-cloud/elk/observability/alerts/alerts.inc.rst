@@ -19,12 +19,12 @@ Key capabilities include:
   evaluation schedules and notification channels.
 
 The Alerts page lists all alerts in the selected time range. Use the
-**Show all**, **Active**, **Recovered** and **Untracked** tabs to filter
-them by status, and the search bar to filter by any alert field. The chart
-shows how alerts are distributed over time, and the table below it gives the
-status, duration and reason of each alert. The counters in the top right
-summarize the rules in your environment; click **Manage Rules** to open the
-list of rules.
+:guilabel:`Show all`, :guilabel:`Active`, :guilabel:`Recovered` and
+:guilabel:`Untracked` tabs to filter them by status, and the search bar to
+filter by any alert field. The chart shows how alerts are distributed over
+time, and the table below it gives the status, duration and reason of each
+alert. The counters in the top right summarize the rules in your
+environment; click :guilabel:`Manage Rules` to open the list of rules.
 
 .. figure:: /neteye-cloud/elk/observability/alerts/img/alerts-page.png
    :alt: Alerts page with status filters, alert chart and alert table
@@ -53,11 +53,11 @@ Create and Manage Rules
 Alert rules continuously evaluate data streams against predefined
 conditions.
 
-You can manage existing rules from the global **Rules** view to adjust
-thresholds, modify evaluation intervals or mute noisy alerts. The view lists
-every rule with its type, last run, last response and state, and lets you
-enable, disable, edit or delete rules. Click :guilabel:`Create rule` to
-define a new one.
+You can manage existing rules from the global :guilabel:`Rules` view to
+adjust thresholds, modify evaluation intervals or mute noisy alerts. The
+view lists every rule with its type, last run, last response and state, and
+lets you enable, disable, edit or delete rules. Click :guilabel:`Create
+rule` to define a new one.
 
 .. figure:: /neteye-cloud/elk/observability/alerts/img/rules-page.png
    :alt: Rules page listing existing rules with the Create rule button
@@ -84,10 +84,14 @@ managing rules
    **Contextual alert creation**
 
    Alert rules don't need to be built exclusively from the dedicated Alerts
-   menu. When analyzing services in **APM**, inspecting nodes in
-   **Infrastructure** or querying logs, you can create rules directly from
-   the current view. The rule creation wizard automatically inherits the
-   filters, service scope and metrics of your active session.
+   menu. When analyzing services in :guilabel:`APM`, inspecting nodes in
+   :guilabel:`Infrastructure` or querying logs in
+   :ref:`Discover <elk-discover>`, you can create rules directly from the
+   current view. The rule creation wizard automatically inherits the
+   filters, service scope and metrics of your active session. For an
+   overview of these applications, see :ref:`elk-observability`; both
+   examples at the end of this chapter create their rules this way, starting
+   from the APM service inventory.
 
 Connectors
 ``````````
@@ -104,8 +108,8 @@ Supported destinations include:
 * **Ticketing systems**: automated incident or issue generation (for example
   Jira or ServiceNow).
 
-Connectors are managed in **Stack Management > Connectors**. Click
-:guilabel:`Create connector` to add a new destination. Configuration
+Connectors are managed in :menuselection:`Stack Management --> Connectors`.
+Click :guilabel:`Create connector` to add a new destination. Configuration
 parameters (such as API tokens, endpoints and credentials) are managed
 centrally by administrators to ensure secure and reusable channel
 definitions across multiple alert rules.
@@ -123,31 +127,32 @@ Example 1: Service Latency Threshold (Static Rule)
 Use threshold rules when you have clear, predefined Service Level
 Objectives (SLOs):
 
-#. Navigate to **APM > Service inventory**, select the target service and
-   click **Alerts > Create threshold rule > Latency**.
+#. Navigate to :menuselection:`APM --> Service inventory`, select the
+   target service and click :menuselection:`Alerts --> Create threshold rule
+   --> Latency`.
 
    .. figure:: /neteye-cloud/elk/observability/alerts/img/create-threshold-rule-example.png
       :alt: Service inventory with the Alerts menu open and Create threshold rule highlighted
       :align: center
 
-#. **Define conditions**: the Create rule wizard opens on the
-   **Definition** step. Specify the service, transaction type (for example
-   ``request``) and environment, and set the latency criteria (for example
-   *average latency is above 1500 ms* for the last 5 minutes). In **Group
-   alerts by** choose the fields that produce separate alerts, and in
-   **Rule schedule** set how often the conditions are checked. Click
-   :guilabel:`Next`.
+#. **Define conditions**: the :guilabel:`Create rule` wizard opens on the
+   :guilabel:`Definition` step. Specify the service, transaction type (for
+   example ``request``) and environment, and set the latency criteria (for
+   example *average latency is above 1500 ms* for the last 5 minutes). In
+   :guilabel:`Group alerts by` choose the fields that produce separate
+   alerts, and in :guilabel:`Rule schedule` set how often the conditions
+   are checked. Click :guilabel:`Next`.
 
    .. figure:: /neteye-cloud/elk/observability/alerts/img/create-threshold-rule-details-example.png
       :alt: Definition step of the Create rule wizard for a latency threshold rule
       :align: center
 
-#. **Configure action**: in the **Actions** step, select an existing
-   notification connector (for example *Teams Operations Channel*) and set
-   the notification frequency to *On status change*.
-#. **Save**: in the **Details** step, assign a descriptive rule name (for
-   example ``[Prod] Web Service Latency Warning``), add tags if needed and
-   save the rule.
+#. **Configure action**: in the :guilabel:`Actions` step, select an
+   existing notification connector (for example *Teams Operations Channel*)
+   and set the notification frequency to *On status change*.
+#. **Save**: in the :guilabel:`Details` step, assign a descriptive rule
+   name (for example ``[Prod] Web Service Latency Warning``), add tags if
+   needed and save the rule.
 
 Example 2: Service Performance Anomaly (Machine Learning Rule)
 ``````````````````````````````````````````````````````````````
@@ -156,8 +161,8 @@ Use anomaly detection rules when baseline behavior fluctuates naturally
 (for example cyclical traffic patterns) and static thresholds would produce
 false positives:
 
-#. In **APM > Service inventory**, select the target service and click
-   **Alerts > Create anomaly rule**.
+#. In :menuselection:`APM --> Service inventory`, select the target service
+   and click :menuselection:`Alerts --> Create anomaly rule`.
 
    .. figure:: /neteye-cloud/elk/observability/alerts/img/create-anomaly-rule-example.png
       :alt: Service inventory with the Alerts menu open and Create anomaly rule highlighted

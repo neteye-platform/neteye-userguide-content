@@ -18,11 +18,14 @@ around system reliability and service health.
 infrastructure and applications:
 
 * **Logs**: timestamped records of discrete events emitted by systems,
-  containers and applications, used for forensic analysis and real-time
-  troubleshooting.
+  containers and applications. Logs are unscheduled: an entry is written
+  whenever something happens. They're used for forensic analysis and
+  real-time troubleshooting.
 * **Metrics**: numerical time-series data measuring resource utilization and
-  performance indicators (such as CPU, memory, latency and throughput) to
-  detect trends and capacity issues.
+  performance indicators (such as CPU, memory, latency and throughput).
+  Unlike logs, metrics are the result of regular, planned checks: values are
+  collected at fixed intervals, which makes them suitable for detecting
+  trends and capacity issues.
 * **Traces (APM)**: end-to-end transaction journeys through distributed
   services that pinpoint latency bottlenecks, errors and failure points in
   application code.
@@ -52,6 +55,34 @@ correlation. When investigating an anomaly, such as a sudden spike in
 service latency, you can pivot seamlessly from an infrastructure metric
 alert directly into the relevant application traces and container logs from
 the exact same timeframe without losing search context.
+
+Let's say it's 09:42 and an alert fires: the average response time of the
+``payment-service`` has been above 1.5 seconds for the last five minutes.
+You open it in **Alerts** and notice that only the production environment
+is affected and that no other alert is active, so whatever is happening is
+limited to this one service.
+
+From the alert you jump straight to the service in **Applications**, with
+the time range already set around the incident. The latency chart shows the
+spike starting at 09:37, and the transaction breakdown makes it clear that
+the extra time is spent waiting for the database, not in the application
+code. So you follow the dependency to the host that runs the database in
+**Infrastructure**. Its metrics tell the rest of the story: disk I/O has
+been at 100% since 09:35. Because metrics are collected at regular
+intervals, the saturation was recorded two minutes before anyone noticed a
+slow checkout.
+
+That leaves the question of *why* the disk is saturated. In **Logs**, still
+on the same host and the same time range, the entries written at 09:35 show
+a scheduled backup job starting. Symptom found, cause found, and at no point
+did you have to rebuild the search or re-enter the time range.
+
+.. figure:: /neteye-cloud/elk/observability/img/observability-correlation-flow.svg
+   :alt: Four steps from Alerts to Applications, Infrastructure and Logs, sharing the same time range and filters
+   :align: center
+
+   From symptom to cause: the same time range and filters follow you from
+   one Observability application to the next.
 
 The following chapters describe the dedicated interfaces, configuration
 steps and common operational workflows for each Observability application.

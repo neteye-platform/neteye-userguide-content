@@ -71,6 +71,8 @@ follow up afterwards.
 |
 
 
+..  _cra-manufacturer-contact:
+
 Manufacturer and Contact
 ------------------------
 
@@ -94,10 +96,12 @@ Manufacturer and Contact
 
 To report vulnerabilities, see `Reporting Vulnerabilities <report-vulnerability>`.
 For incidents and actively exploited vulnerabilities under Article 14 of the
-Cyber Resilience Act, see Cyber Resilience Act Compliance.
+Cyber Resilience Act, see :ref:`Reporting a CRA Incident <cra-incident-reporting>`.
 
 |
 
+
+..  _cra-product-identification:
 
 Product Identification
 ----------------------
@@ -110,7 +114,7 @@ Product Identification
    * - **Product name:**
      - |ne|
    * - **Product type**
-     - Software product with digital elements (full managed and self managed
+     - Software product with digital elements (both fully- and self-managed
        monitoring platform)
    * - **Editions**
      - |ne|; |ne| with additional Feature Modules
@@ -119,6 +123,8 @@ Product Identification
 
 |
 
+
+..  _cra-after-you-report:
 
 What Happens After You Report
 -----------------------------
@@ -168,6 +174,9 @@ for example under NIS2, DORA or data protection law.
    <mailto:security.neteye@wuerth-it.com>`_.
 
 |
+
+
+..  _cra-related-information:
 
 Related Information
 -------------------

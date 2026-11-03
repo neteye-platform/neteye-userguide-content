@@ -7,3 +7,4 @@ ELK - Log Analytics
 
     elk/getting-started.rst
     elk/analytics.rst
+    elk/observability.rst

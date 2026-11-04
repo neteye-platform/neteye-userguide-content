@@ -81,13 +81,13 @@ Work on a Case
 The case page keeps the description and the full history of comments and
 changes in one place. While the issue is being handled:
 
-* add a comment for each finding, decision or action taken, so that
-  whoever picks up the case next can follow what has been done;
-* attach the relevant alerts, so that the people working on the case see
-  the same data;
-* adjust the severity as the impact becomes clearer, and reassign the case
-  when it moves to another team or on-call engineer;
-* move the status from *Open* to *In progress* when someone starts working
+* Add a comment for each finding, decision or action taken, so that
+  whoever picks up the case next can follow what has been done.
+* Attach the relevant alerts, so that the people working on the case see
+  the same data.
+* Adjust the severity as the impact becomes clearer, and reassign the case
+  when it moves to another team or on-call engineer.
+* Move the status from *Open* to *In progress* when someone starts working
   on it, and to *Closed* when the issue is resolved. Closed cases stay in
   the list and keep their full history.
 

@@ -15,7 +15,7 @@ How an SLO is Built
 ```````````````````
 
 Every SLO comes down to three decisions. Make them before you open the
-wizard and the setup is straightforward.
+wizard and the setup will be straightforward.
 
 **What to measure.** The *service level indicator* (SLI) is the proportion
 of good events out of all events. Good can mean a successful HTTP
@@ -29,7 +29,7 @@ events allowed to be bad before the SLO is breached.
 **Over which period.** A **rolling** time window (for example the last 30
 days) always looks back from now and suits day-to-day operations. A
 **calendar aligned** window (for example each month) resets on fixed dates
-and suits contractual SLAs and periodic reporting.
+and better matches contractual SLAs and periodic reporting.
 
 .. rubric:: Roles and Permissions
 
@@ -47,8 +47,9 @@ Open :menuselection:`Observability --> SLOs` and click
 :guilabel:`Create SLO` (or :guilabel:`Create new SLO` if SLOs already
 exist). The wizard has three steps.
 
-#. **Define the SLI.** From :guilabel:`Choose the SLI type`, pick the type
-   that matches your data:
+#. **Define the SLI** (service level indicator), that is, what counts as
+   a good event and out of which total. From
+   :guilabel:`Choose the SLI type`, pick the type that matches your data:
 
    * :guilabel:`APM latency` / :guilabel:`APM availability`: for services
      monitored with APM. Select the service, environment and optionally a
@@ -57,13 +58,13 @@ exist). The wizard has three steps.
      view and timestamp field, then write a :guilabel:`Good query` (for
      example ``http.response.status_code < 500``) and a
      :guilabel:`Total query` (for example ``http.response.status_code : *``).
-   * :guilabel:`Custom Metric`: as Custom Query, but good and total are
+   * :guilabel:`Custom Metric`: like a Custom Query, but good and total are
      aggregations of numeric fields rather than document counts.
    * :guilabel:`Histogram Metric`: for values stored in histogram fields,
      typically latency distributions.
    * :guilabel:`Timeslice Metric`: for an equation over several
      aggregations evaluated per time slice; requires the *Timeslices*
-     budgeting method.
+     budgeting method described in the next step.
    * :guilabel:`Synthetics availability`: for the uptime of synthetic
      monitors, selected by name, project or tag.
 
@@ -90,7 +91,7 @@ exist). The wizard has three steps.
 #. **Describe the SLO.** Give it an :guilabel:`SLO Name` that identifies
    the service and what is measured (for example ``[Production] Checkout
    availability``), a :guilabel:`Description`, and :guilabel:`Tags` such as
-   environment or team for filtering later. Optionally pick
+   *environment* or *team* for filtering later. Optionally pick
    :guilabel:`Linked dashboards` to reach related dashboards from the SLO.
    Click :guilabel:`Create SLO`.
 
@@ -100,7 +101,7 @@ exist). The wizard has three steps.
 
 .. note::
 
-   The SLO is computed from the moment it's created. With a rolling 30-day
+   The SLO is computed starting the moment it's created. With a rolling 30-day
    window, status and error budget reflect a shorter period until 30 days
    of data are available.
 
@@ -113,7 +114,7 @@ narrow the list, and :guilabel:`Sort by` or :guilabel:`Group by` to
 organize it. Each card shows:
 
 * **Status**: *Healthy* if the observed SLI is at or above the target,
-  *Violated* if below, *Degrading* if the error budget is being consumed
+  *Violated* if below, or *Degrading* if the error budget is being consumed
   faster than planned. An alert badge appears if an alert is active for
   the SLO.
 * **SLI type, tags and time window** of the SLO.

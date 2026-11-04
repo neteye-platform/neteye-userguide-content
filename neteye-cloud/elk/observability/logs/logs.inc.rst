@@ -4,8 +4,10 @@ Logs
 ~~~~
 
 The **Logs** section is where you analyze the log data collected from your
-applications, systems and infrastructure. It has three entries, each
-suited to a different stage of an investigation:
+applications, systems and infrastructure.
+
+It has three entries, each suited to a different stage of an
+investigation:
 
 * **Discover**: search, filter and read individual log entries when you
   know roughly what you're looking for.
@@ -17,8 +19,8 @@ suited to a different stage of an investigation:
 
 .. rubric:: Roles and Permissions
 
-Depending on the role defined by the contract with your organization, you
-might have different permissions:
+The Logs views are read-only for all roles defined by the contract with
+your organization:
 
 * **VIEWER**: Read
 * **EDITOR**: Read
@@ -41,22 +43,26 @@ a host. These changes often indicate an incident, a regression or a
 component that stopped working, and are hard to notice by reading logs.
 
 Use the dataset filter and the time picker at the top to focus on the
-datasets and period you're interested in. The chart shows one row per
-dataset; each cell is colored by the anomaly score of that time interval,
-from light blue (score below 3) to red (score 75 or higher), so you can
-see at a glance when and where something unusual happened. The table below
-lists the individual anomalies with their score, a short description (for
-example *2x fewer log messages in this dataset than expected*), their
-start time and dataset. Click a row to see the details and open the
-affected logs.
+datasets and period you're interested in.
+
+The chart shows one row per dataset; each cell is colored by the anomaly
+score of that time interval, from light blue (score below 3) to red (score
+75 or higher), so you can see at a glance when and where something unusual
+happened.
+
+The table below lists the individual anomalies with their score, a short
+description (for example *2x fewer log messages in this dataset than
+expected*), their start time and dataset. Click a row to see the details
+and open the affected logs.
 
 .. figure:: /neteye-cloud/elk/observability/logs/img/logs-anomalies.png
    :alt: Logs Anomalies with the anomaly heat map per dataset and the table of detected anomalies
    :align: center
 
-Start from the red and orange cells, or sort the table by anomaly score,
-and check whether the period matches an alert, a deployment or a known
-change. Anomalies are produced by machine learning jobs; click
+Start from the red and orange cells, or click the :guilabel:`Anomaly
+score` column header to sort the table so that the highest scores come
+first, and check whether the period matches an alert, a deployment or a
+known change. Anomalies are produced by machine learning jobs; click
 :guilabel:`Manage ML jobs` to see which datasets are analyzed. For the
 machine learning features in general, see :ref:`elk-machine-learning`.
 
@@ -73,7 +79,7 @@ For each category you can see an example message, how many messages
 belong to it and how its frequency changes over time, and you can open
 the matching log entries. Use it to find out which messages dominate a
 dataset, to notice a category that appears for the first time or far
-more often than before, and to filter out routine messages when looking
+more often than before, and to filter out routine messages while looking
 for the unusual ones.
 
 .. seealso::

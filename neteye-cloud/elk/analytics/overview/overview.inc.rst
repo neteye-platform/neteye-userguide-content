@@ -1,8 +1,8 @@
 
 .. _elk-analytics-overview:
 
-Analytics
-=========
+Analytics Overview
+~~~~~~~~~~~~~~~~~~
 
 The Analytics area of Kibana is where you work with the data your
 |nec| tenant collects in Elasticsearch. Logs, events and metrics are

@@ -1,8 +1,8 @@
 
 .. _elk-observability-overview:
 
-Observability
-=============
+Observability Overview
+~~~~~~~~~~~~~~~~~~~~~~
 
 In |nec|, Observability extends traditional monitoring by providing
 real-time visibility into the health, performance and behavior of complex,

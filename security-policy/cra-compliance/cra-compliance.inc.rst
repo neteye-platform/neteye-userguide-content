@@ -73,6 +73,8 @@ follow up afterwards.
 
 ..  _cra-manufacturer-contact:
 
+.. Annex II §1
+
 Manufacturer and Contact
 ------------------------
 
@@ -94,14 +96,16 @@ Manufacturer and Contact
    * - **Website:**
      - https://www.wuerth-it.it
 
-To report vulnerabilities, see `Reporting Vulnerabilities <report-vulnerability>`.
-For incidents and actively exploited vulnerabilities under Article 14 of the
+To report vulnerabilities, see the :ref:`Reporting Vulnerabilities <report-vulnerability>`
+page. For incidents and actively exploited vulnerabilities under Article 14 of the
 Cyber Resilience Act, see :ref:`Reporting a CRA Incident <cra-incident-reporting>`.
 
 |
 
 
 ..  _cra-product-identification:
+
+.. Annex II §3
 
 Product Identification
 ----------------------

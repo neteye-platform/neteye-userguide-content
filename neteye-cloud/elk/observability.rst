@@ -7,3 +7,4 @@
    observability/alerts.rst
    observability/slos.rst
    observability/cases.rst
+   observability/logs.rst

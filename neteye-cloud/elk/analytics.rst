@@ -12,3 +12,4 @@ Analytics
    analytics/maps.rst
    analytics/machine-learning.rst
    analytics/graph.rst
+   analytics/visualize-library.rst

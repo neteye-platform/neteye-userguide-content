@@ -1,4 +1,4 @@
-.. _visualize-library:
+.. _elk-visualize-library:
 
 Visualize Library
 ~~~~~~~~~~~~~~~~~
@@ -75,15 +75,17 @@ To create a Lens visualization:
 #. **Select the data view:** Choose the dataset you want to work with. The
    list of available fields depends on this choice.
 
-   .. image:: images/visualize-library-lens-select-data-view.png
+   .. figure:: /neteye-cloud/elk/analytics/img/visualize-library-lens-select-data-view.png
       :alt: Select data view
+      :align: center
 
 #. **Choose the visualization type:** Lens suggests a chart type based on
    the fields you add. You can switch to another type at any time: bar,
    line, area, pie, table, metric or heat map.
 
-   .. image:: images/visualize-library-choose-type.png
+   .. figure:: /neteye-cloud/elk/analytics/img/visualize-library-choose-type.png
       :alt: Choose visualization type
+      :align: center
 
 #. **Add fields:** Each field plays one of two roles in the chart:
 
@@ -105,8 +107,9 @@ To create a Lens visualization:
    * **Average:** mean value of a numeric field
    * **Minimum** and **Maximum:** lowest and highest values
 
-   .. image:: images/visualize-lens-metrics.png
+   .. figure:: /neteye-cloud/elk/analytics/img/visualize-lens-metrics.png
       :alt: Lens metrics configuration
+      :align: center
 
    For dimensions:
 
@@ -116,15 +119,17 @@ To create a Lens visualization:
    * **Intervals:** groups numeric values into ranges of a size you set
    * **Filters:** groups data by conditions you define
 
-   .. image:: images/visualize-lens-dimensions.png
+   .. figure:: /neteye-cloud/elk/analytics/img/visualize-lens-dimensions.png
       :alt: Lens dimensions configuration
+      :align: center
 
    **Example:** put ``@timestamp`` on the horizontal axis, *Count* on the
    vertical axis and ``http.response.status_code`` as the breakdown. The
    chart shows the number of requests over time, split by response code.
 
-   .. image:: images/visualize-lens-config-example.png
+   .. figure:: /neteye-cloud/elk/analytics/img/visualize-lens-config-example.png
       :alt: Example Lens chart
+      :align: center
 
 #. **Save the visualization:** When the visualization is ready, save it to
    Visualize Library so it can be reused, or add it directly to a dashboard.

@@ -5,3 +5,4 @@
    :maxdepth: 2
 
    observability/alerts.rst
+   observability/slos.rst

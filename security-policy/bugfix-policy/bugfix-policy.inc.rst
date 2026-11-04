@@ -4,17 +4,17 @@
 Security Bug Fix Service Level Objectives (SLO)
 -----------------------------------------------
 
-NetEye sets service level objectives for fixing security vulnerabilities based
-on the security severity level and the affected package. The following timeframes
-for fixing security issues in our product have been defined:
+|ne| sets service level objectives for fixing security vulnerabilities based
+on the security severity level and the affected package. The following
+timeframes for fixing security issues in our product have been defined:
 
 ..  _standard-timeframe:
 
 Standard Resolution Timeframe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following resolution timeframes are respected should a security vulnerability be discovered
-within NetEye:
+The following resolution timeframes are respected should a security
+vulnerability be discovered within |ne|:
 
  * **Critical, High** severity bugs in product to be fixed within 90 days of being verified
  * **Medium, Low** severity bugs to be fixed in product within 180 days of being verified
@@ -23,25 +23,45 @@ within NetEye:
 Critical Vulnerabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a Critical security vulnerability is discovered by a third party or |witit| itself,
-the latter will release a fix for the :ref:`current version <intro-neteye-releases>` of the product:
+When a Critical security vulnerability is discovered by a third party or |witit|
+itself, the latter will release a fix for the :ref:`current version <intro-neteye-releases>`
+of the product:
 
-For example: If a bug is discovered in 4.29 (current version) and the fix is ​​released 90 days later
-(current version after 90 days: 4.30) only 4.30 will be fixed.
+For example: If a bug is discovered in 4.29 (current version) and the fix is
+released 90 days later (current version after 90 days: 4.30) only 4.30 will be
+fixed.
 
-.. note:: The bugfixes are not backported to versions prior to the one where the bug was fixed.
-   This is why it is important to stay on the latest release for the version of the product you are using
-   (this is best practice).
+.. note:: The bugfixes are not backported to versions prior to the one where
+   the bug was fixed. This is why it is important to stay on the latest release
+   for the version of the product you are using (this is best practice).
 
 Non-critical vulnerabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a security issue of a High, Medium or Low severity level is discovered, NetEye will aim to release
-a fix for the :ref:`current version <intro-neteye-releases>` of the product within the service level objectives
-listed in :ref:`standard-timeframe`.
+When a security issue of a High, Medium or Low severity level is discovered,
+|ne| will aim to release a fix for the :ref:`current version <intro-neteye-releases>`
+of the product within the service level objectives listed in :ref:`standard-timeframe`.
 
-You should upgrade your installations when a bug fix release becomes available to ensure that
-the latest security fixes have been applied.
+You should upgrade your installations when a bug fix release becomes available
+to ensure that the latest security fixes have been applied.
+
+
+.. _unsupported-releases:
+
+Unsupported Releases
+~~~~~~~~~~~~~~~~~~~~
+
+Older |ne| releases remain available for reference and for existing
+installations. They do not receive security fixes.
+
+Running a release that is outside its security support period means that known
+vulnerabilities in that release will not be corrected, including vulnerabilities
+that are publicly disclosed and actively exploited. Operators running such a
+release should either upgrade to a supported release or document compensating
+controls in their own risk assessment.
+
+.. Commented for future work: Add "(see Support Period in the CRA section)"
+   w/link in Parag2-Sent1
 
 
 ..  _severity-levels:
@@ -49,9 +69,10 @@ the latest security fixes have been applied.
 Severity Levels
 ---------------
 
-|ne| uses Common Vulnerability Scoring System (CVSS) as a method of assessing security risk
-and prioritization for each discovered vulnerability.
-CVSS is an industry standard vulnerability metric. You can learn more about CVSS at `FIRST.org <https://www.first.org/cvss/user-guide>`__.
+|ne| uses Common Vulnerability Scoring System (CVSS) as a method of assessing
+security risk and prioritization for each discovered vulnerability. CVSS is an
+industry standard vulnerability metric. You can learn more about CVSS at
+`FIRST.org <https://www.first.org/cvss/user-guide>`__.
 
 |ne| security advisories include a severity level. It is based on our
 self-calculated CVSS score for each specific vulnerability.
@@ -72,13 +93,14 @@ For CVSS v3 |witit| uses the following severity rating system:
    "0.1 - 3.9", "Low"
 
 In some cases, |ne| may use additional factors unrelated to CVSS score
-to determine the severity level of a vulnerability. This approach is supported by the `CVSS v3.1 <https://www.first.org/cvss/v3.1/specification-document>`__.
+to determine the severity level of a vulnerability. This approach is supported
+by the `CVSS v3.1 <https://www.first.org/cvss/v3.1/specification-document>`__.
 Should this approach be taken, |ne| will describe which additional factors
 have been considered and why upon publicly disclosing the vulnerability.
 
-Below are a few examples of vulnerabilities which may result in a given severity level.
-Please keep in mind that this rating does not take into account details of your installation
-and are to be treated purely for a guide purpose.
+Below are a few examples of vulnerabilities which may result in a given severity
+level. Please keep in mind that this rating does not take into account details
+of your installation, and are to be treated purely for instructional purposes.
 
 **Severity Level: Critical**
 
@@ -116,10 +138,10 @@ Vulnerabilities that score in the medium range usually have some of the followin
 
 **Severity Level: Low**
 
-Vulnerabilities in the low range typically have very little impact on an organization's business.
-Exploitation of such vulnerabilities usually requires local or physical system access.
-Vulnerabilities in third party code that are unreachable from |ne| code may be downgraded
-to low severity.
+Vulnerabilities in the low range typically have very little impact on an
+organization's business. Exploitation of such vulnerabilities usually requires
+local or physical system access. Vulnerabilities in third party code that are
+unreachable from |ne| code may be downgraded to low severity.
 
 ..  _neteye-bugfix-policy-os:
 

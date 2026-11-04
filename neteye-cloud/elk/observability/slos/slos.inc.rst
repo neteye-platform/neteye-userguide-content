@@ -127,11 +127,9 @@ organize it. Each card shows:
    :alt: SLOs overview with one card per SLO showing status, observed value and budget remaining
    :align: center
 
-Click a card to open the SLO details with the SLI and error budget charts
-over time, the burn rate (how fast the budget is being spent: at 1 it runs
-out exactly at the end of the window, at 10 in a tenth of it), the related
-alerts, and actions to edit, clone, reset or delete the SLO. To show an SLO
-next to other data, add an **SLO Overview** panel to a dashboard (see
+Click a card to open the SLO details, where you can follow the SLI and the
+error budget over time and edit or delete the SLO. To show an SLO next to
+other data, add an **SLO Overview** panel to a dashboard (see
 :ref:`elk-dashboards`).
 
 .. note::

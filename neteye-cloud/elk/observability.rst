@@ -10,3 +10,4 @@ Observability
    observability/slos.rst
    observability/cases.rst
    observability/logs.rst
+   observability/applications.rst

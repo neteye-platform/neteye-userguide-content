@@ -81,5 +81,5 @@ service, as described in :ref:`elk-observability-service-map`.
    :align: center
 
 **Logs** shows the log entries written by the service in the selected time
-range, so without leaving the pageyou can read what the application reported at the moment a
+range, so without leaving the page you can read what the application reported at the moment a
 transaction was slow or failed.

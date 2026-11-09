@@ -4,7 +4,7 @@ Service Map
 ```````````
 
 The **Service Map**, reached from the :guilabel:`Service map` tab of the
-service inventory, draws a graph ofall instrumented services in the selected
+service inventory, draws a graph of all instrumented services in the selected
 environment and the connections between them as observed in the traces:
 if service A called service B, there is a line from A to B. Databases,
 caches and external hosts appear as well, so the map shows the whole path

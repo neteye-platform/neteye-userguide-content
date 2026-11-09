@@ -1,6 +1,6 @@
 The **Applications** section is where you monitor the performance of your
 instrumented services with APM (application performance monitoring). Each
-service reports its transactions, the operations it performs for its
+one of your services reports its transactions, the operations it performs for its
 callers, and the spans inside them, such as database queries or calls to
 other services. From this data |nec| derives the three indicators you'll
 meet on almost every page of this section: **latency** (how long a service
@@ -21,13 +21,13 @@ The section is organized the way an investigation usually goes:
   end to end.
 * **Dependencies** turns the view around and shows the databases, APIs
   and other external systems your services call, so you can tell whether
-  a slowdown comes from your code or from something it depends on.
+  a slowdown comes from your code, or from something it depends on.
 * **Service Map** draws all services and their connections, which helps
-  you understand the architecture and see which services an issue can
+  you understand the architecture and see which services an issue could
   spread to.
 
 All pages share the global time range and the environment selector, so
-when you move from one to another you keep looking at the same data.
+when you move from one to another you will continue viewing the same data.
 
 .. rubric:: Roles and Permissions
 

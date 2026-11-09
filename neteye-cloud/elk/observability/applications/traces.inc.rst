@@ -13,7 +13,9 @@ average latency, how many traces per minute it produces and its
 **impact**. Impact is latency multiplied by throughput: a transaction that
 is both slow and frequently called has a high impact, while a slow one
 that is rarely called, or a fast one that is called constantly, ranks
-lower. The list is sorted by impact by default, which puts the
+lower.
+
+The list is sorted by impact by default, which puts the
 transactions whose optimization would benefit users most at the top. This
 is the list to start from when you have a performance budget and need to
 decide what to work on first, rather than when you're chasing a specific

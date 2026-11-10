@@ -9,19 +9,19 @@ Pivot Exploration
    can be changed or removed at any time, without prior notice.
 
 **Pivot exploration** is a canvas where you chain steps to explore your
-:ref:`findings <satayo_findings>`. A flow starts from a single finding: from
+:ref:`findings <satayo_findings>`. The flow starts from a single finding: from
 there you can load its related findings, filter them, branch on whether a
 list is empty, and show the result.
 
-Each step is a node on the canvas. You connect the nodes with wires, and
-every wire carries a list of findings from one node to the next. For
+Each step is a node on the canvas. You connect the nodes with links, and
+every link carries a list of findings from one node to the next. For
 example, you can start from a domain, load its related findings, keep only
 the ones with a high priority, and open the result in the **Findings** page.
 
 .. figure:: pivot-exploration/img/pivot-exploration.png
 
    A flow that starts from an IPv4 address and branches into filters, **If**
-   nodes and results
+   nodes, and results
 
 Enable the Feature
 ==================
@@ -34,7 +34,7 @@ Pivot exploration is hidden until you switch it on for a particular user:
    row.
 
 The setting is saved in your user account: it follows you on every browser
-and device, and it does not affect other users. To hide the feature again,
+and device, without affecting other users. To hide the feature again,
 turn off the same toggle.
 
 .. note::
@@ -50,15 +50,15 @@ Open the **Tools** menu in the header of the |sat| web interface and select
 Build a Flow
 ============
 
-#. Every flow begins with a **Search** node. Type at least 3 characters, for
-   example a domain, an IP address, an email address or a CVE, and pick one
-   finding from the results. Every step after the **Search** node works on
+#. Every flow begins with a **Search** node. Type at least 3 characters to see a
+   list of suggested findings, for example a domain, an IP address, an email
+   address or a CVE, and pick one of them. Every step after the **Search** node works on
    that finding.
 #. Click the **+** button (**Add next step**) on the side of a node and
-   choose the next step. The new node is added and wired to that node.
-#. To connect two existing nodes, drag a wire from the output dot of one
-   node to the input dot of another. Each input accepts only one wire, and a
-   wire cannot create a loop.
+   choose the next step. The new node is added and connected to that node.
+#. To connect two existing nodes, drag a link from the output dot of one
+   node to the input dot of another. Each input accepts only one link, and a
+   link cannot create a loop.
 #. To remove a node, click its **Delete node** button, or select it and
    press :kbd:`Delete` or :kbd:`Backspace`.
 
@@ -106,14 +106,14 @@ Node Types
      - Keeps only the findings of one type. When a node shows its findings
        grouped by type, click a type to add a **Type** node for it.
    * - **Results**
-     - Shows the findings on its wire and has no output. Click **Expand
+     - Shows the findings on its link and has no output. Click **Expand
        details** to see the findings in a table, and **Open in findings
        page** to open them in the **Findings** page.
 
-Limits
-======
+Limits Imposed for Efficiency
+=============================
 
-To keep a flow fast, some steps work on a limited number of findings:
+To keep flows responsive, some steps work on a limited number of findings:
 
 * A flow has at most **50** steps.
 * **Get related findings** follows at most the first **20** findings on its

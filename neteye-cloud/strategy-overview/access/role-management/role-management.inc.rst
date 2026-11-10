@@ -9,6 +9,9 @@ verifies a user's identity; authorization grants the permissions needed
 for that user's tasks. Signing in through Single Sign-On (SSO) does not
 automatically grant access to every module or to all data.
 
+|
+
+
 Roles, Permissions and Scope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -28,6 +31,9 @@ within the scope of the user's **company/tenant**:
 A user can have different access levels for different contract types,
 but only one access level is allowed per contract type. For example,
 a user may be a Viewer for MON and an Editor for ELK.
+
+|
+
 
 Access Levels
 ~~~~~~~~~~~~~
@@ -55,6 +61,17 @@ contract/access-level combinations default to Viewer, as described in
 :ref:`authorization-procedure`. Consult that section for the current
 contract-specific availability table before assigning a role.
 
+Some contract types also provide
+:ref:`Additional Access Levels <neteye-cloud-additional-access-levels>`,
+which are isolated from Viewer, Editor and Admin and grant access to
+specific functionalities only. For example, access to the
+:ref:`Command Orchestrator <neteye-cloud-cmdo-access>` is denied by
+default and requires the MON **CMDO Executor** Access Level, which can
+be assigned in addition to the user's standard MON Access Level.
+
+|
+
+
 Who Manages Roles?
 ~~~~~~~~~~~~~~~~~~
 
@@ -80,6 +97,9 @@ the |nec| `service request process
 
 For more information about these management options, see
 :ref:`group-claims-for-authorization`.
+
+|
+
 
 Managing Role Assignments
 ~~~~~~~~~~~~~~~~~~~~~~~~~

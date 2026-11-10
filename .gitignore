@@ -1,2 +1,6 @@
 RPMS/
 SRPMS/
+
+# Local AI tooling
+.serena/
+.playwright-mcp/

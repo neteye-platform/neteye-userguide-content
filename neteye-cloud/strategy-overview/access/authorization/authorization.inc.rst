@@ -1,4 +1,4 @@
-.. _authorization-procedure:
+.. _cloud-authorization-procedure:
 
 Authorization
 -------------
@@ -74,6 +74,8 @@ any server-side configuration are silently ignored.
 |
 
 
+.. _cloud-group-claims:
+
 Resolving Group Claims
 ~~~~~~~~~~~~~~~~~~~~~~
 Assigning permissions to an authenticated user entails reading the group names
@@ -104,12 +106,14 @@ The elements involved in creating a group claim are:
     Note that this is equivalent to a module administrator, not a full
     system administrator.
 
-Only one standard access level is allowed per contract type.  Also, some
+Only one standard access level is allowed per contract type. Also, some
 contracts may not utilize all three levels; if a group indicates a contract
 with an access level that is not a valid combination, the access role will
-default to *Viewer*. A few particular contract types also provide isolated
-:ref:`access levels <neteye-cloud-additional-access-levels>`,
-which can be assigned in addition to the standard one.
+default (fall back) to *Viewer*.
+
+.. note:: Some contract types also provide isolated
+          :ref:`access levels <cloud-additional-access-levels>`, which can
+          be assigned in addition to the standard levels described above.)
 
 As an example, given a company (named 'COMPANY') with a user who uses
 monitoring and the Elastic Stack, and needing viewing and editor roles
@@ -161,6 +165,7 @@ mismatch in group names is the most common cause.
 
 |
 
+.. _cloud-permissions-table:
 
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +177,6 @@ that are added to the user's profile.
 
    How an OIDC token is converted in stages into module permissions
 
-
 The following table lists the available Customer Roles for each |nec|
 Contract type, indicating whether the contract grants WebUI access and which
 Access Levels (Viewer, Editor, Admin) are currently available or still to be
@@ -181,95 +185,96 @@ defined.
 .. table::
    :widths: 20 20 20 40
 
-   +------------+------------------+--------------+-------------------------------------------+
-   | Contract   | Has WebUI Access | Access Level | Status                                    |
-   +============+==================+==============+===========================================+
-   | ``ASSET``  | Yes              | Viewer       | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | Not defined (Fallback as Viewer)          |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | Available                                 |
-   +------------+------------------+--------------+-------------------------------------------+
-   | ``ELK``    | Yes              | Viewer       | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | Not defined (Fallback as Viewer)          |
-   +------------+------------------+--------------+-------------------------------------------+
-   | ``MON``    | Yes              | Viewer       | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | CMDO         | Available (no Fallback, see               |
-   |            |                  |              | :ref:`Additional Access Levels:           |
-   |            |                  |              | <neteye-cloud-additional-access-levels>`) |
-   +------------+------------------+--------------+-------------------------------------------+
-   | ``SOC``    | Yes              | Viewer       | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | N/A                                       |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | N/A                                       |
-   +------------+------------------+--------------+-------------------------------------------+
-   | ``SOC_ADS``| Yes              | Viewer       | Available                                 |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | N/A                                       |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | N/A                                       |
-   +------------+------------------+--------------+-------------------------------------------+
-   | ``TEL``    | Yes              | Viewer       | Yes                                       |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | Not defined (Fallback as Viewer)          |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | Not defined (Fallback as Viewer)          |
-   +------------+------------------+--------------+-------------------------------------------+
-   | ``TRACE``  | Yes              | Viewer       | Yes                                       |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | Not defined (Fallback as Viewer)          |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | Not defined (Fallback as Viewer)          |
-   +------------+------------------+--------------+-------------------------------------------+
-   | ``SATAYO`` | Yes              | Viewer       | Not defined                               |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Editor       | Not defined                               |
-   +            +                  +--------------+-------------------------------------------+
-   |            |                  | Admin        | Available                                 |
-   +------------+------------------+--------------+-------------------------------------------+
+   +------------+------------------+--------------+------------------------------------+
+   | Contract   | Has WebUI Access | Access Level | Status                             |
+   +============+==================+==============+====================================+
+   | ``ASSET``  | Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined (Fallback as Viewer)   |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Available                          |
+   +------------+------------------+--------------+------------------------------------+
+   | ``ELK``    | Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Not defined (Fallback as Viewer)   |
+   +------------+------------------+--------------+------------------------------------+
+   | ``MON``    | Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | CMDO         | Available (no Fallback, see        |
+   |            |                  |              | :ref:`Additional Access Levels     |
+   |            |                  |              | <cloud-additional-access-levels>`) |
+   +------------+------------------+--------------+------------------------------------+
+   | ``SOC``    | Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | N/A                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | N/A                                |
+   +------------+------------------+--------------+------------------------------------+
+   | ``SOC_ADS``| Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | N/A                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | N/A                                |
+   +------------+------------------+--------------+------------------------------------+
+   | ``TEL``    | Yes              | Viewer       | Yes                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined (Fallback as Viewer)   |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Not defined (Fallback as Viewer)   |
+   +------------+------------------+--------------+------------------------------------+
+   | ``TRACE``  | Yes              | Viewer       | Yes                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined (Fallback as Viewer)   |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Not defined (Fallback as Viewer)   |
+   +------------+------------------+--------------+------------------------------------+
+   | ``SATAYO`` | Yes              | Viewer       | Not defined                        |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined                        |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Available                          |
+   +------------+------------------+--------------+------------------------------------+
 
 |
 
 
-.. _neteye-cloud-additional-access-levels:
+.. _cloud-additional-access-levels:
 
 Additional Access Levels
 ~~~~~~~~~~~~~~~~~~~~~~~~
-Some contracts include an *Additional Access Level* besides the standard
-Viewer, Editor and Admin levels. Additional access levels are outside the
-standard levels, *i.e.* they are not part of the Viewer/Editor/Admin hierarchy.
-Thus they do not fall back to any other level, and their permissions or
-capabilities are not granted implicitly by any standard Access Level.
+Additional access levels are permission types outside the standard levels,
+*i.e.* they are **not** part of the :ref:`Viewer/Editor/Admin <cloud-group-claims>`
+hierarchy. Although they are processed like other
+:ref:`permission types <cloud-permissions-table>`, they do not fall back to any
+other level, and their permissions or capabilities are not granted implicitly
+by any standard access level.
 
 They are meant to grant access to specific functionalities that would otherwise
 be available to anyone with access to the contract. An additional access Level
-can thus be assigned to a user along with the standard Access Level they hold
+can thus be assigned to a user along with the standard access level they hold
 for that same contract type.
 
 .. table::
-   :widths: 15 25 15 45
+   :widths: 10 27 13 50
 
-   +----------+---------------------+----------+------------------------------+
-   | Contract | Access Level        | Fallback | Description                  |
-   +==========+=====================+==========+==============================+
-   | ``MON``  | CMDO Executor       | No       | Allows access to the         |
-   |          | (``cmdo-executor``) |          | :ref:`Command Orchestrator   |
-   |          |                     |          | <neteye-cloud-cmdo-access>`: |
-   |          |                     |          | All available Commands are   |
-   |          |                     |          | visible and can be freely    |
-   |          |                     |          | executed on their targets.   |
-   +----------+---------------------+----------+------------------------------+
+   +----------+---------------------+----------+---------------------------------------+
+   | Contract | Access Level        | Fallback | Description                           |
+   +==========+=====================+==========+=======================================+
+   | ``MON``  | CMDO Executor       | No       | Allows access to the                  |
+   |          | (*cmdo-executor*)   |          | :ref:`Command Orchestrator            |
+   |          |                     |          | <command-orchestrator-authorization>` |
+   |          |                     |          | – all available commands are          |
+   |          |                     |          | visible and can be freely             |
+   |          |                     |          | executed on their targets.            |
+   +----------+---------------------+----------+---------------------------------------+
 
-The **CMDO Executor** Access Level controls access to the Command
+The **CMDO Executor** access level controls access to the Command
 Orchestrator (CMDO) module, which is **denied by default** to all users,
 regardless of their standard MON access level. Only users explicitly assigned
 the CMDO Executor access level can see the Command Orchestrator and launch

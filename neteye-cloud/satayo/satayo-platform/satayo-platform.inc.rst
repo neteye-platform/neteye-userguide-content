@@ -23,20 +23,19 @@ The right side of the header contains the following tools, from left to right:
      - Shows your data as it was on a given day.
    * - :ref:`Organization selector <satayo-organization-selector>`
      - Shows the data of one organization, or of all your organizations.
-   * - **Search**
+   * - :ref:`Search <satayo-search-findings>`
      - Searches through all findings in |sat| (once you've typed at least
-       three characters). Press :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`F` to open it from the keyboard,
-       and :kbd:`Esc` to close it.
+       three characters).
    * - **Help and guides**
      - Opens a link to this user guide, and displays the |sat| version.
-   * - **Settings**
-     - Opens the :ref:`Settings <satayo-settings>` area. Only users with the
-       **Tenant Admin** role see this icon.
+   * - :ref:`Settings <satayo-open-settings>`
+     - Opens the Settings area. Only users with the **Tenant Admin** role see
+       this icon.
 
 .. _satayo-organization-selector:
 
-Organization Selector
-`````````````````````
+Choose Organization
+```````````````````
 
 All the data in |sat| belongs to an *organization*. Use the organization
 selector in the header to choose which data you see. If you have access to more
@@ -68,8 +67,8 @@ you can bookmark or share the URL to open the same view again.
 
 .. _satayo-time-machine:
 
-Time Machine
-````````````
+View Past Data
+``````````````
 
 The **time machine** lets you travel back in time, using the history of your
 data kept by |sat|. When you select a day in the past, the pages show your
@@ -185,3 +184,30 @@ The following rules apply:
    The date is part of the URL of the page. Copy the URL to give a colleague
    the same view of the same day. The date also stays when you move between
    pages and when you reload the page.
+
+.. _satayo-search-findings:
+
+Search Findings
+```````````````
+
+Use the search in the header to find all the findings that match a value,
+without opening the **Findings** page first. The search looks through all
+findings in |sat|.
+
+Select the **Search** icon in the header, or press :kbd:`Ctrl` + :kbd:`Shift` +
+:kbd:`F`, and type at least three characters. The search shows a list of the
+matching findings, with the matching value and the type of each finding.
+
+Select :guilabel:`Show all` to see all the matching findings on the
+**Findings** page, or select one finding to open it there with its details
+already shown. Press :kbd:`Esc` to close the search.
+
+.. _satayo-open-settings:
+
+Open Settings
+`````````````
+
+Select the **Settings** (gear) icon in the header to open the Settings area,
+which shows how |sat| is configured for your tenant and all its organizations.
+Only users with the **Tenant Admin** role see this icon. For details, see
+:ref:`satayo-settings`.

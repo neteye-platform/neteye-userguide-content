@@ -5,7 +5,7 @@ Dashboard
 ~~~~~~~~~
 
 The |sat| Dashboard is your starting point for understanding the current
-security posture of your organization in NetEye.Cloud. Use it to check
+security posture of your organization in |nec|. Use it to check
 exposure indices, identify new findings, follow remediation progress, and
 decide which areas require your attention first.
 

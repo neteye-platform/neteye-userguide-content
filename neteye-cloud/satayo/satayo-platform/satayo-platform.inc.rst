@@ -4,8 +4,8 @@
 ~~~~~~~~~~~~~~~
 
 The header of the |sat| web interface is always visible, on every page.
-It gives you the tools that work on the whole platform, not on one page only.
-Use these tools to choose which data you see, and to find your way in |sat|.
+It contains tools that work across the entire |sat|, not just on one page.
+Use these tools to choose which data you see, and to find your way around |sat|.
 
 .. figure:: satayo-platform/img/top-bar.png
 
@@ -20,15 +20,15 @@ The right side of the header contains the following tools, from left to right:
    * - Tool
      - Purpose
    * - :ref:`Time machine <satayo-time-machine>`
-     - Shows your data as it was on a day in the past.
+     - Shows your data as it was on a given day.
    * - :ref:`Organization selector <satayo-organization-selector>`
      - Shows the data of one organization, or of all your organizations.
    * - **Search**
-     - Searches among all findings in |sat|. Type at least three characters.
-       Press :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`F` to open it from the keyboard,
+     - Searches through all findings in |sat| (once you've typed at least
+       three characters). Press :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`F` to open it from the keyboard,
        and :kbd:`Esc` to close it.
    * - **Help and guides**
-     - Opens a link to this user guide, and shows the version of |sat|.
+     - Opens a link to this user guide, and displays the |sat| version.
    * - **Settings**
      - Opens the :ref:`Settings <satayo-settings>` area. Only users with the
        **Tenant Admin** role see this icon.
@@ -48,15 +48,16 @@ than one organization, you can select:
 
 To change the selection:
 
-#. Select the organization selector in the header. It shows the name of the
-   current selection, for example :guilabel:`All organizations`. A list opens.
+#. Choose the organization selector in the header. It shows the name of the
+   current selection, for example :guilabel:`All organizations`, and opens a
+   list.
 #. Optionally, type a part of the name in the :guilabel:`Search` field to
-   filter the list. Select the **x** icon in the field to clear the filter.
+   filter the list.
 #. Select an organization, or :guilabel:`All organizations` at the top of the
    list.
 
 The selection applies to all the pages that show data, such as the
-:ref:`Dashboard <satayo-dashboard>` and the findings. It stays when you move
+:ref:`Dashboard <satayo-dashboard>` and the findings. It remains when you move
 from one page to another. The selection is also part of the URL of the page, so
 you can bookmark or share the URL to open the same view again.
 
@@ -70,54 +71,48 @@ you can bookmark or share the URL to open the same view again.
 Time Machine
 ````````````
 
-The **time machine** lets you travel back in time. |sat| keeps the history of
-your data. When you select a day in the past, the pages show your attack surface
-and your findings as |sat| saw them on that day.
+The **time machine** lets you travel back in time, using the history of your
+data kept by |sat|. When you select a day in the past, the pages show your
+attack surface and your findings as |sat| saw them on that day.
 
 Use the time machine to:
 
 - check what your exposure looked like before a change, for example before an
   incident or before a remediation activity;
-- compare the situation of today with the situation of a week or a month ago;
+- compare the situation of today to what it was a week or a month ago;
 - find out when a finding appeared, or when it was closed.
 
-The time machine does not change your data. You can use it as many times as
+The time machine will not change your data. You can use it as many times as
 you want, and you can leave it at any time.
 
 Open the Time Machine
 '''''''''''''''''''''
 
-Select the :guilabel:`Time machine` button in the header. A panel opens.
-The panel contains:
+Select the :guilabel:`Time machine` button in the header, which will open a
+panel containing:
 
 - **Quick select**: the buttons :guilabel:`1 week`, :guilabel:`2 weeks`,
   :guilabel:`3 weeks` and :guilabel:`1 month` go back by that period from today.
 - **Select a date**: a field in which you type a date (``dd/mm/yyyy``) or pick
   a day in a calendar.
-- **Recent dates**: the days that you selected before. Select one to use it again.
-  This list appears only after you have used the time machine.
+- **Recent dates**: the days that you have used previously. Select one to use
+  it again. This list appears only after you have used the time machine at
+  least once.
 
 Travel to a Day in the Past
 '''''''''''''''''''''''''''
 
-To go back by a fixed period, select one of the **Quick select** buttons.
-|sat| applies the date at once.
-
-To choose any other day:
-
-#. Select the date field, or its calendar icon.
-#. Select a day in the calendar. Use the arrows next to the month name to move
-   to another month.
-#. Select :guilabel:`Save`.
+Select one of the **Quick select** buttons to go back by a fixed period. To
+choose any other day, pick it in the date field and select :guilabel:`Save`.
 
 .. figure:: satayo-platform/img/time-machine-calendar.png
 
    Choosing a day in the calendar
 
-You can select any day up to yesterday. There is no limit in the past, but
+You can select any day up to yesterday. There is no limit for past dates, but
 |sat| has data only from the time when it started to monitor your
-organization. Today and the future are not available. To see the data of
-today, :ref:`leave the time machine <satayo-time-machine-leave>`.
+organization. To see the data for today,
+:ref:`leave the time machine <satayo-time-machine-leave>`.
 
 .. note::
 
@@ -130,10 +125,10 @@ Know That the Time Machine Is Active
 When the time machine is active, the header shows it in two ways:
 
 - the button changes to :guilabel:`Time traveling to` and the selected date, and
-  it has a glow;
+  it is highlighted with a glow;
 - a notice :guilabel:`Time machine is active` appears next to it. Select the
   **x** icon to dismiss the notice. The button stays as it is, so you always see
-  that you look at the past.
+  that you are looking at the past.
 
 .. figure:: satayo-platform/img/time-machine-active.png
 
@@ -142,14 +137,13 @@ When the time machine is active, the header shows it in two ways:
 .. warning::
 
    While the time machine is active, the numbers on the pages are **not** the
-   current ones. Before you take a decision, check the date in the header.
+   current ones. Before you make a decision, check the date in the header.
 
 Change the Day
 ''''''''''''''
 
-Select the :guilabel:`Time traveling to` button, and select another quick
-select button, or another day in the calendar and :guilabel:`Save`.
-The tables go back to the first page when the date changes.
+Open the time machine again and choose another day. The tables go back to the
+first page when the date changes.
 
 .. _satayo-time-machine-leave:
 
@@ -163,7 +157,7 @@ Select the :guilabel:`Time traveling to` button, and then select
 
    The :guilabel:`Save` and :guilabel:`Clear` buttons
 
-What Changes With the Time Machine
+What Changes with the Time Machine
 ''''''''''''''''''''''''''''''''''
 
 The date applies to all the pages that show your data. This includes the
@@ -173,12 +167,13 @@ the tickets.
 The following rules apply:
 
 - **Organizations.** The :ref:`organization selector <satayo-organization-selector>`
-  shows the organizations that existed on the selected day. If the organization that you selected did not
-  exist yet, |sat| selects :guilabel:`All organizations`. A finding of an
-  organization that did not exist yet is not shown.
+  shows the organizations that existed on the selected day. If the
+  organization that you selected did not exist yet, |sat| automatically
+  selects :guilabel:`All organizations`. A finding of an organization that did
+  not exist yet will not be shown.
 - **Your access.** The time machine uses your **current** permissions. It never
   gives you access to more data than you have today. If an access was removed
-  after the selected day, you do not see that data.
+  after the selected day, you will not see that data.
 - **Settings.** The :ref:`Settings <satayo-settings>` pages always show the
   current configuration. The selected date stays active, and it applies again
   when you return to a page with data.

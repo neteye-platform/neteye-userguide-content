@@ -18,3 +18,15 @@ in that Group, and to all its descendants.
 Each NetEye user can only execute Commands on the hosts which he has
 access to in the Icinga DB module. In addition to this restriction,
 each Command defines on which hosts the Command itself can be executed.
+
+|
+
+
+.. _command-orchestrator-in-neteye-cloud:
+
+Access to the Command Orchestrator in |nec|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Specifically on |nec|, access to the Command Orchestrator (CMDO) is
+governed by :ref:`Additional Access Level <neteye-cloud-additional-access-levels>`
+that are outside the scope of the standard authorization roles.

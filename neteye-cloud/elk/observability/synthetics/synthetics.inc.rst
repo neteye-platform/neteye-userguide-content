@@ -1,12 +1,21 @@
 .. _elk-observability-synthetics:
 
-Synthetics
-~~~~~~~~~~
+Synthetic Monitoring
+~~~~~~~~~~~~~~~~~~~~
 
 The **Synthetics** section monitors websites, APIs and services through
 simulated checks. These checks help you verify availability and detect
 failures, slow responses or intermittent problems before they affect
 real users.
+
+.. rubric:: Roles and Permissions
+
+Depending on the role defined by the contract with your organization, you
+might have different permissions:
+
+* **VIEWER**: Read
+* **EDITOR**: Create, Read, Update and Delete
+* **ADMIN**: Create, Read, Update and Delete
 
 Monitor
 ```````

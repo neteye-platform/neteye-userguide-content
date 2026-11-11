@@ -13,3 +13,4 @@ Observability
    observability/infrastructure.rst
    observability/applications.rst
    observability/synthetics.rst
+   observability/user-experience.rst

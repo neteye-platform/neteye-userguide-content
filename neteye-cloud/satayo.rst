@@ -10,6 +10,7 @@ Cyber Threat Intelligence - SATAYO
    satayo/threat-intelligence-lifecycle.rst
    satayo/how-it-works.rst
    satayo/mitre-attack.rst
+   satayo/satayo-platform.rst
    satayo/dashboard.rst
    satayo/satayo-items.rst
    satayo/rest-api.rst

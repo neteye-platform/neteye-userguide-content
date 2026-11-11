@@ -102,7 +102,7 @@ with the corresponding finding’s preview panel automatically displayed.
 Link to the Findings of a Ticket
 --------------------------------
 
-Inside |sat|, you find the findings of a ticket with the filters of the
+Inside |sat|, you can see the findings of a ticket with the filters of the
 **Findings** page, using the **Ticket ID** field. When you are outside
 |sat|, for example in a ticket, an e-mail or another tool, you can instead
 use a short link that opens all the findings related to a ticket:
@@ -111,16 +111,16 @@ use a short link that opens all the findings related to a ticket:
 
    https://<your SATAYO host>/satayo/findings?ticket=<TICKET-KEY>
 
-For example, ``.../satayo/findings?ticket=SAT-123``. Use it to refer to the
-findings of a ticket from wherever you work on it. The link opens the
-**Findings** page with the ticket filter already applied, the same filter
-you would set by hand.
+For example, ``.../satayo/findings?ticket=SAT-123``, which you can use to
+refer to the findings of a ticket from wherever you work on it. The link
+opens the **Findings** page with the ticket filter already applied, the same
+filter you would set by hand.
 
-The filter is visible, and you can change it like any other filter:
+The filter is then visible, and you can change it like any other filter:
 
 - the :guilabel:`1 Advanced` label above the table shows that an advanced
   filter is active;
-- the advanced filter panel shows the rule **Ticket ID** · **Is in**, with
+- the advanced filter panel shows the rule **Ticket ID** | **Is in**, with
   the ticket selected in the list of values.
 
 .. tip::

@@ -15,6 +15,10 @@ If a workload connects to a service whose certificate is issued by a private CA,
 directory. A typical example is Keycloak connecting to an LDAPS server (see :ref:`ldap-configuration`) or to an
 external identity provider. Without the CA, the TLS handshake fails.
 
+The workloads also connect to the |ne| frontend domain. If its certificate is not issued by the |ne| root CA, for
+example because you configured a custom certificate for the web interface, the CA that issued it must be in the
+directory as well.
+
 .. note:: Every certificate in the directory is trusted by all the workloads above. Add only the CAs that are really
    needed, and never a CA you do not trust.
 
@@ -27,6 +31,30 @@ The directory is created by |ne| and contains:
   install`, :command:`neteye update` and :command:`neteye upgrade`: do not edit or remove it.
 - Your own CAs. Add them as files with the :file:`.crt` or :file:`.pem` extension, in PEM format. A file may contain
   more than one certificate.
+
+When |ne| adds :file:`00-neteye-root-ca.crt` for the first time, it also pre-populates the directory with the CAs
+trusted by the node, so that the workloads keep trusting the CAs you already added to the node. It copies the
+:file:`.crt` and :file:`.pem` files of :file:`/etc/pki/ca-trust/source/anchors/` and
+:file:`/usr/share/pki/ca-trust-source/anchors/`, with the following exceptions:
+
+- :file:`root-ca.crt`, the |ne| root CA, already present as :file:`00-neteye-root-ca.crt`;
+- :file:`neteye-icinga2-master-ca.crt`, the Icinga 2 master CA, which the workloads do not need;
+- files with the same content as one already copied. If both directories contain a file with the same name or the same
+  content, the one of :file:`/etc/pki/ca-trust/source/anchors/` is copied.
+
+The pre-population happens only once: the CAs you add to the node afterwards are not copied, and the files you remove
+from the directory are not copied again. Review the copied files and remove those that the workloads do not need.
+
+The trust store of the node also accepts certificates in other formats, such as DER, which the workloads cannot use.
+Such files are copied as they are, and the upgrade prerequisite checks report them. Convert each of them to PEM, for
+example:
+
+.. code-block:: bash
+
+   neteye# cd /neteye/local/rke2/conf/ca-trust/
+   neteye# openssl x509 -inform DER -in my-ca.crt -out my-ca.pem && rm my-ca.crt
+
+or remove it if the workloads do not need that CA.
 
 Subdirectories, hidden files and files with any other extension are ignored. Files that you add are never modified or
 removed by |ne|.
@@ -45,6 +73,28 @@ To add a CA, for example the one of an LDAPS server, copy its certificate into t
 .. note:: On a cluster, the directory must contain the same files on **all** the nodes, so copy the files to every
    node. :command:`neteye install`, :command:`neteye update` and :command:`neteye upgrade` stop with an error that
    lists the checksum of each node if the directory differs.
+
+Confirm the directory before upgrading to |ne| 4.51
+```````````````````````````````````````````````````
+
+The directory is introduced, and pre-populated, by the latest updates of |ne| 4.50. Before upgrading to |ne| 4.51:
+
+#. On **every** node, review the content of :file:`/neteye/local/rke2/conf/ca-trust`: remove the CAs that the
+   workloads do not need and add the missing ones, for example the CA of an LDAPS server that is not trusted by the
+   node, or the CA that issued the certificate of the |ne| frontend domain if it is not the |ne| root CA. Make sure
+   that all the nodes contain the same files.
+#. Confirm that the directory is ready: in Icinga Web 2, open the configuration of the *neteye* module, check **I am
+   ready to upgrade** and save. Alternatively, run:
+
+   .. code-block:: bash
+
+      neteye# icingacli neteye catrustready enable
+
+The upgrade prerequisite checks fail until the confirmation is given. They also fail, on each node, if the directory
+or its files can be changed by a user other than ``root``, and if a :file:`.crt` or :file:`.pem` file is empty, does not
+contain any certificate in PEM format, contains a malformed certificate or contains a private key. For each problem,
+they name the file and tell how to fix it. The checks are skipped on |ne| Satellites, as they do not run Kubernetes
+workloads.
 
 Apply the changes
 `````````````````

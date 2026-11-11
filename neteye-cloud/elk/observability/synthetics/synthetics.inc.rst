@@ -117,5 +117,5 @@ request.
 
 .. seealso::
 
-	 * `Elastic synthetic monitoring
-		 <https://www.elastic.co/docs/solutions/observability/synthetics>`__
+   * `Elastic synthetic monitoring
+     <https://www.elastic.co/docs/solutions/observability/synthetics>`__

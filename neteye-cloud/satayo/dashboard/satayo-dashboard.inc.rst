@@ -222,6 +222,8 @@ In this case, the panel shows an empty state instead of ticket data.
 .. tip:: Open the dedicated
    :guilabel:`Tickets` page when you need full ticket management capabilities,
    complete ticket details, comments, ownership information, or the full remediation history.
+   To link to all the findings of a ticket from outside |sat|, see
+   :ref:`satayo-findings-by-ticket`.
 
 
 .. topic:: How findings and tickets are connected

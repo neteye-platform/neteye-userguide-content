@@ -16,22 +16,23 @@ apply the configuration changes to the Operator without affecting the other serv
 
 To ensure that all Kubernetes workloads trust the various Certificate Authorities (CAs) used by external services, for
 example, when connecting to LDAP servers with Keycloak, users are now required to configure the |ne| CA Trust.
-To do so, a new configuration directory has been introduced at :file:`/neteye/local/rke2/conf/ca-trust`.
+To do so, a new configuration directory has been introduced at :file:`/neteye/local/rke2/conf/ca-trust/`.
 
-This is a **breaking change**: the workloads running on Kubernetes no longer trust the CAs installed on the node (for
-example with :command:`update-ca-trust`), but only the public CAs shipped with their image, the |ne| root CA and the CAs
-in this directory. If, before the upgrade, Keycloak relied on a CA added to the node to reach an LDAPS server or an
-external identity provider, that CA must be added to the directory, otherwise the connection fails after the upgrade.
+This is a **breaking change**: the workloads running on Kubernetes will no longer trust the CAs installed on the node
+(for example with :command:`update-ca-trust`), but only the public CAs shipped with their image, the |ne| root CA and
+the CAs in this directory. If, before the upgrade, Keycloak relied on a CA added to the node to reach an LDAPS server or
+an external identity provider, that CA must be added to the directory, otherwise the connection will fail after the
+upgrade.
 
-The directory is created by the latest updates of |ne| 4.50 and pre-populated with the |ne| root CA and the CAs
-trusted by the node, that is the :file:`.crt` and :file:`.pem` files of :file:`/etc/pki/ca-trust/source/anchors/` and
-:file:`/usr/share/pki/ca-trust-source/anchors/`, except for the |ne| root CA and the Icinga 2 master CA, already handled
-by |ne|. Before upgrading:
+The directory is created by the latest updates of |ne| 4.50 and pre-populated with the |ne| root CA and the CAs trusted
+by the node, that is, the :file:`.crt` and :file:`.pem` files in :file:`/etc/pki/ca-trust/source/anchors/` and
+:file:`/usr/share/pki/ca-trust-source/anchors/`, except for the |ne| root CA and the Icinga 2 master CA, which are
+already handled by |ne|. Before upgrading:
 
 #. Identify the private CAs of the services that Keycloak and the other workloads (OpenTelemetry Collector) connect to,
    including the CA that issued the certificate of the |ne| frontend domain, if it is not the |ne| root CA.
-#. Review :file:`/neteye/local/rke2/conf/ca-trust` on **every** node of the installation: remove the pre-populated CAs
-   that the workloads do not need and add the missing ones, in PEM format with the :file:`.crt` or :file:`.pem`
+#. Review :file:`/neteye/local/rke2/conf/ca-trust/` on **every** node of the installation: **remove** the pre-populated
+   CAs that the workloads do not need and add the missing ones, in PEM format with the :file:`.crt` or :file:`.pem`
    extension. All the nodes must contain the same files. The directory and the files must be owned by ``root`` and not
    writable by their group or by others, and every :file:`.crt` and :file:`.pem` file must contain only valid
    certificates in PEM format: the files copied from the node may also be in other formats, such as DER. Otherwise the

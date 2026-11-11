@@ -7,13 +7,13 @@ The |ne| components that run on Kubernetes, such as Keycloak and the OpenTelemet
 Certificate Authorities (CAs) trusted by the node they run on, for example those added with
 :command:`update-ca-trust`. They trust only:
 
-- the well-known public CAs shipped with their container image;
-- the |ne| root CA;
-- the CAs you add to the :file:`/neteye/local/rke2/conf/ca-trust` directory, described below.
+- The well-known public CAs shipped with their container image
+- The |ne| root CA
+- The CAs you add to the :file:`/neteye/local/rke2/conf/ca-trust/` directory, described below
 
 If a workload connects to a service whose certificate is issued by a private CA, you must add that CA to the
-directory. A typical example is Keycloak connecting to an LDAPS server (see :ref:`ldap-configuration`) or to an
-external identity provider. Without the CA, the TLS handshake fails.
+directory. A typical example is when Keycloak connects to an LDAPS server (see :ref:`ldap-configuration`) or to an
+external identity provider. Without a valid CA, TLS handshakes will fail.
 
 The workloads also connect to the |ne| frontend domain. If its certificate is not issued by the |ne| root CA, for
 example because you configured a custom certificate for the web interface, the CA that issued it must be in the
@@ -22,7 +22,7 @@ directory as well.
 .. note:: Every certificate in the directory is trusted by all the workloads above. Add only the CAs that are really
    needed, and never a CA you do not trust.
 
-The :file:`ca-trust` directory
+The :file:`ca-trust` Directory
 ``````````````````````````````
 
 The directory is created by |ne| and contains:
@@ -37,13 +37,13 @@ trusted by the node, so that the workloads keep trusting the CAs you already add
 :file:`.crt` and :file:`.pem` files of :file:`/etc/pki/ca-trust/source/anchors/` and
 :file:`/usr/share/pki/ca-trust-source/anchors/`, with the following exceptions:
 
-- :file:`root-ca.crt`, the |ne| root CA, already present as :file:`00-neteye-root-ca.crt`;
-- :file:`neteye-icinga2-master-ca.crt`, the Icinga 2 master CA, which the workloads do not need;
-- files with the same content as one already copied. If both directories contain a file with the same name or the same
-  content, the one of :file:`/etc/pki/ca-trust/source/anchors/` is copied.
+- :file:`root-ca.crt`, the |ne| root CA, already present as :file:`00-neteye-root-ca.crt`
+- :file:`neteye-icinga2-master-ca.crt`, the Icinga 2 master CA, which the workloads do not need
+- Files with the same content as one already copied. If both directories contain a file with the same name or the same
+  content, the one in :file:`/etc/pki/ca-trust/source/anchors/` is copied.
 
-The pre-population happens only once: the CAs you add to the node afterwards are not copied, and the files you remove
-from the directory are not copied again. Review the copied files and remove those that the workloads do not need.
+Pre-population happens only once: the CAs you add to the node afterwards are not copied, and the files you remove from
+the directory are not copied again. Review the copied files and **remove** those that the workloads do not need.
 
 The trust store of the node also accepts certificates in other formats, such as DER, which the workloads cannot use.
 Such files are copied as they are, and the upgrade prerequisite checks report them. Convert each of them to PEM, for
@@ -54,7 +54,7 @@ example:
    neteye# cd /neteye/local/rke2/conf/ca-trust/
    neteye# openssl x509 -inform DER -in my-ca.crt -out my-ca.pem && rm my-ca.crt
 
-or remove it if the workloads do not need that CA.
+or **remove** it if the workloads do not need that CA.
 
 Subdirectories, hidden files and files with any other extension are ignored. Files that you add are never modified or
 removed by |ne|.
@@ -64,7 +64,7 @@ directory and every :file:`.crt` and :file:`.pem` file in it (a symbolic link is
 must not be writable by their group or by others. Otherwise :command:`neteye install`, :command:`neteye update` and
 :command:`neteye upgrade` stop with an error naming the path.
 
-To add a CA, for example the one of an LDAPS server, copy its certificate into the directory:
+To add a CA, for example the one for an LDAPS server, copy its certificate into the directory:
 
 .. code-block:: bash
 
@@ -74,12 +74,12 @@ To add a CA, for example the one of an LDAPS server, copy its certificate into t
    node. :command:`neteye install`, :command:`neteye update` and :command:`neteye upgrade` stop with an error that
    lists the checksum of each node if the directory differs.
 
-Confirm the directory before upgrading to |ne| 4.51
+Confirm the Directory Before Upgrading to |ne| 4.51
 ```````````````````````````````````````````````````
 
-The directory is introduced, and pre-populated, by the latest updates of |ne| 4.50. Before upgrading to |ne| 4.51:
+The directory is created, and pre-populated, by the latest updates of |ne| 4.50. Before upgrading to |ne| 4.51:
 
-#. On **every** node, review the content of :file:`/neteye/local/rke2/conf/ca-trust`: remove the CAs that the
+#. On **every** node, review the content of :file:`/neteye/local/rke2/conf/ca-trust/`: **remove** the CAs that the
    workloads do not need and add the missing ones, for example the CA of an LDAPS server that is not trusted by the
    node, or the CA that issued the certificate of the |ne| frontend domain if it is not the |ne| root CA. Make sure
    that all the nodes contain the same files.
@@ -96,7 +96,7 @@ contain any certificate in PEM format, contains a malformed certificate or conta
 they name the file and tell how to fix it. The checks are skipped on |ne| Satellites, as they do not run Kubernetes
 workloads.
 
-Apply the changes
+Apply the Changes
 `````````````````
 
 The content of the directory is merged into a single bundle, stored in the ``neteye-ca-bundle`` ConfigMap of the
@@ -109,14 +109,14 @@ other time, run:
    neteye# neteye install --restrict-services-to neteye-operator
 
 When the bundle changes, Keycloak and the OpenTelemetry Collector are restarted to load it. Nothing is restarted if
-the content did not change.
+the content does not change.
 
-While merging, |ne| re-encodes every certificate, removes duplicates and comments, and refuses to continue, naming the
-guilty file, if:
+While merging the CAs, |ne| re-encodes every certificate, removes duplicates and comments, and refuses to continue,
+naming the guilty file, if:
 
-- a file does not contain any PEM certificate, or contains a malformed one;
-- a file contains a private key: never put private keys in this directory;
-- the resulting bundle is larger than 900 KB.
+- A file does not contain any PEM certificate, or contains a malformed one
+- A file contains a private key (never put private keys in this directory)
+- The resulting bundle is larger than 900 KB
 
 To check which CAs were merged, count the certificates in the bundle (the |ne| root CA and one for each certificate you
 added, minus duplicates):

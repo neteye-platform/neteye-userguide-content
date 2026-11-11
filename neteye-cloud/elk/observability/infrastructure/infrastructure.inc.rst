@@ -60,7 +60,7 @@ investigation.
 
 The host detail panel summarizes CPU usage, normalized load, memory and
 disk usage for its selected time range. Check the aggregation labels:
-an average describes usage across the period, while a maximum highlights
+an *average* describes usage across the period, while a *maximum* highlights
 the peak. The charts below show when changes occurred; use the
 :guilabel:`Metrics` or :guilabel:`Logs` tabs to investigate further where
 the corresponding data is available.
@@ -79,7 +79,7 @@ such as CPU, memory, disk or network usage, and an aggregation such as
 by an attribute, allowing you to compare individual hosts or Kubernetes
 nodes rather than viewing all matching resources together.
 
-The illustrated CPU view selects ``system.cpu.total.norm.pct``,
+The CPU screenshot below has 3 values selected: ``system.cpu.total.norm.pct``,
 ``kubernetes.node.cpu.usage.node.pct`` and ``docker.cpu.total.pct``, with
 :guilabel:`Average` as the aggregation and :guilabel:`Everything` as the
 grouping. The colored metric labels identify the corresponding chart
@@ -93,16 +93,18 @@ container metrics describe different resource scopes.
 
 To investigate individual Kubernetes nodes, for example, select
 ``kubernetes.node.cpu.usage.nanocores`` and group by
-``kubernetes.node.name``. This metric is expressed in nanocores, unlike
-the percentage metrics above. Use filters to isolate the nodes of
+``kubernetes.node.name``. This metric measures CPU usage in nanocores
+(one billionth of a CPU core), rather than as a percentage.
+Use filters to isolate the nodes of
 interest and look for spikes, sustained increases or differences between
 nodes during the same period.
 
 Hosts
 `````
 
-Open :menuselection:`Infrastructure --> Hosts` when you need a host-level
-perspective. The host list and key CPU, memory, disk and network metrics
+When you need a host-level perspective, open
+:menuselection:`Infrastructure --> Hosts`. The host list and key CPU,
+memory, disk and network metrics
 help you identify systems whose resource usage stands out within the
 selected period.
 
@@ -112,8 +114,10 @@ distinguish averages from maximum values. The :guilabel:`Metrics` tab
 below the table compares host trends using a separate line for each
 host; :guilabel:`Logs` and :guilabel:`Alerts` provide related context.
 
-Filter the list to the hosts involved in an incident, then select a host
-to inspect its performance charts. Compare the timing of changes across
+During an incident, filter the host list to the affected systems to
+exclude unrelated activity. Select a host to inspect its performance
+charts and check whether resource usage changed when the problem began.
+Compare the timing of changes across
 metrics: for example, a rise in CPU usage alongside increased network
 traffic can help narrow the investigation to a workload change. Use the
 charts to distinguish a brief peak from persistent resource pressure.

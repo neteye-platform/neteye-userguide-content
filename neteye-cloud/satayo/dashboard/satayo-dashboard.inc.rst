@@ -4,8 +4,8 @@
 Dashboard
 ~~~~~~~~~
 
-The SATAYO Dashboard is your starting point for understanding the current
-security posture of your organization in NetEye.Cloud. Use it to check
+The |sat| Dashboard is your starting point for understanding the current
+security posture of your organization in |nec|. Use it to check
 exposure indices, identify new findings, follow remediation progress, and
 decide which areas require your attention first.
 
@@ -14,12 +14,8 @@ across separate views. You can review scan results, findings, tickets, remediati
 and attack surface indicators from a single page, then open the related detailed view
 when you need to investigate a specific item.
 
-Dashboard data is always shown in the context of the *organization* you select.
-If you have access to more than one organization, use the selector in the top-right
-corner to switch between a single organization and *All Organizations*.
-Select a single **organization** when you want to focus on one monitored perimeter.
-Select :guilabel:`All Organizations` when you want an aggregated overview across
-all organizations available to you.
+Dashboard data is always shown for the *organization* that you select in the
+header. For details, see :ref:`satayo-organization-selector`.
 
 The Dashboard contains two tabs:
 
@@ -64,7 +60,7 @@ value, the greater the potential impact of the information that an attacker coul
    is calculated and what the thresholds mean.
 
 The graph below the counter shows how exposure evolved over the same period, with one
-line for each of the three exposure categories tracked by SATAYO:
+line for each of the three exposure categories tracked by |sat|:
 
 - **Infrastructure** — exposure related to your network and systems configuration.
 - **Data Files & People** — exposure related to leaked data, files, and personal information.
@@ -101,7 +97,7 @@ A larger organization with more domains, services, and publicly accessible
 infrastructure can naturally have a higher value because its external presence is broader.
 
 .. note::
-    When you select :guilabel:`All Organizations`, the value shown is the average across
+    When you select :guilabel:`All organizations`, the value shown is the average across
     your organizations' domains, not a sum, so viewing several organizations together does
     not inflate the index.
 
@@ -128,7 +124,7 @@ top of the panel:
 For the selected dimension, each row shows one group together with three counts:
 
 - **WFC** (Waiting for customer): findings whose ticket is waiting for your organization to act.
-- **WFS** (Waiting for support): findings whose ticket is waiting on the SATAYO Intelligence Team.
+- **WFS** (Waiting for support): findings whose ticket is waiting on the |sat| Intelligence Team.
 - **Closed**: findings whose ticket has reached a final state (canceled, false positive, resolved,
   risk accepted, or published).
 
@@ -160,7 +156,7 @@ that layer and its percentage of the total number of findings:
   authentication or surfacing in leaked data collections. It covers findings such as
   :ref:`data breaches <data_breach_item>` and :ref:`stealer logs <stealer_logs_item>`.
 - **Dark Web** – content only reachable through specialized, anonymized networks and tools,
-  such as onion sites and illegal marketplaces. SATAYO reports this evidence as
+  such as onion sites and illegal marketplaces. |sat| reports this evidence as
   :ref:`Deep & Dark Web findings <deep_dark_web_item>`.
 
 .. tip:: Select the arrow next to a layer to drill down into the findings detected
@@ -208,7 +204,7 @@ exists, you can check whether it has already been assigned, prioritized, reviewe
 
    Tickets panel of the Dashboard
 
-Tickets are managed by the SATAYO Intelligence Team. You can filter tickets by status, including:
+Tickets are managed by the |sat| Intelligence Team. You can filter tickets by status, including:
 
  - Open
  - In Progress
@@ -226,12 +222,14 @@ In this case, the panel shows an empty state instead of ticket data.
 .. tip:: Open the dedicated
    :guilabel:`Tickets` page when you need full ticket management capabilities,
    complete ticket details, comments, ownership information, or the full remediation history.
+   To link to all the findings of a ticket from outside |sat|, see
+   :ref:`satayo-findings-by-ticket`.
 
 
 .. topic:: How findings and tickets are connected
 
    Findings and tickets represent two steps of the same workflow. A finding is
-   the evidence SATAYO detects during monitoring or scan activities. It tells
+   the evidence |sat| detects during monitoring or scan activities. It tells
    you that something relevant was found in the monitored perimeter,
    such as an exposed service, leaked information, a suspicious reference, or another exposure category.
    A ticket is created when that finding requires operational follow-up.
@@ -249,7 +247,7 @@ In this case, the panel shows an empty state instead of ticket data.
    when the issue is already being handled.
 
 
-.. tip:: Use the Findings panel first when you want to understand what SATAYO detected
+.. tip:: Use the Findings panel first when you want to understand what |sat| detected
    and how exposure is distributed across categories or domains. Then use the
    Tickets panel to understand which of those findings are already acknowledged,
    prioritized, assigned, reviewed, or resolved. Together, the two panels help
@@ -329,7 +327,7 @@ Every point is a score of the selected organization, calculated from its scans:
   on Monday) or one day. For each domain, the most recent scan up to the end of that week
   or day is used. A line therefore keeps its last value until the next scan changes it.
 - When the organization has more than one domain, a point is the average across its
-  domains. With :guilabel:`All Organizations` selected, it is the average across the
+  domains. With :guilabel:`All organizations` selected, it is the average across the
   domains of all your organizations, so viewing several organizations together does not
   inflate the values.
 

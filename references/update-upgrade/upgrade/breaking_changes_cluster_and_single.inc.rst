@@ -35,14 +35,15 @@ already handled by |ne|. Before upgrading:
    CAs that the workloads do not need and add the missing ones, in PEM format with the :file:`.crt` or :file:`.pem`
    extension. All the nodes must contain the same files. The directory and the files must be owned by ``root`` and not
    writable by their group or by others, and every :file:`.crt` and :file:`.pem` file must contain only valid
-   certificates in PEM format: the files copied from the node may also be in other formats, such as DER. Otherwise the
-   upgrade prerequisite checks fail on that node and tell how to fix each file, or to remove it if the workloads do not
-   need that CA.
+   certificates in PEM format (the files copied from the node may also be in other formats, such as DER). Otherwise the
+   upgrade prerequisite checks will fail on that node and explain how to fix each file, or advise removing it if the
+   workloads do not need that CA.
 #. Confirm it in Icinga Web 2: in the configuration of the *neteye* module, check **I am ready to upgrade** and save,
    or run :command:`icingacli neteye catrustready enable`.
 
-The upgrade prerequisite checks fail until the confirmation is given. The check is skipped on |ne| Satellites, as they
-do not run Kubernetes workloads. The directory is merged into the bundle used by the workloads during the upgrade.
+The upgrade prerequisite checks will fail until the confirmation is given. The check is skipped on |ne| Satellites, as
+they do not run Kubernetes workloads. The directory will be merged into the bundle used by the workloads during the
+upgrade.
 
-The directory stays in use after the upgrade, when you need to trust new CAs. For its content, the pre-population, the
+The directory will remain after the upgrade in case you need to trust new CAs. For the content, the pre-population, the
 format of the files and the commands to apply a change, see :ref:`kubernetes-ca-trust`.

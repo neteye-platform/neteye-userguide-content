@@ -1,4 +1,4 @@
-.. _neteye-cloud-role-management:
+.. _cloud-role-management:
 
 Roles and Permissions
 ---------------------
@@ -8,6 +8,9 @@ users can access and which operations they can perform. Authentication
 verifies a user's identity; authorization grants the permissions needed
 for that user's tasks. Signing in through Single Sign-On (SSO) does not
 automatically grant access to every module or to all data.
+
+|
+
 
 Roles, Permissions and Scope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,6 +31,9 @@ within the scope of the user's **company/tenant**:
 A user can have different access levels for different contract types,
 but only one access level is allowed per contract type. For example,
 a user may be a Viewer for MON and an Editor for ELK.
+
+|
+
 
 Access Levels
 ~~~~~~~~~~~~~
@@ -52,8 +58,19 @@ Access Levels
 Not every contract type supports all three levels. The exact permissions
 and available levels depend on the subscribed service. Unsupported
 contract/access-level combinations default to Viewer, as described in
-:ref:`authorization-procedure`. Consult that section for the current
+:ref:`cloud-authorization-procedure`. Consult that section for the current
 contract-specific availability table before assigning a role.
+
+Some contract types also provide
+:ref:`Additional Access Levels <cloud-additional-access-levels>`, which are
+isolated from Viewer, Editor and Admin and grant access to specific
+functionalities only. For example, access to the
+:ref:`Command Orchestrator <command-orchestrator-authorization>` is denied by
+default and requires the MON **CMDO Executor** Access Level, which can
+be assigned in addition to the user's standard MON Access Level.
+
+|
+
 
 Who Manages Roles?
 ~~~~~~~~~~~~~~~~~~
@@ -81,6 +98,9 @@ the |nec| `service request process
 For more information about these management options, see
 :ref:`group-claims-for-authorization`.
 
+|
+
+
 Managing Role Assignments
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -105,4 +125,4 @@ In order to manage your role assignments:
 If expected permissions are missing, check that the user's group claims
 exactly match the configured group names and that the requested access
 level is available for the contract type. The detailed mapping process
-and tenant restrictions are described in :ref:`authorization-procedure`.
+and tenant restrictions are described in :ref:`cloud-authorization-procedure`.

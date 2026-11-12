@@ -3,8 +3,8 @@
 Synthetic Monitoring
 ~~~~~~~~~~~~~~~~~~~~
 
-The **Synthetics** section monitors websites, APIs and services through
-simulated checks. These checks help you verify availability and detect
+The **Synthetics** section monitors websites, APIs, services and applications through
+simulated checks. These checks help you verify their availability and detect
 failures, slow responses or intermittent problems before they affect
 real users.
 
@@ -20,7 +20,7 @@ might have different permissions:
 Monitor
 ```````
 
-A **monitor** is a configured check that runs automatically at defined
+A **monitor** in ELK is a configured check that runs automatically at defined
 intervals. Choose between two categories according to what you need to
 verify.
 
@@ -40,7 +40,7 @@ a browser:
 Browser monitors test application behavior by simulating user
 interactions in a real browser, such as signing in, navigating pages or
 submitting forms. Unlike lightweight checks, they can detect broken user
-journeys and frontend performance problems even when an endpoint responds
+interaction flow and frontend performance problems even when an endpoint responds
 successfully.
 
 Monitor Status and History
@@ -49,16 +49,17 @@ Monitor Status and History
 The :guilabel:`Overview` tab helps you see which monitors need attention
 and when checks failed:
 
-* **Monitors status** summarizes the monitors by state, such as Up or Down.
-* **Pings over time** shows successful checks in green and failed checks
+* :guilabel:`Monitors status` summarizes the monitors by state, such as
+	:guilabel:`Up` or :guilabel:`Down`.
+* :guilabel:`Pings over time` shows successful checks in green and failed checks
 	over the selected period in red. Alert markers show when alerts started.
-* **Monitor cards** show each target's check type, location, status and
+* Monitor cards show each target's check type, location, status and
 	average duration. A monitor running from several locations appears
 	separately for each location, so you can spot location-specific problems.
 
 Use filters to focus on the relevant monitors and the time picker to
 examine the incident period. Check the history to distinguish a one-off
-failure from a recurring problem: a monitor that is Up now may still
+failure from a recurring problem, since a monitor that is :guilabel:`Up` now may still
 have failed earlier.
 
 .. figure:: /neteye-cloud/elk/observability/synthetics/img/synthetics-overview.png
@@ -74,15 +75,15 @@ recognizable name, and select its execution locations and frequency.
 Locations let you check the target from different network or geographic
 perspectives; frequency determines how often the check runs.
 
-The illustrated form selects :guilabel:`Multistep` for a browser journey.
-Add the journey script in the :guilabel:`Script editor`, or upload a
+The form shown below selects :guilabel:`Multistep` for a browser flow.
+Add the browser test script in the :guilabel:`Script editor`, or upload a
 script generated with the Elastic Synthetics Recorder. The script
-defines the interactions and checks the browser will perform. Use
-:guilabel:`Run test`, where available, to validate the check before
+defines the interactions and checks that the browser will perform. Use
+:guilabel:`Run test` (where available) to validate the check before
 selecting :guilabel:`Create monitor`.
 
 .. figure:: /neteye-cloud/elk/observability/synthetics/img/create-browser-monitor.png
-	:alt: Create Monitor form with Multistep selected, execution locations, frequency and a journey script
+	:alt: Create Monitor form with Multistep selected, execution locations, frequency and a browser test script
 	:align: center
 	:width: 75%
 
@@ -91,8 +92,7 @@ Monitor Analysis
 
 Select a monitor card to open its summary panel, then click
 :guilabel:`Go to monitor` to open the full details page. The panel's
-:guilabel:`Duration` chart shows how execution time changes; where a
-previous-period comparison is displayed, use it to identify whether
+:guilabel:`Duration` chart shows how execution time changes; where a comparison for a previous period is displayed, use it to identify whether
 checks have become slower than before.
 
 .. figure:: /neteye-cloud/elk/observability/synthetics/img/monitor-summary.png
@@ -103,13 +103,13 @@ On the monitor details page, check the monitor name, type and location
 to confirm which target and execution location you are investigating.
 Use the following tabs to narrow down the problem:
 
-* **Overview**: examine availability, duration trends and errors to
+* :guilabel:`Overview`: examine availability, duration trends and errors to
 	understand the monitor's behavior over time.
-* **History**: review individual executions and their outcomes during
+* :guilabel:`History`: review individual executions and their outcomes during
 	the period of interest.
-* **Errors**: focus on failed checks and the available failure details.
+* :guilabel:`Errors`: focus on failed checks and the available failure details.
 
-For browser monitors, open an individual run to investigate its journey
+For browser monitors, open an individual run to investigate its test
 steps. Compare a failed or slow step with a successful run to understand
 what changed. Error messages, timings and captured screenshots, where
 available, help distinguish a broken interaction from a slow page or

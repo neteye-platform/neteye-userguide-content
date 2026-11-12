@@ -4,14 +4,14 @@ User Experience (RUM)
 ~~~~~~~~~~~~~~~~~~~~~
 
 The **User Experience** section uses **Real User Monitoring (RUM)** to
-show how real users experience your web applications, including page
-loading, responsiveness and frontend errors. Unlike Synthetics, which
-runs simulated checks, RUM analyzes data collected from actual browser
-activity.
+show how real users experience your web applications, including
+responsiveness (such as page load times) and frontend errors. Unlike Synthetics, which
+runs simulated checks, RUM analyzes data collected from the browser activity of actual users.
 
 Use it to identify slow page loads, rendering delays and interaction
 problems that backend or infrastructure metrics alone may not reveal.
-The available views depend on the frontend data your application sends.
+The available views depend on the frontend telemetry your application
+sends for monitoring.
 
 .. rubric:: Roles and Permissions
 
@@ -34,7 +34,7 @@ these attributes are available.
 For example, if users report slow pages on mobile devices, filter by
 device type and the affected page during the reported period. Compare
 that view with other devices or browsers to see whether the slowdown is
-specific to one group or affects the application more broadly.
+specific to one group, or affects the application more broadly.
 
 Page Performance
 ````````````````
@@ -42,16 +42,16 @@ Page Performance
 The performance charts help you understand both the overall trend and
 the differences between individual page loads:
 
-* **Page load** summarizes total loading time and its backend and
+* :guilabel:`Page load` summarizes total load time and its backend and
   frontend components for the selected percentile and period. Use the
-  breakdown to see which part contributes most to loading time.
-* **Metrics** summarizes key frontend performance values, giving you a
+  breakdown to see which part contributes most to load time.
+* :guilabel:`Metrics` summarizes key frontend performance values, giving you a
   quick view of loading speed and responsiveness in the selected context.
-* **Core Web Vitals** evaluates loading, interactivity and visual
+* :guilabel:`Core Web Vitals` evaluates page loading, interactivity and visual
   stability. Use it to identify aspects of the experience that need
   attention, even when pages load successfully.
-* **Page load distribution** shows how page load times are spread.
-  A concentration of fast loads with a smaller group of very slow ones
+* :guilabel:`Page load distribution` shows how page load times are spread out.
+  A concentration of fast load times with a smaller group of very slow ones
   can reveal problems that an overall average would hide.
 
 .. figure:: /neteye-cloud/elk/observability/user-experience/img/observability-user-experience-tab.png
@@ -64,12 +64,12 @@ Traffic and User Context
 Use the traffic and visitor charts to understand who is affected and
 whether performance changes coincide with changes in usage:
 
-* **Total page views** shows traffic volume over the selected period.
+* :guilabel:`Total page views` shows traffic volume over the selected period.
   Compare it with loading performance to see whether slowdowns coincide
-  with increased activity; this alone does not establish the cause.
-* **Page load duration by region** compares loading performance across
+  with increased activity, although this alone does not establish the cause.
+* :guilabel:`Page load duration by region` compares loading performance across
   geographic regions, helping you identify locations with slower loads.
-* **Visitor breakdown** shows the browser and operating system mix.
+* :guilabel:`Visitor breakdown` shows the browser and operating system mix.
   Use it to understand your audience, then filter the performance views
   to investigate a particular client environment.
 
@@ -80,9 +80,9 @@ whether performance changes coincide with changes in usage:
 JavaScript Errors
 `````````````````
 
-The **JavaScript errors** chart highlights client-side errors and how
+The :guilabel:`JavaScript errors` chart highlights client-side errors and how
 their frequency changes. Check whether an increase coincides with a
-performance degradation or application change, then use filters to
+performance degradation or an application change, then use filters to
 identify the affected pages, browsers or user groups. Errors can disrupt
 an interaction even when the page itself loads quickly.
 

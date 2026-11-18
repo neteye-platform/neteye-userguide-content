@@ -16,14 +16,16 @@
   <rect x="40.5" y="80.5" width="167" height="367" fill="#262626" stroke="#6F6F6F" stroke-dasharray="3 3"/>
   <rect x="40" y="80" width="168" height="4" fill="#6F6F6F"/>
   <text x="56" y="108" font-size="14" font-weight="600" fill="#F4F4F4">Customer hosts</text>
-  <rect x="56.5" y="168.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
-  <text x="72" y="189" font-size="14" fill="#F4F4F4">Host A</text>
-  <rect x="56.5" y="268.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
-  <text x="72" y="289" font-size="14" fill="#F4F4F4">Host B</text>
-  <rect x="56.5" y="368.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
-  <text x="72" y="389" font-size="14" fill="#F4F4F4">Host n</text>
-  <text x="56" y="418" font-size="12" fill="#C6C6C6">Icinga agent</text>
-  <text x="56" y="434" font-size="12" fill="#C6C6C6">on each host</text>
+  <rect x="56.5" y="152.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
+    <text x="72" y="173" font-size="14" fill="#F4F4F4">Host A</text>
+  <rect x="56.5" y="240.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
+    <text x="72" y="261" font-size="14" fill="#F4F4F4">Host B</text>
+  <rect x="56.5" y="328.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
+    <text x="72" y="349" font-size="14" fill="#F4F4F4">Host n</text>
+    <text x="56" y="384" font-size="12" fill="#C6C6C6">Icinga agent</text>
+    <text x="56" y="400" font-size="12" fill="#C6C6C6">on each host</text>
+    <text x="56" y="420" font-size="12" fill="#C6C6C6">Elastic Agent</text>
+    <text x="56" y="436" font-size="12" fill="#C6C6C6">if subscribed</text>
   <rect x="496.5" y="80.5" width="191" height="367" fill="#1E2C29" stroke="#0A9D81" stroke-dasharray="3 3"/>
   <rect x="496" y="80" width="192" height="4" fill="#0A9D81"/>
   <text x="512" y="108" font-size="14" font-weight="600" fill="#F4F4F4">NetEye Satellites</text>

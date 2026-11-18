@@ -22,7 +22,8 @@
   <text x="72" y="197" font-size="14" fill="#F4F4F4">Host B</text>
   <rect x="56.5" y="224.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
   <text x="72" y="245" font-size="14" fill="#F4F4F4">Host n</text>
-  <text x="56" y="292" font-size="12" fill="#C6C6C6">Icinga agent on each host</text>
+  <text x="56" y="284" font-size="12" fill="#C6C6C6">Icinga agent on each host</text>
+  <text x="56" y="300" font-size="12" fill="#C6C6C6">Elastic Agent if subscribed</text>
   <rect x="440.5" y="80.5" width="183" height="239" fill="#1E2C29" stroke="#0A9D81" stroke-dasharray="3 3"/>
   <rect x="440" y="80" width="184" height="4" fill="#0A9D81"/>
   <text x="456" y="108" font-size="14" font-weight="600" fill="#F4F4F4">NetEye Satellites</text>

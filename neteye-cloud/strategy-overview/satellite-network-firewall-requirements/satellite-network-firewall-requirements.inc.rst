@@ -4,7 +4,7 @@ NetEye.Cloud Satellite Network and Firewall Requirements
 
 .. Pending before publication: the names of the subscriptions that trigger the subscription- or module-dependent flows.
 
-Purpose and audience
+Purpose and Audience
 ^^^^^^^^^^^^^^^^^^^^
 
 This page lists the network and firewall flows that must be allowed before a NetEye Satellite is connected
@@ -19,7 +19,7 @@ Read this page before the onboarding session so that the required rules can be r
    Values specific to your environment, such as private IP addresses, custom routing, and custom ports,
    are provided separately during onboarding.
 
-Architecture overview
+Architecture Overview
 ^^^^^^^^^^^^^^^^^^^^^
 
 The communication model involves four parties:
@@ -41,7 +41,7 @@ for the SSH and HTTPS flows listed below.
 
    Communication paths and the two points where firewall rules apply
 
-Firewall requirements
+Firewall Requirements
 ^^^^^^^^^^^^^^^^^^^^^
 
 The tables list the flows between your hosts, the NetEye Satellite, and the NetEye.Cloud Master.

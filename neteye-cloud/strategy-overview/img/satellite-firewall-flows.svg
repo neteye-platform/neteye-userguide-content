@@ -12,17 +12,17 @@
   <!-- Customer network -->
   <rect x="24.5" y="24.5" width="679" height="439" fill="#393939" stroke="#6F6F6F" stroke-dasharray="3 3"/>
   <rect x="24" y="24" width="680" height="4" fill="#6F6F6F"/>
-  <text x="40" y="56" font-size="16" font-weight="600" fill="#F4F4F4">Customer network</text>
+  <text x="40" y="56" font-size="16" font-weight="600" fill="#F4F4F4">Customer Network</text>
   <rect x="40.5" y="80.5" width="167" height="367" fill="#262626" stroke="#6F6F6F" stroke-dasharray="3 3"/>
   <rect x="40" y="80" width="168" height="4" fill="#6F6F6F"/>
-  <text x="56" y="108" font-size="14" font-weight="600" fill="#F4F4F4">Customer hosts</text>
+  <text x="56" y="108" font-size="14" font-weight="600" fill="#F4F4F4">Customer Hosts</text>
   <rect x="56.5" y="152.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
     <text x="72" y="173" font-size="14" fill="#F4F4F4">Host A</text>
   <rect x="56.5" y="240.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
     <text x="72" y="261" font-size="14" fill="#F4F4F4">Host B</text>
   <rect x="56.5" y="328.5" width="135" height="31" fill="#393939" stroke="#6F6F6F"/>
-    <text x="72" y="349" font-size="14" fill="#F4F4F4">Host n</text>
-    <text x="56" y="384" font-size="12" fill="#C6C6C6">Icinga agent</text>
+    <text x="72" y="349" font-size="14" fill="#F4F4F4">Host <tspan font-style="italic">n</tspan></text>
+    <text x="56" y="384" font-size="12" fill="#C6C6C6">Icinga and GLPI Agents</text>
     <text x="56" y="400" font-size="12" fill="#C6C6C6">on each host</text>
     <text x="56" y="420" font-size="12" fill="#C6C6C6">Elastic Agent</text>
     <text x="56" y="436" font-size="12" fill="#C6C6C6">if subscribed</text>
@@ -43,22 +43,22 @@
 
   <!-- Flows: customer hosts and NetEye Satellites -->
   <g stroke="#C6C6C6" stroke-width="2" fill="none">
-    <line x1="212" y1="144" x2="492" y2="144" marker-end="url(#arrow)"/>
-    <line x1="212" y1="184" x2="492" y2="184" stroke-dasharray="8 4" marker-end="url(#arrow)"/>
-    <line x1="212" y1="224" x2="492" y2="224" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-    <line x1="212" y1="264" x2="492" y2="264" marker-end="url(#arrow)"/>
+    <line x1="212" y1="144" x2="492" y2="144" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="212" y1="184" x2="492" y2="184" marker-end="url(#arrow)"/>
+    <line x1="212" y1="224" x2="492" y2="224" marker-end="url(#arrow)"/>
+    <line x1="212" y1="264" x2="492" y2="264" stroke-dasharray="8 4" marker-end="url(#arrow)"/>
     <line x1="212" y1="304" x2="492" y2="304" stroke-dasharray="8 4" marker-end="url(#arrow)"/>
     <line x1="212" y1="344" x2="492" y2="344" stroke-dasharray="8 4" marker-end="url(#arrow)"/>
     <line x1="212" y1="384" x2="492" y2="384" stroke-dasharray="8 4" marker-end="url(#arrow)"/>
     <line x1="212" y1="424" x2="492" y2="424" marker-end="url(#arrow)"/>
   </g>
-  <text x="352" y="136" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">NATS</tspan> TCP 4222</text>
-  <text x="352" y="176" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Logstash</tspan> TCP 5045</text>
-  <text x="352" y="216" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Icinga 2</tspan> TCP 5665</text>
-  <text x="352" y="256" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Syslog (standard)</tspan> TCP/UDP 514</text>
-  <text x="352" y="296" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Syslog (various)</tspan> TCP/UDP 5001-5199</text>
-  <text x="352" y="336" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Elastic Agent / Fleet</tspan> TCP 8220</text>
-  <text x="352" y="376" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Elasticsearch data</tspan> TCP 9200</text>
+  <text x="352" y="136" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Icinga 2</tspan> TCP 5665</text>
+  <text x="352" y="176" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">NATS</tspan> TCP 4222</text>
+  <text x="352" y="216" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Syslog (standard)</tspan> TCP/UDP 514</text>
+  <text x="352" y="256" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Syslog (various)</tspan> TCP/UDP 5001-5199</text>
+  <text x="352" y="296" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Elastic Agent / Fleet</tspan> TCP 8220</text>
+  <text x="352" y="336" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Elasticsearch data</tspan> TCP 9200</text>
+  <text x="352" y="376" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">Logstash</tspan> TCP 5045</text>
   <text x="352" y="416" font-size="14" text-anchor="middle" fill="#C6C6C6"><tspan font-weight="600" fill="#F4F4F4">HTTPS</tspan> TCP 443</text>
 
   <!-- Flows: NetEye Satellites and NetEye.Cloud Master -->

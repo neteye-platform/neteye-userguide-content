@@ -12,18 +12,19 @@
   <!-- Customer network -->
   <rect x="24.5" y="24.5" width="615" height="311" fill="#393939" stroke="#6F6F6F" stroke-dasharray="3 3"/>
   <rect x="24" y="24" width="616" height="4" fill="#6F6F6F"/>
-  <text x="40" y="56" font-size="16" font-weight="600" fill="#F4F4F4">Customer network</text>
+  <text x="40" y="56" font-size="16" font-weight="600" fill="#F4F4F4">Customer Network</text>
   <rect x="40.5" y="80.5" width="183" height="239" fill="#262626" stroke="#6F6F6F" stroke-dasharray="3 3"/>
   <rect x="40" y="80" width="184" height="4" fill="#6F6F6F"/>
-  <text x="56" y="108" font-size="14" font-weight="600" fill="#F4F4F4">Customer hosts</text>
+  <text x="56" y="108" font-size="14" font-weight="600" fill="#F4F4F4">Customer Hosts</text>
   <rect x="56.5" y="128.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
   <text x="72" y="149" font-size="14" fill="#F4F4F4">Host A</text>
   <rect x="56.5" y="176.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
   <text x="72" y="197" font-size="14" fill="#F4F4F4">Host B</text>
   <rect x="56.5" y="224.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
-  <text x="72" y="245" font-size="14" fill="#F4F4F4">Host n</text>
-  <text x="56" y="284" font-size="12" fill="#C6C6C6">Icinga agent on each host</text>
-  <text x="56" y="300" font-size="12" fill="#C6C6C6">Elastic Agent if subscribed</text>
+  <text x="72" y="245" font-size="14" fill="#F4F4F4">Host <tspan font-style="italic">n</tspan></text>
+  <text x="56" y="276" font-size="12" fill="#C6C6C6">Icinga and GLPI Agents</text>
+  <text x="56" y="292" font-size="12" fill="#C6C6C6">on each host</text>
+  <text x="56" y="308" font-size="12" fill="#C6C6C6">Elastic Agent if subscribed</text>
   <rect x="440.5" y="80.5" width="183" height="239" fill="#1E2C29" stroke="#0A9D81" stroke-dasharray="3 3"/>
   <rect x="440" y="80" width="184" height="4" fill="#0A9D81"/>
   <text x="456" y="108" font-size="14" font-weight="600" fill="#F4F4F4">NetEye Satellites</text>

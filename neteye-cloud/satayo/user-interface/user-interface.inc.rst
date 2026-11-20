@@ -226,5 +226,5 @@ The |sat| user interface is available in the following languages:
 - Italian
 - German
 
-|sat| uses the language of your web browser. If the language of your browser
-is not one of the languages above, |sat| uses English.
+|sat| automatically uses the language set in your web browser. If your browser
+language is not supported, the interface defaults to English.

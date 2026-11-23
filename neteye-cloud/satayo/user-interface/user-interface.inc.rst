@@ -1,15 +1,18 @@
-.. _satayo-platform:
+.. _satayo-user-interface:
 
-|sat| Platform
-~~~~~~~~~~~~~~~
+User Interface
+~~~~~~~~~~~~~~
 
-The header of the |sat| web interface is always visible, on every page.
-It contains tools that work across the entire |sat|, not just on one page.
-Use these tools to choose which data you see, and to find your way around |sat|.
+This page describes the parts of the |sat| user interface that work across the
+entire |sat|, not just on one page: the tools in the header and the
+:ref:`interface language <satayo-interface-language>`.
 
-.. figure:: satayo-platform/img/top-bar.png
+The header of the |sat| user interface is always visible, on every page.
+Use its tools to choose which data you see, and to find your way around |sat|.
 
-   The header of the |sat| web interface
+.. figure:: user-interface/img/top-bar.png
+
+   The header of the |sat| user interface
 
 The right side of the header contains the following tools, from left to right:
 
@@ -104,7 +107,7 @@ Travel to a Day in the Past
 Select one of the **Quick select** buttons to go back by a fixed period. To
 choose any other day, pick it in the date field and select :guilabel:`Save`.
 
-.. figure:: satayo-platform/img/time-machine-calendar.png
+.. figure:: user-interface/img/time-machine-calendar.png
 
    Choosing a day in the calendar
 
@@ -129,7 +132,7 @@ When the time machine is active, the header shows it in two ways:
   **x** icon to dismiss the notice. The button stays as it is, so you always see
   that you are looking at the past.
 
-.. figure:: satayo-platform/img/time-machine-active.png
+.. figure:: user-interface/img/time-machine-active.png
 
    The header when the time machine is active
 
@@ -152,7 +155,7 @@ Leave the Time Machine
 Select the :guilabel:`Time traveling to` button, and then select
 :guilabel:`Clear`. The pages show the current data again.
 
-.. figure:: satayo-platform/img/time-machine-save-clear.png
+.. figure:: user-interface/img/time-machine-save-clear.png
 
    The :guilabel:`Save` and :guilabel:`Clear` buttons
 
@@ -211,3 +214,17 @@ Select the **Settings** (gear) icon in the header to open the Settings area,
 which shows how |sat| is configured for your tenant and all its organizations.
 Only users with the **Tenant Admin** role see this icon. For details, see
 :ref:`satayo-settings`.
+
+.. _satayo-interface-language:
+
+Interface Language
+``````````````````
+
+The |sat| user interface is available in the following languages:
+
+- English
+- Italian
+- German
+
+|sat| automatically uses the language set in your web browser. If your browser
+language is not supported, the interface defaults to English.

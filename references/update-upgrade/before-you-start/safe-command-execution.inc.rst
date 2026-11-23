@@ -15,7 +15,7 @@ which allows the command to run in a detached bash session.
 
 In the following example, the :command:`neteye update` command is run in the background with all output written to **nohup.out** file:
 
-.. code:: bash
+.. code:: neteye-console
 
     # (nohup neteye update &) && tail --retry -f nohup.out
 
@@ -24,7 +24,7 @@ allowing you to check its progress and results as soon as the connection is rein
 
 In case the connection drops, you can simply log back into the system and check the progress of the command by examining the :file:`nohup.out` file.
 
-.. code:: bash
+.. code:: neteye-console
 
    # tail --retry -f nohup.out
 

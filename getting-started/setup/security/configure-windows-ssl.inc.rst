@@ -71,13 +71,14 @@ Procedure
 -  Now click **Next**, and then **Finish**. You should see the
    message “The export was successful.”
 
-.. rubric:: **Step 3:** Export your CA Certificate(s) in Base64
-   format.
+.. rubric:: **Step 3:** Export your CA Certificate(s) in Base64 format.
 
-.. note:: If the Certification Authority Infrastructure consists of
-   multiple CAs (for example, Root CA > Subordinate Intermediate CA),
-   you must export all of them and then combine them into a single
-   Certificate.
+.. note::
+   :class: rubric-following-note
+
+   If the Certification Authority Infrastructure consists of multiple CAs (for
+   example, *Root CA* > *Subordinate Intermediate CA*), you must export all of
+   them and then combine them into a single Certificate.
 
 -  Double click on your new certificate in the center panel. In the
    popup dialog, click on the **Certification Path** tab, which
@@ -108,7 +109,7 @@ Procedure
 
    .. container:: codeblock:
 
-      .. code::
+      .. code:: apache
 
          SSLCertificateChainFile /neteye/shared/httpd/conf/tls/certs/neteye_chain.crt
          SSLCACertificateFile /neteye/shared/httpd/conf/tls/certs/neteye_ca_bundle.crt
@@ -120,36 +121,42 @@ Procedure
    */tmp*.
 -  Extract the public part of the certificate. You will be asked for
    the Key Password, which is the one you entered when you exported
-   your PFX from the Windows Machine::
+   your PFX from the Windows Machine:
 
-     # openssl pkcs12 -in {yourfile.pfx} -nokeys -out {certificate.crt}
+   .. code:: neteye-console
+
+      # openssl pkcs12 -in {yourfile.pfx} -nokeys -out {certificate.crt}
 
 -  Extract the encrypted private key part of the certificate. You
    will be asked for the Key Password, which is the one you entered
    when you exported your PFX file from the Windows Machine. You will
    also be asked to enter a new Password for the newly generated
-   private key (you can use the same password)::
+   private key (you can use the same password):
 
-     #  openssl pkcs12 -in {yourfile.pfx} -nocerts -out {keyfile-encrypted.key}
+   .. code:: neteye-console
 
--  Now decrypt your private key::
+      # openssl pkcs12 -in {yourfile.pfx} -nocerts -out {keyfile-encrypted.key}
 
-     # openssl rsa -in {keyfile-encrypted.key} -out {keyfile-decrypted.key}
+-  Now decrypt your private key:
 
--  Rename your certificate and key and move them in the proper folder according
-   to the settings in :file:`/etc/httpd/conf.d/neteye-ssl.conf` file:
+   .. code:: neteye-console
+
+      # openssl rsa -in {keyfile-encrypted.key} -out {keyfile-decrypted.key}
+
+-  Rename your certificate and key and move them into the proper folder according
+   to the settings in the file :file:`/etc/httpd/conf.d/neteye-ssl.conf`:
 
    .. container:: codeblock:
 
-      .. code::
+      .. code:: apache
 
          SSLCertificateFile /neteye/shared/httpd/conf/tls/certs/neteye_cert.crt
          SSLCertificateKeyFile /neteye/shared/httpd/conf/tls/private/neteye.key
 
-.. note:: Both the certificate and key must be owned by root and only root must
-   have full read and write access to the files. Also, certificate and key are located
-   in shared directory. Therefore, in a cluster environment, they should be changed
-   only on the node running the httpd resource.
+   .. note:: Both the certificate and key must be owned by root and only root must
+      have full read and write access to the files. Also, certificate and key are located
+      in shared directory. Therefore, in a cluster environment, they should be changed
+      only on the node running the httpd resource.
 
 -  Finally, restart Apache.
 

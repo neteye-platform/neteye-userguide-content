@@ -100,12 +100,16 @@ From version 4.6 onwards, the changelog can be created automatically,
 on-demand. You can generate the changelog of the current release at any
 time by following these steps.
 
-First, install the changelog plugin for yum::
+First, install the changelog plugin for yum:
+
+.. code:: neteye-console
 
   # yum install yum-plugin-changelog -y
 
 You can then view the changelog by passing the last release date to the
 plugin, which will show all changes since that date. For instance, for
-NetEye 4.8::
+NetEye 4.8:
+
+.. code:: neteye-console
 
    # yum changelog 2019-07-31 all > changelog.txt

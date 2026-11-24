@@ -112,8 +112,8 @@ with an access level that is not a valid combination, the access role will
 default (fall back) to *Viewer*.
 
 .. note:: Some contract types also provide isolated
-          :ref:`access levels <cloud-additional-access-levels>`, which can
-          be assigned in addition to the standard levels described above.)
+          :ref:`special access levels <cloud-special-access-levels>`, which
+          can be assigned in addition to the standard levels described above.)
 
 As an example, given a company (named 'COMPANY') with a user who uses
 monitoring and the Elastic Stack, and needing viewing and editor roles
@@ -171,7 +171,7 @@ Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Each group claim is then mapped to one or more specific
 `module permissions <https://neteye.guide/current/getting-started/setup/authorization/roles.html>`__
-that are added to the user's profile.
+(roles) that are added to the user's profile.
 
 .. figure:: /neteye-cloud/strategy-overview/img/authorizationFlow.jpg
 
@@ -207,8 +207,8 @@ defined.
    |            |                  | Admin        | Available                          |
    +            +                  +--------------+------------------------------------+
    |            |                  | CMDO         | Available (no Fallback, see        |
-   |            |                  |              | :ref:`Additional Access Levels     |
-   |            |                  |              | <cloud-additional-access-levels>`) |
+   |            |                  |              | :ref:`Special Access Levels        |
+   |            |                  |              | <cloud-special-access-levels>`)    |
    +------------+------------------+--------------+------------------------------------+
    | ``SOC``    | Yes              | Viewer       | Available                          |
    +            +                  +--------------+------------------------------------+
@@ -244,45 +244,46 @@ defined.
 |
 
 
-.. _cloud-additional-access-levels:
+.. _cloud-special-access-levels:
 
-Additional Access Levels
-~~~~~~~~~~~~~~~~~~~~~~~~
-Additional access levels are permission types outside the standard levels,
-*i.e.* they are **not** part of the :ref:`Viewer/Editor/Admin <cloud-group-claims>`
-hierarchy. Although they are processed like other
-:ref:`permission types <cloud-permissions-table>`, they do not fall back to any
-other level, and their permissions or capabilities are not granted implicitly
-by any standard access level.
+Special Access Levels
+~~~~~~~~~~~~~~~~~~~~~
+Special access levels lie outside the standard levels, *i.e.* they are **not**
+part of the :ref:`Viewer/Editor/Admin <cloud-group-claims>` hierarchy. Although
+their permissions go through the same authorization process as the other
+:ref:`permission types <cloud-permissions-table>`, they do not fall back
+to any other level, and their permissions or capabilities are not granted
+implicitly by any standard access level.
 
-They are meant to grant access to specific functionalities that would otherwise
-be available to anyone with access to the contract. An additional access Level
-can thus be assigned to a user along with the standard access level they hold
-for that same contract type.
+They are meant to grant access to specific functionalities that otherwise would
+not be available to anyone who already has access to the contract. A special
+access level can thus be assigned to a user either alone (*e.g.*, MON-CMDO) or
+in addition to a standard access level (*e.g.*, MON-EDITOR + MON-CMDO) for the
+same contract type.
+
+As an example, the **CMDO Executor** access level controls access to the Command
+Orchestrator (CMDO) module, which is **denied by default** to all users,
+regardless of their standard MON access level. Only users explicitly assigned
+the CMDO Executor access level can see the Command Orchestrator and launch
+its commands on the tenant's infrastructure:
 
 .. table::
    :widths: 10 27 13 50
 
-   +----------+---------------------+----------+---------------------------------------+
-   | Contract | Access Level        | Fallback | Description                           |
-   +==========+=====================+==========+=======================================+
-   | ``MON``  | CMDO Executor       | No       | Allows access to the                  |
-   |          | (*cmdo-executor*)   |          | :ref:`Command Orchestrator            |
-   |          |                     |          | <command-orchestrator-authorization>` |
-   |          |                     |          | – all available commands are          |
-   |          |                     |          | visible and can be freely             |
-   |          |                     |          | executed on their targets.            |
-   +----------+---------------------+----------+---------------------------------------+
+   +----------+----------------------+----------+---------------------------------------+
+   | Contract | Special Access Level | Fallback | Description                           |
+   +==========+======================+==========+=======================================+
+   | ``MON``  | CMDO Executor        | No       | Allows access to the                  |
+   |          | (*cmdo-executor*)    |          | :ref:`Command Orchestrator            |
+   |          |                      |          | <command-orchestrator-authorization>` |
+   |          |                      |          | – all available commands are          |
+   |          |                      |          | visible and can be freely             |
+   |          |                      |          | executed on their targets.            |
+   +----------+----------------------+----------+---------------------------------------+
 
-The **CMDO Executor** access level controls access to the Command
-Orchestrator (CMDO) module, which is **denied by default** to all users,
-regardless of their standard MON access level. Only users explicitly assigned
-the CMDO Executor access level can see the Command Orchestrator and launch
-its commands on the tenant's infrastructure.
-
-This access level grants only the ability to see and run commands: It does
-**not** grant any editing or administrative permission on the Command
-Orchestrator configuration.
+This access level grants only the ability to see and run CMDO commands: It does
+**not** grant any editing or administrative permissions on the configuration
+of the Command Orchestrator itself.
 
 As with the standard access levels, a group claim for the CMDO Executor
 access level follows the usual format, for example:
@@ -290,7 +291,7 @@ access level follows the usual format, for example:
 .. code:: json
 
    "group": [
-     "COMPANY-neteye-cloud-mon-viewer",
+     "COMPANY-neteye-cloud-mon-editor",
      "COMPANY-neteye-cloud-mon-cmdo-executor"
    ]
 

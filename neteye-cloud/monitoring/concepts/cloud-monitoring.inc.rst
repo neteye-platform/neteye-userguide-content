@@ -41,4 +41,4 @@ solution.
   :ref:`execute administrative commands <neteye-command-orchestrator-architecture>`
   on remote systems without special   credentials, reducing risks of error
   (available as AEV). Note that using this feature requires
-  :ref:`special permissions <cloud-additional-access-levels>`.
+  :ref:`special permissions <cloud-special-access-levels>`.

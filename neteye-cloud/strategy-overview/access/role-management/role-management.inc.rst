@@ -62,7 +62,7 @@ contract/access-level combinations default to Viewer, as described in
 contract-specific availability table before assigning a role.
 
 Some contract types also provide
-:ref:`Additional Access Levels <cloud-additional-access-levels>`, which are
+:ref:`Special Access Levels <cloud-special-access-levels>`, which are
 isolated from Viewer, Editor and Admin and grant access to specific
 functionalities only. For example, access to the
 :ref:`Command Orchestrator <command-orchestrator-authorization>` is denied by

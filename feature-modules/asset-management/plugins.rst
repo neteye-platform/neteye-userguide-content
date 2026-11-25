@@ -46,4 +46,5 @@ You can access the GLPI container using the following command:
 
    neteye# podman exec -it systemd-glpi bash
 
-Once inside the container, you can follow the official GLPI documentation to enable plugins, which often involves running commands via the GLPI command-line interface.
+Once inside the container, follow the `official GLPI documentation for activating plugins
+<https://help.glpi-project.org/documentation/cli#plugin-activate>`__ to enable or reactivate plugins.

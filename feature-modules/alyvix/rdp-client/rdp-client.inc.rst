@@ -179,7 +179,9 @@ Troubleshooting
    * - **RDP server closed/refused connection: SSL/TLS connection failed
        (untrusted/self-signed certificate?)**
      - The RDP certificate of the node is not signed by a Certificate
-       Authority that ``guacd`` trusts, see :ref:`alyvix_rdp_certificate`.
+       Authority that ``guacd`` trusts, or it is not valid for the address
+       specified in the Director host representing the Alyvix node.
+       See :ref:`alyvix_rdp_certificate`.
    * - **Cannot connect to the RDP gateway.**
      - The RDP gateway does not respond. Try again after a few moments. If the
        problem persists, contact |support|_.

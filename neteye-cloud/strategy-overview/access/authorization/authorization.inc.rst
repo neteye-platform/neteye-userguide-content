@@ -2,6 +2,7 @@
 
 Authorization
 -------------
+
 Once a user is authenticated, he or she needs to be *authorized*, which is
 the set of steps for obtaining their specific permissions and role which they
 will need within |ne| to complete their tasks without granting them
@@ -18,11 +19,39 @@ then the appropriate groups and permissions will be handled via requests to the
 assist you in configuring the required information in your IdP to grant your
 users the necessary permissions.
 
+The following concepts are important for understanding how |nec| progresses
+from successful authentication to final authorization:
+
+.. table:: Access Levels, Roles, Permissions, and Restrictions
+   :widths: 20 40 40
+
+   +-----------------+----------------------------------+----------------------------+
+   | Concept         | What It Is                       | Who Manages It             |
+   +=================+==================================+============================+
+   | **Access        | Broad functional capability      | Customer management via    |
+   | Level**         | tier per contract (*Viewer*,     | IdP / AD groups            |
+   |                 | *Editor*, *Admin*)               |                            |
+   +-----------------+----------------------------------+----------------------------+
+   | **Role**        | Technical container combining    | NetEye Cloud automated     |
+   |                 | restrictions and/or permissions  | CI/CD pipelines and        |
+   |                 | (e.g., Restriction Roles vs.     | product scripts            |
+   |                 | Permission Roles)                |                            |
+   +-----------------+----------------------------------+----------------------------+
+   | **Permission**  | Fine-grained atomic capability   | Module developers /        |
+   |                 | allowing specific actions,       | system definitions         |
+   |                 | features, or module access       |                            |
+   +-----------------+----------------------------------+----------------------------+
+   | **Restriction** | Filter rule or boundary          | NetEye product scripts and |
+   |                 | constraining visible objects     | Cloud pipelines (via       |
+   |                 | to enforce tenant data isolation | restriction roles)         |
+   +-----------------+----------------------------------+----------------------------+
+
 |
 
 
 OIDC and Group Claims
 ~~~~~~~~~~~~~~~~~~~~~
+
 Under OIDC, the Identity Provider (IdP) passes a token to |ne| as part
 of the OIDC message confirming successful authentication.
 
@@ -78,6 +107,7 @@ any server-side configuration are silently ignored.
 
 Resolving Group Claims
 ~~~~~~~~~~~~~~~~~~~~~~
+
 Assigning permissions to an authenticated user entails reading the group names
 from the group claims in the token, mapping each group to its contract type
 and access level via the tenant's `idp_groups_mapping` configuration, and
@@ -95,8 +125,8 @@ The elements involved in creating a group claim are:
 * **Contract Type:** Aligned with the set of |ne| modules, a contract
   type may also refer to a defined subset of a module's functionality.
   Examples include MON, ELK, |sat| and SOC.
-* **Access Levels:** The various levels of usage types needed to accomplish
-  specific types of tasks.  These roles are:
+* **Standard Access Levels:** The various levels of usage types needed to
+  accomplish specific types of tasks.  These roles are:
 
   * **Viewer:** A user who can see information such as monitoring data and
     performance graphs limited to their tenancy and contract type.
@@ -169,6 +199,7 @@ mismatch in group names is the most common cause.
 
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Each group claim is then mapped to one or more specific
 `module permissions <https://neteye.guide/current/getting-started/setup/authorization/roles.html>`__
 (roles) that are added to the user's profile.
@@ -200,7 +231,7 @@ defined.
    +            +                  +--------------+------------------------------------+
    |            |                  | Admin        | Not defined (Fallback as Viewer)   |
    +------------+------------------+--------------+------------------------------------+
-   | ``MON``    | Yes              | Viewer       | Available                          |
+   | ``MON``    | Yes              | Viewer       | Available .. _cloud-table-mon:     |
    +            +                  +--------------+------------------------------------+
    |            |                  | Editor       | Available                          |
    +            +                  +--------------+------------------------------------+
@@ -248,24 +279,27 @@ defined.
 
 Special Access Levels
 ~~~~~~~~~~~~~~~~~~~~~
-Special access levels lie outside the standard levels, *i.e.* they are **not**
-part of the :ref:`Viewer/Editor/Admin <cloud-group-claims>` hierarchy. Although
-their permissions go through the same authorization process as the other
-:ref:`permission types <cloud-permissions-table>`, they do not fall back
-to any other level, and their permissions or capabilities are not granted
-implicitly by any standard access level.
+
+Special access levels lie outside the :ref:`standard levels <cloud-group-claims>`,
+*i.e.* they are **not** part of the Viewer/Editor/Admin hierarchy. Although
+they go through the same authorization process as standard access levels to be
+converted into :ref:`permissions <cloud-permissions-table>` (Access Level → Role
+→ Permission), they do not fall back to any other level, and the capabilities
+allowed by those permissions are not granted implicitly by any standard access
+level.
 
 They are meant to grant access to specific functionalities that otherwise would
 not be available to anyone who already has access to the contract. A special
-access level can thus be assigned to a user either alone (*e.g.*, MON-CMDO) or
-in addition to a standard access level (*e.g.*, MON-EDITOR + MON-CMDO) for the
-same contract type.
+access level can thus be assigned to a user either alone (*e.g.*, ``MON-CMDO``)
+or in addition to a standard access level (*e.g.*, ``MON-VIEWER + MON-CMDO``,
+``MON-ADMIN + MON-CMDO``, or even for a different contract type:
+``ELK-EDITOR + MON-CMDO``).
 
-As an example, the **CMDO Executor** access level controls access to the Command
+The special **CMDO Executor** access level controls usage of the Command
 Orchestrator (CMDO) module, which is **denied by default** to all users,
-regardless of their standard MON access level. Only users explicitly assigned
-the CMDO Executor access level can see the Command Orchestrator and launch
-its commands on the tenant's infrastructure:
+regardless of their standard ``MON`` access level. Only users explicitly
+assigned the CMDO Executor access level can see the Command Orchestrator and
+launch its commands on the tenant's infrastructure:
 
 .. table::
    :widths: 10 27 13 50
@@ -300,6 +334,8 @@ Exact group names must be agreed upon with |witit|, as for any other group.
 |
 
 
+.. _cloud-restrictions:
+
 Tenant Restrictions
 ~~~~~~~~~~~~~~~~~~~
 
@@ -322,17 +358,20 @@ This means the authorization outcome has two layers:
 
 Compliance
 ~~~~~~~~~~
+
 Login attempts – whether successful or not – are logged with the user identity,
 action, and timestamp.
 
 These logs are retained in compliance with applicable regulations, including
-the Italian Data Protection Authority's requirements for system administrator access logging.
+the Italian Data Protection Authority's requirements for system administrator
+access logging.
 
 |
 
 
 IdP/User Configuration Procedure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 When an IdP administrator configures permissions for a new user, they need to:
 
 * Create their user account locally with an email address using the local domain

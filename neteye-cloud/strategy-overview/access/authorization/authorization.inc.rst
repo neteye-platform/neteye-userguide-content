@@ -1,14 +1,15 @@
-.. _authorization-procedure:
+.. _cloud-authorization-procedure:
 
 Authorization
 -------------
+
 Once a user is authenticated, he or she needs to be *authorized*, which is
 the set of steps for obtaining their specific permissions and role which they
-will need within NetEye to complete their tasks without granting them
+will need within |ne| to complete their tasks without granting them
 additional abilities beyond what they should have.
 
-NetEye uses the Single Sign-On (SSO) model: You only need to sign in once to
-be able to use any NetEye module, so permissions determine not only what you
+|ne| uses the Single Sign-On (SSO) model: You only need to sign in once to
+be able to use any |ne| module, so permissions determine not only what you
 can do within a particular module, but also whether you can even access a
 module at all.
 
@@ -18,9 +19,40 @@ then the appropriate groups and permissions will be handled via requests to the
 assist you in configuring the required information in your IdP to grant your
 users the necessary permissions.
 
+The following concepts are important for understanding how |nec| progresses
+from successful authentication to final authorization:
+
+.. table:: Access Levels, Roles, Permissions, and Restrictions
+   :widths: 20 40 40
+
+   +-----------------+----------------------------------+----------------------------+
+   | Concept         | What It Is                       | Who Manages It             |
+   +=================+==================================+============================+
+   | **Access        | Broad functional capability      | Customer management via    |
+   | Level**         | tier per contract (*Viewer*,     | IdP / AD groups            |
+   |                 | *Editor*, *Admin*)               |                            |
+   +-----------------+----------------------------------+----------------------------+
+   | **Role**        | Technical container combining    | NetEye Cloud automated     |
+   |                 | restrictions and/or permissions  | CI/CD pipelines and        |
+   |                 | (e.g., Restriction Roles vs.     | product scripts            |
+   |                 | Permission Roles)                |                            |
+   +-----------------+----------------------------------+----------------------------+
+   | **Permission**  | Fine-grained atomic capability   | Module developers /        |
+   |                 | allowing specific actions,       | system definitions         |
+   |                 | features, or module access       |                            |
+   +-----------------+----------------------------------+----------------------------+
+   | **Restriction** | Filter rule or boundary          | NetEye product scripts and |
+   |                 | constraining visible objects     | Cloud pipelines (via       |
+   |                 | to enforce tenant data isolation | restriction roles)         |
+   +-----------------+----------------------------------+----------------------------+
+
+|
+
+
 OIDC and Group Claims
 ~~~~~~~~~~~~~~~~~~~~~
-Under OIDC, the Identity Provider (IdP) passes a token to NetEye as part
+
+Under OIDC, the Identity Provider (IdP) passes a token to |ne| as part
 of the OIDC message confirming successful authentication.
 
 This token contains a number of *group claims*, which are how a local
@@ -29,7 +61,7 @@ log in.
 
 A user who has been authenticated, but whose account has not been otherwise
 configured, will have no group claims in their token, and will thus be able
-to enter the NetEye platform but will not see any modules or data.
+to enter the |ne| platform but will not see any modules or data.
 
 The authenticated user is issued a token containing their group claims in
 `OAuth 2.0 JSON Web Token <https://datatracker.ietf.org/doc/html/rfc7519>`_ format:
@@ -51,11 +83,11 @@ The authenticated user is issued a token containing their group claims in
 
 Customers manage group memberships in their own Identity Provider –
 they decide who gets which groups, and how group claims are structured so
-that they represent specific NetEye Cloud Access Levels, for example the
+that they represent specific |nec| Access Levels, for example the
 string `neteye-cloud-mon-viewer`.
 
 However, the mapping from groups to actual permissions is controlled entirely
-on the NetEye.Cloud platform side and reflects only the contracts and access
+on the |nec| platform side and reflects only the contracts and access
 levels that are active for the company/tenant.
 
 A customer cannot grant access to contracts they have not subscribed to,
@@ -68,8 +100,14 @@ any server-side configuration are silently ignored.
    login process, permissions are effectively updated during login, so any change
    to permissions will require logging out and logging back in.
 
+|
+
+
+.. _cloud-group-claims:
+
 Resolving Group Claims
 ~~~~~~~~~~~~~~~~~~~~~~
+
 Assigning permissions to an authenticated user entails reading the group names
 from the group claims in the token, mapping each group to its contract type
 and access level via the tenant's `idp_groups_mapping` configuration, and
@@ -84,11 +122,11 @@ The elements involved in creating a group claim are:
 * **Company Code:** The unique tenant ID that ensures a company's data
   and infrastructure cannot be viewed or modified by someone outside
   that company.
-* **Contract Type:** Aligned with the set of NetEye modules, a contract
+* **Contract Type:** Aligned with the set of |ne| modules, a contract
   type may also refer to a defined subset of a module's functionality.
   Examples include MON, ELK, |sat| and SOC.
-* **Access Levels:** The various levels of usage types needed to accomplish
-  specific types of tasks.  These roles are:
+* **Standard Access Levels:** The various levels of usage types needed to
+  accomplish specific types of tasks.  These roles are:
 
   * **Viewer:** A user who can see information such as monitoring data and
     performance graphs limited to their tenancy and contract type.
@@ -98,10 +136,14 @@ The elements involved in creating a group claim are:
     Note that this is equivalent to a module administrator, not a full
     system administrator.
 
-Only one access level is allowed per contract type.  Also, some
+Only one standard access level is allowed per contract type. Also, some
 contracts may not utilize all three levels; if a group indicates a contract
 with an access level that is not a valid combination, the access role will
-default to Viewer.
+default (fall back) to *Viewer*.
+
+.. note:: Some contract types also provide isolated
+          :ref:`special access levels <cloud-special-access-levels>`, which
+          can be assigned in addition to the standard levels described above.)
 
 As an example, given a company (named 'COMPANY') with a user who uses
 monitoring and the Elastic Stack, and needing viewing and editor roles
@@ -151,16 +193,20 @@ in the Identity Provider exactly match those agreed upon with |witit|.
 When a user reports being able to log in but not seeing expected data, a
 mismatch in group names is the most common cause.
 
+|
+
+.. _cloud-permissions-table:
+
 Converting to Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Each group claim is then mapped to one or more specific
 `module permissions <https://neteye.guide/current/getting-started/setup/authorization/roles.html>`__
-that are added to the user's profile.
+(roles) that are added to the user's profile.
 
 .. figure:: /neteye-cloud/strategy-overview/img/authorizationFlow.jpg
 
    How an OIDC token is converted in stages into module permissions
-
 
 The following table lists the available Customer Roles for each |nec|
 Contract type, indicating whether the contract grants WebUI access and which
@@ -170,64 +216,125 @@ defined.
 .. table::
    :widths: 20 20 20 40
 
-   +------------+----------------+--------------+--------------------------------+
-   | Contract   | Has WebUI      | Access Level | Status                         |
-   |            | Access         |              |                                |
-   +============+================+==============+================================+
-   | ``ASSET``  | Yes            | Viewer       | Available                      |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | Not defined (Fallback as       |
-   |            |                |              | Viewer)                        |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | Available                      |
-   +------------+----------------+--------------+--------------------------------+
-   | ``ELK``    | Yes            | Viewer       | Available                      |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | Available                      |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | Not defined (Fallback as       |
-   |            |                |              | Viewer)                        |
-   +------------+----------------+--------------+--------------------------------+
-   | ``MON``    | Yes            | Viewer       | Available                      |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | Available                      |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | Available                      |
-   +------------+----------------+--------------+--------------------------------+
-   | ``SOC``    | Yes            | Viewer       | Available                      |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | N/A                            |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | N/A                            |
-   +------------+----------------+--------------+--------------------------------+
-   | ``SOC_ADS``| Yes            | Viewer       | Available                      |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | N/A                            |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | N/A                            |
-   +------------+----------------+--------------+--------------------------------+
-   | ``TEL``    | Yes            | Viewer       | Yes                            |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | Not defined (Fallback as       |
-   |            |                |              | Viewer)                        |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | Not defined (Fallback as       |
-   |            |                |              | Viewer)                        |
-   +------------+----------------+--------------+--------------------------------+
-   | ``TRACE``  | Yes            | Viewer       | Yes                            |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | Not defined (Fallback as       |
-   |            |                |              | Viewer)                        |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | Not defined (Fallback as       |
-   |            |                |              | Viewer)                        |
-   +------------+----------------+--------------+--------------------------------+
-   | ``SATAYO`` | Yes            | Viewer       | Not defined                    |
-   +            +                +--------------+--------------------------------+
-   |            |                | Editor       | Not defined                    |
-   +            +                +--------------+--------------------------------+
-   |            |                | Admin        | Available                      |
-   +------------+----------------+--------------+--------------------------------+
+   +------------+------------------+--------------+------------------------------------+
+   | Contract   | Has WebUI Access | Access Level | Status                             |
+   +============+==================+==============+====================================+
+   | ``ASSET``  | Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined (Fallback as Viewer)   |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Available                          |
+   +------------+------------------+--------------+------------------------------------+
+   | ``ELK``    | Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Not defined (Fallback as Viewer)   |
+   +------------+------------------+--------------+------------------------------------+
+   | ``MON``    | Yes              | Viewer       | Available .. _cloud-table-mon:     |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | CMDO         | Available (no Fallback, see        |
+   |            |                  |              | :ref:`Special Access Levels        |
+   |            |                  |              | <cloud-special-access-levels>`)    |
+   +------------+------------------+--------------+------------------------------------+
+   | ``SOC``    | Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | N/A                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | N/A                                |
+   +------------+------------------+--------------+------------------------------------+
+   | ``SOC_ADS``| Yes              | Viewer       | Available                          |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | N/A                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | N/A                                |
+   +------------+------------------+--------------+------------------------------------+
+   | ``TEL``    | Yes              | Viewer       | Yes                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined (Fallback as Viewer)   |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Not defined (Fallback as Viewer)   |
+   +------------+------------------+--------------+------------------------------------+
+   | ``TRACE``  | Yes              | Viewer       | Yes                                |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined (Fallback as Viewer)   |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Not defined (Fallback as Viewer)   |
+   +------------+------------------+--------------+------------------------------------+
+   | ``SATAYO`` | Yes              | Viewer       | Not defined                        |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Editor       | Not defined                        |
+   +            +                  +--------------+------------------------------------+
+   |            |                  | Admin        | Available                          |
+   +------------+------------------+--------------+------------------------------------+
+
+|
+
+
+.. _cloud-special-access-levels:
+
+Special Access Levels
+~~~~~~~~~~~~~~~~~~~~~
+
+Special access levels lie outside the :ref:`standard levels <cloud-group-claims>`,
+*i.e.* they are **not** part of the Viewer/Editor/Admin hierarchy. Although
+they go through the same authorization process as standard access levels to be
+converted into :ref:`permissions <cloud-permissions-table>` (Access Level → Role
+→ Permission), they do not fall back to any other level, and the capabilities
+allowed by those permissions are not granted implicitly by any standard access
+level.
+
+They are meant to grant access to specific functionalities that otherwise would
+not be available to anyone who already has access to the contract. A special
+access level can thus be assigned to a user either alone (*e.g.*, ``MON-CMDO``)
+or in addition to a standard access level (*e.g.*, ``MON-VIEWER + MON-CMDO``,
+``MON-ADMIN + MON-CMDO``, or even for a different contract type:
+``ELK-EDITOR + MON-CMDO``).
+
+The special **CMDO Executor** access level controls usage of the Command
+Orchestrator (CMDO) module, which is **denied by default** to all users,
+regardless of their standard ``MON`` access level. Only users explicitly
+assigned the CMDO Executor access level can see the Command Orchestrator and
+launch its commands on the tenant's infrastructure:
+
+.. table::
+   :widths: 10 27 13 50
+
+   +----------+----------------------+----------+---------------------------------------+
+   | Contract | Special Access Level | Fallback | Description                           |
+   +==========+======================+==========+=======================================+
+   | ``MON``  | CMDO Executor        | No       | Allows access to the                  |
+   |          | (*cmdo-executor*)    |          | :ref:`Command Orchestrator            |
+   |          |                      |          | <command-orchestrator-authorization>` |
+   |          |                      |          | – all available commands are          |
+   |          |                      |          | visible and can be freely             |
+   |          |                      |          | executed on their targets.            |
+   +----------+----------------------+----------+---------------------------------------+
+
+This access level grants only the ability to see and run CMDO commands: It does
+**not** grant any editing or administrative permissions on the configuration
+of the Command Orchestrator itself.
+
+As with the standard access levels, a group claim for the CMDO Executor
+access level follows the usual format, for example:
+
+.. code:: json
+
+   "group": [
+     "COMPANY-neteye-cloud-mon-editor",
+     "COMPANY-neteye-cloud-mon-cmdo-executor"
+   ]
+
+Exact group names must be agreed upon with |witit|, as for any other group.
+
+|
+
+
+.. _cloud-restrictions:
 
 Tenant Restrictions
 ~~~~~~~~~~~~~~~~~~~
@@ -246,16 +353,25 @@ This means the authorization outcome has two layers:
 - Permissions determine what operations the user can perform (view, edit, administer) within each module.
 - Restrictions determine which data those operations apply to, scoped to the user's company/tenant.
 
+|
+
+
 Compliance
 ~~~~~~~~~~
+
 Login attempts – whether successful or not – are logged with the user identity,
 action, and timestamp.
 
 These logs are retained in compliance with applicable regulations, including
-the Italian Data Protection Authority's requirements for system administrator access logging.
+the Italian Data Protection Authority's requirements for system administrator
+access logging.
+
+|
+
 
 IdP/User Configuration Procedure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 When an IdP administrator configures permissions for a new user, they need to:
 
 * Create their user account locally with an email address using the local domain

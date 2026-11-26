@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="392" viewBox="0 0 1120 392" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif">
+  <title>NetEye.Cloud Satellite architecture overview</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C6C6C6"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1120" height="392" fill="#262626"/>
+
+  <!-- Customer network -->
+  <rect x="24.5" y="24.5" width="615" height="311" fill="#393939" stroke="#6F6F6F" stroke-dasharray="3 3"/>
+  <rect x="24" y="24" width="616" height="4" fill="#6F6F6F"/>
+  <text x="40" y="56" font-size="16" font-weight="600" fill="#F4F4F4">Customer Network</text>
+  <rect x="40.5" y="80.5" width="183" height="239" fill="#262626" stroke="#6F6F6F" stroke-dasharray="3 3"/>
+  <rect x="40" y="80" width="184" height="4" fill="#6F6F6F"/>
+  <text x="56" y="108" font-size="14" font-weight="600" fill="#F4F4F4">Customer Hosts</text>
+  <rect x="56.5" y="128.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
+  <text x="72" y="149" font-size="14" fill="#F4F4F4">Host A</text>
+  <rect x="56.5" y="176.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
+  <text x="72" y="197" font-size="14" fill="#F4F4F4">Host B</text>
+  <rect x="56.5" y="224.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
+  <text x="72" y="245" font-size="14" fill="#F4F4F4">Host <tspan font-style="italic">n</tspan></text>
+  <text x="56" y="276" font-size="12" fill="#C6C6C6">Icinga and GLPI Agents</text>
+  <text x="56" y="292" font-size="12" fill="#C6C6C6">on each host</text>
+  <text x="56" y="308" font-size="12" fill="#C6C6C6">Elastic Agent if subscribed</text>
+  <rect x="440.5" y="80.5" width="183" height="239" fill="#1E2C29" stroke="#0A9D81" stroke-dasharray="3 3"/>
+  <rect x="440" y="80" width="184" height="4" fill="#0A9D81"/>
+  <text x="456" y="108" font-size="14" font-weight="600" fill="#F4F4F4">NetEye Satellites</text>
+  <rect x="456.5" y="160.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
+  <text x="472" y="181" font-size="14" fill="#F4F4F4">Satellite A</text>
+  <rect x="456.5" y="216.5" width="151" height="31" fill="#393939" stroke="#6F6F6F"/>
+  <text x="472" y="237" font-size="14" fill="#F4F4F4">Satellite B</text>
+
+  <!-- NetEye.Cloud -->
+  <rect x="848.5" y="24.5" width="247" height="311" fill="#1E2C29" stroke="#0A9D81" stroke-dasharray="3 3"/>
+  <rect x="848" y="24" width="248" height="4" fill="#0A9D81"/>
+  <text x="864" y="56" font-size="16" font-weight="600" fill="#F4F4F4">NetEye.Cloud</text>
+  <rect x="864.5" y="204.5" width="215" height="31" fill="#393939" stroke="#6F6F6F"/>
+  <text x="880" y="225" font-size="14" fill="#F4F4F4">NetEye.Cloud Master</text>
+
+  <!-- Rule point 1: customer hosts and NetEye Satellites -->
+  <circle cx="332" cy="128" r="12" fill="#F4F4F4"/>
+  <text x="332" y="132" font-size="12" font-weight="600" fill="#262626" text-anchor="middle">1</text>
+  <line x1="228" y1="184" x2="436" y2="184" stroke="#C6C6C6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="332" y="176" font-size="14" font-weight="600" fill="#F4F4F4" text-anchor="middle">Monitoring and log data</text>
+  <text x="332" y="204" font-size="12" fill="#C6C6C6" text-anchor="middle">Initiated by the hosts</text>
+
+  <!-- Rule point 2: NetEye Satellites and NetEye.Cloud Master -->
+  <circle cx="744" cy="128" r="12" fill="#F4F4F4"/>
+  <text x="744" y="132" font-size="12" font-weight="600" fill="#262626" text-anchor="middle">2</text>
+  <line x1="628" y1="184" x2="844" y2="184" stroke="#C6C6C6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="744" y="176" font-size="14" font-weight="600" fill="#F4F4F4" text-anchor="middle">Monitoring and log data</text>
+  <text x="744" y="204" font-size="12" fill="#C6C6C6" text-anchor="middle">Initiated by the Satellite</text>
+  <line x1="844" y1="256" x2="628" y2="256" stroke="#C6C6C6" stroke-width="2" stroke-dasharray="2 4" marker-end="url(#arrow)"/>
+  <text x="744" y="248" font-size="14" font-weight="600" fill="#F4F4F4" text-anchor="middle">SSH and HTTPS</text>
+  <text x="744" y="276" font-size="12" fill="#C6C6C6" text-anchor="middle">Initiated by the Master</text>
+  <rect x="704.5" y="296.5" width="79" height="23" rx="12" fill="#262626" stroke="#6F6F6F"/>
+  <text x="744" y="312" font-size="12" fill="#F4F4F4" text-anchor="middle">Internet</text>
+
+  <!-- Legend -->
+  <circle cx="36" cy="364" r="12" fill="#F4F4F4"/>
+  <text x="36" y="368" font-size="12" font-weight="600" fill="#262626" text-anchor="middle">1</text>
+  <circle cx="380" cy="364" r="12" fill="#F4F4F4"/>
+  <text x="380" y="368" font-size="12" font-weight="600" fill="#262626" text-anchor="middle">2</text>
+  <line x1="744" y1="364" x2="784" y2="364" stroke="#C6C6C6" stroke-width="2" stroke-dasharray="2 4"/>
+  <g font-size="12" fill="#C6C6C6">
+    <text x="56" y="368">Rules between customer hosts and NetEye Satellites</text>
+    <text x="400" y="368">Rules between NetEye Satellites and NetEye.Cloud Master</text>
+    <text x="792" y="368">Only after confirmation during onboarding</text>
+  </g>
+</svg>

@@ -5,3 +5,4 @@
 
    experimental/mcp-server.rst
    experimental/graph-exploration.rst
+   experimental/pivot-exploration.rst

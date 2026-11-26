@@ -92,7 +92,7 @@ As a running example, let's imagine sending the following authentication event t
 
    {
      "host": {
-       "name": "myhost.wp.lan",
+       "name": "myhost.example.com",
        "ip": "172.17.0.2"
      },
      "event": {
@@ -155,7 +155,7 @@ appears as a string:
 .. code:: json
 
    {
-     "host": "myhost.wp.lan",
+     "host": "myhost.example.com",
      "event": {
          "category": "authentication"
      }

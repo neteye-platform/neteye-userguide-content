@@ -11,6 +11,7 @@ Visual Monitoring with Alyvix
    alyvix/installation.rst
    alyvix/nodes.rst
    alyvix/rdp-monitor.rst
+   alyvix/rdp-client.rst
    alyvix/getting-started.rst
    alyvix/editor.rst
    alyvix/test-cases.rst

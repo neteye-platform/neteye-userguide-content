@@ -54,7 +54,7 @@ To make ``guacd`` trust the certificate:
 #. Apply the change by running the :ref:`neteye install command <neteye-install>`
    for the |ne| Operator only:
 
-   .. code-block:: neteye-console
+   .. code-block:: console
 
       # neteye install --restrict-services-to neteye-operator
 

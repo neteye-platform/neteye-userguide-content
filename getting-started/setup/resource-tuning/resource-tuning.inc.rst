@@ -86,8 +86,8 @@ To persist a different value in your environment, add the following line to
 Replace ``<number-of-threads>`` with a value between 1 and the number of
 available CPU cores in your system.
 
-Then reload systemd, restart Icinga 2, and verify that the override is active::
+Then restart Icinga 2 on the node where ``icinga2-master`` is running
+and verify that the override is active::
 
-  systemctl daemon-reload
-  systemctl restart icinga2.service
-  systemctl show icinga2.service -p ExecStart
+  systemctl restart icinga2-master
+  pgrep -a icinga2 | grep -o 'Concurrency=[0-9]*' | uniq

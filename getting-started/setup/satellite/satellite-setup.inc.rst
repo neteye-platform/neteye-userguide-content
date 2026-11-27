@@ -15,7 +15,7 @@ To attach a new `systemd service` to the Satellite Target you can use the comman
 ``neteye satellite service add``. For example, if you want to add the service
 ``telegraf-local@my_custom_instance.service`` to the ``neteye-satellite.target`` you can execute:
 
-.. code:: bash
+.. code:: neteye-console
 
    sat# neteye satellite service add telegraf-local@my_custom_instance
 
@@ -29,13 +29,13 @@ Removing a service from the Satellite Target can be useful if you previously add
 For example, to remove ``telegraf-local@my_custom_instance.service`` from the ``neteye-satellite.target`` you can
 execute:
 
-.. code:: bash
+.. code:: neteye-console
 
    sat# neteye satellite service remove telegraf-local@my_custom_instance
 
 We remind you that you can verify which services are attached to the Satellite Target with the command:
 
-.. code:: bash
+.. code:: neteye-console
 
    sat# systemctl list-dependencies neteye-satellite.target
 

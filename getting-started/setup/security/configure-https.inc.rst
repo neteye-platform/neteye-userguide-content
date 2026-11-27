@@ -62,34 +62,41 @@ certificates in the following directories:
 Because the private key is so fundamentally important to your network's
 security, you should strongly consider creating a new one. You can
 create the private key and the CSR file in the appropriate directory
-with a single command, after moving to the correct directory::
+with a single command, after switching to the correct directory.
 
-    # cd /neteye/shared/httpd/conf/tls/private/
-    # openssl req -newkey rsa:4096 -nodes -keyout hostname.fqdn.key -out hostname.fqdn.csr
-    Generating a 4096 bit RSA private key
-    ..................................................................................................++
-    ..................................................++
-    writing new private key to 'hostname.fqdn.key'
-    -----
-    You are about to be asked to enter information that will be incorporated
-    into your certificate request.
-    What you are about to enter is what is called a Distinguished Name or a DN.
-    There are quite a few fields but you can leave some blank
-    For some fields there will be a default value,
-    If you enter '.', the field will be left blank.
-    -----
-    Country Name (2 letter code) [XX]:IT
-    State or Province Name (full name) []:BZ
-    Locality Name (eg, city) [Default City]:Bolzano
-    Organization Name (eg, company) [Default Company Ltd]:Company
-    Organizational Unit Name (eg, section) []:Monitoring
-    Common Name (eg, your name or your server's hostname) []:hostname.fqdn
-    Email Address []:mail@company.com
+.. code:: neteye-console
 
-    Please enter the following 'extra' attributes
-    to be sent with your certificate request
-    A challenge password []:
-    An optional company name []:
+   # cd /neteye/shared/httpd/conf/tls/private/
+   # openssl req -newkey rsa:4096 -nodes -keyout hostname.fqdn.key -out hostname.fqdn.csr
+
+where the output will look similar to this:
+
+.. code:: none
+
+   Generating a 4096 bit RSA private key
+   ....................................................................................++
+   ..................................................++
+   writing new private key to 'hostname.fqdn.key'
+   -----
+   You are about to be asked to enter information that will be incorporated
+   into your certificate request.
+   What you are about to enter is what is called a Distinguished Name or a DN.
+   There are quite a few fields but you can leave some blank
+   For some fields there will be a default value,
+   If you enter '.', the field will be left blank.
+   -----
+   Country Name (2 letter code) [XX]:IT
+   State or Province Name (full name) []:BZ
+   Locality Name (eg, city) [Default City]:Bolzano
+   Organization Name (eg, company) [Default Company Ltd]:Company
+   Organizational Unit Name (eg, section) []:Monitoring
+   Common Name (eg, your name or your server's hostname) []:hostname.fqdn
+   Email Address []:mail@company.com
+
+   Please enter the following 'extra' attributes
+   to be sent with your certificate request
+   A challenge password []:
+   An optional company name []:
 
 The *hostname.fqdn.key* file is your private key which should be kept
 secure and not given to anyone. The *hostname.fqdn.csr* file is what you
@@ -121,9 +128,16 @@ certificate in applications (e.g., browsers or the Icinga2 agent) that
 in turn trust the CA you used.
 
 To be used with the Icinga2 agent, this certificate should be in PEM
-format. To check, you can look at the certificate file::
+format. To check, you can look at the certificate file:
+
+.. code:: neteye-console
 
     # cat countersigned.crt
+
+where the output should look similar to this:
+
+.. code:: none
+
     -----BEGIN CERTIFICATE-----
     MIID3jCCAsagAwIBAgICPnowDQYJKoZIhvcNAQELBQAwgaMxCzAJBgNVBAYTAi0t
     ...
@@ -131,23 +145,27 @@ format. To check, you can look at the certificate file::
 
 If you do not see **BEGIN CERTIFICATE**, you will need to export the
 certificate to PEM format (you can use other tools besides *openssl* as
-long as they generate a certificate in PEM format)::
+long as they generate a certificate in PEM format):
 
-    # openssl x509 -in countersigned.crt -outform PEM -out countersigned.pem
+.. code:: neteye-console
+
+   # openssl x509 -in countersigned.crt -outform PEM -out countersigned.pem
 
 .. rubric:: Step 3: Install the Certificates on the Web Server
 
 You must then rename your certificates and key and move them in the
 proper folder according to the settings in file
-*/etc/httpd/conf.d/neteye-ssl.conf*::
+*/etc/httpd/conf.d/neteye-ssl.conf*:
 
-    <VirtualHost _default_:443>
-    SSLEngine on
-    SSLCertificateFile /neteye/shared/httpd/conf/tls/certs/neteye_cert.crt
-    SSLCertificateKeyFile /neteye/shared/httpd/conf/tls/private/neteye.key
-    SSLCertificateChainFile /neteye/shared/httpd/conf/tls/certs/neteye_chain.crt
-    SSLCACertificateFile /neteye/shared/httpd/conf/tls/certs/neteye_ca_bundle.crt
-    </VirtualHost>
+.. code:: apache
+
+   <VirtualHost _default_:443>
+   SSLEngine on
+   SSLCertificateFile /neteye/shared/httpd/conf/tls/certs/neteye_cert.crt
+   SSLCertificateKeyFile /neteye/shared/httpd/conf/tls/private/neteye.key
+   SSLCertificateChainFile /neteye/shared/httpd/conf/tls/certs/neteye_chain.crt
+   SSLCACertificateFile /neteye/shared/httpd/conf/tls/certs/neteye_ca_bundle.crt
+   </VirtualHost>
 
 -  **SSLCertificateFile:** Your trusted certificate countersigned by the
    CA, from *countersigned.crt* (or *countersigned.pem* if you exported
@@ -160,20 +178,24 @@ proper folder according to the settings in file
 -  **SSLCACertificateFile:** The CA's public certificate named
    *neteye\_ca\_bundle.crt*
 
-.. note:: Do not change setting in file */etc/httpd/conf.d/neteye-ssl.conf*
-   because they will be overwritten during update procedure possibly
+.. note:: Do not change settings in the file */etc/httpd/conf.d/neteye-ssl.conf*
+   because they will be overwritten during the next update procedure, possibly
    causing NetEye outages.
 
 .. rubric:: Step 4: Restart Apache
 
 Finally, restart the HTTPD service so it reloads the configuration files
 above with the new trusted certificates. If you are on a single-node
-instance use::
+instance use:
 
-     # systemctl restart httpd.service
+.. code:: neteye-console
 
-If you are on a cluster use::
+   # systemctl restart httpd.service
 
-     # pcs resource restart httpd
+If you are on a cluster use:
+
+.. code:: neteye-console
+
+   # pcs resource restart httpd
 
 |

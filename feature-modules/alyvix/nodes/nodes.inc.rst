@@ -121,9 +121,9 @@ and it accepts the following positional parameters:
 
 Example usage:
 
-.. code:: bash
+.. code:: neteye-console
 
-   bash /usr/share/neteye/scripts/security/generate_server_certs.sh \
+   # bash /usr/share/neteye/scripts/security/generate_server_certs.sh \
    "/C=IT/ST=Bolzano/L=Bolzano/O=GlobalSecurity/OU=AlyvixNodes/CN=example03.lan" \
    "example03.lan" 192.168.0.100 "example03" "/root/certs"
 

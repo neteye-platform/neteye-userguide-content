@@ -83,9 +83,9 @@ configure the OTEL connection manually on the Alyvix node by following these ste
 
 #. On the |ne| Master, run the following command to generate the OTEL configuration payload to be used on the Alyvix node:
 
-   .. code-block:: console
+   .. code-block:: neteye-console
 
-      neteye alyvix-node print-otel-configuration --node-name NODE_NAME --tenant-name TENANT_NAME
+      # neteye alyvix-node print-otel-configuration --node-name NODE_NAME --tenant-name TENANT_NAME
 
    Replace ``NODE_NAME`` with the hostname of the Alyvix node and ``TENANT_NAME`` with the name of the Tenant.
    This command will generate the OTEL configuration payload and the authentication credentials for the Alyvix node to
@@ -95,11 +95,12 @@ configure the OTEL connection manually on the Alyvix node by following these ste
 #. On the |ne| Satellite, or any host that can reach the Alyvix node, send the generated OTEL configuration payload
    to the Alyvix node by running the following command:
 
-   .. code-block:: console
+   .. code-block:: neteye-console
 
-      curl -X POST https://<ALYVIX_NODE_IP>/v5/super-admin/otel \
-      -H "Content-Type: application/json" -H "Authorization: Bearer <JWT_TOKEN>" \
-      -d @<OTEL_CONFIGURATION_PAYLOAD_FILE>
+      # curl -X POST https://<ALYVIX_NODE_IP>/v5/super-admin/otel \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer <JWT_TOKEN>" \
+          -d @<OTEL_CONFIGURATION_PAYLOAD_FILE>
 
    Where:
     - ``<ALYVIX_NODE_IP>`` is the IP address of the Alyvix node.

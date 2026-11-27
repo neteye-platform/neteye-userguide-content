@@ -43,7 +43,7 @@ The roles that can be assigned to a node can be found in
 After modifying the configuration file, it is necessary to sync the cluster configuration
 to all the nodes in the cluster. This can be done by executing the following command:
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# neteye config cluster sync
 
@@ -51,7 +51,7 @@ Finally, to apply the changes to the cluster services configuration,
 it is necessary to execute the install procedure focused on the service you want to apply
 the changes to:
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# neteye install --restrict-services-to <service_name>
 
@@ -77,9 +77,9 @@ Once the configuration of a specific service has been performed, it is necessary
 apply the changes to the cluster services configuration. This can be done by
 executing the install procedure focused on the service you want to apply the changes to:
 
-.. code:: bash
+.. code:: neteye-console
 
-   neteye install --restrict-services-to <service_name>
+   # neteye install --restrict-services-to <service_name>
 
 Where the ``<service_name>`` is the name of the service you want to apply the changes to.
 
@@ -109,7 +109,7 @@ Cluster and to troubleshoot problems are:
 In the remainder, we show some typical use of these commands, starting
 from the simplest one.
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# drbdmon
 
@@ -132,7 +132,7 @@ The command itself has a lot of options and sub commands, extensively
 described in the above-mentioned man page. Within a NetEye Cluster,
 the most used sub command is perhaps
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# drbdadm --dry-run adjust all
 
@@ -145,7 +145,7 @@ The third command is the main tool to manage the corosync/pacemaker
 stack of a cluster: :command:`pcs`. Like :manpage:`drbdadm` it has a
 number of sub commands and option.
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# pcs status
 
@@ -174,16 +174,16 @@ the commands :command:`systemctl status <resource name>` and
 Additional sub commands of :command:`pcs` are:
 
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# pcs property list
 
-This command returns some information about the cluster and is similar
-to the following snippet:
+This command returns summary information about the cluster, such as the
+following example:
 
 .. container:: codeblock
 
-   .. code::
+   .. code:: cfg
 
       Cluster Properties:
       cluster-infrastructure: corosync
@@ -213,14 +213,14 @@ The important points here are:
    post `Configuring Fencing on Dell Servers
    <https://www.neteye-blog.com/2020/06/configuring-fencing-on-dell-servers/>`_.
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# pcs constraint
 
 Returns a list of all active constraints on the cluster.
 
 
-.. code:: bash
+.. code:: neteye-console
 
    cluster# pcs resource show [cluster_ip]
 
@@ -232,10 +232,11 @@ This command shows all the configured resources; if the parameter
    debugging commands, you can refer to RedHat's `Reference
    Documentation
    <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_overview-of-high-availability-configuring-and-managing-high-availability-clusters>`_
-   for Pacemaker and high-availability, in particular Chapters `3. The
-   pcs CLI
-   <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_pcs-operation-configuring-and-managing-high-availability-clusters>`_,
-   `9.7 Displaying fencing devices
-   <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-fencing-configuring-and-managing-high-availability-clusters#proc_displaying-configuring-fence-devices-configuring-fencing>`_,
-   and `10.3. Displaying Configured Resources
-   <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-cluster-resources-configuring-and-managing-high-availability-clusters#proc_configuring-resource-meta-options-configuring-cluster-resources>`_.
+   for Pacemaker and high-availability, in particular the chapters:
+
+   * `The pcs command-line interface
+     <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_pcs-operation-configuring-and-managing-high-availability-clusters>`_
+   * `Displaying configured fence devices
+     <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-fencing-configuring-and-managing-high-availability-clusters#proc_displaying-configuring-fence-devices-configuring-fencing>`_
+   * `Displaying configured resources
+     <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-cluster-resources-configuring-and-managing-high-availability-clusters#proc_configuring-resource-meta-options-configuring-cluster-resources>`_

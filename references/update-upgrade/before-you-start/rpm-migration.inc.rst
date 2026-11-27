@@ -17,7 +17,9 @@ the package manager will do one of these two things:
    version, it will leave the edited version alone and save the new
    system configuration file as an .rpmnew file.
 
-You can use the following commands to locate .rpmsave and .rpmnew files::
+You can use the following commands to locate .rpmsave and .rpmnew files:
+
+.. code:: neteye-console
 
     # updatedb
     # locate *.rpmsave*
@@ -36,22 +38,28 @@ configuration settings from the new package, while maintaining the
 previous customized settings. The following procedure uses Elasticsearch
 as an example.
 
-First, run a diff between the original file and the .rpmnew file::
+First, run a diff between the original file and the .rpmnew file:
+
+.. code:: neteye-console
 
    # diff -uN /etc/sysconfig/elasticsearch /etc/sysconfig/elasticsearch.rpmnew
 
-OR
+OR:
 
-::
+.. code:: neteye-console
 
    # vimdiff /etc/sysconfig/elasticsearch /etc/sysconfig/elasticsearch.rpmnew
 
 Copy all custom settings from the original into the .rpmnew file. Then
-create a backup of the original file::
+create a backup of the original file:
+
+.. code:: neteye-console
 
    # cp /etc/sysconfig/elasticsearch /etc/sysconfig/elasticsearch.01012018.bak
 
-And then substitute the original file with the .rpmnew::
+And then substitute the original file with the .rpmnew:
+
+.. code:: neteye-console
 
    # mv /etc/sysconfig/elasticsearch.rpmnew /etc/sysconfig/elasticsearch
 
@@ -64,17 +72,21 @@ to preserve your customizations from the previous version, you will need
 to migrate those from the original .rpmsave into the new configuration
 file.
 
-Run a diff between the new file and the .rpmsave file::
+Run a diff between the new file and the .rpmsave file:
+
+.. code:: neteye-console
 
    # diff -uN /etc/sysconfig/elasticsearch.rpmsave /etc/sysconfig/elasticsearch
 
-OR
+OR:
 
-::
+.. code:: neteye-console
 
    # vimdiff /etc/sysconfig/elasticsearch.rpmsave /etc/sysconfig/elasticsearch
 
 Copy all custom settings from the .rpmsave into the new configuration
-file, and preserve the original .rpmsave file under a different name::
+file, and preserve the original .rpmsave file under a different name:
+
+.. code:: neteye-console
 
    # mv /etc/sysconfig/elasticsearch.rpmsave /etc/sysconfig/elasticsearch.01012018.bak

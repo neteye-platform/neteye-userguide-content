@@ -102,55 +102,54 @@ in InfluxDB or explore the data arranged in easy to read and meaningful dashboar
 Make sure that you choose the correct Grafana Organization associated to the Tenant
 to which the performance metrics belong to.
 
-.. topic:: Switching to a new Alyvix Performance metrics format
+**Switching to a new Alyvix Performance metrics format**
 
-  Starting from version 2.1.0, Alyvix Service returns the performance metrics of the Test Cases running inside the same
-  session as separate InfluxDB measurements, in contrast with the single measurement exposed in previous versions.
+Starting from version 2.1.0, Alyvix Service returns the performance metrics of the Test Cases running inside the same
+session as separate InfluxDB measurements, in contrast with the single measurement exposed in previous versions.
 
-  The built-in dashboards available in the :ref:`itoa-module-description` are fully compatible with the new format.
+The built-in dashboards available in the :ref:`itoa-module-description` are fully compatible with the new format.
 
-  It is important to take into consideration that the Alyvix Test Cases Performance metrics collected with Alyvix Service
-  2.1.0 or above will be stored in different InfluxDB measurements than those collected with previous versions.
+It is important to take into consideration that the Alyvix Test Cases Performance metrics collected with Alyvix Service
+2.1.0 or above will be stored in different InfluxDB measurements than those collected with previous versions.
 
-  For this reason, we provide a script to migrate already collected Alyvix Performance metrics to the new format in the
-  InfluxDB database dedicated to their Tenant. This will also allow their inclusion in the available built-in dashboards.
-  Please note that the script **will not** delete the already collected
-  metrics but will copy them in the correct measurements, ensuring that no data is loss during the migration process.
+For this reason, we provide a script to migrate already collected Alyvix Performance metrics to the new format in the
+InfluxDB database dedicated to their Tenant. This will also allow their inclusion in the available built-in dashboards.
+Please note that the script **will not** delete the already collected
+metrics but will copy them in the correct measurements, ensuring that no data is lost during the migration process.
 
-  To migrate the already collected metrics to the new measurements, after having performed the configuration outlined
-  above, the following script is to be run:
+To migrate the already collected metrics to the new measurements, after having performed the configuration outlined
+above, the following script is to be run:
 
-  .. code:: bash
+.. code:: neteye-console
 
-    bash /usr/share/neteye/scripts/alyvix/migrate_alyvix_influx_measurements.sh \
-      "<source-database>" "<source-measurement>" "<target-tenant>"
+   # bash /usr/share/neteye/scripts/alyvix/migrate_alyvix_influx_measurements.sh \
+     "<source-database>" "<source-measurement>" "<target-tenant>"
 
-  with the following parameters:
+with the following parameters:
 
-  - **source-database**: representing the database in InfluxDB where the previously collected metrics are stored
-  - **source-measurement**: representing the measurement in the provided InfluxDB database where
-    the previously collected metrics are stored
-  - **target-tenant**: the Tenant to which specified metrics belong. They will be migrated to a separate measurement
-    in the InfluxDB database dedicated to the Alyvix metrics for this Tenant.
+- **source-database**: representing the database in InfluxDB where the previously collected metrics are stored
+- **source-measurement**: representing the measurement in the provided InfluxDB database where
+  the previously collected metrics are stored
+- **target-tenant**: the Tenant to which specified metrics belong. They will be migrated to a separate measurement
+  in the InfluxDB database dedicated to the Alyvix metrics for this Tenant.
 
-  Moreover, in case the source InfluxDB node differs from the destination one,
-  the script can be launched specifying four more parameters to define the
-  connection to the source InfluxDB instance:
+Moreover, in case the source InfluxDB node differs from the destination one,
+the script can be launched specifying four more parameters to define the
+connection to the source InfluxDB instance:
 
-  .. code:: bash
+.. code:: neteye-console
 
-    bash /usr/share/neteye/scripts/alyvix/migrate_alyvix_influx_measurements.sh \
-      "<source-database>" "<source-measurement>" "<target-tenant>" \
-      "<source-node-hostname>" "<source-node-port>" \
-      "<source-node-admin-user>" "<source-node-admin-password>"
+   # bash /usr/share/neteye/scripts/alyvix/migrate_alyvix_influx_measurements.sh \
+     "<source-database>" "<source-measurement>" "<target-tenant>" \
+     "<source-node-hostname>" "<source-node-port>" \
+     "<source-node-admin-user>" "<source-node-admin-password>"
 
-  where the new parameters are:
+where the new parameters are:
 
-  - **source-node-hostname**: the hostname of the source InfluxDB instance
-  - **source-node-port**: the port where InfluxDB is listening for connections on the source host
-  - **source-node-admin-user**: username of a user with administrator privileges on the source InfluxDB instance
-  - **source-node-admin-password**: password of the specified administrator user
+- **source-node-hostname**: the hostname of the source InfluxDB instance
+- **source-node-port**: the port where InfluxDB is listening for connections on the source host
+- **source-node-admin-user**: username of a user with administrator privileges on the source InfluxDB instance
+- **source-node-admin-password**: password of the specified administrator user
 
-
-  .. note:: The target InfluxDB node is inferred from the specified target Tenant, as configured in
-            the :ref:`tenant configuration <tenants-configuration>`.
+.. note:: The target InfluxDB node is inferred from the specified target Tenant, as configured in
+          the :ref:`tenant configuration <tenants-configuration>`.

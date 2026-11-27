@@ -49,7 +49,7 @@ The trust store of the node also accepts certificates in other formats, such as 
 Such files are copied as they are, and the upgrade prerequisite checks report them. Convert each of them to PEM, for
 example:
 
-.. code-block:: bash
+.. code:: neteye-console
 
    neteye# cd /neteye/local/rke2/conf/ca-trust/
    neteye# openssl x509 -inform DER -in my-ca.crt -out my-ca.pem && rm my-ca.crt
@@ -66,7 +66,7 @@ must not be writable by their group or by others. Otherwise :command:`neteye ins
 
 To add a CA, for example the one for an LDAPS server, copy its certificate into the directory:
 
-.. code-block:: bash
+.. code:: neteye-console
 
    neteye# cp ldap-ca.crt /neteye/local/rke2/conf/ca-trust/
 
@@ -86,7 +86,7 @@ The directory is created, and pre-populated, by the latest updates of |ne| 4.50.
 #. Confirm that the directory is ready: in Icinga Web 2, open the configuration of the *neteye* module, check **I am
    ready to upgrade** and save. Alternatively, run:
 
-   .. code-block:: bash
+   .. code:: neteye-console
 
       neteye# icingacli neteye catrustready enable
 
@@ -104,7 +104,7 @@ The content of the directory is merged into a single bundle, stored in the ``net
 during :command:`neteye install`, :command:`neteye update` and :command:`neteye upgrade`. To apply a change at any
 other time, run:
 
-.. code-block:: bash
+.. code:: neteye-console
 
    neteye# neteye install --restrict-services-to neteye-operator
 
@@ -121,7 +121,7 @@ naming the guilty file, if:
 To check which CAs were merged, count the certificates in the bundle (the |ne| root CA and one for each certificate you
 added, minus duplicates):
 
-.. code-block:: bash
+.. code:: neteye-console
 
    neteye# kubectl get configmap neteye-ca-bundle -n neteye-tenant-shared \
        -o jsonpath='{.data.ca-bundle\.pem}' | grep -c 'BEGIN CERTIFICATE'

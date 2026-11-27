@@ -1,11 +1,11 @@
 The **RDP Client in the Browser** opens a remote desktop connection to a
 session of an Alyvix node directly from the |ne| web interface. You do not need
-to install an RDP client on your workstation, nor to look up the connection
+to install an RDP client on your workstation, nor look up the connection
 details of the session.
 
 .. note:: The feature works only for sessions on nodes reachable from the
-    |ne| master node. To connect via RDP to other nodes, please refer to the
-    :ref:`local RDP client <alyvix_rdp_monitor_local_client>`.
+   |ne| master node. To connect via RDP to other nodes, please refer to the
+   :ref:`local RDP client <alyvix_rdp_monitor_local_client>`.
 
 Prerequisites
 `````````````
@@ -13,17 +13,20 @@ Prerequisites
 To use this feature, make sure that:
 
 - You have the :ref:`administrator <alyvix_permissions_roles>` role on the node:
-  you are either a |ne| super administrator, or a Tenant administrator of the
+  i.e., you are either a |ne| super administrator, or a Tenant administrator of the
   Tenant to which the node belongs. On a
   :ref:`Tenant shared node <alyvix_multitenant_tenant_shared_node>`, only super
   administrators can connect. If you are not an administrator of the node, the
-  **Connect to RDP** button is disabled.
+  **Connect to RDP** button will be disabled.
 
 - You know the password for the Windows session. |ne| does not store it for
-  this purpose, so you will enter it at every connection.
+  this purpose, so you will need to enter it at every connection.
 
 - The RDP certificate of the node is signed by a Certificate Authority that
-  ``guacd`` trusts, see :ref:`alyvix_rdp_certificate`.
+  ``guacd`` trusts.
+
+.. If you need to add something here, please add the link to the RDP
+    certificate section on the line above.
 
 .. _alyvix_rdp_certificate:
 
@@ -43,25 +46,25 @@ To make ``guacd`` trust the certificate:
       Director host that represents the Alyvix node, because ``guacd`` uses that
       address to connect to the node.
 
-#. Copy the certificate in the directory
+#. Copy the certificate into the directory
    :file:`/neteye/local/rke2/conf/ca-trust/`, with the :file:`.crt` extension.
    On a |ne| cluster, copy it to **every node**: the directory must have the
-   same content on all the nodes, otherwise the next step stops with an error.
+   same content on all the nodes, otherwise the next step will stop with an error.
 
 #. Apply the change by running the :ref:`neteye install command <neteye-install>`
    for the |ne| Operator only:
 
-   .. code-block:: console
+   .. code-block:: neteye-console
 
       # neteye install --restrict-services-to neteye-operator
 
-   The command merges all the certificates of the directory, together with the
-   |ne| root CA, into one CA bundle. If the bundle changed, ``guacd`` restarts
-   and starts to trust the new certificate.
+   The command merges all certificates in the directory, together with the
+   |ne| root CA, into one CA bundle. Whenever this bundle changes, ``guacd`` will
+   restart and begin to trust the new certificate.
 
    .. note:: The command also checks the |ne| Operator against its channel:
       if a newer version of the Operator is available for your |ne| release,
-      the command updates it as well.
+      this command will update it as well.
 
 Opening a Connection
 ````````````````````
@@ -81,15 +84,15 @@ To connect to a session:
 
 5. Click **Log in**.
 
-.. _figure_alyvix_connect_to_rdp:
+.. _alyvix_figure_connect_to_rdp:
 
 .. figure:: /feature-modules/alyvix/img/connect-to-rdp.png
    :alt: Connect to RDP button
 
    The **Connect to RDP** button in the Sessions tab of the Node details page.
 
-When the connection is established, the remote screen appears with a green
-border and the toolbar at the top. If the page cannot connect, it shows one of
+When the connection is established, the remote screen will appear with a green
+border and the toolbar at the top. If the page cannot connect, it will show one of
 the messages in :ref:`alyvix_rdp_browser_troubleshooting`.
 
 
@@ -112,18 +115,18 @@ over the remote screen and includes the following buttons.
    * - **Keyboard**
      - Shows or hides the on-screen keyboard, which sends keystrokes to the
        session that the physical keyboard cannot send, for example
-       :kbd:`Ctrl+Alt+Del` or :kbd:`Win`. Drag it anywhere on the page:
-       it reopens where you left it.
+       :kbd:`Ctrl+Alt+Del` or :kbd:`Win`. Drag it anywhere around the page:
+       it will reopen where you left it.
    * - **Full screen**
-     - Shows the page in full screen, without the browser. The button changes
+     - Shows the page in full screen mode, without the browser. The button changes
        to **Exit full screen**.
    * - **Hide UI**
      - Collapses the toolbar, so it does not cover the remote screen. A small
        button brings it back.
    * - **Disconnect**
-     - Closes the RDP connection, after you confirm.
+     - Closes the RDP connection after you confirm.
 
-.. _figure_alyvix_rdp_session_page:
+.. _alyvix_figure_rdp_session_page:
 
 .. figure:: /feature-modules/alyvix/img/rdp-session-page.png
    :alt: RDP session page
@@ -156,8 +159,7 @@ gateway that runs in the RKE2 cluster of |ne|. When you click
 .. warning:: A connection to a session is a real Windows login. While you are
    connected, your mouse and keyboard actions reach the session in which Alyvix
    runs the test cases, and **they can make the test cases fail**. Connect only
-   when you need to, and :ref:`disconnect <alyvix_rdp_browser_disconnect>` when
-   you are done.
+   when you need to, and disconnect as soon as you are done.
 
 .. _alyvix_rdp_browser_troubleshooting:
 
@@ -178,12 +180,12 @@ Troubleshooting
        **Reconnect** and enter the credentials again.
    * - **RDP server closed/refused connection: SSL/TLS connection failed
        (untrusted/self-signed certificate?)**
-     - The RDP certificate of the node is not signed by a Certificate
+     - The RDP certificate of the node has not been signed by a Certificate
        Authority that ``guacd`` trusts, or it is not valid for the address
        specified in the Director host representing the Alyvix node.
        See :ref:`alyvix_rdp_certificate`.
    * - **Cannot connect to the RDP gateway.**
-     - The RDP gateway does not respond. Try again after a few moments. If the
+     - The RDP gateway is not responding. Try again after a few moments. If the
        problem persists, contact |support|_.
    * - **Cannot get the connection data for this session.**
      - |ne| could not prepare the connection, for example because the node does

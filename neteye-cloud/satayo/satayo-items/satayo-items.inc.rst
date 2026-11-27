@@ -164,7 +164,25 @@ same domain. Currently, a DNS Entry finding can aggregate **Services**, **Mail**
 **Email addresses**, and **Stealer Logs** related to the same domain, as well as the **IPv4 addresses**
 it resolves to.
 
-Additionally, a DNS Entry finding includes a property indicating whether its value is used as target of an **MX Record**.
+Additionally, a DNS Entry finding includes a **Mail Server** property, showing the role the DNS entry plays
+in e-mail delivery:
+
+- **Mail Domain** — the domain has MX records, which name the mail servers that receive its e-mail.
+  The finding details list these servers under **Mail exchangers**.
+- **Mail Exchanger** — the DNS entry is a mail server named in the MX record of a domain.
+
+In the finding details, the role is a link that opens the related DNS entries in a new tab: the mail
+exchangers of a mail domain, or the domains a mail exchanger receives e-mail for.
+
+When a domain publishes an **SPF** or a **DMARC** record, the finding details show two rows for each
+record:
+
+- **SPF status** / **DMARC status** — the result of the scanner's check of the record:
+  :guilabel:`Valid` if it reported no problem, otherwise the number of errors and warnings.
+  :guilabel:`See more` lists the error first, then the warnings.
+- **SPF value** / **DMARC value** — :guilabel:`See more` shows the record split into its parts:
+  each SPF term as a tag, and each DMARC tag next to its value. This overview also offers some
+  further insight into the SPF and DMARC policies.
 
 Every DNS Entry finding carries a **severity** field that reflects how sensitive it is:
 

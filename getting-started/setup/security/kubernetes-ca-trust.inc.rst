@@ -86,7 +86,7 @@ The directory is created, and pre-populated, by the latest updates of |ne| 4.50.
 #. Confirm that the directory is ready: in Icinga Web 2, open the configuration of the *neteye* module, check **I am
    ready to upgrade** and save. Alternatively, run:
 
-.. code:: neteye-console
+   .. code:: neteye-console
 
       neteye# icingacli neteye catrustready enable
 

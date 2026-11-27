@@ -178,8 +178,8 @@ Additional sub commands of :command:`pcs` are:
 
    cluster# pcs property list
 
-This command returns some information about the cluster and is similar
-to the following snippet:
+This command returns summary information about the cluster, such as the
+following example:
 
 .. container:: codeblock
 
@@ -232,10 +232,11 @@ This command shows all the configured resources; if the parameter
    debugging commands, you can refer to RedHat's `Reference
    Documentation
    <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_overview-of-high-availability-configuring-and-managing-high-availability-clusters>`_
-   for Pacemaker and high-availability, in particular Chapters #3 `The
-   pcs CLI
-   <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_pcs-operation-configuring-and-managing-high-availability-clusters>`_,
-   #9.7 `Displaying fencing devices
-   <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-fencing-configuring-and-managing-high-availability-clusters#proc_displaying-configuring-fence-devices-configuring-fencing>`_,
-   and #10.3. `Displaying Configured Resources
-   <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-cluster-resources-configuring-and-managing-high-availability-clusters#proc_configuring-resource-meta-options-configuring-cluster-resources>`_.
+   for Pacemaker and high-availability, in particular the chapters:
+
+   * `The pcs command-line interface
+     <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_pcs-operation-configuring-and-managing-high-availability-clusters>`_
+   * `Displaying configured fence devices
+     <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-fencing-configuring-and-managing-high-availability-clusters#proc_displaying-configuring-fence-devices-configuring-fencing>`_
+   * `Displaying configured resources
+     <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_configuring-cluster-resources-configuring-and-managing-high-availability-clusters#proc_configuring-resource-meta-options-configuring-cluster-resources>`_
